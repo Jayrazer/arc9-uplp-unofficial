@@ -326,24 +326,7 @@ SWEP.BulletBones = {
     [11] = "bullet11",
     [12] = "bullet12",
 }
-SWEP.BulletBonesSub1 = false 
-
-SWEP.ReloadHideBoneTables = {
-    [1] = {
-        "bullet1",
-        "bullet2",
-        "bullet3",
-        "bullet4",
-        "bullet5",
-        "bullet6",
-        "bullet7",
-        "bullet8",
-        "bullet9",
-        "bullet10",
-        "bullet11",
-        "bullet12",
-    },
-}
+SWEP.BulletBonesSub1 = true 
 
 local mechh = {
     pathUT .. "mech-01.ogg",
@@ -443,11 +426,8 @@ SWEP.Animations = {
             { s = pathM249 .. "beltin.ogg", t = 165 / 60, c = ca },
             { s = pathM249 .. "closetop.ogg", t = 230 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 257 / 60, c = ca },
-			
-            {hide = 0, t = 0},
-            {hide = 1, t = 0.6},
-            {hide = 0, t = 0.7}
         },
+		MagSwapTime = 1.4,
 
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -501,6 +481,7 @@ SWEP.Animations = {
             { s = pathM249 .. "closetop.ogg", t = 230 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 257 / 60, c = ca },
         },
+		MagSwapTime = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
