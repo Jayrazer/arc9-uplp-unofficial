@@ -376,7 +376,8 @@ SWEP.Animations = {
         Source = "ready",
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 56 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 78 / 60, c = ca },
         },
         IKTimeLine = {
@@ -452,10 +453,11 @@ SWEP.Animations = {
         Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 56 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 80 / 60, c = ca },
             { s = pathM249 .. "magout.ogg", t = 117 / 60, c = ca },
-            { s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
+            --{ s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
             { s = pathM249 .. "magin.ogg", t = 193 / 60, c = ca },
             { s = pathM249 .. "beltin.ogg", t = 215 / 60, c = ca },
             { s = pathM249 .. "closetop.ogg", t = 278 / 60, c = ca },
@@ -505,10 +507,11 @@ SWEP.Animations = {
         Mult = 0.9,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 55 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 80 / 60, c = ca },
             { s = pathM249 .. "magout.ogg", t = 117 / 60, c = ca },
-            { s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
+            --{ s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
             { s = pathM249 .. "magin.ogg", t = 193 / 60, c = ca },
             { s = pathM249 .. "beltin.ogg", t = 215 / 60, c = ca },
             { s = pathM249 .. "closetop.ogg", t = 278 / 60, c = ca },
@@ -532,8 +535,8 @@ SWEP.Animations = {
         Mult = 0.875,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.ogg", t = 61 / 60, c = ca },
-            --{ s = pathM249 .. "30magin.ogg", t = 64 / 60, c = ca },
+            { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
+            { s = pathM249 .. "30magin.ogg", t = 59 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 92 / 60, c = ca },
         },
         IKTimeLine = {
@@ -553,10 +556,11 @@ SWEP.Animations = {
         Mult = 0.875,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.ogg", t = 50 / 60, c = ca },
+            { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
             --{ s = pathDist .. "lowpolyhk416_drop.ogg", t = 110 / 60, c = ca },
             { s = pathM249 .. "30emptymagin.ogg", t = 60 / 60, c = ca },
-            { s = pathM249 .. "charge.ogg", t = 128.5 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 120 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 140 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 151 / 60, c = ca },
         },
         IKTimeLine = {
