@@ -1,0 +1,25 @@
+{
+  "title": "[ARC9] Low-Poly Panzerfaust 3",
+  "type": "weapon",
+  "tags": [
+    "realism",
+    "fun",
+    "cartoon"
+  ],
+  "ignore": [
+    "*.txt",
+    "*.smd",
+    "*.qci",
+    "*.qc",
+    "*.gitattributes",
+    "*.pdn",
+    "*.psd",
+    "*.gif",
+    "*.rar",
+    "*.zip",
+    "*.blend",
+    "*.blend1",
+    "*.git",
+    "*.md"
+  ]
+}

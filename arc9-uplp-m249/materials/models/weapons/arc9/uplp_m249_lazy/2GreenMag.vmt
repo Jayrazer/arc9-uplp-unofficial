@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+		"$basetexture"	"models\weapons\arc9\uplp_m249_lazy\2GreenMag"
+		$nocull 1
+}

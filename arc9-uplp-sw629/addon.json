@@ -1,0 +1,25 @@
+{
+  "title": "[ARC9] Low Poly S&W Stealth Hunter",
+  "type": "weapon",
+  "tags": [
+    "fun",
+    "realism",
+    "cartoon"
+  ],
+  "ignore": [
+    "*.txt",
+    "*.smd",
+    "*.qci",
+    "*.qc",
+    "*.gitattributes",
+    "*.pdn",
+    "*.psd",
+    "*.gif",
+    "*.rar",
+    "*.zip",
+    "*.blend",
+    "*.blend1",
+    "*.git",
+    "*.md"
+  ]
+}
