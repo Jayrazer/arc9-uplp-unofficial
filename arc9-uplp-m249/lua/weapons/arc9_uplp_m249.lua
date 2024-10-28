@@ -40,7 +40,7 @@ SWEP.StandardPresets = {
 
 }
 
-SWEP.DefaultBodygroups = "01001"
+SWEP.DefaultBodygroups = "00101"
 
 ---- Muzzle Effects, Shell Effects, Camera
 SWEP.MuzzleParticle = "muzzleflash_ak47"
@@ -566,8 +566,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
-            { t = 0.75, lhik = 0 },
-            { t = 0.925, lhik = 1 },
+            { t = 0.4, lhik = 0 },
+            { t = 0.7, lhik = 1 },
             { t = 1, lhik = 1 },
         },
     },
@@ -669,13 +669,30 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if eles["uplp_m249_mag_30"] then
         mdl:SetBodygroup(4, 2)
     end
+	
+    if eles["uplp_m249_brl_commando"] then
+		mdl:SetBodygroup(3, 1)
+	end
 
-    if (eles["uplp_ak_dc_old"] or eles["uplp_ak_dc_internals"]) and (eles["uplp_ak_stock_old"] or eles["uplp_ak_stock_underfold"]) then
-        mdl:SetBodygroup(0, 1)
-        if eles["uplp_ak_nmount"] then
-            mdl:SetBodygroup(7, 3)
-        end
-    end
+    if eles["uplp_m249_brl_saw"] then
+		mdl:SetBodygroup(3, 2)
+	end
+	
+    if eles["uplp_m249_brl_para"] then
+		mdl:SetBodygroup(3, 3)
+	end
+	
+    if eles["uplp_m249_stock_std"] then
+		mdl:SetBodygroup(2, 0)
+	end
+	
+	if eles["uplp_m249_hs_std"] then
+		mdl:SetBodygroup(1, 1)
+	end
+	
+	if eles["uplp_m249_hs_mod"] then
+		mdl:SetBodygroup(1, 2)
+	end
 
     if eles["uplp_ak_brl_rpk"] and wep:GetBipod() then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
@@ -689,14 +706,10 @@ SWEP.AttachmentElements = {
 
 	["uplp_m249_mag_200"] = 	   { Bodygroups = { { 4, 0 } } },
 	["uplp_m249_mag_30"] = 	   { Bodygroups = { { 4, 2 } } },
-
-    -- DUST COVERS
-    ["uplp_ak_dc_azen"] =           { Bodygroups = { { 3, 5 } } },
-    ["uplp_ak_dc_beryl"] =         { Bodygroups = { { 3, 6 } }, AttPosMods = {
-    [1] = { Pos = Vector(0, -0.35, 1), },
-    [9] = { Pos = Vector(0, -0.35, 0.25), },
-    [10] = { Pos = Vector(0, -0.35, 6.5), }
-    }},
+	
+	["uplp_m249_brl_commando"] =   {Bodygroups = { { 3, 1 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 9.5), }}},
+	["uplp_m249_brl_saw"] =   {Bodygroups = { { 3, 2 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 16), }}},
+	["uplp_m249_brl_para"] =   {Bodygroups = { { 3, 3 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 8.8), }}},
 
 }
 
@@ -724,7 +737,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, -2, 15),
         Ang = Angle(90, 90, 180),
-        --Installed = "uplp_ak_mz_std",
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
@@ -734,8 +746,6 @@ SWEP.Attachments = {
         Pos = Vector(0, -1, 5),
         Icon_Offset = Vector(-5, 0, 0.5),
         Ang = Angle(90, 90, 180),
-        -- Installed = "uplp_m249_brl_std",
-        -- Integral = "uplp_m249_brl_std",
     },
     {
         PrintName = "Heatshield",
@@ -745,7 +755,8 @@ SWEP.Attachments = {
         Pos = Vector(0, -4, 8.5),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(-6.5, 0, -0.5),
-       -- ExcludeElements = {"uplp_ak_brl_su"},
+        Installed = {"uplp_m249_hs_std"},
+		ExcludeElements = {"uplp_m249_brl_para", "uplp_m249_brl_commando"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
@@ -754,8 +765,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(3, 0, -4),
         Ang = Angle(90, 90, 180),
-        --Installed = "uplp_m249_mag_100_std",
-        --Integral = "uplp_m249_mag_100_std",
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
@@ -764,7 +773,7 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),
-        --Installed = "uplp_m249_stock_std",
+        Installed = {"uplp_m249_stock_std"},
     },
 
 
