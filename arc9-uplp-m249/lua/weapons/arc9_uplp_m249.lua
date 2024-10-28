@@ -9,7 +9,10 @@ SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "SAW-46"
-SWEP.Description = "A popular \"squad automatic weapon\" used by the military since the 70's."
+SWEP.Description = [[
+A popular "squad automatic weapon" designed with modularity in mind, allowing it to fit a variety of squad roles.
+While it's primarily meant to use ammunition belts, the SAW-46 can also accept AR-15 magazines in a separate magwell.
+]]
 
 SWEP.Class = "Light-Machine Gun" -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
@@ -69,6 +72,8 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
+SWEP.ReloadInSights = false
+
 SWEP.ViewModelFOVBase = 70
 SWEP.ActivePos = Vector(-0.9, -1, 0.5)
 
@@ -99,7 +104,7 @@ SWEP.PhysBulletDrag = 1.5
 SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 0
-SWEP.ClipSize = 100
+SWEP.ClipSize = 125
 
 -- Recoil
 SWEP.Recoil = 1.1
@@ -155,9 +160,9 @@ SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 
 -- Weapon handling
-SWEP.Speed = 0.82 + 0.05 -- Walk speed multiplier
-SWEP.SpeedMultSights = 0.6 / 0.85 -- When aiming
-SWEP.SpeedMultShooting = 0.8
+SWEP.Speed = 0.75 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.65 / 0.85 -- When aiming
+SWEP.SpeedMultShooting = 0.7
 
 SWEP.AimDownSightsTime = 0.37 - 0.1 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.37 - 0.1 -- Time it takes to fully enter sprint
@@ -230,14 +235,15 @@ SWEP.CustomizeSnapshotPos = Vector(0, 5, 0)
 SWEP.CustomizeSnapshotFOV = 90
 
 -- Dropped Magazine
-SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/ak_mag_762.mdl"
-SWEP.DropMagazineTime = 0.75 * 1.05
-SWEP.DropMagazineQCA = 5
-SWEP.DropMagazinePos = Vector(0, 0, 0)
-SWEP.DropMagazineAng = Angle(90, 95, 90)
-SWEP.DropMagazineVelocity = Vector(0, 80, -80)
+SWEP.ShouldDropMag = true
+SWEP.ShouldDropMagEmpty = true
+SWEP.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag30.mdl"
+SWEP.DropMagazineTime = 1.8
+SWEP.DropMagazineTimeEmpty = 2.3
+SWEP.DropMagazineQCA = 2
+SWEP.DropMagazinePos = Vector(0, 0, -4)
+SWEP.DropMagazineAng = Angle(0, 90, 0)
+SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 
 ---- Sounds
 -- urbna!
@@ -416,7 +422,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -443,7 +449,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "charge.ogg", t = 36 / 60, c = ca },
@@ -470,7 +476,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.9,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -496,7 +502,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.9,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "charge.ogg", t = 36 / 60, c = ca },
@@ -523,11 +529,11 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.875,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.ogg", t = 60 / 60, c = ca },
-            { s = pathM249 .. "30magin.ogg", t = 60 / 60, c = ca },
+            { s = pathM249 .. "30magout.ogg", t = 61 / 60, c = ca },
+            --{ s = pathM249 .. "30magin.ogg", t = 64 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 92 / 60, c = ca },
         },
         IKTimeLine = {
@@ -544,13 +550,13 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 0.875,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "30magout.ogg", t = 50 / 60, c = ca },
             --{ s = pathDist .. "lowpolyhk416_drop.ogg", t = 110 / 60, c = ca },
-            { s = pathM249 .. "30emptymagin.ogg", t = 59 / 60, c = ca },
-            { s = pathM249 .. "charge.ogg", t = 130 / 60, c = ca },
+            { s = pathM249 .. "30emptymagin.ogg", t = 60 / 60, c = ca },
+            { s = pathM249 .. "charge.ogg", t = 128.5 / 60, c = ca },
             { s = pathM249 .. "end.ogg", t = 151 / 60, c = ca },
         },
         IKTimeLine = {
@@ -699,20 +705,20 @@ SWEP.Attachments = {
         Category = {"uplp_optic_small", "uplp_optic_mid"},
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "topcover",
-        Pos = Vector(-0.25, -0.9, -4.95),
+        Pos = Vector(-0.25, -0.9, -5.3),
         Ang = Angle(90, 90, 180),
         CorrectiveAng = Angle(0.02, 0, 0),
 		RejectAttachments = {
-        ["arc9_att_uplp_optic_pso_rail"] = true,
-	    ["arc9_att_uplp_optic_dcl110"] = true,
-        ["arc9_att_uplp_optic_ez6x"] = true,
+        ["uplp_optic_pso_rail"] = true,
+	    ["uplp_optic_dcl110"] = true,
+        ["uplp_optic_ez6x"] = true,
         },
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
         Bone = "body",
-        Pos = Vector(0, 1.768, 22.3),
+        Pos = Vector(0, -2, 15),
         Ang = Angle(90, 90, 180),
         --Installed = "uplp_ak_mz_std",
     },
@@ -721,18 +727,18 @@ SWEP.Attachments = {
         Category = {"uplp_m249_barrel"},
         DefaultIcon = Material(defatt2 .. "akbar.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 1.5, 17),
+        Pos = Vector(0, -1, 5),
         Icon_Offset = Vector(-5, 0, 0.5),
         Ang = Angle(90, 90, 180),
         -- Installed = "uplp_m249_brl_std",
         -- Integral = "uplp_m249_brl_std",
     },
     {
-        PrintName = ARC9:GetPhrase("uplp_category_handguard"),
+        PrintName = "Heatshield",
         Category = {"uplp_handguard_m249"},
         DefaultIcon = Material(defatt2 .. "akhg.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 1.5, 14.5),
+        Pos = Vector(0, -4, 8.5),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(-6.5, 0, -0.5),
        -- ExcludeElements = {"uplp_ak_brl_su"},
@@ -752,7 +758,7 @@ SWEP.Attachments = {
         Category = {"uplp_m249_stock"},
         DefaultIcon = Material(defatt2 .. "akstock.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 2, -3),
+        Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),
         --Installed = "uplp_m249_stock_std",
     },

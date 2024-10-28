@@ -1,0 +1,5 @@
+- add bipod bodygroup wherever it is
+- change model's mats to polyarms's palette
+- do all the attachas
+- slot icons
+- (optional) worldmodel (the ak worldmodel seems to work just fine for now)
