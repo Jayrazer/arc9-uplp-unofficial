@@ -438,8 +438,9 @@ SWEP.Animations = {
 
         IKTimeLine = {
             { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
+            { t = 0.1, lhik = 0 },
             { t = 0.65, lhik = 0 },
+            { t = 0.85, lhik = 0 },
             { t = 0.9, lhik = 1 },
             { t = 1, lhik = 1 },
         },
@@ -465,8 +466,10 @@ SWEP.Animations = {
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.75, lhik = 0 },
+            { t = 0.1, lhik = 1 },
+            { t = 0.35, lhik = 1 },
+            { t = 0.45, lhik = 0 },
+            { t = 0.85, lhik = 0 },
             { t = 0.925, lhik = 1 },
             { t = 1, lhik = 1 },
         },
@@ -492,8 +495,9 @@ SWEP.Animations = {
 		MagSwapTime = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
+            { t = 0.1, lhik = 0 },
             { t = 0.65, lhik = 0 },
+            { t = 0.85, lhik = 0 },
             { t = 0.9, lhik = 1 },
             { t = 1, lhik = 1 },
         },
@@ -519,8 +523,10 @@ SWEP.Animations = {
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.75, lhik = 0 },
+            { t = 0.1, lhik = 1 },
+            { t = 0.35, lhik = 1 },
+            { t = 0.45, lhik = 0 },
+            { t = 0.85, lhik = 0 },
             { t = 0.925, lhik = 1 },
             { t = 1, lhik = 1 },
         },

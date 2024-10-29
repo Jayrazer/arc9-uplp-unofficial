@@ -92,6 +92,25 @@ ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_grip"),
+        Category = {"uplp_grip_vert", "uplp_grip_horiz"},
+        DefaultIcon = Material("entities/uplp_attachements/def/grip.png", "mips smooth"),
+        Pos = Vector(2, 0, 1.5),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_tactical"),
+        Category = {"uplp_tac"},
+        Bone = "body",
+        Pos = Vector(2.5, 1.2, 0.1),
+        Ang = Angle(0, 0, 90),
+    },
+	
+},
+
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
 
@@ -147,6 +166,13 @@ ATT.LHIK = true
 ATT.LHIK_Priority = 5
 
 ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_tactical"),
+        Category = {"uplp_tac"},
+        Bone = "body",
+        Pos = Vector(0.9, -1.25, 0.3),
+        Ang = Angle(0, 0, -90),
+    },
     {
         PrintName = "Heatshield",
         Category = {"uplp_handguard_m249_short"},
@@ -207,5 +233,27 @@ ATT.Description = ATT.PrintName
 ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249_short"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_tactical"),
+        Category = {"uplp_tac"},
+        Bone = "body",
+        Pos = Vector(-1.05, -0.7, 0.3),
+        Ang = Angle(-90, 0, 0),
+        ExcludeElements = {"uplp_m249_brl_commando"},
+    },
+	{
+    PrintName = ARC9:GetPhrase("uplp_category_backup"),
+    Category = {"uplp_backup_optic"},
+    DefaultIcon = Material("arc9/def_att_icons/rs.png", "mips smooth"),
+    Bone = "body",
+    Pos = Vector(0, 0.6, -1.5),
+    Ang = Angle(-90, 0, 90),
+    ExcludeElements = {"uplp_no_backup"},
+    CorrectiveAng = Angle(0.7, -0.35, 0),
+    Icon_Offset = Vector(-1, 0, 0),
+	},
+},
 
 ARC9.LoadAttachment(ATT, "uplp_m249_hs_mod")
