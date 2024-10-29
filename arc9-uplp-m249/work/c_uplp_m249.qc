@@ -169,6 +169,24 @@ $sequence "ready" {
 	fps 60
 }
 
+$sequence "draw" {
+	"anims\draw_new.smd"
+	activity "ACT_VM_DRAW" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 60
+}
+
+$sequence "holster" {
+	"anims\holster.smd"
+	activity "ACT_VM_DRAW" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 60
+}
+
 $sequence "reload" {
 	"c_uplp_m249_anims\reload.smd"
 	"c_uplp_m249_anims\reload_2.smd"

@@ -55,13 +55,12 @@ ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_30"
 end
 
--- Positives
+
 ATT.ClipSizeOverride = 30
 
--- Negatives
-ATT.SpreadAddHipFire = 0.02
-ATT.AimDownSightsTimeAdd = 0.05
-ATT.SprintToFireTimeAdd = 0.07
+ATT.SpreadAddHipFire = -0.02
+ATT.AimDownSightsTimeAdd = -0.125
+ATT.SprintToFireTimeAdd = -0.05
 ATT.DeployTimeMult = 0.8
 ATT.ReloadTimeMult = 0.85
 ATT.SwayAddSights = -0.15
@@ -82,7 +81,7 @@ local iconfolder = "entities/uplp_attachements/ak/mag/"
 
 ATT = {}
 
-ATT.PrintName = "20.5\" SAW Barrel"
+ATT.PrintName = "21\" SAW Barrel"
 ATT.CompactName = "SAW"
 ATT.Description = ATT.PrintName
 
@@ -109,7 +108,13 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 90),
     },
 	
-},
+}
+
+ATT.SpreadAddHipFire = -0.01
+ATT.SpreadAddSights = -0.01
+ATT.SprintToFireTimeAdd = 0.04
+ATT.DeployTimeMult = 1.075
+ATT.SpeedMultSights = 0.9
 
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
@@ -120,7 +125,7 @@ local iconfolder = "entities/uplp_attachements/ak/mag/"
 
 ATT = {}
 
-ATT.PrintName = "17.5\" Paratrooper Barrel"
+ATT.PrintName = "17\" Paratrooper Barrel"
 ATT.CompactName = "PARA"
 ATT.Description = ATT.PrintName
 
@@ -141,6 +146,16 @@ ATT.Attachments = {
     },
 }
 
+ATT.RPM = 975
+ATT.SpreadAddHipFire = 0.015
+ATT.SpreadAddSights = 0.015
+ATT.SprintToFireTimeAdd = -0.15
+ATT.AimDownSightsTimeAdd = -0.2
+ATT.DeployTimeMult = 0.85
+ATT.RecoilMult = 1.75
+ATT.RecoilSideMult = 1.5
+ATT.RecoilAutoControlMult = 0.9
+
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
 
@@ -160,7 +175,7 @@ ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.Model = "models/weapons/arc9/atts/fg_lhik.mdl"
+ATT.Model = "models/weapons/arc9/atts/m249_fg_lhik.mdl"
 ATT.ModelOffset = Vector(-23.2, -3.2, 5)
 ATT.LHIK = true
 ATT.LHIK_Priority = 5
@@ -183,6 +198,14 @@ ATT.Attachments = {
     },
 }
 
+ATT.SpreadAddHipFire = 0.01
+ATT.SpreadAddSights = 0.01
+ATT.SprintToFireTimeAdd = -0.05
+ATT.AimDownSightsTimeAdd = -0.1
+ATT.DeployTimeMult = 0.925
+ATT.RecoilMult = 1.35
+ATT.RecoilSideMult = 1.15
+
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 
@@ -199,6 +222,12 @@ ATT.Description = ATT.PrintName
 ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.SprintToFireTimeAdd = 0.25
+ATT.AimDownSightsTimeAdd = 0.2
+ATT.DeployTimeMult = 1.25
+ATT.RecoilMult = 0.7
+ATT.RecoilSideMult = 0.85
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
@@ -217,6 +246,9 @@ ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
+ATT.RecoilMult = 0.975
+ATT.AimDownSightsTimeAdd = 0.05
+
 ARC9.LoadAttachment(ATT, "uplp_m249_hs_std")
 
 
@@ -233,6 +265,9 @@ ATT.Description = ATT.PrintName
 ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249_short"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.RecoilMult = 0.975
+ATT.AimDownSightsTimeAdd = 0.05
 
 ATT.Attachments = {
     {
@@ -257,3 +292,25 @@ ATT.Attachments = {
 },
 
 ARC9.LoadAttachment(ATT, "uplp_m249_hs_mod")
+
+
+-- default flash hider
+
+local iconfolder = "entities/uplp_attachements/ak/mag/"
+
+ATT = {}
+
+ATT.PrintName = "Default Muzzle"
+ATT.CompactName = "DEF"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Category = "uplp_muzzle"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+ATT.Model = "models/weapons/arc9/atts/uplp_m249_fh.mdl"
+ATT.ModelOffset = Vector(-28.73, -3.325, 4.18)
+
+ATT.Hidden = false
+ATT.Free = true
+
+ARC9.LoadAttachment(ATT, "uplp_m249_flash_default")

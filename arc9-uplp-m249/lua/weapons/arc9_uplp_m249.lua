@@ -108,9 +108,9 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 125
 
 -- Recoil
-SWEP.Recoil = 1.1
-SWEP.RecoilUp = 0.95
-SWEP.RecoilSide = 0.85
+SWEP.Recoil = 1.3
+SWEP.RecoilUp = 1.15
+SWEP.RecoilSide = 1.05
 
 SWEP.RecoilRandomUp = 1
 SWEP.RecoilRandomSide = 1
@@ -161,12 +161,12 @@ SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 
 -- Weapon handling
-SWEP.Speed = 0.825 -- Walk speed multiplier
-SWEP.SpeedMultSights = 0.65 / 0.85 -- When aiming
+SWEP.Speed = 0.875 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.7 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.7
 
-SWEP.AimDownSightsTime = 0.37 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.37 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.32 - 0.1 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.32 - 0.1 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 40
@@ -380,23 +380,29 @@ SWEP.Animations = {
         },
     },
 
-    --["draw"] = {
-        --Source = "draw",
-		--MinProgress = 0.6,
-		--FireASAP = true,
-        --EventTable = {
-            --{ s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            --{ s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
-        --},
-    --},
-    --["holster"] = {
-        --Source = "holster",
-        --MinProgress = 0.5,
-        --IKTimeLine = { { t = 0, lhik = 1 } },
-        --EventTable = {
-            --{ s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
-        --},
-    --},
+    ["draw"] = {
+        Source = "draw",
+		MinProgress = 0.6,
+		FireASAP = true,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+        },
+		IKTimeLine = {
+			{ t = 0, lhik = 1 },
+		},
+    },
+    ["holster"] = {
+        Source = "holster",
+        MinProgress = 0.8,
+        IKTimeLine = { { t = 0, lhik = 1 } },
+        EventTable = {
+            { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+        },
+		IKTimeLine = {
+			{ t = 0, lhik = 1 },
+		},
+    },
 
     ["fire"] = {
         Source = {"fire"},
@@ -732,9 +738,10 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
         Bone = "body",
-		VMScale = 0.5,
         Pos = Vector(0, -2, 15.2),
         Ang = Angle(90, 90, 180),
+		Installed = "uplp_m249_flash_default",
+		Integral = "uplp_m249_flash_default",
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
@@ -753,7 +760,6 @@ SWEP.Attachments = {
         Pos = Vector(0, -4, 8.5),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(-6.5, 0, -0.5),
-        Installed = "uplp_m249_hs_std",
 		ExcludeElements = {"uplp_m249_brl_para", "uplp_m249_brl_commando"},
     },
     {
