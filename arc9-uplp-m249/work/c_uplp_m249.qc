@@ -29,6 +29,7 @@ $bodygroup "4"
 	studio "defbox.smd"
 	studio "100box.smd"
 	studio "30mag.smd"
+	studio "60mag.smd"
 }
 
 

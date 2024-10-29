@@ -40,7 +40,7 @@ SWEP.StandardPresets = {
 
 }
 
-SWEP.DefaultBodygroups = "00101"
+SWEP.DefaultBodygroups = "00001"
 
 ---- Muzzle Effects, Shell Effects, Camera
 SWEP.MuzzleParticle = "muzzleflash_ak47"
@@ -107,9 +107,9 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 125
 
 -- Recoil
-SWEP.Recoil = 1.3
-SWEP.RecoilUp = 1.15
-SWEP.RecoilSide = 1.05
+SWEP.Recoil = 1.1
+SWEP.RecoilUp = 1
+SWEP.RecoilSide = 0.95
 
 SWEP.RecoilRandomUp = 1
 SWEP.RecoilRandomSide = 1
@@ -117,7 +117,7 @@ SWEP.RecoilRandomSide = 1
 SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
 SWEP.RecoilPunch = 0
-SWEP.RecoilAutoControl = 1.25
+SWEP.RecoilAutoControl = 1.2
 
 SWEP.RecoilMultSights = 1
 SWEP.RecoilMultCrouch = 0.75
@@ -160,12 +160,12 @@ SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 
 -- Weapon handling
-SWEP.Speed = 0.875 -- Walk speed multiplier
+SWEP.Speed = 0.75 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.7 / 0.85 -- When aiming
-SWEP.SpeedMultShooting = 0.7
+SWEP.SpeedMultShooting = 0.6
 
-SWEP.AimDownSightsTime = 0.32 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.32 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.38 - 0.1 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.42 - 0.1 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 40
@@ -672,6 +672,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
         mdl:SetBodygroup(4, 2)
     end
 	
+    if eles["uplp_m249_mag_60"] then
+        mdl:SetBodygroup(4, 3)
+    end
+	
     if eles["uplp_m249_brl_commando"] then
 		mdl:SetBodygroup(3, 1)
 	end
@@ -685,7 +689,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	end
 	
     if eles["uplp_m249_stock_std"] then
-		mdl:SetBodygroup(2, 0)
+		mdl:SetBodygroup(2, 1)
 	end
 	
 	if eles["uplp_m249_hs_std"] then
@@ -708,6 +712,7 @@ SWEP.AttachmentElements = {
 
 	["uplp_m249_mag_200"] = 	   { Bodygroups = { { 4, 0 } } },
 	["uplp_m249_mag_30"] = 	   { Bodygroups = { { 4, 2 } } },
+	["uplp_m249_mag_60"] = 	   { Bodygroups = { { 4, 3 } } },
 	
 	["uplp_m249_brl_commando"] =   {Bodygroups = { { 3, 1 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 9.5), }}},
 	["uplp_m249_brl_saw"] =   {Bodygroups = { { 3, 2 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 16), }}},
@@ -776,7 +781,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),
-        Installed = "uplp_m249_stock_std",
     },
 
 

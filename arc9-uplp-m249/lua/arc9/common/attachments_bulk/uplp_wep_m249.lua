@@ -80,6 +80,50 @@ ATT.ReloadInSights = true
 ARC9.LoadAttachment(ATT, "uplp_m249_mag_30")
 
 
+-- 60rnd mag
+
+local iconfolder = "entities/uplp_attachements/ak/mag/"
+
+ATT = {}
+
+ATT.PrintName = "60R AR-15 Mag"
+ATT.CompactName = "60RND"
+ATT.Description = "Uses the weapon's STANAG-compatible magwell."
+
+ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Category = "uplp_m249_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag60.mdl"
+ATT.DropMagazinePos = Vector(2, 0, -8)
+ATT.DropMagazineVelocity = Vector(80, 20, 0)
+
+ATT.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_30"
+end
+
+
+ATT.ClipSizeOverride = 60
+
+ATT.SpreadAddHipFire = -0.01
+ATT.AimDownSightsTimeAdd = -0.1
+ATT.SprintToFireTimeAdd = -0.025
+ATT.DeployTimeMult = 0.9
+ATT.SwayAddSights = -0.1
+ATT.SwayMultSights = 1
+ATT.SpeedAdd = 0.125
+ATT.SpeedMultSights = 1.1
+ATT.DropMagazineTime = 0.4
+ATT.DropMagazineTimeEmpty = 0.4
+
+ATT.ReloadInSights = true
+
+ARC9.LoadAttachment(ATT, "uplp_m249_mag_60")
+
+
+
+
+
 -- SAW barrel
 
 local iconfolder = "entities/uplp_attachements/ak/mag/"
@@ -214,25 +258,33 @@ ATT.RecoilSideMult = 1.15
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 
+
+
+
+
+
+
+
+
 -- Stock
 
 local iconfolder = "entities/uplp_attachements/ak/mag/"
 
 ATT = {}
 
-ATT.PrintName = "Buttstock"
-ATT.CompactName = "STOCK"
+ATT.PrintName = "Removed Stock"
+ATT.CompactName = "NOSTOCK"
 ATT.Description = ATT.PrintName
 
 ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.SprintToFireTimeAdd = 0.25
-ATT.AimDownSightsTimeAdd = 0.2
-ATT.DeployTimeMult = 1.25
-ATT.RecoilMult = 0.7
-ATT.RecoilSideMult = 0.85
+ATT.SprintToFireTimeAdd = -0.25
+ATT.AimDownSightsTimeAdd = -0.2
+ATT.DeployTimeMult = 0.75
+ATT.RecoilMult = 1.3
+ATT.RecoilSideMult = 1.15
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
