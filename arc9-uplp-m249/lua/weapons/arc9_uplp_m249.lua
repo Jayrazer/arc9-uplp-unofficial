@@ -37,8 +37,7 @@ SWEP.Credits = {
 
 
 SWEP.StandardPresets = {
-	"[GPMG]XQAAAQDtAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtQyXDt2tb27kPU4wvdes0/f11kfGsyt/LcQ3wXLOcNAUvnqOmMQ2hhtfdNTlvISRy6gaBOTg3kelzNQkVpZXLn+RQR2wrowtYqcqdJM8DdiaMQ+tZg/5+1I7I/0A",
-	"[Commando]XQAAAQDxAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtQyXDt2tb27kPU4wvdes0/f11ke70hxaYNmWxi7un8RFKarPt7cgGKqnq7jw9KC/2s1gH8cvh25ubXLvF7WQEPnolOyqXjBqYU6tKzIKZmIkoDgaWeFSU4rNhYoZpA=="
+
 }
 
 SWEP.DefaultBodygroups = "00101"
@@ -238,11 +237,11 @@ SWEP.CustomizeSnapshotFOV = 90
 -- Dropped Magazine
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag30.mdl"
+SWEP.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_100.mdl"
 SWEP.DropMagazineTime = 1.8
 SWEP.DropMagazineTimeEmpty = 2.3
 SWEP.DropMagazineQCA = 2
-SWEP.DropMagazinePos = Vector(0, 0, -4)
+SWEP.DropMagazinePos = Vector(2, 0, -18)
 SWEP.DropMagazineAng = Angle(0, 90, 0)
 SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 

@@ -1,6 +1,6 @@
 -- M249 attachas
 
--- 150rnd mag
+-- 200rnd mag
 
 local iconfolder = "entities/uplp_attachements/ak/mag/"
 
@@ -17,6 +17,9 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_200"
 end
+
+ATT.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_200.mdl"
+ATT.DropMagazineTimeEmpty = 2.6
 
 -- Positives
 ATT.ClipSizeOverride = 200
@@ -50,6 +53,8 @@ ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag30.mdl"
+ATT.DropMagazinePos = Vector(2, 0, -8)
+ATT.DropMagazineVelocity = Vector(80, 20, 0)
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_30"
@@ -119,7 +124,7 @@ ATT.SpeedMultSights = 0.9
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
 
--- Short barrel
+-- Para barrel
 
 local iconfolder = "entities/uplp_attachements/ak/mag/"
 
@@ -152,9 +157,9 @@ ATT.SpreadAddSights = 0.015
 ATT.SprintToFireTimeAdd = -0.15
 ATT.AimDownSightsTimeAdd = -0.2
 ATT.DeployTimeMult = 0.85
-ATT.RecoilMult = 1.75
+ATT.RecoilMult = 1.5
 ATT.RecoilSideMult = 1.5
-ATT.RecoilAutoControlMult = 0.9
+ATT.RecoilAutoControlMult = 0.95
 
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
