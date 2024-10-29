@@ -76,7 +76,7 @@ SWEP.WorldModelOffset = {
 SWEP.ReloadInSights = false
 
 SWEP.ViewModelFOVBase = 70
-SWEP.ActivePos = Vector(-0.9, -1, 0.5)
+SWEP.ActivePos = Vector(-0.9, -1, 0.7)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
@@ -250,23 +250,15 @@ SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 -- urbna!
 local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
+local pathM249 = "weapons/arc9/uplp_m249/"
 
 SWEP.ShootSound = {
-    pathUT .. "fire-01.ogg",
-    pathUT .. "fire-02.ogg",
-    pathUT .. "fire-03.ogg",
-    pathUT .. "fire-04.ogg",
-    pathUT .. "fire-05.ogg",
-    pathUT .. "fire-06.ogg",
+    pathM249 .. "fire.ogg",
+    --pathM249 .. "fire2.ogg",
 }
 
 SWEP.ShootSoundSilenced = {
-    pathUT .. "fire-sup-01.ogg",
-    pathUT .. "fire-sup-02.ogg",
-    pathUT .. "fire-sup-03.ogg",
-    pathUT .. "fire-sup-04.ogg",
-    pathUT .. "fire-sup-05.ogg",
-    pathUT .. "fire-sup-06.ogg",
+    pathM249 .. "supp.ogg",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
@@ -361,8 +353,6 @@ local thetoggle = {{
         "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
     }, t = 0
 }}
-
-local pathM249 = "weapons/arc9/uplp_m249/"
 
 -- Animations
 SWEP.Animations = {
@@ -742,7 +732,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
         Bone = "body",
-        Pos = Vector(0, -2, 15),
+		VMScale = 0.5,
+        Pos = Vector(0, -2, 15.2),
         Ang = Angle(90, 90, 180),
     },
     {
@@ -762,7 +753,7 @@ SWEP.Attachments = {
         Pos = Vector(0, -4, 8.5),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(-6.5, 0, -0.5),
-        Installed = {"uplp_m249_hs_std"},
+        Installed = "uplp_m249_hs_std",
 		ExcludeElements = {"uplp_m249_brl_para", "uplp_m249_brl_commando"},
     },
     {
@@ -780,7 +771,7 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),
-        Installed = {"uplp_m249_stock_std"},
+        Installed = "uplp_m249_stock_std",
     },
 
 

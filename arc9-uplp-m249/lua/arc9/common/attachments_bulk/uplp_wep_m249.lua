@@ -167,19 +167,19 @@ ATT.LHIK_Priority = 5
 
 ATT.Attachments = {
     {
+        PrintName = "Heatshield",
+        Category = {"uplp_handguard_m249", "uplp_handguard_m249_short"},
+        DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(3, 0, -2.5),
+        Ang = Angle(90, 90, 180),
+    },
+    {
         PrintName = ARC9:GetPhrase("uplp_category_tactical"),
         Category = {"uplp_tac"},
         Bone = "body",
         Pos = Vector(0.9, -1.25, 0.3),
         Ang = Angle(0, 0, -90),
-    },
-    {
-        PrintName = "Heatshield",
-        Category = {"uplp_handguard_m249_short"},
-        DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
-        Bone = "body",
-        Pos = Vector(3, 0, -2.5),
-        Ang = Angle(90, 90, 180),
     },
 }
 
