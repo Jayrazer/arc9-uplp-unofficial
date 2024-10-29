@@ -1,5 +1,5 @@
 - add bipod bodygroup wherever it is
-- do all the attachas
+- ar buffer tube
 - STATS FFS
 - slot icons
 - (optional) worldmodel (the ak worldmodel seems to work just fine for now)

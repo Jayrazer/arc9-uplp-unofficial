@@ -40,8 +40,6 @@ SWEP.StandardPresets = {
 
 }
 
-SWEP.DefaultBodygroups = "00001"
-
 ---- Muzzle Effects, Shell Effects, Camera
 SWEP.MuzzleParticle = "muzzleflash_ak47"
 SWEP.MuzzleEffectQCA = 1
@@ -76,6 +74,9 @@ SWEP.ReloadInSights = false
 
 SWEP.ViewModelFOVBase = 70
 SWEP.ActivePos = Vector(-0.9, -1, 0.7)
+
+SWEP.PeekPos = Vector(-1, 2, -5)
+SWEP.PeekAng = Angle(-0.3, 0.1, -40)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
@@ -164,8 +165,8 @@ SWEP.Speed = 0.75 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.7 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.6
 
-SWEP.AimDownSightsTime = 0.38 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.42 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.42 - 0.1 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.5 - 0.1 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 40
@@ -238,8 +239,8 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_100.mdl"
-SWEP.DropMagazineTime = 1.8
-SWEP.DropMagazineTimeEmpty = 2.3
+SWEP.DropMagazineTime = 1.6
+SWEP.DropMagazineTimeEmpty = 2.1
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(2, 0, -18)
 SWEP.DropMagazineAng = Angle(0, 90, 0)
@@ -419,7 +420,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.85,
+        Mult = 0.75,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -447,7 +448,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.85,
+        Mult = 0.75,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -477,7 +478,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 0.9,
+        Mult = 0.75,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -504,7 +505,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 0.9,
+        Mult = 0.75,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -534,7 +535,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 0.875,
+        Mult = 0.825,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
@@ -555,7 +556,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 0.875,
+        Mult = 0.825,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
@@ -664,34 +665,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local eles = data.elements
     local mdl = data.model
 	
-    if eles["uplp_m249_mag_200"] then
-        mdl:SetBodygroup(4, 0)
-    end
-	
-    if eles["uplp_m249_mag_30"] then
-        mdl:SetBodygroup(4, 2)
-    end
-	
-    if eles["uplp_m249_mag_60"] then
-        mdl:SetBodygroup(4, 3)
-    end
-	
-    if eles["uplp_m249_brl_commando"] then
-		mdl:SetBodygroup(3, 1)
-	end
-
-    if eles["uplp_m249_brl_saw"] then
-		mdl:SetBodygroup(3, 2)
-	end
-	
-    if eles["uplp_m249_brl_para"] then
-		mdl:SetBodygroup(3, 3)
-	end
-	
-    if eles["uplp_m249_stock_std"] then
-		mdl:SetBodygroup(2, 1)
-	end
-	
 	if eles["uplp_m249_hs_std"] then
 		mdl:SetBodygroup(1, 1)
 	end
@@ -700,23 +673,20 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 		mdl:SetBodygroup(1, 2)
 	end
 
-    if eles["uplp_ak_brl_rpk"] and wep:GetBipod() then
-        if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            mdl:SetBodygroup(2, 10)
-        end
-    end
-
 end
 
 SWEP.AttachmentElements = {
 
-	["uplp_m249_mag_200"] = 	   { Bodygroups = { { 4, 0 } } },
+	["uplp_m249_mag_200"] = 	   { Bodygroups = { { 4, 1 } } },
 	["uplp_m249_mag_30"] = 	   { Bodygroups = { { 4, 2 } } },
 	["uplp_m249_mag_60"] = 	   { Bodygroups = { { 4, 3 } } },
 	
 	["uplp_m249_brl_commando"] =   {Bodygroups = { { 3, 1 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 9.5), }}},
 	["uplp_m249_brl_saw"] =   {Bodygroups = { { 3, 2 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 16), }}},
 	["uplp_m249_brl_para"] =   {Bodygroups = { { 3, 3 } } , AttPosMods = {[2] = { Pos = Vector(0, -2, 8.8), }}},
+	
+	["uplp_m249_stock_std"] =   {Bodygroups = { { 2, 1 } } },
+	["uplp_m249_stock_buffer"] =   {Bodygroups = { { 2, 2 } } },
 
 }
 

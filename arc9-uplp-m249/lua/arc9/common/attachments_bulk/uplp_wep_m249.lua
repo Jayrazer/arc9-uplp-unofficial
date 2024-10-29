@@ -14,12 +14,14 @@ ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
+ATT.ActivateElements = {"uplp_m249_mag_200"}
+
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_200"
 end
 
 ATT.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_200.mdl"
-ATT.DropMagazineTimeEmpty = 2.6
+ATT.DropMagazineTimeEmpty = 2.4
 
 -- Positives
 ATT.ClipSizeOverride = 200
@@ -29,7 +31,7 @@ ATT.SpreadAddHipFire = 0.02
 ATT.AimDownSightsTimeAdd = 0.05
 ATT.SprintToFireTimeAdd = 0.07
 ATT.DeployTimeMult = 1.05
-ATT.ReloadTimeMult = 1.1
+ATT.ReloadTimeMult = 1.15
 ATT.SwayAddSights = 0.2
 ATT.SwayMultSights = 1.1
 ATT.SpeedAdd = -0.15
@@ -48,13 +50,15 @@ ATT.PrintName = "30R AR-15 Mag"
 ATT.CompactName = "30RND"
 ATT.Description = "Uses the weapon's STANAG-compatible magwell."
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material("entities/uplp_attachements/ar15/mag/30.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag30.mdl"
 ATT.DropMagazinePos = Vector(2, 0, -8)
 ATT.DropMagazineVelocity = Vector(80, 20, 0)
+
+ATT.ActivateElements = {"uplp_m249_mag_30"}
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_30"
@@ -90,13 +94,15 @@ ATT.PrintName = "60R AR-15 Mag"
 ATT.CompactName = "60RND"
 ATT.Description = "Uses the weapon's STANAG-compatible magwell."
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material("entities/uplp_attachements/ar15/mag/60.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/ar15_mag_stanag60.mdl"
 ATT.DropMagazinePos = Vector(2, 0, -8)
 ATT.DropMagazineVelocity = Vector(80, 20, 0)
+
+ATT.ActivateElements = {"uplp_m249_mag_60"}
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_30"
@@ -280,13 +286,53 @@ ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.SprintToFireTimeAdd = -0.25
-ATT.AimDownSightsTimeAdd = -0.2
+ATT.SprintToFireTimeMult = 0.8
+ATT.AimDownSightsTimeMult = 0.8
 ATT.DeployTimeMult = 0.75
-ATT.RecoilMult = 1.3
-ATT.RecoilSideMult = 1.15
+ATT.RecoilMult = 1.75
+ATT.RecoilSideMult = 1.3
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
+
+
+-- Buffertube
+
+local iconfolder = "entities/uplp_attachements/ak/mag/"
+
+ATT = {}
+
+ATT.PrintName = "Buffer Tube"
+ATT.CompactName = "TUBE"
+ATT.Description = "Allows mounting of buffer tube stocks"
+
+ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Category = "uplp_m249_stock"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+--ATT.SprintToFireTimeMult = 0.825
+--ATT.AimDownSightsTimeMult = 0.825
+--ATT.DeployTimeMult = 0.75
+--ATT.RecoilMult = 1.5
+--ATT.RecoilSideMult = 1.25
+
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_stock"),
+        Category = {"uplp_ar15_stock"},
+        DefaultIcon = Material("entities/uplp_attachements/def/akstock.png", "mips smooth"),
+        Pos = Vector(-0.75, 0, -0.825),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-1, 0, 0),
+        Scale = 1.08
+    },
+}
+
+ARC9.LoadAttachment(ATT, "uplp_m249_stock_buffer")
+
+
+
+
+
 
 
 -- default Heatshield

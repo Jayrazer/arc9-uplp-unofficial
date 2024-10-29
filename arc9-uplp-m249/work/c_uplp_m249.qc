@@ -16,6 +16,7 @@ $bodygroup "2"
 {
 	studio "ststock.smd"
 	studio "buffer.smd"
+	studio "buffertube.smd"
 }
 $bodygroup "3"
 {
@@ -26,8 +27,8 @@ $bodygroup "3"
 }
 $bodygroup "4"
 {
-	studio "defbox.smd"
 	studio "100box.smd"
+	studio "defbox.smd"
 	studio "30mag.smd"
 	studio "60mag.smd"
 }
