@@ -15,7 +15,7 @@ While it's primarily meant to use ammunition belts, the SAW-46 can also accept A
 ]]
 
 SWEP.Class = "Light-Machine Gun" -- In the Customization Menu
-SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
+SWEP.SubCategory = "Machine Gun" -- In the Spawnmenu
 
 SWEP.Trivia = {
     [ ARC9:GetPhrase( "uplp_realname" ) ] = "M249 SAW",
@@ -37,7 +37,8 @@ SWEP.Credits = {
 
 
 SWEP.StandardPresets = {
-
+	"[GPMG]XQAAAQDtAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtQyXDt2tb27kPU4wvdes0/f11kfGsyt/LcQ3wXLOcNAUvnqOmMQ2hhtfdNTlvISRy6gaBOTg3kelzNQkVpZXLn+RQR2wrowtYqcqdJM8DdiaMQ+tZg/5+1I7I/0A",
+	"[Commando]XQAAAQDxAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdevdtQyXDt2tb27kPU4wvdes0/f11ke70hxaYNmWxi7un8RFKarPt7cgGKqnq7jw9KC/2s1gH8cvh25ubXLvF7WQEPnolOyqXjBqYU6tKzIKZmIkoDgaWeFSU4rNhYoZpA=="
 }
 
 SWEP.DefaultBodygroups = "00101"
@@ -160,7 +161,7 @@ SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 
 -- Weapon handling
-SWEP.Speed = 0.75 -- Walk speed multiplier
+SWEP.Speed = 0.825 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.65 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.7
 
