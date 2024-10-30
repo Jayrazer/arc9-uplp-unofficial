@@ -716,7 +716,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
-        Category = {"uplp_muzzle"},
+        Category = {"uplp_muzzle", "uplp_muzzle_m249"},
         Bone = "body",
         Pos = Vector(0, -2, 15.2),
         Ang = Angle(90, 90, 180),
@@ -766,19 +766,19 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "body",
-        Pos = Vector(0.77, 1.89, 13.8),
+        Pos = Vector(0.78, -1.8, 7),
         Ang = Angle(90, 0, -90),
     },
 
 
-    {
-        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        StickerModel = "models/weapons/arc9/uplp/stickers/ak_1.mdl",
-        Category = "stickers",
-        Bone = "body",
-        Pos = Vector(0, 1.8 + 1.5, 5.75),
-        Ang = Angle(90, 90, 180),
-    },
+    --{
+        --PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
+        --StickerModel = "models/weapons/arc9/uplp/stickers/ak_1.mdl",
+        --Category = "stickers",
+        --Bone = "body",
+        --Pos = Vector(0, 1.8 + 1.5, 5.75),
+        --Ang = Angle(90, 90, 180),
+    --},
 
 }
 

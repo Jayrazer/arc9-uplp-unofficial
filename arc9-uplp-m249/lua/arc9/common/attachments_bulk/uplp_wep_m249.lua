@@ -386,11 +386,22 @@ ATT.Attachments = {
     Category = {"uplp_backup_optic"},
     DefaultIcon = Material("arc9/def_att_icons/rs.png", "mips smooth"),
     Bone = "body",
-    Pos = Vector(0, 0.6, -1.5),
+    Pos = Vector(0, 0.6, -2),
     Ang = Angle(-90, 0, 90),
     ExcludeElements = {"uplp_no_backup"},
     CorrectiveAng = Angle(0.7, -0.35, 0),
     Icon_Offset = Vector(-1, 0, 0),
+	},
+	{
+	PrintName = ARC9:GetPhrase("uplp_category_backup"),
+    Category = {"uplp_backup_optic_front"},
+    Bone = "body",
+    Pos = Vector(0, 0.6, 4.232),
+    Ang = Angle(-90, 0, 90),
+    RequireElements = {"uplp_backup_optic_is"},
+    Installed = "uplp_backup_optic_is_front",
+    Integral = "uplp_backup_optic_is_front",
+    Hidden = true,
 	},
 },
 
@@ -408,7 +419,7 @@ ATT.CompactName = "DEF"
 ATT.Description = ATT.PrintName
 
 ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
-ATT.Category = "uplp_muzzle"
+ATT.Category = "uplp_muzzle_m249"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Model = "models/weapons/arc9/atts/uplp_m249_fh.mdl"
 ATT.ModelOffset = Vector(-28.73, -3.325, 4.18)
