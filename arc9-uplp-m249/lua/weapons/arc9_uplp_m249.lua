@@ -38,11 +38,9 @@ SWEP.Credits = {
 
 SWEP.StandardPresets = {
 
-	"[GPMG]XQAAAQDqAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fgO/zsDZTxjdkjyfzBLnqftb/DIKz0wUHNlvmzGwfBfHLRjSTVMIs92HjfS9ooYQZGbBQcGysQQxF+VBKFFLUTAsipjpzOzTMVQjWLFlNXWKAgA=",
-	"[HUGE-249]XQAAAQDZAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUClWvyuOsnZ5z+7/HVfHlbwDfu+wkSuttD8ZBHJcsv/J+9PzYFvNFBEhuxvTwz4Q9H6e6yeyTg16veNWnPVLpPwvEiKN4Ai+1SwRh1RrmPLgA=",
-	"[Patrol]XQAAAQAmAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUClWvyuOsnZ5z+7/HVfHlbwDfu+wkSuttcdVsZA9odzZdTae587is30Jqtgkelkg6oovSp3SIUlbJH8oCgOUVDuRniCQPapbfOfy/G/WU7DvxGVoln+dYD7SJ0za0IoNu0EcXRDukFm1wmp6wQZVhewO0A",
-	"[Navy]XQAAAQApAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fiKr7GPdzYtN32JX+i2VrwIm5KAzd2ru3PBD+qKiPHHYkySuqpdNIBOiNCf6eROdzhu2C54PwrPQwfPxow+ylYEXZb3RWOMnV/kQtVG53HpMez7jypnf+r/X1bEjkMeWe0/BTidWmgA=",
-	"[Subgun]XQAAAQDqAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUClWvyuOsnZ5z+7/HVfHlbwDfu+wkSuttcdVsZA9paNyjsEuCZ9/LaM/JMDEPfeRgyvwaF6cqSK5EQYmFEhEopLayKBlJsOTje9GV6sitlItIL8OWUZBzk7e9oOw=="
+	"[Navy Mod]XQAAAQAxAQAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuQnlIscFViI1VFeJosO3LEZ3tKXQN6uGRHoy6PgAGIZHQNJ9N2VzXF2MHqlfotdCJqNN1oP3aU36gUxpAe5rcUDAdEXiigefU8zNY+ZfD/YKH1mVx2+9Fs2RV6IOncAx5aKcvdYgjMzUkxboCGSMcVg7SfAA==",
+	"[HUGE-249]XQAAAQDEAAAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuPmCZlzL7XO8ZTikto/sOhM5uMURa4j5lbL3znbFuuQQnFTXRnKW2ZPZsVMe81REAecOcxSnry/pR9qypbwppgP+qbZ7hRKF6PkA==",
+	"[Patrol]XQAAAQAPAQAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuPmCZlzL7XO8ZTikto/sOhN9wghYUFN6rGkI1lFmwMdKL4m4nsUp7pwVG3Kd+wfgyD8xUjz6A9igaLgtd5VtFQldRpQkuU8MlcKkeyrd6OS85G/fD9g4vdW39bpv2+wwM0LbBG5vmGZiFzFvQ="
 	
 }
 
@@ -716,17 +714,16 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
-        Category = {"uplp_muzzle", "uplp_muzzle_m249"},
+        Category = {"uplp_muzzle"},
         Bone = "body",
         Pos = Vector(0, -2, 15.2),
         Ang = Angle(90, 90, 180),
-		Installed = "uplp_m249_flash_default",
-		Integral = "uplp_m249_flash_default",
+		Installed = "uplp_muzzle_cage",
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
         Category = {"uplp_m249_barrel"},
-        DefaultIcon = Material(defatt2 .. "akbar.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "m249_bar.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, -1, 5),
         Icon_Offset = Vector(-5, 0, 0.5),
@@ -735,7 +732,6 @@ SWEP.Attachments = {
     {
         PrintName = "Heatshield",
         Category = {"uplp_handguard_m249"},
-        DefaultIcon = Material(defatt2 .. "akhg.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, -4, 8.5),
         Ang = Angle(90, 90, 180),
@@ -745,7 +741,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
         Category = {"uplp_m249_mag"},
-        DefaultIcon = Material(defatt2 .. "akmag.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "m249_mag.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(3, 0, -4),
         Ang = Angle(90, 90, 180),
@@ -753,7 +749,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
         Category = {"uplp_m249_stock"},
-        DefaultIcon = Material(defatt2 .. "akstock.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "m249_stock.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),

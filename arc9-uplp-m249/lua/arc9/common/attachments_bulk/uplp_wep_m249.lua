@@ -1,8 +1,8 @@
 -- M249 attachas
 
--- 200rnd mag
+local iconfolder = "entities/uplp_attachements/m249/"
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
+-- 200rnd mag
 
 ATT = {}
 
@@ -10,7 +10,7 @@ ATT.PrintName = "200R Big Box"
 ATT.CompactName = "200RND"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -41,8 +41,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_200")
 
 
 -- 30rnd mag
-
-local iconfolder = "entities/uplp_attachements/ak/mag/"
 
 ATT = {}
 
@@ -85,8 +83,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_30")
 
 
 -- 60rnd mag
-
-local iconfolder = "entities/uplp_attachements/ak/mag/"
 
 ATT = {}
 
@@ -132,8 +128,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_60")
 
 -- SAW barrel
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "21\" SAW Barrel"
@@ -142,7 +136,7 @@ ATT.Description = ATT.PrintName
 
 ATT.ActivateElements = {"uplp_m249_brl_saw"}
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "brl_saw.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -176,8 +170,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
 -- Para barrel
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "17\" Paratrooper Barrel"
@@ -186,7 +178,7 @@ ATT.Description = ATT.PrintName
 
 ATT.ActivateElements = {"uplp_m249_brl_para"}
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "brl_para.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -216,8 +208,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
 -- Commando barrel
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "17.5\" Commando Barrel"
@@ -226,7 +216,7 @@ ATT.Description = ATT.PrintName
 
 ATT.ActivateElements = {"uplp_m249_brl_commando"}
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "brl_commando.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -274,15 +264,13 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 -- Stock
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
-ATT.PrintName = "Removed Stock"
+ATT.PrintName = "Rear Buffer Plate"
 ATT.CompactName = "NOSTOCK"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "nostock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -297,15 +285,13 @@ ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
 -- Buffertube
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "Buffer Tube"
 ATT.CompactName = "TUBE"
 ATT.Description = "Allows mounting of buffer tube stocks"
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "buffertube.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -337,15 +323,13 @@ ARC9.LoadAttachment(ATT, "uplp_m249_stock_buffer")
 
 -- default Heatshield
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "Standard Issue Heatshield"
 ATT.CompactName = "STD"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "hs_std.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -357,15 +341,13 @@ ARC9.LoadAttachment(ATT, "uplp_m249_hs_std")
 
 -- mod Heatshield
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "Navy Mod Heatshield"
 ATT.CompactName = "MOD"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "hs_mod.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249_short"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -410,8 +392,6 @@ ARC9.LoadAttachment(ATT, "uplp_m249_hs_mod")
 
 -- default flash hider
 
-local iconfolder = "entities/uplp_attachements/ak/mag/"
-
 ATT = {}
 
 ATT.PrintName = "Default Muzzle"
@@ -424,7 +404,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Model = "models/weapons/arc9/atts/uplp_m249_fh.mdl"
 ATT.ModelOffset = Vector(-28.73, -3.325, 4.18)
 
-ATT.Hidden = false
-ATT.Free = true
+ATT.Hidden = true
+ATT.Free = false
 
 ARC9.LoadAttachment(ATT, "uplp_m249_flash_default")
