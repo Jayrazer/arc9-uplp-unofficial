@@ -125,7 +125,9 @@ SWEP.RecoilPunch = 0
 SWEP.RecoilAutoControl = 1.2
 
 SWEP.RecoilMultSights = 1
-SWEP.RecoilMultCrouch = 0.75
+SWEP.RecoilMultCrouch = 0.8
+
+SWEP.RecoilMultBipod = 0.4
 
 -- Visual Recoil
 SWEP.VisualRecoil = 0.5
@@ -752,6 +754,15 @@ SWEP.Attachments = {
         DefaultIcon = Material(defatt2 .. "m249_stock.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, -1, -15),
+        Ang = Angle(90, 90, 180),
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_bipod"),
+        Category = {"uplp_bipod_m249"},
+        DefaultIcon = Material(defatt .. "bipod.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(-0.3, -5.5, 7.6435),
+        Icon_Offset = Vector(0, -0.3, -5),
         Ang = Angle(90, 90, 180),
     },
 

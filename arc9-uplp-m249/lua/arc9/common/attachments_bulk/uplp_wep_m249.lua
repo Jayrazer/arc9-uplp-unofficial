@@ -130,7 +130,7 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_60")
 
 ATT = {}
 
-ATT.PrintName = "21\" SAW Barrel"
+ATT.PrintName = "15\" SAW Barrel"
 ATT.CompactName = "SAW"
 ATT.Description = ATT.PrintName
 
@@ -172,7 +172,7 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
 ATT = {}
 
-ATT.PrintName = "17\" Paratrooper Barrel"
+ATT.PrintName = "10\" Paratrooper Barrel"
 ATT.CompactName = "PARA"
 ATT.Description = ATT.PrintName
 
@@ -210,7 +210,7 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
 ATT = {}
 
-ATT.PrintName = "17.5\" Commando Barrel"
+ATT.PrintName = "11\" Commando Barrel"
 ATT.CompactName = "COMM"
 ATT.Description = ATT.PrintName
 
@@ -390,7 +390,10 @@ ATT.Attachments = {
 ARC9.LoadAttachment(ATT, "uplp_m249_hs_mod")
 
 
--- default flash hider
+
+
+
+-- default flash hider -- UNUSED
 
 ATT = {}
 
@@ -408,3 +411,33 @@ ATT.Hidden = true
 ATT.Free = false
 
 ARC9.LoadAttachment(ATT, "uplp_m249_flash_default")
+
+
+
+
+---------- m249 special bipod for special boys
+
+
+ATT = {}
+
+ATT.PrintName = "SAW-46 Bipod"
+ATT.CompactName = "SAW B."
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material("entities/uplp_attachements/awp/bipod.png", "mips smooth")
+
+ATT.Model = "models/weapons/arc9/atts/uplp_m249_bipod.mdl"
+
+ATT.ActivateElements = {"uplp_bipod_used"}
+-- ATT.ExcludeElements = {"uplp_grip_no_pdw"}
+
+ATT.Category = "uplp_bipod_m249"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+-- Positives
+ATT.Bipod = true
+
+-- Negatives
+ATT.SprintToFireTimeAdd = 0.06
+
+ARC9.LoadAttachment(ATT, "uplp_m249_bipod")
