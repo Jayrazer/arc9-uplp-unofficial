@@ -295,11 +295,11 @@ ATT.Icon = Material(iconfolder .. "buffertube.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
---ATT.SprintToFireTimeMult = 0.825
---ATT.AimDownSightsTimeMult = 0.825
---ATT.DeployTimeMult = 0.75
---ATT.RecoilMult = 1.5
---ATT.RecoilSideMult = 1.25
+ATT.SprintToFireTimeMult = 0.8
+ATT.AimDownSightsTimeMult = 0.8
+ATT.DeployTimeMult = 0.75
+ATT.RecoilMult = 1.75
+ATT.RecoilSideMult = 1.3
 
 ATT.Attachments = {
     {
