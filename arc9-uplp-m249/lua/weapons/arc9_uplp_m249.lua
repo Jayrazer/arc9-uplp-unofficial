@@ -761,9 +761,10 @@ SWEP.Attachments = {
         Category = {"uplp_bipod_m249"},
         DefaultIcon = Material(defatt .. "bipod.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(-0.3, -5.5, 7.6435),
+        Pos = Vector(-0.3, -5.5, 7.643),
         Icon_Offset = Vector(0, -0.3, -5),
         Ang = Angle(90, 90, 180),
+		Installed = "uplp_m249_bipod",
     },
 
 
