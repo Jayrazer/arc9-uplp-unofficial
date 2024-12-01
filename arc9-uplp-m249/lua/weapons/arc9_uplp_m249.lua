@@ -131,22 +131,22 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultBipod = 0.4
 
 -- Visual Recoil
-SWEP.VisualRecoil = 0.5
-SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoil = 0.6
+SWEP.VisualRecoilMultSights = 0.8
 SWEP.VisualRecoilCenter = Vector(2, 11, 2)
 SWEP.VisualRecoilUp = 0.1 -- Vertical tilt
 SWEP.VisualRecoilSide = -0.015 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 10 -- Roll tilt
-SWEP.VisualRecoilPunch = 2.5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilRoll = 2 -- Roll tilt
+SWEP.VisualRecoilPunch = 0.2 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilDampingConst = 80
 SWEP.VisualRecoilSpringMagnitude = 0.44
 SWEP.VisualRecoilPositionBumpUp = .1
 
-SWEP.VisualRecoilMultHipFire = 1
-SWEP.VisualRecoilUpHipFire = 2
-SWEP.VisualRecoilSideHipFire = -0.2
-SWEP.VisualRecoilRollHipFire = 20
-SWEP.VisualRecoilPunchHipFire = 0.5
+SWEP.VisualRecoilMultHipFire = 0.8
+SWEP.VisualRecoilUpHipFire = 0.4
+SWEP.VisualRecoilSideHipFire = -0.1
+SWEP.VisualRecoilRollHipFire = 2
+SWEP.VisualRecoilPunchHipFire = 0.3
 SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
@@ -427,7 +427,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.75,
+        Mult = 0.8,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -455,7 +455,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.75,
+        Mult = 0.8,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -485,7 +485,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 0.75,
+        Mult = 0.8,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -512,7 +512,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 0.75,
+        Mult = 0.8,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },

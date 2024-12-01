@@ -279,6 +279,8 @@ ATT.AimDownSightsTimeMult = 0.8
 ATT.DeployTimeMult = 0.75
 ATT.RecoilMult = 1.75
 ATT.RecoilSideMult = 1.3
+ATT.VisualRecoilMult = 1.1
+ATT.VisualRecoilMultHipFire = 1.8
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
@@ -300,6 +302,8 @@ ATT.AimDownSightsTimeMult = 0.8
 ATT.DeployTimeMult = 0.75
 ATT.RecoilMult = 1.75
 ATT.RecoilSideMult = 1.3
+ATT.VisualRecoilMult = 1.1
+ATT.VisualRecoilMultHipFire = 1.8
 
 ATT.Attachments = {
     {
