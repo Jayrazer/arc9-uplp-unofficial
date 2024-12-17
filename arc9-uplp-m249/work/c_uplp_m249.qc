@@ -42,13 +42,6 @@ $illumposition 0 0 0
 
 $cdmaterials "models\weapons\arc9\uplp"
 
-$texturegroup "skinfamilies"
-{
-	{ "LightBlackWire" "2GreenMag" "DarkTan" }
-	{ "Wireframe"      "2GreenMag" "DarkTan" }
-	{ "LightBlackWire" "Black"     "Black"   }
-}
-
 $attachment "1" "barrel" 0 0 0 rotate -90 0 0
 $attachment "2" "brass" 0 0 -1 rotate -10 -180 -180
 $attachment "3" "camera" 0 0 0 rotate 0 0 0
