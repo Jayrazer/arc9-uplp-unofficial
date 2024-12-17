@@ -88,18 +88,16 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 
 ---- Weapon Stats and Behaviour
 -- Damage
--- make sure ak12 matches this
-SWEP.DamageMax = 34
-SWEP.DamageMin = 18
-SWEP.HeadshotDamage = 1
+SWEP.DamageMax = 20
+SWEP.DamageMin = 12
 SWEP.DamageType = DMG_BULLET
 
-SWEP.Penetration = 18
-SWEP.ImpactForce = 4
+SWEP.Penetration = 15
+SWEP.ImpactForce = 2
 
 -- Range
 SWEP.RangeMin = 20 / ARC9.HUToM
-SWEP.RangeMax = 90 / ARC9.HUToM
+SWEP.RangeMax = 50 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 715 / ARC9.HUToM
@@ -113,40 +111,40 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 125
 
 -- Recoil
-SWEP.Recoil = 2
-SWEP.RecoilUp = 1.5
-SWEP.RecoilSide = 1.3
+SWEP.Recoil = 2 * 0.75
+SWEP.RecoilUp = 1.25
+SWEP.RecoilSide = 1.5
 
-SWEP.RecoilRandomUp = 1
-SWEP.RecoilRandomSide = 1
+SWEP.RecoilRandomUp = 1.1
+SWEP.RecoilRandomSide = 1.1
 
 SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
 SWEP.RecoilPunch = 0
-SWEP.RecoilAutoControl = 1.2
+SWEP.RecoilAutoControl = 1.5 * 1.5
 
-SWEP.RecoilMultSights = 0.9
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilMultSights = 0.75
+SWEP.RecoilMultCrouch = 0.85
 
 SWEP.RecoilMultBipod = 0.4
 
 -- Visual Recoil
-SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultSights = 0.75
+SWEP.VisualRecoil = 0.5
+SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilCenter = Vector(2, 11, 2)
 SWEP.VisualRecoilUp = 0.1 -- Vertical tilt
-SWEP.VisualRecoilSide = -0.03 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 1 -- Roll tilt
-SWEP.VisualRecoilPunch = 0.4 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilSide = 0.015 -- Horizontal tilt
+SWEP.VisualRecoilRoll = -2.5 -- Roll tilt
+SWEP.VisualRecoilPunch = 10 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilDampingConst = 80
 SWEP.VisualRecoilSpringMagnitude = 0.44
-SWEP.VisualRecoilPositionBumpUp = .1
+SWEP.VisualRecoilPositionBumpUp = .25
 
 SWEP.VisualRecoilMultHipFire = 1
-SWEP.VisualRecoilUpHipFire = 0.4
-SWEP.VisualRecoilSideHipFire = -0.09
-SWEP.VisualRecoilRollHipFire = 1.25
-SWEP.VisualRecoilPunchHipFire = 0.2
+SWEP.VisualRecoilUpHipFire = 2
+SWEP.VisualRecoilSideHipFire = -0.1
+SWEP.VisualRecoilRollHipFire = 20
+SWEP.VisualRecoilPunchHipFire = 2
 SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
@@ -170,12 +168,12 @@ SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 
 -- Weapon handling
-SWEP.Speed = 0.75 -- Walk speed multiplier
-SWEP.SpeedMultSights = 0.7 / 0.85 -- When aiming
-SWEP.SpeedMultShooting = 0.6
+SWEP.Speed = 0.7 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.5 -- When aiming
+SWEP.SpeedMultShooting = 0.4
 
-SWEP.AimDownSightsTime = 0.35 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.42 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.37 - 0.1 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.45 - 0.1 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 40
@@ -257,17 +255,27 @@ SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 
 ---- Sounds
 -- urbna!
-local pathUT = "uplp_urban_temp/ar15/"
-local pathUTC = "uplp_urban_temp/common/"
 local pathM249 = "weapons/arc9/uplp_m249/"
 
+local pathUT = "uplp_urban_temp/ar15/"
+local pathUTC = "uplp_urban_temp/common/"
+
 SWEP.ShootSound = {
-    pathM249 .. "fire.ogg",
-    --pathM249 .. "fire2.ogg",
+    pathUT .. "fire-01.ogg",
+    pathUT .. "fire-02.ogg",
+    pathUT .. "fire-03.ogg",
+    pathUT .. "fire-04.ogg",
+    pathUT .. "fire-05.ogg",
+    pathUT .. "fire-06.ogg",
 }
 
 SWEP.ShootSoundSilenced = {
-    pathM249 .. "supp.ogg",
+    pathUT .. "fire-sup-01.ogg",
+    pathUT .. "fire-sup-02.ogg",
+    pathUT .. "fire-sup-03.ogg",
+    pathUT .. "fire-sup-04.ogg",
+    pathUT .. "fire-sup-05.ogg",
+    pathUT .. "fire-sup-06.ogg",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
@@ -374,6 +382,7 @@ SWEP.Animations = {
 	
     ["ready"] = {
         Source = "ready",
+		Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -393,6 +402,7 @@ SWEP.Animations = {
         Source = "draw",
 		MinProgress = 0.6,
 		FireASAP = true,
+		Mult = 0.85,
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
@@ -404,6 +414,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         MinProgress = 0.8,
+		Mult = 0.85,
         IKTimeLine = { { t = 0, lhik = 1 } },
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },

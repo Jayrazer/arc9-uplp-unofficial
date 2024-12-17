@@ -270,7 +270,7 @@ ATT.PrintName = "SAW-46 Stock"
 ATT.CompactName = "STOCK"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "nostock.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "std_stock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -313,7 +313,7 @@ ATT.Attachments = {
         DefaultIcon = Material("entities/uplp_attachements/def/akstock.png", "mips smooth"),
         Pos = Vector(-0.75, 0, -0.825),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(-1, 0, 0),
+        Icon_Offset = Vector(-2, 0, 0.5),
         Scale = 1.08
     },
 }
