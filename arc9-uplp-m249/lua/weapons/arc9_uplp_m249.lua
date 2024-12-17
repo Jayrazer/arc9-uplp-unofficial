@@ -37,12 +37,12 @@ SWEP.Credits = {
 
 
 SWEP.StandardPresets = {
-
-	"[GPMG]XQAAAQAAAQAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuQnlIscFViI1VFeJosO3LEZ3tKXQN6uGRHoy6ixXgeSBH03dg5+yeGuMen0IbgzWfk5iupRnLKpPOfpeYEhxr31d0ELRMCrOc+NhMH95ZIQEGsmN6A4bqsDVp9vjTzny4=",
-	"[Navy Mod]XQAAAQAxAQAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuQnlIscFViI1VFeJosO3LEZ3tKXQN6uGRHoy6PgAGIZHQNJ9N2VzXF2MHqlfotdCJqNN1oP3aU36gUxpAe5rcUDAdEXiigefU8zNY+ZfD/YKH1mVx2+9Fs2RV6IOncAx5aKcvdYgjMzUkxboCGSMcVg7SfAA==",
-	"[HUGE-249]XQAAAQDEAAAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuPmCZlzL7XO8ZTikto/sOhM5uMURa4j5lbL3znbFuuQQnFTXRnKW2ZPZsVMe81REAecOcxSnry/pR9qypbwppgP+qbZ7hRKF6PkA==",
-	"[Patrol]XQAAAQAPAQAAAAAAAAA9iIIiM7hMNz0dhIkbkvJZHs6byFCnDJdwgfXjhzuPmCZlzL7XO8ZTikto/sOhN9wghYUFN6rGkI1lFmwMdKL4m4nsUp7pwVG3Kd+wfgyD8xUjz6A9igaLgtd5VtFQldRpQkuU8MlcKkeyrd6OS85G/fD9g4vdW39bpv2+wwM0LbBG5vmGZiFzFvQ="
 	
+    "[HUGE-249]XQAAAQDGAAAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fZrcjYNhvwMauLaXDSQ0jiPTDQ2ChNVWuzhE90kPJPdeu4qvxW+ONeF1YGd028vrzFCbwo5y0Cg+2NWOUgA=",
+    "[Navy Mod]XQAAAQBNAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fZrcjYNhvwMauPXvZruJ8ZOWjTHg2CxeNyNcL1V8w8vamjZhNX/AjQjYdAPbNlWjGR28LI9xKjGRcQMyxlyR7AAiZDnHHvsZxEQ0LHVkeoqw/1MbytoLFHDMS9VWNIhrFcf9GxLa1briF/yvrAA=",
+    "[Patrol]XQAAAQAsAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fZrcjYNhvwMauPXvZruJ8ZOWjS99s9dEKl0Zwr1iQuW+oTzx9pE1UHv2KOZHniX2AbGlNqck8S9OGasnkFdBSnHn8v5Lo0CNlW9KYBUEsRwnQPNEP49IcMUZMSs/etjWicXsozE=",
+    "[GPMG]XQAAAQBlAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUCm4d16R22fZrcjYNhvwMauPXvZruJ8ZOWjTJaCOaneNjKpGl5+rmYaiOy4ohT/NsaFrZiV/W/rJNyTtlq3zjotgvX9SmxdF06oNC4YZCpHaTQ9OBU6xJNmpIEsKdEjU/88qj4wlPzVcvdnj0q3hEpUYfkGp2mfrTq5k8="
+
 }
 
 ---- Muzzle Effects, Shell Effects, Camera
@@ -113,9 +113,9 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 125
 
 -- Recoil
-SWEP.Recoil = 1.1
-SWEP.RecoilUp = 1
-SWEP.RecoilSide = 0.95
+SWEP.Recoil = 2
+SWEP.RecoilUp = 1.5
+SWEP.RecoilSide = 1.3
 
 SWEP.RecoilRandomUp = 1
 SWEP.RecoilRandomSide = 1
@@ -125,30 +125,32 @@ SWEP.MaxRecoilBlowback = 0
 SWEP.RecoilPunch = 0
 SWEP.RecoilAutoControl = 1.2
 
-SWEP.RecoilMultSights = 1
+SWEP.RecoilMultSights = 0.9
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultBipod = 0.4
 
 -- Visual Recoil
-SWEP.VisualRecoil = 0.6
-SWEP.VisualRecoilMultSights = 0.8
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultSights = 0.75
 SWEP.VisualRecoilCenter = Vector(2, 11, 2)
 SWEP.VisualRecoilUp = 0.1 -- Vertical tilt
-SWEP.VisualRecoilSide = -0.015 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 2 -- Roll tilt
-SWEP.VisualRecoilPunch = 0.2 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilSide = -0.03 -- Horizontal tilt
+SWEP.VisualRecoilRoll = 1 -- Roll tilt
+SWEP.VisualRecoilPunch = 0.4 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilDampingConst = 80
 SWEP.VisualRecoilSpringMagnitude = 0.44
 SWEP.VisualRecoilPositionBumpUp = .1
 
-SWEP.VisualRecoilMultHipFire = 0.8
+SWEP.VisualRecoilMultHipFire = 1
 SWEP.VisualRecoilUpHipFire = 0.4
-SWEP.VisualRecoilSideHipFire = -0.1
-SWEP.VisualRecoilRollHipFire = 2
-SWEP.VisualRecoilPunchHipFire = 0.3
+SWEP.VisualRecoilSideHipFire = -0.09
+SWEP.VisualRecoilRollHipFire = 1.25
+SWEP.VisualRecoilPunchHipFire = 0.2
 SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
+
+SWEP.VisualRecoilMultBipod = 0.2
 
 -- Accuracy and Spread
 SWEP.Spread = 0.0045
@@ -172,8 +174,8 @@ SWEP.Speed = 0.75 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.7 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.6
 
-SWEP.AimDownSightsTime = 0.42 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.5 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.35 - 0.1 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.42 - 0.1 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 40
@@ -427,7 +429,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.8,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -455,7 +457,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
-        Mult = 0.8,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -485,7 +487,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 0.8,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -512,7 +514,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.7,
 		FireASAP = true,
-        Mult = 0.8,
+        Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
@@ -740,6 +742,7 @@ SWEP.Attachments = {
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(-6.5, 0, -0.5),
 		ExcludeElements = {"uplp_m249_brl_para", "uplp_m249_brl_commando"},
+        Installed = "uplp_m249_hs_std"
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
@@ -756,6 +759,7 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, -1, -15),
         Ang = Angle(90, 90, 180),
+        Installed = "uplp_m249_stock_std"
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_bipod"),

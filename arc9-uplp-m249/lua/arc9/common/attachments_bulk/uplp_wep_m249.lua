@@ -266,21 +266,22 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 ATT = {}
 
-ATT.PrintName = "Rear Buffer Plate"
-ATT.CompactName = "NOSTOCK"
+ATT.PrintName = "SAW-46 Stock"
+ATT.CompactName = "STOCK"
 ATT.Description = ATT.PrintName
 
 ATT.Icon = Material(iconfolder .. "nostock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.SprintToFireTimeMult = 0.8
-ATT.AimDownSightsTimeMult = 0.8
-ATT.DeployTimeMult = 0.75
-ATT.RecoilMult = 1.75
-ATT.RecoilSideMult = 1.3
-ATT.VisualRecoilMult = 1.1
-ATT.VisualRecoilMultHipFire = 1.8
+ATT.SprintToFireTimeMult = 1.2
+ATT.AimDownSightsTimeMult = 1.2
+ATT.DeployTimeMult = 1.1
+ATT.RecoilMult = 0.75
+ATT.RecoilSideMult = 0.7
+ATT.VisualRecoilMult = 0.8
+ATT.VisualRecoilMultHipFire = 0.5
+ATT.SwayAddSights = -0.6
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
@@ -297,13 +298,13 @@ ATT.Icon = Material(iconfolder .. "buffertube.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.SprintToFireTimeMult = 0.8
-ATT.AimDownSightsTimeMult = 0.8
-ATT.DeployTimeMult = 0.75
-ATT.RecoilMult = 1.75
-ATT.RecoilSideMult = 1.3
-ATT.VisualRecoilMult = 1.1
-ATT.VisualRecoilMultHipFire = 1.8
+-- ATT.SprintToFireTimeMult = 0.8
+-- ATT.AimDownSightsTimeMult = 0.8
+-- ATT.DeployTimeMult = 0.75
+-- ATT.RecoilMult = 1.75
+-- ATT.RecoilSideMult = 1.3
+-- ATT.VisualRecoilMult = 1.1
+-- ATT.VisualRecoilMultHipFire = 1.8
 
 ATT.Attachments = {
     {

@@ -14,8 +14,8 @@ $bodygroup "1"
 }
 $bodygroup "2"
 {
-	studio "ststock.smd"
 	studio "buffer.smd"
+	studio "ststock.smd"
 	studio "buffertube.smd"
 }
 $bodygroup "3"
