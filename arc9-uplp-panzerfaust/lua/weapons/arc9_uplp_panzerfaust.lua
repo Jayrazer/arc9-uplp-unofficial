@@ -8,20 +8,17 @@ SWEP.Spawnable = true
 SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "TK-F 3"
-SWEP.Description = [[A semi-reusable rocket-propelled grenade launcher designed for anti-tank use. 
-The anti-tank warhead penetrates armor and causes massive internal damage to vehicles.
-When the launcher is expended the rocket tube is discarded and the trigger assembly can then be refitted with a new tube.]]
-
+SWEP.PrintName = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3")
+SWEP.Description = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
 SWEP.Class = "Rocket Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = "Panzerfaust 3",
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_real"),
 
-    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "Dynamit Nobel AG",
-    [ ARC9:GetPhrase( "uplp_caliber" ) ] = "60mm Rocket",
-    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Rocket Propulsion",
+    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_manufacturer"),
+    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase("uplp_speedonerd_caliber_60mm"),
+    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = ARC9:GetPhrase("uplp_speedonerd_mechanism_rocket"),
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_germany" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1987" ),
 }

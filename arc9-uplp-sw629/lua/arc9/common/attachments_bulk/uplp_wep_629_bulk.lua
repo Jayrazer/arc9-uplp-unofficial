@@ -5,9 +5,9 @@ local iconfolder = "entities/uplp_attachements/sw629/"
 
 ATT = {}
 
-ATT.PrintName = "Long Barrel"
-ATT.CompactName = "Long"
-ATT.Description = "Long barrel that adds weight, improving recoil control."
+ATT.PrintName = ARC9:GetPhrase("uplp_629_barrel_long.printname")
+ATT.CompactName = ARC9:GetPhrase("uplp_629_barrel_long.compactname")
+ATT.Description = ARC9:GetPhrase("uplp_629_barrel_long.description")
 
 ATT.Icon = Material(iconfolder .. "uplp_sw_barrel_long.png", "mips smooth")
 ATT.Category = "uplp_sw_barrel"
@@ -26,9 +26,9 @@ ARC9.LoadAttachment(ATT, "uplp_629_barrel_long")
 
 ATT = {}
 
-ATT.PrintName = "Short Barrel"
-ATT.CompactName = "Short"
-ATT.Description = "Snub-nosed barrel making the weapon lighter. Too short for optics despite having a rail."
+ATT.PrintName = ARC9:GetPhrase("uplp_629_barrel_short.printname")
+ATT.CompactName = ARC9:GetPhrase("uplp_629_barrel_short.compactname")
+ATT.Description = ARC9:GetPhrase("uplp_629_barrel_short.description")
 
 ATT.Icon = Material(iconfolder .. "uplp_sw_barrel_short.png", "mips smooth")
 ATT.Category = "uplp_sw_barrel"
@@ -46,9 +46,9 @@ ARC9.LoadAttachment(ATT, "uplp_629_barrel_short")
 
 ATT = {}
 
-ATT.PrintName = "Smooth Grip"
-ATT.CompactName = "Smooth"
-ATT.Description = "Smooth wood-colored grip with faster handling."
+ATT.PrintName = ARC9:GetPhrase("uplp_629_grip_big.printname")
+ATT.CompactName = ARC9:GetPhrase("uplp_629_grip_big.compactname")
+ATT.Description = ARC9:GetPhrase("uplp_629_grip_big.description")
 
 ATT.Icon = Material(iconfolder .. "uplp_sw_grip_smooth.png", "mips smooth")
 ATT.Category = "uplp_sw_grip"

@@ -8,20 +8,16 @@ SWEP.Spawnable = true
 SWEP.Slot = 1 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "629PC"
-SWEP.Description = [[A classic revolver updated to modern standards. The 629 is a newer variant of the M29, a weapon made famous by its appearance in movies. 
-When it was first introduced it was the most powerful handgun in the world, though it has since been outclassed by guns chambered for larger calibers.
-The PC model is heavily customized with improved grips and a picatinny rail on the barrel.
-]]
-
+SWEP.PrintName = ARC9:GetPhrase("uplp_speedonerd_weapon_629")
+SWEP.Description = ARC9:GetPhrase("uplp_speedonerd_weapon_629_desc")
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_pistol") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_pistol") -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = "S&W Model 629 Stealth Hunter",
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_629_real"),
 
-    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "Smith & Wesson",
-    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ".44 Magnum",
+    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_629_manufacturer"),
+    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase("uplp_speedonerd_caliber_44mag"),
     [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Double Action",
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1978" ),
@@ -382,7 +378,7 @@ SWEP.Animations = {
         Source = "reload",
         MinProgress = 0.9,
 		PeekProgress = 0.85,
-		Time = 2.75,
+		Time = 2.5,
 		RefillProgress = 0.75,
 		FireASAP = true,
         EventTable = {
@@ -392,7 +388,7 @@ SWEP.Animations = {
             { s = pathUT .. "extractor2.ogg", t = 28 / 60, c = ca },
             { s = pathUT .. "cylinder_extract.ogg", t = 35 / 60, c = ca },
             { s = pathUT .. "speedloader.ogg", t = 91 / 60, c = ca },
-            { s = pathUT .. "cylinder_in.ogg", t = 119 / 60, c = ca },
+            { s = pathUT .. "cylinder_in.ogg", t = 112 / 60, c = ca },
             {hide = 1, t = 0},
             {hide = 0, t = 0.2},
             {hide = 2, t = 1.44}

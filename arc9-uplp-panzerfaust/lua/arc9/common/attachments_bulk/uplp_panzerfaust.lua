@@ -59,11 +59,10 @@ ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 
 ATT = {}
 
-ATT.PrintName = [[Bunkerfaust Warhead]]
-ATT.CompactName = [[BUNKER]]
+ATT.PrintName = ARC9:GetPhrase("uplp_ammo_bunkerbuster.printname")
+ATT.CompactName = ARC9:GetPhrase("uplp_ammo_bunkerbuster.compactname")
 ATT.Icon = Material("")
-ATT.Description = [[Smaller warhead designed for anti-personnel applications.
-Does more impact damage than the standard warhead but has a smaller explosion radius.]]
+ATT.Description = ARC9:GetPhrase("uplp_ammo_bunkerbuster.description")
 ATT.CustomPros = { 
 ["Blast Damage"] = "+25%"
 }
