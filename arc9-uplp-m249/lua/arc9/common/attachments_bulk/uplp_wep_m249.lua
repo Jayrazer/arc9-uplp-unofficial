@@ -6,8 +6,8 @@ local iconfolder = "entities/uplp_attachements/m249/"
 
 ATT = {}
 
-ATT.PrintName = "200R Big Box"
-ATT.CompactName = "200RND"
+ATT.PrintName = "180R Big Box"
+ATT.CompactName = "180RND"
 ATT.Description = ATT.PrintName
 
 ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
@@ -24,7 +24,7 @@ ATT.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_200.mdl"
 ATT.DropMagazineTimeEmpty = 2.4
 
 -- Positives
-ATT.ClipSizeOverride = 200
+ATT.ClipSizeOverride = 180
 
 -- Negatives
 ATT.SpreadAddHipFire = 0.02
@@ -34,7 +34,7 @@ ATT.DeployTimeMult = 1.05
 ATT.ReloadTimeMult = 1.15
 ATT.SwayAddSights = 0.2
 ATT.SwayMultSights = 1.1
-ATT.SpeedAdd = -0.15
+ATT.SpeedAdd = -0.125
 ATT.SpeedMultSights = 0.9
 
 ARC9.LoadAttachment(ATT, "uplp_m249_mag_200")
@@ -76,6 +76,7 @@ ATT.SpeedAdd = 0.2
 ATT.SpeedMultSights = 1.15
 ATT.DropMagazineTime = 0.4
 ATT.DropMagazineTimeEmpty = 0.4
+ATT.SpeedMultShooting = 1.25
 
 ATT.ReloadInSights = true
 
@@ -117,6 +118,7 @@ ATT.SpeedAdd = 0.125
 ATT.SpeedMultSights = 1.1
 ATT.DropMagazineTime = 0.4
 ATT.DropMagazineTimeEmpty = 0.4
+ATT.SpeedMultShooting = 1.15
 
 ATT.ReloadInSights = true
 
@@ -274,14 +276,15 @@ ATT.Icon = Material(iconfolder .. "std_stock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
-ATT.SprintToFireTimeMult = 1.2
-ATT.AimDownSightsTimeMult = 1.2
-ATT.DeployTimeMult = 1.1
-ATT.RecoilMult = 0.75
-ATT.RecoilSideMult = 0.7
+ATT.RecoilAdd = -1
+ATT.RecoilAutoControlMult = 1.75
 ATT.VisualRecoilMult = 0.8
 ATT.VisualRecoilMultHipFire = 0.5
 ATT.SwayAddSights = -0.6
+
+ATT.SprintToFireTimeMult = 1.2
+ATT.AimDownSightsTimeMult = 1.2
+ATT.DeployTimeMult = 1.1
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 

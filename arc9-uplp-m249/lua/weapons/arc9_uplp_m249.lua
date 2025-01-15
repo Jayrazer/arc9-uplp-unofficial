@@ -152,7 +152,7 @@ SWEP.VisualRecoilMultBipod = 0.2
 
 -- Accuracy and Spread
 SWEP.Spread = 0.0045
-SWEP.SpreadAddHipFire = 0.03 - 0.01
+SWEP.SpreadAddHipFire = 0.06
 
 SWEP.SpreadAddRecoil = 0.015
 SWEP.SpreadAddMove = 0.02
@@ -175,7 +175,8 @@ SWEP.SpeedMultShooting = 0.4
 SWEP.AimDownSightsTime = 0.37 - 0.1 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.45 - 0.1 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 1
+SWEP.Sway = 1
+SWEP.SwayAddSights = -0.15
 SWEP.BarrelLength = 40
 
 -- Shooting and Firemodes
