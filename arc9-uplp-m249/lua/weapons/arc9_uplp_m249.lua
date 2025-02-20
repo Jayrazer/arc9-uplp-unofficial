@@ -14,15 +14,15 @@ A popular "squad automatic weapon" designed with modularity in mind, allowing it
 While it's primarily meant to use ammunition belts, the SAW-46 can also accept AR-15 magazines in a separate magwell.
 ]]
 
-SWEP.Class = "Light-Machine Gun" -- In the Customization Menu
-SWEP.SubCategory = "Machine Gun" -- In the Spawnmenu
+SWEP.Class = ARC9:GetPhrase( "uplp_class_weapon_mg") -- In the Customization Menu
+SWEP.SubCategory = ARC9:GetPhrase( "uplp_category_weapon_mg") -- In the Spawnmenu
 
 SWEP.Trivia = {
     [ ARC9:GetPhrase( "uplp_realname" ) ] = "M249 SAW",
 
     [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "FN America",
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_5.56x45mm"),
-    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Gas-operated, Open rotating bolt",
+        [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ), ARC9:GetPhrase( "uplp_mechanism_gasoperated" ), ARC9:GetPhrase( "uplp_mechanism_rotatingbolt" ) ),
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1976" ),
 }
