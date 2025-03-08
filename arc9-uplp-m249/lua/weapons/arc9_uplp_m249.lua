@@ -744,7 +744,7 @@ SWEP.Attachments = {
         Ang = Angle(90, 90, 180),
     },
     {
-        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" ),
         Category = {"uplp_handguard_m249"},
         Bone = "body",
         Pos = Vector(0, -4, 8.5),

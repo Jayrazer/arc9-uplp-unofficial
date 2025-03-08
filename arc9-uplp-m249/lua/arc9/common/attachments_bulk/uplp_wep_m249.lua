@@ -186,7 +186,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.Attachments = {
     {
-        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" ),
         Category = {"uplp_handguard_m249_short"},
         DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
         Bone = "body",
@@ -229,7 +229,7 @@ ATT.LHIK_Priority = 5
 
 ATT.Attachments = {
     {
-        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" ),
         Category = {"uplp_handguard_m249", "uplp_handguard_m249_short"},
         DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
         Bone = "body",
