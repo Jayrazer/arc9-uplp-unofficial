@@ -8,21 +8,18 @@ SWEP.Spawnable = true
 SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "SAW-46"
-SWEP.Description = [[
-A popular "squad automatic weapon" designed with modularity in mind, allowing it to fit a variety of squad roles.
-While it's primarily meant to use ammunition belts, the SAW-46 can also accept AR-15 magazines in a separate magwell.
-]]
+SWEP.PrintName = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249" )
+SWEP.Description = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249_desc" )
 
-SWEP.Class = ARC9:GetPhrase( "uplp_class_weapon_mg") -- In the Customization Menu
-SWEP.SubCategory = ARC9:GetPhrase( "uplp_category_weapon_mg") -- In the Spawnmenu
+SWEP.Class = ARC9:GetPhrase( "uplp_class_weapon_mg" ) -- In the Customization Menu
+SWEP.SubCategory = ARC9:GetPhrase( "uplp_category_weapon_mg" ) -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = "M249 SAW",
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249_real" ),
 
-    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "FN America",
+    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249_manufacturer" ),
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_5.56x45mm"),
-        [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ), ARC9:GetPhrase( "uplp_mechanism_gasoperated" ), ARC9:GetPhrase( "uplp_mechanism_rotatingbolt" ) ),
+    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ), ARC9:GetPhrase( "uplp_mechanism_gasoperated" ), ARC9:GetPhrase( "uplp_mechanism_rotatingbolt" ) ),
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1976" ),
 }
@@ -747,7 +744,7 @@ SWEP.Attachments = {
         Ang = Angle(90, 90, 180),
     },
     {
-        PrintName = "Heatshield",
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
         Category = {"uplp_handguard_m249"},
         Bone = "body",
         Pos = Vector(0, -4, 8.5),

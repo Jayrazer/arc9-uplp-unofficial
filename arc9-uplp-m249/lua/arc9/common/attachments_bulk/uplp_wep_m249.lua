@@ -6,9 +6,9 @@ local iconfolder = "entities/uplp_attachements/m249/"
 
 ATT = {}
 
-ATT.PrintName = "180R Big Box"
-ATT.CompactName = "180RND"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_mag_200.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_mag_200.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_mag_200.description" )
 
 ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
@@ -44,9 +44,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_200")
 
 ATT = {}
 
-ATT.PrintName = "30R AR-15 Mag"
-ATT.CompactName = "30RND"
-ATT.Description = "Uses the weapon's STANAG-compatible magwell."
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_mag_30.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_mag_30.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_mag_30.description" )
 
 ATT.Icon = Material("entities/uplp_attachements/ar15/mag/30.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
@@ -87,9 +87,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_30")
 
 ATT = {}
 
-ATT.PrintName = "60R AR-15 Mag"
-ATT.CompactName = "60RND"
-ATT.Description = "Uses the weapon's STANAG-compatible magwell."
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_mag_60.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_mag_60.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_mag_60.description" )
 
 ATT.Icon = Material("entities/uplp_attachements/ar15/mag/60.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
@@ -132,9 +132,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_mag_60")
 
 ATT = {}
 
-ATT.PrintName = "15\" SAW Barrel"
-ATT.CompactName = "SAW"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_brl_saw.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_brl_saw.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_saw.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_saw"}
 
@@ -174,9 +174,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
 ATT = {}
 
-ATT.PrintName = "10\" Paratrooper Barrel"
-ATT.CompactName = "PARA"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_brl_para.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_brl_para.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_para.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_para"}
 
@@ -186,7 +186,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.Attachments = {
     {
-        PrintName = "Heatshield",
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
         Category = {"uplp_handguard_m249_short"},
         DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
         Bone = "body",
@@ -212,9 +212,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
 ATT = {}
 
-ATT.PrintName = "11\" Commando Barrel"
-ATT.CompactName = "COMM"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_brl_commando.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_brl_commando.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_commando.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_commando"}
 
@@ -229,7 +229,7 @@ ATT.LHIK_Priority = 5
 
 ATT.Attachments = {
     {
-        PrintName = "Heatshield",
+        PrintName = ARC9:GetPhrase( "uplp_category_m249_heatshield" )
         Category = {"uplp_handguard_m249", "uplp_handguard_m249_short"},
         DefaultIcon = Material("entities/uplp_attachements/def/akhg.png", "mips smooth"),
         Bone = "body",
@@ -268,9 +268,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 ATT = {}
 
-ATT.PrintName = "SAW-46 Stock"
-ATT.CompactName = "STOCK"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_stock_std.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_stock_std.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_stock_std.description" )
 
 ATT.Icon = Material(iconfolder .. "std_stock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
@@ -293,9 +293,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_stock_std")
 
 ATT = {}
 
-ATT.PrintName = "Buffer Tube"
-ATT.CompactName = "TUBE"
-ATT.Description = "Allows mounting of buffer tube stocks"
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_stock_buffer.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_stock_buffer.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_stock_buffer.description" )
 
 ATT.Icon = Material(iconfolder .. "buffertube.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
@@ -333,9 +333,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_stock_buffer")
 
 ATT = {}
 
-ATT.PrintName = "Standard Issue Heatshield"
-ATT.CompactName = "STD"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_hs_std.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_hs_std.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_hs_std.description" )
 
 ATT.Icon = Material(iconfolder .. "hs_std.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249"
@@ -351,9 +351,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_hs_std")
 
 ATT = {}
 
-ATT.PrintName = "Navy Mod Heatshield"
-ATT.CompactName = "MOD"
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_hs_mod.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_hs_mod.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_hs_mod.description" )
 
 ATT.Icon = Material(iconfolder .. "hs_mod.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249_short"
@@ -428,9 +428,9 @@ ARC9.LoadAttachment(ATT, "uplp_m249_flash_default")
 
 ATT = {}
 
-ATT.PrintName = "SAW-46 Bipod"
-ATT.CompactName = "SAW B."
-ATT.Description = ATT.PrintName
+ATT.PrintName = ARC9:GetPhrase( "uplp_m249_bipod.printname" )
+ATT.CompactName = ARC9:GetPhrase( "uplp_m249_bipod.compactname" )
+ATT.Description = ARC9:GetPhrase( "uplp_m249_bipod.description" )
 
 ATT.Icon = Material("entities/uplp_attachements/awp/bipod.png", "mips smooth")
 
