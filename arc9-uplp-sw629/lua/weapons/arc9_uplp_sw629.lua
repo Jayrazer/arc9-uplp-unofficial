@@ -177,19 +177,24 @@ SWEP.AimDownSightsTime = 0.3 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.25 -- Time it takes to fully enter sprint
 
 -- Shooting and Firemodes
-SWEP.RPM = 120 -- How fast gun shoot
+SWEP.RPM = 200 -- How fast gun shoot
 
 SWEP.Num = 1 -- How many bullets shot at once
 
 SWEP.Firemodes = {
-    { 
-	Mode = 1,
-	PrintName = "DACT",	
-	},	
-}
+    { Mode = 1, PrintName = ARC9:GetPhrase("uplp_mechanism_doubleaction")  },
+    { Mode = 1, PrintName = ARC9:GetPhrase("uplp_mechanism_singleaction"), ManualAction = true, RPM = 250, TriggerDelay = false, RecoilKickMult = 0.75 },
+}	
 
-SWEP.TriggerDelay = false -- fun allowed
-SWEP.TriggerDelayTime = 0.04
+SWEP.TriggerDelay = true
+SWEP.TriggerDelayTime = 0.12
+SWEP.TriggerDelayCancellable = true --false
+SWEP.TriggerStartFireAnim = false --true
+-- SWEP.ShellVelocity = 0
+SWEP.NoForceSetLoadedRoundsOnReload = true
+SWEP.ManualActionNoLastCycle = false
+SWEP.ManualActionEjectAnyway = false
+SWEP.FiremodeAnimLock = true
 
 SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120
@@ -294,6 +299,18 @@ SWEP.ReloadHideBoneTables = {
     },
 }
 
+SWEP.Hook_TranslateAnimation = function(swep, anim)
+	local fm = swep:GetFiremode()
+    
+	if anim == "idle" and fm == 2 then return anim .. "_sa" end
+	if anim == "ready" and fm == 2 then return anim .. "_sa" end
+	if anim == "draw" and fm == 2 then return anim .. "_sa" end
+	if anim == "holster" and fm == 2 then return anim .. "_sa" end
+	if anim == "dryfire" and fm == 2 then return anim .. "_sa" end
+	if anim == "reload" and fm == 2 then return anim .. "_sa" end
+	if anim == "inspect" and fm == 2 then return anim .. "_sa" end
+end
+
 -- Animations
 SWEP.Animations = {
     ["idle"] = {
@@ -304,6 +321,16 @@ SWEP.Animations = {
         },
         -- Time = 0.1,
     },
+	    
+	["idle_sa"] = {
+        Source = "idle_cocked",
+		Time = 1,
+        EventTable = {
+            {hide = 1, t = 0},
+        },
+        -- Time = 0.1,
+    },
+	
     ["ready"] = {
         Source = "ready",
         Mult = 1.1,
@@ -319,6 +346,23 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },
+	
+	["ready_sa"] = {
+        Source = "ready_cocked",
+        Mult = 1.1,
+        EventTable = {
+            { s = pathUT .. "draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
+            { s = pathUT .. "cylinder_in.ogg", t = 5 / 60, c = ca, v = 0.8 },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.65, lhik = 0 },
+            { t = 0.92, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
     ["draw"] = {
         Source = "draw",
 		MinProgress = 0.65,
@@ -331,8 +375,34 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },
+
+    ["draw_sa"] = {
+        Source = "draw_cocked",
+		MinProgress = 0.65,
+		FireASAP = true,
+        EventTable = {
+            { s = pathUT .. "draw.ogg", t = 0 / 60, c = ca, v = 0.8 },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
     ["holster"] = {
         Source = "holster",
+        MinProgress = 0.5,
+        EventTable = {
+            { s = pathUTC .. "rattle2.ogg", t = 0 / 60, c = ca },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
+    ["holster_sa"] = {
+        Source = "holster_cocked",
         MinProgress = 0.5,
         EventTable = {
             { s = pathUTC .. "rattle2.ogg", t = 0 / 60, c = ca },
@@ -348,26 +418,45 @@ SWEP.Animations = {
         -- Time = 1,
         --ShellEjectAt = 0.01,
         EventTable = { { s = mech, t = 0, v = 0.6 } },
+    },    
+	
+	["cycle"] = {
+        Source = "cocking",
+        -- Time = 1,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = pathUTC .. "revolver_cock.ogg", t = 0.1 } },
     },
 	
     ["dryfire"] = {
         Source = "dryfire",
         -- Time = 1,
         --ShellEjectAt = 0.01,
-        EventTable = { { s = pathUT .. "drophammer.ogg", t = 1 / 60, v = 0.6 } },
-        EventTable = { { s = mech, t = 5 / 60, v = 0.6 } },
+        EventTable = { 
+		{ s = mech, t = 1 / 60, v = 0.6 },
+		{ s = pathUT .. "drophammer.ogg", t = 5 / 60, v = 0.6 }
+		},
+    },
+	
+    ["dryfire_sa"] = {
+        Source = "dryfire_sact",
+        -- Time = 1,
+        --ShellEjectAt = 0.01,
+        EventTable = { 
+		{ s = pathUT .. "drophammer.ogg", t = 1 / 60, v = 0.6 }, 
+		{ s = pathUTC .. "revolver_cock.ogg", t = 18 / 60, v = 0.6 } 
+		},
     },
 	
     ["trigger"] = {
         Source = "trigger",
-        Time = 0.05,
+        --Time = 0.15,
         --ShellEjectAt = 0.01,
         EventTable = { { s = mech, t = 1 / 60, v = 0.6 } },
     },
 	
 	["untrigger"] = {
         Source = "untrigger",
-        Time = 0.05,
+        --Time = 0.15,
         --ShellEjectAt = 0.01,
         EventTable = { { s = mech, t = 1 / 60, v = 0.6 } },
     },
@@ -400,11 +489,71 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },
+	
+	["reload_sa"] = {
+        Source = "reload_cocked",
+        MinProgress = 0.9,
+		PeekProgress = 0.85,
+		Time = 2.5,
+		RefillProgress = 0.75,
+		FireASAP = true,
+        EventTable = {
+            { s = pathUT .. "rattle.ogg", t = 0 / 60, c = ca },
+            { s = pathUT .. "cylinder_out.ogg", t = 15 / 60, c = ca },
+            { s = pathUT .. "extractor1.ogg", t = 26 / 60, c = ca },
+            { s = pathUT .. "extractor2.ogg", t = 28 / 60, c = ca },
+            { s = pathUT .. "cylinder_extract.ogg", t = 35 / 60, c = ca },
+            { s = pathUT .. "speedloader.ogg", t = 91 / 60, c = ca },
+            { s = pathUT .. "cylinder_in.ogg", t = 112 / 60, c = ca },
+            {hide = 1, t = 0},
+            {hide = 0, t = 0.2},
+            {hide = 2, t = 1.44}
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.2, lhik = 0 },
+            { t = 0.65, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
+	-- Firemode Switching --
+	
+	["firemode_1"] = {
+        Source = "cocking_cycle",
+        -- Time = 1,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = pathUTC .. "revolver_cock.ogg", t = 0.1 } },
+    },
+	
+	["firemode_2"] = {
+        Source = "decocking",
+        -- Time = 1,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = mech, t = 0.2 }, { s = pathUT .. "drophammer.ogg", t = 0.35 } },
+    },
 
     -- Inspecc --
 
     ["inspect"] = {
         Source = "inspect",
+		Time = 4.4,
+        EventTable = {
+            { s = pathUTC .. "cloth_2.ogg", t = 5 / 30, c = ca },
+            { s = pathUTC .. "movement-pistol-02.ogg", t = 52 / 30, c = ca },
+            { s = pathUTC .. "cloth_4.ogg", t = 56 / 30, c = ca, v = 0.5 },
+            { s = pathUTC .. "cloth_1.ogg", t = 92 / 30, c = ca },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.75, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
+    ["inspect_sa"] = {
+        Source = "inspect_cocked",
 		Time = 4.4,
         EventTable = {
             { s = pathUTC .. "cloth_2.ogg", t = 5 / 30, c = ca },
