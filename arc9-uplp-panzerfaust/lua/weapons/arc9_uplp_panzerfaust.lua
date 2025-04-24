@@ -138,13 +138,13 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.001
+SWEP.Spread = 0
 SWEP.SpreadAddRecoil = 0
 
-SWEP.SpreadMultSights = 0.07
-SWEP.SpreadAddHipFire = 0.025
-SWEP.SpreadAddMove = 0.01
-SWEP.SpreadAddMidAir = 0.1
+SWEP.SpreadMultSights = 0
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0
+SWEP.SpreadAddMidAir = 0
 -- SWEP.SpreadAddShooting = 0
 
 SWEP.RecoilPatternDrift = 20
