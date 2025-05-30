@@ -219,14 +219,14 @@ SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeSnapshotFOV = 90
 
 -- Dropped Magazine
-SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/ak_mag_762.mdl"
-SWEP.DropMagazineTime = 0.75 * 1.05
-SWEP.DropMagazineQCA = 5
-SWEP.DropMagazinePos = Vector(0, 0, 0)
+SWEP.ShouldDropMag = true
+SWEP.ShouldDropMagEmpty = true
+SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
+SWEP.DropMagazineTime = 0.55
+SWEP.DropMagazineQCA = 2
+SWEP.DropMagazinePos = Vector(30, -5, -20)
 SWEP.DropMagazineAng = Angle(90, 95, 90)
-SWEP.DropMagazineVelocity = Vector(0, 80, -80)
+SWEP.DropMagazineVelocity = Vector(20, -10, -20)
 
 ---- Sounds
 -- urbna!
@@ -242,6 +242,10 @@ SWEP.ShootSound = "arc9_uplp/panzerfaust/pable3_fire.wav"
 SWEP.ShootSoundIndoor = SWEP.ShootSound
 SWEP.ShootSoundSilenced = ""
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
+
+SWEP.DropMagazineSounds = {
+    "arc9_uplp/panzerfaust/tube_hit_ground.wav",
+}
 
 -- Animations
 SWEP.Animations = {
