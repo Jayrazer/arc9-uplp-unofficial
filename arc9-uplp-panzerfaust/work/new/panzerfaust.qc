@@ -83,7 +83,7 @@ $sequence "idle" {
 }
 
 $sequence "reload" {
-	"anims\reload.smd"
+	"anims\reload_new.smd"
 	fadein 0.1
 	fadeout 0.2
 	fps 30

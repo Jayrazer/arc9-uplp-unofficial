@@ -67,7 +67,7 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.PeekPos = Vector(3, 2, -3)
 SWEP.PeekAng = Angle(0, 6, 0)
 
-SWEP.RestPos = Vector(0, -2, 0)
+SWEP.RestPos = Vector(0, -1, -1)
 SWEP.RestAng = Angle(0, -20, 0)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
@@ -169,7 +169,7 @@ SWEP.SpeedMultShooting = 0.8
 SWEP.AimDownSightsTime = 0.7 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.65 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 0.35
+SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 50
 
 -- Shooting and Firemodes
@@ -273,7 +273,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-        Time = 95 / 30,
+        Time = 90 / 30,
         MinProgress = 1,
 		RefillProgress = 0.35,
 		FireASAP = true,
@@ -281,8 +281,8 @@ SWEP.Animations = {
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
             {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
             {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 17 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 41 / 30},
-            {s = "arc9_uplp/panzerfaust/magin.wav", t = 42 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 35 / 30},
+            {s = "arc9_uplp/panzerfaust/magin.wav", t = 46 / 30},
         },
     },
     ["inspect"] = {
@@ -315,7 +315,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         Bone = "pzf3_root",
-        Pos = Vector(2, -3, 4),
+        Pos = Vector(7.9, -4.1, 13.5),
         Ang = Angle(90, -90, 0),
 		Integral = "uplp_optic_panzerfaust",
 		Hidden = true,

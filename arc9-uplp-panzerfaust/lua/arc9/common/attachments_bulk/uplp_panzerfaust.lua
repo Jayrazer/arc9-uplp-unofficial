@@ -23,7 +23,7 @@ ATT.Sights = {
 
 ATT.SortOrder = 1
 
-ATT.RTScope = false
+ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 2
 ATT.RTScopeFOV = 60 / 4
 ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
@@ -41,7 +41,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Free = true
 ATT.Hidden = false
 
-ATT.ModelOffset = Vector(9.5, -6, 1.05)
+ATT.ModelOffset = Vector(0, 0, 0)
 
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 
@@ -70,6 +70,8 @@ ATT.Category = "uplp_panzer_ammo"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_panzer_bunker"}
 ATT.ShootEnt = "uplp_proj_panzerfaust_bunker"
+
+ATT.Ignore = false
 
 ARC9.LoadAttachment(ATT, "uplp_ammo_bunkerbuster")
 
