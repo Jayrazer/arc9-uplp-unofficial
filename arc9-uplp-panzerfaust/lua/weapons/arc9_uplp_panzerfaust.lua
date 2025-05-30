@@ -26,8 +26,8 @@ SWEP.Trivia = {
 SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
     [ ARC9:GetPhrase( "uplp_assets" ) ] = "TastyTony",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "speedonerd",
-    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "Infinity Ward, New World Interactive",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Dummified",
+    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "Treyarch",
 }
 
 ---- Muzzle Effects, Shell Effects, Camera
@@ -61,18 +61,24 @@ SWEP.WorldModelOffset = {
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.ViewModelFOVBase = 70
-SWEP.ActivePos = Vector(-1, -3, -0.5)
-SWEP.ActiveAng = Angle(0, 0, -15)
+SWEP.ActivePos = Vector(0, -1, -1)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.PeekPos = Vector(-1, 2, -5)
-SWEP.PeekAng = Angle(-0.3, 0.1, -40)
+SWEP.PeekPos = Vector(3, 2, -3)
+SWEP.PeekAng = Angle(0, 6, 0)
+
+SWEP.RestPos = Vector(0, -2, 0)
+SWEP.RestAng = Angle(0, -20, 0)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
 
----- Weapon Stats and Behaviour
--- Damage
--- make sure ak12 matches this
+
+-- If we arent aiming, dont fire
+SWEP.HookP_BlockFire = function(self)
+    return self:GetSightAmount() < 1
+end
+
 SWEP.DamageMax = 34
 SWEP.DamageMin = 18
 SWEP.HeadshotDamage = 1
@@ -160,10 +166,10 @@ SWEP.Speed = 0.7 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.45 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
-SWEP.AimDownSightsTime = 0.8 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.75 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.7 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.65 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 1
+SWEP.SwayAddSights = 0.35
 SWEP.BarrelLength = 50
 
 -- Shooting and Firemodes
@@ -196,8 +202,8 @@ SWEP.NPCWeight = 100
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-    Pos = Vector(-2, 0, 0),
-    Ang = Angle(0, 0, 0),
+	Pos = Vector(-5.18, 19, -2.25),
+	Ang = Angle(0, -5, 0),
     Magnification = 1.25,
     ViewModelFOV = 60,
     CrosshairInSights = true,
@@ -227,10 +233,14 @@ SWEP.DropMagazineVelocity = Vector(0, 80, -80)
 local pathUT = "uplp_urban_temp/ak/"
 local pathUTC = "uplp_urban_temp/common/"
 
-SWEP.ShootSound = "arc9_uplp/panzerfaust/fire.ogg"
+SWEP.ShootSound = "arc9_uplp/panzerfaust/pable3_fire.wav"
+-- {
+	-- "^arc9_uplp/panzerfaust/fire_1.wav",
+	-- "^arc9_uplp/panzerfaust/fire_2.wav",
+	-- "^arc9_uplp/panzerfaust/fire_3.wav",
+-- }
 SWEP.ShootSoundIndoor = SWEP.ShootSound
 SWEP.ShootSoundSilenced = ""
-
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
 
 -- Animations
@@ -244,8 +254,7 @@ SWEP.Animations = {
         Source = "draw",
 		MinProgress = 0.9,
         EventTable = {
-            {s = "uplp_urban_temp/common/cloth_3.ogg", t = 1 / 30},
-            {s = "arc9_uplp/panzerfaust/rotate.ogg", t = 5 / 30},
+            {s = "arc9_uplp/panzerfaust/draw.wav", t = 1 / 30},
         },
     },
     ["holster"] = {
@@ -256,20 +265,24 @@ SWEP.Animations = {
         },
     },
     ["fire"] = {
-        Source = {
-            "fire",
-        },
+        Source = "fire",
 		MinProgress = 0.9,
         Time = 48 / 35,
+        EventTable = {
+        },
     },
     ["reload"] = {
         Source = "reload",
-        Time = 90 / 30,
-        MinProgress = 0.5,
+        Time = 95 / 30,
+        MinProgress = 1,
+		RefillProgress = 0.35,
+		FireASAP = true,
         EventTable = {
-            {s = "arc9_uplp/panzerfaust/rotate.ogg", t = 1 / 30},
-            {s = "arc9_uplp/panzerfaust/shellin.ogg", t = 25 / 30},
-            {s = "arc9_uplp/panzerfaust/raise.ogg", t = 28 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
+            {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 17 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 41 / 30},
+            {s = "arc9_uplp/panzerfaust/magin.wav", t = 42 / 30},
         },
     },
     ["inspect"] = {
@@ -278,8 +291,10 @@ SWEP.Animations = {
 		Time = 120 / 30,
         MinProgress = 0.925,
         EventTable = {
-		    {s = "arc9_uplp/panzerfaust/rotate.ogg", t = 1 / 30},
-            {s = "arc9_uplp/panzerfaust/rotate.ogg", t = 90 / 30},
+		    {s = "arc9_uplp/panzerfaust/inspect_start.wav", t = 0 / 30},
+		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 40 / 30},
+		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 52 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_end.wav", t = 75 / 30},
         },
     },
 }
@@ -299,7 +314,7 @@ end
 SWEP.Attachments = {
     {
         PrintName = "Optic",
-        Bone = "pzr_body",
+        Bone = "pzf3_root",
         Pos = Vector(2, -3, 4),
         Ang = Angle(90, -90, 0),
 		Integral = "uplp_optic_panzerfaust",
@@ -309,7 +324,7 @@ SWEP.Attachments = {
 
     {
         PrintName = "Ammo",
-        Bone = "pzr_body",
+        Bone = "pzf3_root",
         Pos = Vector(0, -4.5, 15),
         Ang = Angle(0, 0, 0),
         Category = {"uplp_panzer_ammo"},
@@ -318,7 +333,7 @@ SWEP.Attachments = {
 	{
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
-        Bone = "pzr_body",
+        Bone = "pzf3_root",
         Pos = Vector(4.55, -6.45, 1),
         Ang = Angle(90, 0, -90),
     },

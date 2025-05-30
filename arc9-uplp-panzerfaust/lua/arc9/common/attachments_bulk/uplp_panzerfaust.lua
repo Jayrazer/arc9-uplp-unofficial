@@ -11,20 +11,11 @@ ATT.Model = "models/weapons/arc9/uplp_unofficial/attachments/panzerfaust_scope.m
 
 ATT.Sights = {
     {
-		Pos = Vector(-4.95, 19.5, -2.42),
-		Ang = Angle(0, 0, 0),
+		Pos = Vector(-5.18, 19, -2.25),
+		Ang = Angle(0, -5, 0),
         Magnification = 2,
         ViewModelFOV = 60,
         RTScopeFOV = 25,
-
-        SwayAddSights = sway_mid,
-    },
-	  {
-        Pos = Vector(-4.95, 19.5, -2.42),
-        Ang = Angle(0, 0, 0),
-        Magnification = 2,
-        RTScopeFOV = 10,
-        ViewModelFOV = 60,
 
         SwayAddSights = sway_mid,
     },
@@ -32,7 +23,7 @@ ATT.Sights = {
 
 ATT.SortOrder = 1
 
-ATT.RTScope = true
+ATT.RTScope = false
 ATT.RTScopeSubmatIndex = 2
 ATT.RTScopeFOV = 60 / 4
 ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
