@@ -262,18 +262,12 @@ SWEP.ShootSound = {
     pathUT .. "fire-01.wav",
     pathUT .. "fire-02.wav",
     pathUT .. "fire-03.wav",
-    pathUT .. "fire-04.wav",
-    pathUT .. "fire-05.wav",
-    pathUT .. "fire-06.wav",
 }
 
 SWEP.ShootSoundSilenced = {
     pathUT .. "fire-sup-01.wav",
     pathUT .. "fire-sup-02.wav",
     pathUT .. "fire-sup-03.wav",
-    pathUT .. "fire-sup-04.wav",
-    pathUT .. "fire-sup-05.wav",
-    pathUT .. "fire-sup-06.wav",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
@@ -282,17 +276,11 @@ SWEP.DistantShootSound = {
     pathUTC .. "556tails/fire-dist-556x45-rif-ext-01.wav",
     pathUTC .. "556tails/fire-dist-556x45-rif-ext-02.wav",
     pathUTC .. "556tails/fire-dist-556x45-rif-ext-03.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-04.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-05.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-06.wav",
 }
 SWEP.DistantShootSoundIndoor = {
     pathUTC .. "556tails/fire-dist-556x45-rif-int-01.wav",
     pathUTC .. "556tails/fire-dist-556x45-rif-int-02.wav",
     pathUTC .. "556tails/fire-dist-556x45-rif-int-03.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-04.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-05.wav",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-06.wav",
 }
 
 SWEP.DistantShootSoundSilenced = {
@@ -301,27 +289,19 @@ SWEP.DistantShootSoundSilenced = {
     pathUTC .. "generictails/sup-tail-03.wav",
     pathUTC .. "generictails/sup-tail-04.wav",
     pathUTC .. "generictails/sup-tail-05.wav",
-    pathUTC .. "generictails/sup-tail-06.wav",
-    pathUTC .. "generictails/sup-tail-07.wav",
-    pathUTC .. "generictails/sup-tail-08.wav",
-    pathUTC .. "generictails/sup-tail-09.wav",
-    pathUTC .. "generictails/sup-tail-10.wav"
 }
 SWEP.DistantShootSoundSilencedIndoor = {
     pathUTC .. "generictails/fire-dist-int-pistol-light-01.wav",
     pathUTC .. "generictails/fire-dist-int-pistol-light-02.wav",
     pathUTC .. "generictails/fire-dist-int-pistol-light-03.wav",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-04.wav",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-05.wav",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-06.wav",
 }
 
 SWEP.DropMagazineSounds = {
-    pathUTC .. "rifle_magdrop_1.wav",
-    pathUTC .. "rifle_magdrop_2.wav",
-    pathUTC .. "rifle_magdrop_3.wav",
-    pathUTC .. "rifle_magdrop_4.wav",
-    pathUTC .. "rifle_magdrop.wav",
+    pathUTC .. "rifle_magdrop_1.ogg",
+    pathUTC .. "rifle_magdrop_2.ogg",
+    pathUTC .. "rifle_magdrop_3.ogg",
+    pathUTC .. "rifle_magdrop_4.ogg",
+    pathUTC .. "rifle_magdrop.ogg",
 }
 
 ---- Animations
@@ -347,8 +327,6 @@ local mechh = {
     pathUT .. "mech-02.wav",
     pathUT .. "mech-03.wav",
     pathUT .. "mech-04.wav",
-    pathUT .. "mech-05.wav",
-    pathUT .. "mech-06.wav",
 }
 
 local UTCrattle = {
