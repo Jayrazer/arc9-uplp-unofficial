@@ -259,69 +259,69 @@ local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
 
 SWEP.ShootSound = {
-    pathUT .. "fire-01.ogg",
-    pathUT .. "fire-02.ogg",
-    pathUT .. "fire-03.ogg",
-    pathUT .. "fire-04.ogg",
-    pathUT .. "fire-05.ogg",
-    pathUT .. "fire-06.ogg",
+    pathUT .. "fire-01.wav",
+    pathUT .. "fire-02.wav",
+    pathUT .. "fire-03.wav",
+    pathUT .. "fire-04.wav",
+    pathUT .. "fire-05.wav",
+    pathUT .. "fire-06.wav",
 }
 
 SWEP.ShootSoundSilenced = {
-    pathUT .. "fire-sup-01.ogg",
-    pathUT .. "fire-sup-02.ogg",
-    pathUT .. "fire-sup-03.ogg",
-    pathUT .. "fire-sup-04.ogg",
-    pathUT .. "fire-sup-05.ogg",
-    pathUT .. "fire-sup-06.ogg",
+    pathUT .. "fire-sup-01.wav",
+    pathUT .. "fire-sup-02.wav",
+    pathUT .. "fire-sup-03.wav",
+    pathUT .. "fire-sup-04.wav",
+    pathUT .. "fire-sup-05.wav",
+    pathUT .. "fire-sup-06.wav",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
 
 SWEP.DistantShootSound = {
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-01.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-02.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-03.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-04.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-05.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-ext-06.ogg",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-01.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-02.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-03.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-04.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-05.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-ext-06.wav",
 }
 SWEP.DistantShootSoundIndoor = {
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-01.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-02.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-03.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-04.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-05.ogg",
-    pathUTC .. "556tails/fire-dist-556x45-rif-int-06.ogg",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-01.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-02.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-03.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-04.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-05.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-06.wav",
 }
 
 SWEP.DistantShootSoundSilenced = {
-    pathUTC .. "generictails/sup-tail-01.ogg",
-    pathUTC .. "generictails/sup-tail-02.ogg",
-    pathUTC .. "generictails/sup-tail-03.ogg",
-    pathUTC .. "generictails/sup-tail-04.ogg",
-    pathUTC .. "generictails/sup-tail-05.ogg",
-    pathUTC .. "generictails/sup-tail-06.ogg",
-    pathUTC .. "generictails/sup-tail-07.ogg",
-    pathUTC .. "generictails/sup-tail-08.ogg",
-    pathUTC .. "generictails/sup-tail-09.ogg",
-    pathUTC .. "generictails/sup-tail-10.ogg"
+    pathUTC .. "generictails/sup-tail-01.wav",
+    pathUTC .. "generictails/sup-tail-02.wav",
+    pathUTC .. "generictails/sup-tail-03.wav",
+    pathUTC .. "generictails/sup-tail-04.wav",
+    pathUTC .. "generictails/sup-tail-05.wav",
+    pathUTC .. "generictails/sup-tail-06.wav",
+    pathUTC .. "generictails/sup-tail-07.wav",
+    pathUTC .. "generictails/sup-tail-08.wav",
+    pathUTC .. "generictails/sup-tail-09.wav",
+    pathUTC .. "generictails/sup-tail-10.wav"
 }
 SWEP.DistantShootSoundSilencedIndoor = {
-    pathUTC .. "generictails/fire-dist-int-pistol-light-01.ogg",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-02.ogg",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-03.ogg",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-04.ogg",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-05.ogg",
-    pathUTC .. "generictails/fire-dist-int-pistol-light-06.ogg",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-01.wav",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-02.wav",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-03.wav",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-04.wav",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-05.wav",
+    pathUTC .. "generictails/fire-dist-int-pistol-light-06.wav",
 }
 
 SWEP.DropMagazineSounds = {
-    pathUTC .. "rifle_magdrop_1.ogg",
-    pathUTC .. "rifle_magdrop_2.ogg",
-    pathUTC .. "rifle_magdrop_3.ogg",
-    pathUTC .. "rifle_magdrop_4.ogg",
-    pathUTC .. "rifle_magdrop.ogg",
+    pathUTC .. "rifle_magdrop_1.wav",
+    pathUTC .. "rifle_magdrop_2.wav",
+    pathUTC .. "rifle_magdrop_3.wav",
+    pathUTC .. "rifle_magdrop_4.wav",
+    pathUTC .. "rifle_magdrop.wav",
 }
 
 ---- Animations
@@ -343,29 +343,29 @@ SWEP.BulletBones = {
 SWEP.BulletBonesSub1 = true 
 
 local mechh = {
-    pathUT .. "mech-01.ogg",
-    pathUT .. "mech-02.ogg",
-    pathUT .. "mech-03.ogg",
-    pathUT .. "mech-04.ogg",
-    pathUT .. "mech-05.ogg",
-    pathUT .. "mech-06.ogg",
+    pathUT .. "mech-01.wav",
+    pathUT .. "mech-02.wav",
+    pathUT .. "mech-03.wav",
+    pathUT .. "mech-04.wav",
+    pathUT .. "mech-05.wav",
+    pathUT .. "mech-06.wav",
 }
 
 local UTCrattle = {
-    -- pathUTC .. "rattle.ogg",
-    pathUTC .. "rattle1.ogg",
-    pathUTC .. "rattle2.ogg",
-    pathUTC .. "rattle3.ogg",
+    -- pathUTC .. "rattle.wav",
+    pathUTC .. "rattle1.wav",
+    pathUTC .. "rattle2.wav",
+    pathUTC .. "rattle3.wav",
 }
 
 local thetoggle = {{
     s = {
-        "arc9/toggles/flashlight_laser_toggle_off_01.ogg",
-        "arc9/toggles/flashlight_laser_toggle_off_02.ogg",
-        "arc9/toggles/flashlight_laser_toggle_off_03.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_01.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_02.ogg",
-        "arc9/toggles/flashlight_laser_toggle_on_03.ogg",
+        "arc9/toggles/flashlight_laser_toggle_off_01.wav",
+        "arc9/toggles/flashlight_laser_toggle_off_02.wav",
+        "arc9/toggles/flashlight_laser_toggle_off_03.wav",
+        "arc9/toggles/flashlight_laser_toggle_on_01.wav",
+        "arc9/toggles/flashlight_laser_toggle_on_02.wav",
+        "arc9/toggles/flashlight_laser_toggle_on_03.wav",
     }, t = 0
 }}
 
@@ -382,10 +382,10 @@ SWEP.Animations = {
         Source = "ready",
 		Mult = 0.85,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 56 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 78 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 78 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -402,8 +402,8 @@ SWEP.Animations = {
 		FireASAP = true,
 		Mult = 0.85,
         EventTable = {
-            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_3.wav", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.wav", t = 2 / 30, c = ca, v = 0.8 },
         },
 		IKTimeLine = {
 			{ t = 0, lhik = 1 },
@@ -440,14 +440,14 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.85,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
-            { s = pathM249 .. "beltout.ogg", t = 62 / 60, c = ca },
-            { s = pathM249 .. "magout.ogg", t = 68 / 60, c = ca },
-            { s = pathM249 .. "magin.ogg", t = 143 / 60, c = ca },
-            { s = pathM249 .. "beltin.ogg", t = 165 / 60, c = ca },
-            { s = pathM249 .. "closetop.ogg", t = 230 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 257 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
+            { s = pathM249 .. "opentop.wav", t = 20 / 60, c = ca },
+            { s = pathM249 .. "beltout.wav", t = 62 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 68 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 143 / 60, c = ca },
+            { s = pathM249 .. "beltin.wav", t = 165 / 60, c = ca },
+            { s = pathM249 .. "closetop.wav", t = 230 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 257 / 60, c = ca },
         },
 		MagSwapTime = 1.4,
 
@@ -468,16 +468,16 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.85,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 56 / 60, c = ca },
-            { s = pathM249 .. "opentop.ogg", t = 80 / 60, c = ca },
-            { s = pathM249 .. "magout.ogg", t = 117 / 60, c = ca },
-            --{ s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
-            { s = pathM249 .. "magin.ogg", t = 193 / 60, c = ca },
-            { s = pathM249 .. "beltin.ogg", t = 215 / 60, c = ca },
-            { s = pathM249 .. "closetop.ogg", t = 278 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 303 / 60, c = ca },
+            { s = pathM249 .. "opentop.wav", t = 80 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 117 / 60, c = ca },
+            --{ s = pathM249 .. "drop.wav", t = 176 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 193 / 60, c = ca },
+            { s = pathM249 .. "beltin.wav", t = 215 / 60, c = ca },
+            { s = pathM249 .. "closetop.wav", t = 278 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 303 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -498,14 +498,14 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.85,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "opentop.ogg", t = 20 / 60, c = ca },
-            { s = pathM249 .. "beltout.ogg", t = 62 / 60, c = ca },
-            { s = pathM249 .. "magout.ogg", t = 68 / 60, c = ca },
-            { s = pathM249 .. "magin.ogg", t = 143 / 60, c = ca },
-            { s = pathM249 .. "beltin.ogg", t = 165 / 60, c = ca },
-            { s = pathM249 .. "closetop.ogg", t = 230 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 257 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
+            { s = pathM249 .. "opentop.wav", t = 20 / 60, c = ca },
+            { s = pathM249 .. "beltout.wav", t = 62 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 68 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 143 / 60, c = ca },
+            { s = pathM249 .. "beltin.wav", t = 165 / 60, c = ca },
+            { s = pathM249 .. "closetop.wav", t = 230 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 257 / 60, c = ca },
         },
 		MagSwapTime = 1.4,
         IKTimeLine = {
@@ -525,16 +525,16 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.85,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 55 / 60, c = ca },
-            { s = pathM249 .. "opentop.ogg", t = 80 / 60, c = ca },
-            { s = pathM249 .. "magout.ogg", t = 117 / 60, c = ca },
-            --{ s = pathM249 .. "drop.ogg", t = 176 / 60, c = ca },
-            { s = pathM249 .. "magin.ogg", t = 193 / 60, c = ca },
-            { s = pathM249 .. "beltin.ogg", t = 215 / 60, c = ca },
-            { s = pathM249 .. "closetop.ogg", t = 278 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 303 / 60, c = ca },
+            { s = pathM249 .. "opentop.wav", t = 80 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 117 / 60, c = ca },
+            --{ s = pathM249 .. "drop.wav", t = 176 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 193 / 60, c = ca },
+            { s = pathM249 .. "beltin.wav", t = 215 / 60, c = ca },
+            { s = pathM249 .. "closetop.wav", t = 278 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 303 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -555,10 +555,10 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.825,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
-            { s = pathM249 .. "30magin.ogg", t = 59 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 92 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
+            { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
+            { s = pathM249 .. "30magin.wav", t = 59 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 92 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -576,13 +576,13 @@ SWEP.Animations = {
 		FireASAP = true,
         Mult = 0.825,
         EventTable = {
-            { s = pathM249 .. "start.ogg", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.ogg", t = 2 / 60, c = ca },
-            --{ s = pathDist .. "lowpolyhk416_drop.ogg", t = 110 / 60, c = ca },
-            { s = pathM249 .. "30emptymagin.ogg", t = 60 / 60, c = ca },
+            { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
+            { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
+            --{ s = pathDist .. "lowpolyhk416_drop.wav", t = 110 / 60, c = ca },
+            { s = pathM249 .. "30emptymagin.wav", t = 60 / 60, c = ca },
             { s = pathM249 .. "chargeback.wav", t = 120 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 140 / 60, c = ca },
-            { s = pathM249 .. "end.ogg", t = 151 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 151 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -598,15 +598,15 @@ SWEP.Animations = {
     ["inspect"] = {
         Source = {"inspect_762"},
         EventTable = {
-            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magrelease.ogg", t = 10 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magout.ogg", t = 12.5 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "grab-polymer.ogg", t = 63 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 80 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magin.ogg", t = 115 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_4.wav", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.wav", t = 5 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magrelease.wav", t = 10 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magout.wav", t = 12.5 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_2.wav", t = 44 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.wav", t = 50 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "grab-polymer.wav", t = 63 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "movement-rifle-02.wav", t = 80 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magin.wav", t = 115 / 30, c = ca, v = 0.8 },
             {hide = 1, t = 0},
         },
         IKTimeLine = {
@@ -620,11 +620,11 @@ SWEP.Animations = {
     ["inspect_look"] = {
         Source = {"inspect0"},
         EventTable = {
-            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_2.ogg", t = 56 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 62 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 110 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_4.wav", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.wav", t = 5 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_2.wav", t = 56 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.wav", t = 62 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-02.wav", t = 110 / 30, c = ca, v = 0.8 },
             {hide = 1, t = 0},
         },
         IKTimeLine = {
@@ -640,13 +640,13 @@ SWEP.Animations = {
     ["firemode_1"] = {
         Source = "firemode_0",
         EventTable = {
-            { s = "uplp_urban_temp/ar15/selector-06.ogg", t = 0.2 },
+            { s = "uplp_urban_temp/ar15/selector-06.wav", t = 0.2 },
         }
     },
     ["firemode_2"] = {
         Source = "firemode_1",
         EventTable = {
-            { s = "uplp_urban_temp/ar15/selector-01.ogg", t = 0.2 },
+            { s = "uplp_urban_temp/ar15/selector-01.wav", t = 0.2 },
         }
     },
 
