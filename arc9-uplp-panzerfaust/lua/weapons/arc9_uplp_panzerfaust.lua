@@ -244,7 +244,8 @@ SWEP.ShootSoundSilenced = ""
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
 
 SWEP.DropMagazineSounds = {
-    "arc9_uplp/panzerfaust/tube_hit_ground.wav",
+    "arc9_uplp/panzerfaust/tube_hit_ground1.wav",
+    "arc9_uplp/panzerfaust/tube_hit_ground2.wav",
 }
 
 -- Animations

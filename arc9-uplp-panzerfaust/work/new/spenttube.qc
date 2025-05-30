@@ -26,7 +26,7 @@ $sequence "idle" {
 	"panzerfaust_spenttube.smd"
 }
 
-$collisionmodel "panzerfaust_spenttube.smd"
+$collisionmodel "panzerfaust_spenttube_physics.smd"
 {
 	$mass 80
 	$inertia 1
