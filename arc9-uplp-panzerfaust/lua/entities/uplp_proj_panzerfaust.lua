@@ -12,23 +12,23 @@ ENT.AdminSpawnable = false
 ENT.Model = "models/weapons/arc9/uplp_unofficial/panzerfaust_warhead_proj.mdl"
 ENT.BoxSize = Vector(8, 4, 1)
 
-ENT.Damage = 350
-ENT.Radius = 300
-ENT.ImpactDamage = 1500
+ENT.Damage = 400
+ENT.Radius = 350
+ENT.ImpactDamage = 2000
 ENT.SmokeTrailSize = 0
 ENT.SmokeTrailTime = 0
 
 ENT.FuseTime = 0.1
 ENT.Defused = false
 
-ENT.Drunkenness = 75
+ENT.Drunkenness = 25
 
-ENT.Boost = 1200
+ENT.Boost = 1250
 ENT.BoostTarget = 6000
 ENT.Lift = 100
 ENT.DragCoefficient = 0.05
 
-ENT.BoostTime = 2
+ENT.BoostTime = 4
 
 local path = "uplp_urban_temp/m203/"
 ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg", path .. "explosion-close-03.ogg", path .. "explosion-close-04.ogg", path .. "explosion-close-05.ogg", path .. "explosion-close-06.ogg"}

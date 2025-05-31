@@ -15,7 +15,7 @@ ATT.Sights = {
 		Ang = Angle(1, -95, 0),
         Magnification = 2,
         ViewModelFOV = 56,
-        RTScopeFOV = 56,
+        RTScopeFOV = 48,
 
         SwayAddSights = sway_mid,
     },

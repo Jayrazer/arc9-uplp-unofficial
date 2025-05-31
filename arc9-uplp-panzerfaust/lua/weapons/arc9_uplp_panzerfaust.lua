@@ -108,12 +108,12 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 1
 
 -- Recoil
-SWEP.Recoil = 1
-SWEP.RecoilUp = 1
-SWEP.RecoilSide = 1
+SWEP.Recoil = 0.1
+SWEP.RecoilUp = 0.1
+SWEP.RecoilSide = 0.1
 
-SWEP.RecoilRandomUp = 1
-SWEP.RecoilRandomSide = 1
+SWEP.RecoilRandomUp = 0
+SWEP.RecoilRandomSide = 0
 
 SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
@@ -129,8 +129,8 @@ SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilCenter = Vector(2, 11, 2)
 SWEP.VisualRecoilUp = 0.1 -- Vertical tilt
 SWEP.VisualRecoilSide = -0.015 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 10 -- Roll tilt
-SWEP.VisualRecoilPunch = 2.5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilRoll = 0.1 -- Roll tilt
+SWEP.VisualRecoilPunch = 1 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilDampingConst = 80
 SWEP.VisualRecoilSpringMagnitude = 0.44
 SWEP.VisualRecoilPositionBumpUp = .1
@@ -169,7 +169,7 @@ SWEP.SpeedMultShooting = 0.8
 SWEP.AimDownSightsTime = 0.7 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.65 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 1
+SWEP.SwayAddSights = 1.25
 SWEP.BarrelLength = 50
 
 -- Shooting and Firemodes
@@ -222,11 +222,11 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
-SWEP.DropMagazineTime = 0.6
+SWEP.DropMagazineTime = 0.55
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(30, -5, -20)
 SWEP.DropMagazineAng = Angle(90, 95, 90)
-SWEP.DropMagazineVelocity = Vector(70, -10, 0)
+SWEP.DropMagazineVelocity = Vector(100, 20, 0)
 
 ---- Sounds
 -- urbna!
@@ -266,7 +266,7 @@ SWEP.Animations = {
         Source = "holster",
 		MinProgress = 0.9,
         EventTable = {
-            {s = "uplp_urban_temp/common/cloth_3.ogg", t = 1 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
         },
     },
     ["fire"] = {
@@ -274,6 +274,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
         Time = 13 / 30,
         EventTable = {
+			{s = "arc9_uplp/panzerfaust/rocket.wav", t = 3 / 30},
         },
     },
     ["reload"] = {
