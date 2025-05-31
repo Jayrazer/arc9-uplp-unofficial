@@ -248,6 +248,10 @@ SWEP.DropMagazineSounds = {
     "arc9_uplp/panzerfaust/tube_hit_ground2.wav",
 }
 
+SWEP.BulletBones = {
+    [1] = "pzf3_rocket",
+}
+
 -- Animations
 SWEP.Animations = {
     ["idle"] = {
@@ -281,7 +285,8 @@ SWEP.Animations = {
         Source = "reload",
         Time = 90 / 30,
         MinProgress = 1,
-		RefillProgress = 0.35,
+		RefillProgress = 0.7,
+		MagSwapTime = 0.9,
 		FireASAP = true,
         EventTable = {
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
@@ -308,14 +313,14 @@ SWEP.Animations = {
 ---- Attachments
 SWEP.AttachmentElements = {}
 
-SWEP.Hook_ModifyBodygroups = function(self, data)
-    local vm = data.model
-    local attached = data.elements
+-- SWEP.Hook_ModifyBodygroups = function(self, data)
+    -- local vm = data.model
+    -- local attached = data.elements
 
-    if self:Clip1() == 0 then vm:SetBodygroup(1,2) end
+    -- if self:Clip1() == 0 then vm:SetBodygroup(1,2) end
 	
-	if attached["uplp_ammo_bunkerbuster"] and self:Clip1() == 1 then vm:SetBodygroup(1,1) end
-end
+	-- if attached["uplp_ammo_bunkerbuster"] and self:Clip1() == 1 then vm:SetBodygroup(1,1) end
+-- end
 
 SWEP.Attachments = {
     {
