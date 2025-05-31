@@ -25,7 +25,7 @@ ATT.SortOrder = 1
 
 
 ATT.RTScope = true
-ATT.RTScopeSubmatIndex = 3
+ATT.RTScopeSubmatIndex = 4
 ATT.RTScopeFOV = 60 / 4
 ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
