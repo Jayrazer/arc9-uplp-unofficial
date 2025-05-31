@@ -64,8 +64,8 @@ SWEP.ViewModelFOVBase = 70
 SWEP.ActivePos = Vector(0, -1, -1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.PeekPos = Vector(3, 2, -3)
-SWEP.PeekAng = Angle(0, 6, 0)
+SWEP.PeekPos = Vector(3, 2, -1)
+SWEP.PeekAng = Angle(0, 3, 0)
 
 SWEP.RestPos = Vector(0, -1, -1)
 SWEP.RestAng = Angle(0, -20, 0)
@@ -202,8 +202,8 @@ SWEP.NPCWeight = 100
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-	Pos = Vector(-5.18, 19, -2.25),
-	Ang = Angle(0, -5, 0),
+	Pos = Vector(-4.95, 19.5, -2.42),
+	Ang = Angle(0, 0, 0),
     Magnification = 1.25,
     ViewModelFOV = 60,
     CrosshairInSights = true,
@@ -233,7 +233,7 @@ SWEP.DropMagazineVelocity = Vector(20, -10, -20)
 local pathUT = "uplp_urban_temp/ak/"
 local pathUTC = "uplp_urban_temp/common/"
 
-SWEP.ShootSound = "arc9_uplp/panzerfaust/pable3_fire.wav"
+SWEP.ShootSound = "^arc9_uplp/panzerfaust/pable3_fire.wav"
 -- {
 	-- "^arc9_uplp/panzerfaust/fire_1.wav",
 	-- "^arc9_uplp/panzerfaust/fire_2.wav",
@@ -320,7 +320,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         Bone = "pzf3_root",
-        Pos = Vector(7.9, -4.1, 13.5),
+        Pos = Vector(2, -3.5, 3.5),
         Ang = Angle(90, -90, 0),
 		Integral = "uplp_optic_panzerfaust",
 		Hidden = true,

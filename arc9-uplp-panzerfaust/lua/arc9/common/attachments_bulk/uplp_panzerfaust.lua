@@ -14,7 +14,7 @@ ATT.Sights = {
 		Pos = Vector(-5.18, 19, -2.25),
 		Ang = Angle(0, -5, 0),
         Magnification = 2,
-        ViewModelFOV = 60,
+        ViewModelFOV = 56,
         RTScopeFOV = 25,
 
         SwayAddSights = sway_mid,
@@ -23,6 +23,7 @@ ATT.Sights = {
 
 ATT.SortOrder = 1
 
+
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 2
 ATT.RTScopeFOV = 60 / 4
@@ -30,8 +31,8 @@ ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
 ATT.RTScopeColorable = true
 ATT.RTScopeShadowIntensity = 10
-ATT.RTScopeBlackBox = true
-ATT.RTScopeBlackBoxShadow = true
+ATT.RTScopeBlackBox = false
+ATT.RTScopeBlackBoxShadow = false
 
 ATT.ScopeScreenRatio = 0.5
 
@@ -41,7 +42,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Free = true
 ATT.Hidden = false
 
-ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelOffset = Vector(10.2, -6, 0.55)
 
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 
