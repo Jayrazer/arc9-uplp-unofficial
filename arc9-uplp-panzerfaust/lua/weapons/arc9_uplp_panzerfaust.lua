@@ -222,11 +222,11 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
-SWEP.DropMagazineTime = 0.55
+SWEP.DropMagazineTime = 0.6
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(30, -5, -20)
 SWEP.DropMagazineAng = Angle(90, 95, 90)
-SWEP.DropMagazineVelocity = Vector(20, -10, -20)
+SWEP.DropMagazineVelocity = Vector(70, -10, 0)
 
 ---- Sounds
 -- urbna!
@@ -272,7 +272,7 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "fire",
 		MinProgress = 0.9,
-        Time = 48 / 35,
+        Time = 13 / 30,
         EventTable = {
         },
     },
@@ -332,6 +332,7 @@ SWEP.Attachments = {
         Bone = "pzf3_root",
         Pos = Vector(0, -4.5, 15),
         Ang = Angle(0, 0, 0),
+		Hidden = true,
         Category = {"uplp_panzer_ammo"},
     },
 	
