@@ -212,7 +212,7 @@ SWEP.IronSights = {
 SWEP.ReloadInSights = false
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(11, 40, 4)
+SWEP.CustomizePos = Vector(11, 40, 5)
 SWEP.CustomizeAng = Angle(85, 0, 0)
 SWEP.CustomizeSnapshotPos = Vector(0, 10, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
@@ -321,7 +321,7 @@ SWEP.Attachments = {
         PrintName = "Optic",
         Bone = "pzf3_root",
         Pos = Vector(2, -3.5, 3.5),
-        Ang = Angle(90, -90, 0),
+        Ang = Angle(0, 0, -90),
 		Integral = "uplp_optic_panzerfaust",
 		Hidden = true,
         Category = {"uplp_optic_panzerfaust"},

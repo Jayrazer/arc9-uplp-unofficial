@@ -11,11 +11,11 @@ ATT.Model = "models/weapons/arc9/uplp_unofficial/attachments/panzerfaust_scope.m
 
 ATT.Sights = {
     {
-		Pos = Vector(-5.18, 19, -2.25),
-		Ang = Angle(0, -5, 0),
+		Pos = Vector(7, 0.32, -0.2),
+		Ang = Angle(1, -95, 0),
         Magnification = 2,
         ViewModelFOV = 56,
-        RTScopeFOV = 25,
+        RTScopeFOV = 38,
 
         SwayAddSights = sway_mid,
     },
@@ -25,7 +25,7 @@ ATT.SortOrder = 1
 
 
 ATT.RTScope = true
-ATT.RTScopeSubmatIndex = 2
+ATT.RTScopeSubmatIndex = 3
 ATT.RTScopeFOV = 60 / 4
 ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
@@ -42,7 +42,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Free = true
 ATT.Hidden = false
 
-ATT.ModelOffset = Vector(10.2, -6, 0.55)
+ATT.ModelOffset = Vector(1.1, -2.1, 2.6)
 
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 
