@@ -32,6 +32,7 @@ $cbox 0 0 0 0 0 0
 
 $bbox 0 0 0 0 0 0
 
+$bonemerge "pzf3_root"
 $bonemerge "ValveBiped.Bip01_Spine4"
 $bonemerge "ValveBiped.Bip01_L_Clavicle"
 $bonemerge "ValveBiped.Bip01_L_UpperArm"

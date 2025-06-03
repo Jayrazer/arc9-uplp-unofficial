@@ -108,9 +108,9 @@ SWEP.ChamberSize = 0
 SWEP.ClipSize = 1
 
 -- Recoil
-SWEP.Recoil = 0.1
-SWEP.RecoilUp = 0.1
-SWEP.RecoilSide = 0.1
+SWEP.Recoil = 0.05
+SWEP.RecoilUp = 0.05
+SWEP.RecoilSide = 0.05
 
 SWEP.RecoilRandomUp = 0
 SWEP.RecoilRandomSide = 0
@@ -124,16 +124,16 @@ SWEP.RecoilMultSights = 1
 SWEP.RecoilMultCrouch = 0.75
 
 -- Visual Recoil
-SWEP.VisualRecoil = 0.5
+SWEP.VisualRecoil = 0
 SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilCenter = Vector(2, 11, 2)
-SWEP.VisualRecoilUp = 0.1 -- Vertical tilt
-SWEP.VisualRecoilSide = -0.015 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 0.1 -- Roll tilt
-SWEP.VisualRecoilPunch = 1 -- How far back visual recoil moves the gun
+-- SWEP.VisualRecoilCenter = Vector(2, 11, 2)
+SWEP.VisualRecoilUp = 0 -- Vertical tilt
+SWEP.VisualRecoilSide = -0 -- Horizontal tilt
+SWEP.VisualRecoilRoll = 0 -- Roll tilt
+SWEP.VisualRecoilPunch = 0 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilSpringMagnitude = 0.44
-SWEP.VisualRecoilPositionBumpUp = .1
+SWEP.VisualRecoilSpringMagnitude = 0
+SWEP.VisualRecoilPositionBumpUp = 0
 
 SWEP.VisualRecoilMultHipFire = 1
 SWEP.VisualRecoilUpHipFire = 2
@@ -166,10 +166,10 @@ SWEP.Speed = 0.7 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.45 / 0.85 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
-SWEP.AimDownSightsTime = 0.7 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.65 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.75 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.75 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 1.25
+SWEP.SwayAddSights = 3
 SWEP.BarrelLength = 50
 
 -- Shooting and Firemodes
@@ -222,7 +222,7 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
-SWEP.DropMagazineTime = 0.55
+SWEP.DropMagazineTime = 0.65
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(30, -5, -20)
 SWEP.DropMagazineAng = Angle(90, 95, 90)
@@ -283,7 +283,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-        Time = 90 / 30,
+        Time = 95 / 30,
         MinProgress = 1,
 		RefillProgress = 0.7,
 		MagSwapTime = 0.9,
@@ -291,21 +291,22 @@ SWEP.Animations = {
         EventTable = {
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
             {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 17 / 30},
+			{s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 18 / 30},
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 35 / 30},
-            {s = "arc9_uplp/panzerfaust/magin.wav", t = 46 / 30},
+            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 54 / 30},
+            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 58 / 30},
         },
     },
     ["inspect"] = {
         Source = "inspect",
         FireASAP = true,
-		Time = 120 / 30,
+		Time = 150 / 30,
         MinProgress = 0.925,
         EventTable = {
 		    {s = "arc9_uplp/panzerfaust/inspect_start.wav", t = 0 / 30},
-		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 40 / 30},
-		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 52 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_end.wav", t = 75 / 30},
+		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 45 / 30},
+		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 65 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 98 / 30},
         },
     },
 }
