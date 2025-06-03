@@ -11,7 +11,7 @@ ATT.Model = "models/weapons/arc9/uplp_unofficial/attachments/panzerfaust_scope.m
 
 ATT.Sights = {
     {
-		Pos = Vector(7, 0.32, -0.2),
+		Pos = Vector(7, 0.33, -0.2),
 		Ang = Angle(1, -95, 0),
         Magnification = 2,
         ViewModelFOV = 56,

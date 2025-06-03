@@ -169,8 +169,8 @@ SWEP.SpeedMultShooting = 0.8
 SWEP.AimDownSightsTime = 0.75 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.75 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 3
-SWEP.BarrelLength = 50
+SWEP.SwayAddSights = 1.25
+SWEP.BarrelLength = 60
 
 -- Shooting and Firemodes
 SWEP.RPM = 600 -- How fast gun shoot
@@ -244,8 +244,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
 
 SWEP.DropMagazineSounds = {
-    "arc9_uplp/panzerfaust/tube_hit_ground1.wav",
-    "arc9_uplp/panzerfaust/tube_hit_ground2.wav",
+    "arc9_uplp/panzerfaust/tube_hit_ground.wav",
 }
 
 SWEP.BulletBones = {
@@ -291,10 +290,11 @@ SWEP.Animations = {
         EventTable = {
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
             {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
-			{s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 18 / 30},
+			{s = "arc9_uplp/panzerfaust/magout.wav", t = 13 / 30},
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 35 / 30},
             {s = "arc9_uplp/panzerfaust/magin2.wav", t = 54 / 30},
             {s = "arc9_uplp/panzerfaust/magin1.wav", t = 58 / 30},
+            {s = "arc9_uplp/panzerfaust/rattle2.wav", t = 61 / 30},
         },
     },
     ["inspect"] = {
