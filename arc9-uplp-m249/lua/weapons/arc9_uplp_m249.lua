@@ -85,16 +85,16 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 
 ---- Weapon Stats and Behaviour
 -- Damage
-SWEP.DamageMax = 20
-SWEP.DamageMin = 12
+SWEP.DamageMax = 22
+SWEP.DamageMin = 15
 SWEP.DamageType = DMG_BULLET
 
 SWEP.Penetration = 15
 SWEP.ImpactForce = 2
 
 -- Range
-SWEP.RangeMin = 20 / ARC9.HUToM
-SWEP.RangeMax = 50 / ARC9.HUToM
+SWEP.RangeMin = 30 / ARC9.HUToM
+SWEP.RangeMax = 55 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 715 / ARC9.HUToM
@@ -187,6 +187,11 @@ SWEP.Firemodes = {
     PoseParam = 1 },
 }
 
+SWEP.TriggerDelay = true
+SWEP.TriggerDelayTime = 0.075
+SWEP.TriggerDelayCancellable = false --false
+SWEP.TriggerStartFireAnim = false --true
+
 SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120
 
@@ -210,28 +215,6 @@ SWEP.IronSights = {
      ViewModelFOV = 55,
 }
 
-SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
-    local attached = self:GetElements()
-
-     if attached["uplp_ak_brl_su"] then
-        return {
-             Pos = Vector(-2.3, -3, 0.8),
-             Ang = Angle(0.375, 0, -2.5),
-             Magnification = 1.15,
-             ViewModelFOV = 60,
-        }
-    end
-
-     if attached["uplp_ak_brl_109"] then
-        return {
-             Pos = Vector(-2.3, -3, 0.875),
-             Ang = Angle(0.34, 0, -2.5),
-             Magnification = 1.15,
-             ViewModelFOV = 60,
-        }
-    end
-end
-
 -- Customization Menu Info
 SWEP.CustomizePos = Vector(17, 32.5, 5)
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -244,12 +227,12 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_100.mdl"
-SWEP.DropMagazineTime = 1.7
+SWEP.DropMagazineTime = 1.55
 SWEP.DropMagazineTimeEmpty = 2.1
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(1, 10, -35)
 SWEP.DropMagazineAng = Angle(0, 90, 0)
-SWEP.DropMagazineVelocity = Vector(10, 10, 0)
+SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 
 ---- Sounds
 -- urbna!
@@ -259,9 +242,9 @@ local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
 
 SWEP.ShootSound = {
-    pathUT .. "fire-01.wav",
-    pathUT .. "fire-02.wav",
-    pathUT .. "fire-03.wav",
+    pathM249 .. "fire-01.wav",
+    pathM249 .. "fire-02.wav",
+    pathM249 .. "fire-03.wav",
 }
 
 SWEP.ShootSoundSilenced = {
@@ -270,7 +253,11 @@ SWEP.ShootSoundSilenced = {
     pathUT .. "fire-sup-03.wav",
 }
 
-SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
+SWEP.ShootSoundSilencedIndoor = {
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-01.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-02.wav",
+    pathUTC .. "556tails/fire-dist-556x45-rif-int-03.wav",
+}
 
 SWEP.DistantShootSound = {
     pathUTC .. "556tails/fire-dist-556x45-rif-ext-01.wav",
@@ -282,6 +269,8 @@ SWEP.DistantShootSoundIndoor = {
     pathUTC .. "556tails/fire-dist-556x45-rif-int-02.wav",
     pathUTC .. "556tails/fire-dist-556x45-rif-int-03.wav",
 }
+
+SWEP.LayerSoundIndoor = SWEP.DistantShootSoundIndoor
 
 SWEP.DistantShootSoundSilenced = {
     pathUTC .. "generictails/sup-tail-01.wav",
@@ -304,6 +293,14 @@ SWEP.DropMagazineSounds = {
     pathUTC .. "rifle_magdrop.ogg",
 }
 
+local mech = {
+	
+	pathM249 .. "mech-01.wav",
+	pathM249 .. "mech-02.wav",
+	pathM249 .. "mech-03.wav",
+
+}
+
 ---- Animations
 -- HideBones, BulletBones, etc.
 SWEP.BulletBones = {
@@ -321,20 +318,6 @@ SWEP.BulletBones = {
     [12] = "bullet12",
 }
 SWEP.BulletBonesSub1 = true 
-
-local mechh = {
-    pathUT .. "mech-01.wav",
-    pathUT .. "mech-02.wav",
-    pathUT .. "mech-03.wav",
-    pathUT .. "mech-04.wav",
-}
-
-local UTCrattle = {
-    -- pathUTC .. "rattle.wav",
-    pathUTC .. "rattle1.wav",
-    pathUTC .. "rattle2.wav",
-    pathUTC .. "rattle3.wav",
-}
 
 local thetoggle = {{
     s = {
@@ -380,8 +363,8 @@ SWEP.Animations = {
 		FireASAP = true,
 		Mult = 0.85,
         EventTable = {
-            { s = pathUTC .. "cloth_3.wav", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "raise.wav", t = 2 / 30, c = ca, v = 0.8 },
+            { s = pathM249 .. "start.wav", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
         },
 		IKTimeLine = {
 			{ t = 0, lhik = 1 },
@@ -393,7 +376,7 @@ SWEP.Animations = {
 		Mult = 0.85,
         IKTimeLine = { { t = 0, lhik = 1 } },
         EventTable = {
-            { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 0 / 30, c = ca, v = 0.8 },
         },
 		IKTimeLine = {
 			{ t = 0, lhik = 1 },
@@ -404,8 +387,15 @@ SWEP.Animations = {
         Source = {"fire"},
         IKTimeLine = { { t = 0, lhik = 1 } },
         EventTable = {
-            { s = mechh, t = 0 },
+            { s = mech, t = 0, v = 0.5 },
         },
+    },
+	
+	["trigger"] = {
+        Source = "idle",
+        --Time = 0.15,
+        --ShellEjectAt = 0.01,
+        EventTable = { { s = pathM249 .. "trigger.wav", t = 0 / 60, v = 1 } },
     },
 
     -- Reloads --
@@ -421,10 +411,12 @@ SWEP.Animations = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.wav", t = 20 / 60, c = ca },
             { s = pathM249 .. "beltout.wav", t = 62 / 60, c = ca },
-            { s = pathM249 .. "magout.wav", t = 68 / 60, c = ca },
-            { s = pathM249 .. "magin.wav", t = 143 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 87 / 60, c = ca },
+            { s = pathM249 .. "magstruggle.wav", t = 142 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 144 / 60, c = ca },
             { s = pathM249 .. "beltin.wav", t = 165 / 60, c = ca },
             { s = pathM249 .. "closetop.wav", t = 230 / 60, c = ca },
+            { s = pathM249 .. "topclick.wav", t = 232 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 257 / 60, c = ca },
         },
 		MagSwapTime = 1.4,
@@ -447,14 +439,15 @@ SWEP.Animations = {
         Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
-            { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
-            { s = pathM249 .. "chargeforward.wav", t = 56 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 30 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 45 / 60, c = ca },
             { s = pathM249 .. "opentop.wav", t = 80 / 60, c = ca },
-            { s = pathM249 .. "magout.wav", t = 117 / 60, c = ca },
-            --{ s = pathM249 .. "drop.wav", t = 176 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 127 / 60, c = ca },
+            { s = pathM249 .. "magstruggle.wav", t = 190 / 60, c = ca },
             { s = pathM249 .. "magin.wav", t = 193 / 60, c = ca },
             { s = pathM249 .. "beltin.wav", t = 215 / 60, c = ca },
             { s = pathM249 .. "closetop.wav", t = 278 / 60, c = ca },
+			{ s = pathM249 .. "topclick.wav", t = 280 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 303 / 60, c = ca },
         },
         IKTimeLine = {
@@ -479,10 +472,12 @@ SWEP.Animations = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "opentop.wav", t = 20 / 60, c = ca },
             { s = pathM249 .. "beltout.wav", t = 62 / 60, c = ca },
-            { s = pathM249 .. "magout.wav", t = 68 / 60, c = ca },
-            { s = pathM249 .. "magin.wav", t = 143 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 87 / 60, c = ca },
+            { s = pathM249 .. "magstruggle.wav", t = 142 / 60, c = ca },
+            { s = pathM249 .. "magin.wav", t = 144 / 60, c = ca },
             { s = pathM249 .. "beltin.wav", t = 165 / 60, c = ca },
             { s = pathM249 .. "closetop.wav", t = 230 / 60, c = ca },
+            { s = pathM249 .. "topclick.wav", t = 232 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 257 / 60, c = ca },
         },
 		MagSwapTime = 1.4,
@@ -504,15 +499,16 @@ SWEP.Animations = {
         Mult = 0.85,
         EventTable = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
-            { s = pathM249 .. "chargeback.wav", t = 36 / 60, c = ca },
-            { s = pathM249 .. "chargeforward.wav", t = 55 / 60, c = ca },
+            { s = pathM249 .. "chargeback.wav", t = 30 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 45 / 60, c = ca },
             { s = pathM249 .. "opentop.wav", t = 80 / 60, c = ca },
-            { s = pathM249 .. "magout.wav", t = 117 / 60, c = ca },
-            --{ s = pathM249 .. "drop.wav", t = 176 / 60, c = ca },
+            { s = pathM249 .. "magout.wav", t = 127 / 60, c = ca },
+            { s = pathM249 .. "magstruggle.wav", t = 190 / 60, c = ca },
             { s = pathM249 .. "magin.wav", t = 193 / 60, c = ca },
             { s = pathM249 .. "beltin.wav", t = 215 / 60, c = ca },
             { s = pathM249 .. "closetop.wav", t = 278 / 60, c = ca },
-            { s = pathM249 .. "end.wav", t = 303 / 60, c = ca },
+			{ s = pathM249 .. "topclick.wav", t = 280 / 60, c = ca },
+            { s = pathM249 .. "end.wav", t = 304 / 60, c = ca },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -558,8 +554,8 @@ SWEP.Animations = {
             { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
             --{ s = pathDist .. "lowpolyhk416_drop.wav", t = 110 / 60, c = ca },
             { s = pathM249 .. "30emptymagin.wav", t = 60 / 60, c = ca },
-            { s = pathM249 .. "chargeback.wav", t = 120 / 60, c = ca },
-            { s = pathM249 .. "chargeforward.wav", t = 140 / 60, c = ca },
+            { s = pathM249 .. "chargeback_30.wav", t = 120 / 60, c = ca },
+            { s = pathM249 .. "chargeforward.wav", t = 128 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 151 / 60, c = ca },
         },
         IKTimeLine = {
