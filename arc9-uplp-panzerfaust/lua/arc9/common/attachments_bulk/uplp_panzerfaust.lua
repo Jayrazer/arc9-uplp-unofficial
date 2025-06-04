@@ -11,7 +11,7 @@ ATT.Model = "models/weapons/arc9/uplp_unofficial/attachments/panzerfaust_scope.m
 
 ATT.Sights = {
     {
-		Pos = Vector(7, 0.33, -0.2),
+		Pos = Vector(7, 0.3275, -0.2),
 		Ang = Angle(1, -95, 0),
         Magnification = 2,
         ViewModelFOV = 56,
@@ -42,7 +42,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Free = true
 ATT.Hidden = false
 
-ATT.ModelOffset = Vector(1.1, -2.1, 2.6)
+ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
 
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 

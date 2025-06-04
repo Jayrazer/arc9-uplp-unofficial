@@ -52,8 +52,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 --SWEP.WorldModelMirror = "models/weapons/arc9/uplp_unofficial/panzerfaust.mdl"
 SWEP.WorldModelOffset = {
-    Pos        =    Vector(-15, 5, -7),
-    Ang        =    Angle(-7.5, -4, 180),
+    Pos        =    Vector(-8.8, 5.5, -6.5),
+    Ang        =    Angle(-8, -3, 175),
     Bone    =    "ValveBiped.Bip01_R_Hand",
     Scale = 0.9,
 }
@@ -222,11 +222,11 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
-SWEP.DropMagazineTime = 0.65
+SWEP.DropMagazineTime = 0.7
 SWEP.DropMagazineQCA = 2
-SWEP.DropMagazinePos = Vector(30, -5, -20)
+SWEP.DropMagazinePos = Vector(30, 0, -20)
 SWEP.DropMagazineAng = Angle(90, 95, 90)
-SWEP.DropMagazineVelocity = Vector(100, 20, 0)
+SWEP.DropMagazineVelocity = Vector(70, 20, 0)
 
 ---- Sounds
 -- urbna!
@@ -291,9 +291,9 @@ SWEP.Animations = {
             {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
             {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
 			{s = "arc9_uplp/panzerfaust/magout.wav", t = 13 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 35 / 30},
-            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 54 / 30},
-            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 58 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 35 / 30},
+            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 54 / 30},
+            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 58 / 30},
             {s = "arc9_uplp/panzerfaust/rattle2.wav", t = 61 / 30},
         },
     },
@@ -304,9 +304,9 @@ SWEP.Animations = {
         MinProgress = 0.925,
         EventTable = {
 		    {s = "arc9_uplp/panzerfaust/inspect_start.wav", t = 0 / 30},
-		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 45 / 30},
-		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 65 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 98 / 30},
+		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 50 / 30},
+		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 62 / 30},
+            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 102 / 30},
         },
     },
 }
