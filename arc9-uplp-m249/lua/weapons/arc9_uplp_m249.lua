@@ -240,6 +240,7 @@ local pathM249 = "weapons/arc9/uplp_m249/"
 
 local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
+local pathAWP = "uplp_urban_temp/awp/"
 
 SWEP.ShootSound = {
     pathM249 .. "fire-01.wav",
@@ -531,7 +532,8 @@ SWEP.Animations = {
         EventTable = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
-            { s = pathM249 .. "30magin.wav", t = 59 / 60, c = ca },
+            { s = pathM249 .. "30magstruggle.wav", t = 52 / 60, c = ca, v = 0.5 },
+            { s = pathAWP .. "magin.ogg", t = 53 / 60, c = ca, v = 1.1 },
             { s = pathM249 .. "end.wav", t = 92 / 60, c = ca },
         },
         IKTimeLine = {
@@ -553,7 +555,7 @@ SWEP.Animations = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
             { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
             --{ s = pathDist .. "lowpolyhk416_drop.wav", t = 110 / 60, c = ca },
-            { s = pathM249 .. "30emptymagin.wav", t = 60 / 60, c = ca },
+            { s = pathAWP .. "magin.ogg", t = 49 / 60, c = ca },
             { s = pathM249 .. "chargeback_30.wav", t = 120 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 128 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 151 / 60, c = ca },
@@ -688,7 +690,7 @@ local defatt2 = "entities/uplp_attachements/def/"
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_optic"),
-        Category = {"uplp_optic_small", "uplp_optic_mid"},
+        Category = {"uplp_optic_micro", "uplp_optic_mid"},
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "topcover",
         Pos = Vector(-0.25, -0.9, -5.3),
