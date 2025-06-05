@@ -240,7 +240,6 @@ local pathM249 = "weapons/arc9/uplp_m249/"
 
 local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
-local pathAWP = "uplp_urban_temp/awp/"
 
 SWEP.ShootSound = {
     pathM249 .. "fire-01.wav",
@@ -531,9 +530,10 @@ SWEP.Animations = {
         Mult = 0.825,
         EventTable = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
-            { s = pathM249 .. "30magstruggle.wav", t = 52 / 60, c = ca, v = 0.5 },
-            { s = pathAWP .. "magin.ogg", t = 53 / 60, c = ca, v = 1.1 },
+            { s = pathM249 .. "magrel.wav", t = 2 / 60, c = ca },
+            { s = pathM249 .. "30magout.wav", t = 16 / 60, c = ca },
+            { s = pathM249 .. "30magstruggle.wav", t = 58 / 60, c = ca, v = 0.5 },
+            { s = pathM249 .. "30magin.wav", t = 56 / 60, c = ca, v = 1.1 },
             { s = pathM249 .. "end.wav", t = 92 / 60, c = ca },
         },
         IKTimeLine = {
@@ -553,9 +553,10 @@ SWEP.Animations = {
         Mult = 0.825,
         EventTable = {
             { s = pathM249 .. "start.wav", t = 0 / 60, c = ca },
-            { s = pathM249 .. "30magout.wav", t = 2 / 60, c = ca },
-            --{ s = pathDist .. "lowpolyhk416_drop.wav", t = 110 / 60, c = ca },
-            { s = pathAWP .. "magin.ogg", t = 49 / 60, c = ca },
+            { s = pathM249 .. "magrel.wav", t = 2 / 60, c = ca },
+            { s = pathM249 .. "30magout.wav", t = 14 / 60, c = ca },
+			--{ s = pathM249 .. "30magstruggle.wav", t = 50 / 60, c = ca, v = 0.5 },
+            { s = pathM249 .. "30magin.wav", t = 46 / 60, c = ca },
             { s = pathM249 .. "chargeback_30.wav", t = 120 / 60, c = ca },
             { s = pathM249 .. "chargeforward.wav", t = 128 / 60, c = ca },
             { s = pathM249 .. "end.wav", t = 151 / 60, c = ca },
