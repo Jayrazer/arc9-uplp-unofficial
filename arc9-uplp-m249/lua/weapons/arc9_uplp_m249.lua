@@ -573,43 +573,40 @@ SWEP.Animations = {
     -- Inspect
 
     ["inspect"] = {
-        Source = {"inspect_762"},
+        Source = {"inspect"},
         EventTable = {
-            { s = pathUTC .. "cloth_4.wav", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.wav", t = 5 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magrelease.wav", t = 10 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magout.wav", t = 12.5 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_2.wav", t = 44 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-04.wav", t = 50 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "grab-polymer.wav", t = 63 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "movement-rifle-02.wav", t = 80 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magin.wav", t = 115 / 30, c = ca, v = 0.8 },
-            {hide = 1, t = 0},
+            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
-            { t = 0.65, lhik = 0 },
-            { t = 0.85, lhik = 0 },
-            { t = 1, lhik = 1 },
+            { t = 0.4, lhik = 0 },
+            { t = 0.48, lhik = 1 },
         },
     },
-    ["inspect_look"] = {
-        Source = {"inspect0"},
+	
+	    ["inspect_30"] = {
+        Source = {"inspect_30"},
         EventTable = {
-            { s = pathUTC .. "cloth_4.wav", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.wav", t = 5 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_2.wav", t = 56 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-04.wav", t = 62 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-02.wav", t = 110 / 30, c = ca, v = 0.8 },
-            {hide = 1, t = 0},
+            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
-            { t = 0.65, lhik = 0 },
-            { t = 0.85, lhik = 0 },
-            { t = 1, lhik = 1 },
+            { t = 0.4, lhik = 0 },
+            { t = 0.48, lhik = 1 },
         },
     },
 
@@ -755,6 +752,7 @@ SWEP.Attachments = {
         Pos = Vector(-0.3, -5.5, 7.643),
         Icon_Offset = Vector(0, -0.3, -5),
         Ang = Angle(90, 90, 180),
+		ExcludeElements = {"uplp_m249_brl_saw", "uplp_m249_brl_commando"},
 		Installed = "uplp_m249_bipod",
     },
 

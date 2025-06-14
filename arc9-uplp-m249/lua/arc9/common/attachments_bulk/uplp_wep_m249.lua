@@ -448,4 +448,16 @@ ATT.Bipod = true
 -- Negatives
 ATT.SprintToFireTimeAdd = 0.06
 
+ATT.DrawFunc = function(self, model, wm)
+
+	if self:GetBipod() then
+		if self:GetEnterBipodTime() + 0.08 < CurTime() then
+			model:SetBodygroup(0, 1)
+		end
+	else
+		model:SetBodygroup(0,0)
+	end
+	
+end
+
 ARC9.LoadAttachment(ATT, "uplp_m249_bipod")
