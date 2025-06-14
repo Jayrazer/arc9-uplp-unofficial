@@ -254,182 +254,19 @@ $sequence "reload_empty_30" {
 	fps 60
 }
 
-$sequence "enter_inspect" {
-	"c_uplp_m249_anims\enter_inspect.smd"
+$sequence "inspect" {
+	"anims\inspect.smd"
 	activity "ACT_VM_IDLE" 1
 	fadein 0.2
 	fadeout 0.2
-	snap
-	fps 60
+	fps 50
 }
 
-$sequence "idle_inspect" {
-	"c_uplp_m249_anims\idle_inspect.smd"
+$sequence "inspect_30" {
+	"anims\inspect_30.smd"
 	activity "ACT_VM_IDLE" 1
 	fadein 0.2
 	fadeout 0.2
-	snap
-	fps 60
+	fps 50
 }
 
-$sequence "exit_inspect" {
-	"c_uplp_m249_anims\exit_inspect.smd"
-	"c_uplp_m249_anims\exit_inspect_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "enter_inspect_empty" {
-	"c_uplp_m249_anims\enter_inspect_empty.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "idle_inspect_empty" {
-	"c_uplp_m249_anims\idle_inspect_empty.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "exit_inspect_empty" {
-	"c_uplp_m249_anims\exit_inspect_empty.smd"
-	"c_uplp_m249_anims\exit_inspect_empty_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "enter_inspect_100" {
-	"c_uplp_m249_anims\enter_inspect_100.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "idle_inspect_100" {
-	"c_uplp_m249_anims\idle_inspect_100.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "exit_inspect_100" {
-	"c_uplp_m249_anims\exit_inspect_100.smd"
-	"c_uplp_m249_anims\exit_inspect_100_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "enter_inspect_empty_100" {
-	"c_uplp_m249_anims\enter_inspect_empty_100.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "idle_inspect_empty_100" {
-	"c_uplp_m249_anims\idle_inspect_empty_100.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "exit_inspect_empty_100" {
-	"c_uplp_m249_anims\exit_inspect_empty_100.smd"
-	"c_uplp_m249_anims\exit_inspect_empty_100_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "enter_inspect_30" {
-	"c_uplp_m249_anims\enter_inspect_30.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "idle_inspect_30" {
-	"c_uplp_m249_anims\idle_inspect_30.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "exit_inspect_30" {
-	"c_uplp_m249_anims\exit_inspect_30.smd"
-	"c_uplp_m249_anims\exit_inspect_30_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "enter_inspect_empty_30" {
-	"c_uplp_m249_anims\enter_inspect_empty_30.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "idle_inspect_empty_30" {
-	"c_uplp_m249_anims\idle_inspect_empty_30.smd"
-	activity "ACT_VM_IDLE" 1
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}
-
-$sequence "exit_inspect_empty_30" {
-	"c_uplp_m249_anims\exit_inspect_empty_30.smd"
-	"c_uplp_m249_anims\exit_inspect_empty_30_2.smd"
-	activity "ACT_VM_IDLE" 1
-	blend "sights" 0 1
-	blendwidth 2
-	fadein 0.2
-	fadeout 0.2
-	snap
-	fps 60
-}

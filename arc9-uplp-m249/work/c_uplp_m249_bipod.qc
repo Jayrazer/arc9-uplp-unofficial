@@ -4,6 +4,7 @@ $modelname "weapons\arc9\atts\uplp_m249_bipod.mdl"
 
 $bodygroup "studio"
 {
+	studio "bipod fold.smd"
 	studio "bipod unfold.smd"
 }
 
