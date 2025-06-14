@@ -282,7 +282,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-        Time = 95 / 30,
+        Time = 100 / 30,
         MinProgress = 1,
 		RefillProgress = 0.7,
 		MagSwapTime = 0.9,
@@ -292,9 +292,9 @@ SWEP.Animations = {
             {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
 			{s = "arc9_uplp/panzerfaust/magout.wav", t = 13 / 30},
             {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 35 / 30},
-            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 54 / 30},
-            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 58 / 30},
-            {s = "arc9_uplp/panzerfaust/rattle2.wav", t = 61 / 30},
+            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 55 / 30},
+            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 61 / 30},
+            {s = "arc9_uplp/panzerfaust/rattle2.wav", t = 63 / 30},
         },
     },
     ["inspect"] = {
