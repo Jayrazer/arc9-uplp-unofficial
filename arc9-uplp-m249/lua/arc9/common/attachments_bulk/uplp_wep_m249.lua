@@ -163,9 +163,10 @@ ATT.Attachments = {
 
 ATT.SpreadAddHipFire = -0.01
 ATT.SpreadAddSights = -0.01
-ATT.SprintToFireTimeAdd = 0.04
-ATT.DeployTimeMult = 1.075
-ATT.SpeedMultSights = 0.9
+ATT.SprintToFireTimeMult = 1.05
+ATT.AimDownSightsTimeMult = 1.025
+ATT.DeployTimeMult = 1.05
+ATT.SpeedMultSights = 0.95
 
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_saw")
 
@@ -198,8 +199,8 @@ ATT.Attachments = {
 ATT.RPM = 975
 ATT.SpreadAddHipFire = 0.015
 ATT.SpreadAddSights = 0.015
-ATT.SprintToFireTimeAdd = -0.15
-ATT.AimDownSightsTimeAdd = -0.2
+ATT.SprintToFireTimeMult = 0.8
+ATT.AimDownSightsTimeMult = 0.85
 ATT.DeployTimeMult = 0.85
 ATT.RecoilMult = 1.5
 ATT.RecoilSideMult = 1.5
@@ -247,8 +248,8 @@ ATT.Attachments = {
 
 ATT.SpreadAddHipFire = 0.01
 ATT.SpreadAddSights = 0.01
-ATT.SprintToFireTimeAdd = -0.05
-ATT.AimDownSightsTimeAdd = -0.1
+ATT.SprintToFireTimeMult = 0.95
+ATT.AimDownSightsTimeMult = 0.9
 ATT.DeployTimeMult = 0.925
 ATT.RecoilMult = 1.35
 ATT.RecoilSideMult = 1.15
