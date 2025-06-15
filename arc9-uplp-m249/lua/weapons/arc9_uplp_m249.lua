@@ -573,25 +573,6 @@ SWEP.Animations = {
     -- Inspect
 
     ["inspect"] = {
-        Source = {"inspect"},
-        EventTable = {
-            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
-			{ s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.4, lhik = 0 },
-            { t = 0.48, lhik = 1 },
-        },
-    },
-	
-	    ["inspect_30"] = {
         Source = {"inspect_30"},
         EventTable = {
             { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -609,6 +590,25 @@ SWEP.Animations = {
             { t = 0.48, lhik = 1 },
         },
     },
+	
+	    -- ["inspect_30"] = {
+        -- Source = {"inspect_30"},
+        -- EventTable = {
+            -- { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            -- { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
+			-- { s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
+            -- { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
+            -- { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
+            -- { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
+            -- { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
+        -- },
+        -- IKTimeLine = {
+            -- { t = 0, lhik = 1 },
+            -- { t = 0.15, lhik = 0 },
+            -- { t = 0.4, lhik = 0 },
+            -- { t = 0.48, lhik = 1 },
+        -- },
+    -- },
 
 
     ["firemode_1"] = {
@@ -644,7 +644,7 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     if !IsFirstTimePredicted() then return end
     -- theres some mod for arc9eft that makes mag checks on bind and it manipulates EFTInspectnum value so well keep eft in name to keep functionality
-    if anim == "inspect" or anim == "inspect_empty" then
+    if anim == "inspect" or anim == "inspect_30" then
         swep.EFTInspectnum = (swep.EFTInspectnum or 0) + 1
         local rand = swep.EFTInspectnum
         if rand == 1 then return anim .. "_look" end
