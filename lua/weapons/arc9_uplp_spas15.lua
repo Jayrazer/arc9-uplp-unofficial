@@ -226,33 +226,11 @@ SWEP.NPCWeight = 60
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-     Pos = Vector(-2.3, -3, 0.975),
-     Ang = Angle(0, 0.2, 0),
+     Pos = Vector(-2.38, -2, -0.4),
+     Ang = Angle(0, 1.9, 0),
      Magnification = 1.15,
      ViewModelFOV = 55,
 }
-
-SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
-    local attached = self:GetElements()
-
-     -- if attached["uplp_ak_brl_su"] then
-        -- return {
-             -- Pos = Vector(-2.3, -3, 0.8),
-             -- Ang = Angle(0.375, 0, -2.5),
-             -- Magnification = 1.15,
-             -- ViewModelFOV = 60,
-        -- }
-    -- end
-
-     -- if attached["uplp_ak_brl_109"] then
-        -- return {
-             -- Pos = Vector(-2.3, -3, 0.875),
-             -- Ang = Angle(0.34, 0, -2.5),
-             -- Magnification = 1.15,
-             -- ViewModelFOV = 60,
-        -- }
-    -- end
-end
 
 -- Customization Menu Info
 SWEP.CustomizePos = Vector(17, 40, 5)
@@ -278,7 +256,7 @@ SWEP.DropMagazineVelocity = Vector(0, -5, 10)
 -- urbna!
 local pathUT = ")uplp_urban_temp/vepr/"
 local pathUTC = "))uplp_urban_temp/common/"
-local pathSPAS = "weapons/arc9/uplp_spas15"
+local pathSPAS = "weapons/arc9/uplp_spas15/"
 
 
 SWEP.ShootSound = {
@@ -402,6 +380,16 @@ SWEP.Animations = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
         },
+    },    
+	["draw_pump"] = {
+        Source = "draw_pump",
+        MinProgress = 0.75,
+        Mult = 0.8,
+		FireASAP = true,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+        },
     },
     ["holster"] = {
         Source = "holster",
@@ -414,6 +402,16 @@ SWEP.Animations = {
     },
     ["draw_empty"] = {
         Source = "draw_empty",
+        MinProgress = 0.75,
+        Mult = 0.8,
+		FireASAP = true,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+        },
+    },
+	["draw_pump_empty"] = {
+        Source = "draw_pump",
         MinProgress = 0.75,
         Mult = 0.8,
 		FireASAP = true,
