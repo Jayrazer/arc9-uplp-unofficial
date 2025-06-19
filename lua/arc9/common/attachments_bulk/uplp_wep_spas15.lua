@@ -25,7 +25,7 @@ ATT.SpeedMultSights = 1.075
 -- Negatives
 ATT.SwayAddSights = 0.4
 ATT.SwayMultSights = 1.1
-ATT.RecoilMult = 1.25
-ATT.RecoilSideMult = 1.25
+ATT.RecoilMult = 1.15
+ATT.RecoilSideMult = 1.15
 
 ARC9.LoadAttachment(ATT, "uplp_spas15_stock_fold")

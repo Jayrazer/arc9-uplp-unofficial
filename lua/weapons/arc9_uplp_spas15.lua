@@ -118,7 +118,7 @@ SWEP.ChamberSize = 1
 SWEP.ClipSize = 6
 
 -- Recoil
-SWEP.Recoil = 2 * 0.75
+SWEP.Recoil = 1.75 * 0.75
 SWEP.RecoilUp = 1.5
 SWEP.RecoilSide = 1.25
 
