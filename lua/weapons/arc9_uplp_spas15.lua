@@ -415,7 +415,7 @@ SWEP.Animations = {
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
         },
     },
-	["draw_pump_empty"] = {
+	["draw_empty_pump"] = {
         Source = "draw_pump",
         MinProgress = 0.75,
         Mult = 0.8,
