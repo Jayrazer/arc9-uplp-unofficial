@@ -51,7 +51,7 @@ SWEP.ShellPitch = 90
 SWEP.ShellVelocity = 0.75
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 
-SWEP.EjectDelay = 0.08
+SWEP.EjectDelay = 0.01
 
 SWEP.CaseEffectQCA = 2
 SWEP.CamQCA = 3
@@ -62,6 +62,8 @@ SWEP.ViewModel = "models/weapons/arc9/c_uplp_spas15.mdl"
 SWEP.WorldModel = "models/weapons/arc9/w_uplp_molot.mdl"
 
 SWEP.ActivePos = Vector(0, 1, -0.25)
+
+SWEP.SprintPos = Vector(2, 1, -1.6)
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
@@ -118,7 +120,7 @@ SWEP.ChamberSize = 1
 SWEP.ClipSize = 6
 
 -- Recoil
-SWEP.Recoil = 1.75 * 0.75
+SWEP.Recoil = 1.5
 SWEP.RecoilUp = 1.5
 SWEP.RecoilSide = 1.25
 
@@ -202,6 +204,7 @@ SWEP.Firemodes = {
         NoShellEjectManualAction = true,
         DispersionSpreadAddHipFire = -0.01,
         SpreadMult = 0.85,
+		RecoilMult = 1.25,
         DamageMaxMult = 1.15, -- blehh :p
         SweetSpotDamageMult = 1.15, -- blehh :p
 
@@ -360,8 +363,8 @@ SWEP.Animations = {
 		FireASAP = true,
         EventTable = {
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chback.ogg", t = 5 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber.ogg", t = 11.5 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "chargeback.wav", t = 5 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "chargeforward.wav", t = 11.5 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_4.ogg", t = 36 / 60, c = ca },
         },
         IKTimeLine = {
@@ -461,7 +464,7 @@ SWEP.Animations = {
 	
 	["cycle"] = {
         Source = "pump",
-		Mult = 1.1,
+		Mult = 1,
         IKTimeLine = { { t = 0, lhik = 1 } },
 		EjectAt = 3 / 30,
         EventTable = {
@@ -481,6 +484,7 @@ SWEP.Animations = {
         Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+			{ s = pathSPAS .. "switch.wav", t = 5 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "magout.wav", t = 8 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "magpouch.ogg", t = 15 / 30, v = 0.6 },
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
@@ -505,6 +509,7 @@ SWEP.Animations = {
         Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "magout.wav", t = 8 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "magpouch.ogg", t = 15 / 30, v = 0.6 },
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
@@ -528,11 +533,13 @@ SWEP.Animations = {
         Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+			{ s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "magout.wav", t = 9 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "magpouch.ogg", t = 18 / 30, v = 0.6 },
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chback.ogg", t = 49 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber.ogg", t = 50 / 30, c = ca, v = 0.8 },
+            { s = UTCrattle, t = 37 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "chargeback.wav", t = 49 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "chargeforward.wav", t = 52 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 60 / 30, c = ca, v = 0.8 },
             {hide = 1, t = 0},
             {hide = 0, t = 0.25},
@@ -558,6 +565,7 @@ SWEP.Animations = {
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpback.wav", t = 1 / 30, c = ca, v = 0.8 },
+			{ s = pathSPAS .. "switch.wav", t = 9 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "magout.wav", t = 11 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "magpouch.ogg", t = 18 / 30, v = 0.6 },
             { s = pathSPAS .. "magin.wav", t = 27 / 30, c = ca, v = 0.8 },
@@ -579,11 +587,17 @@ SWEP.Animations = {
 
     ["firemode_1"] = {
         Source = "to_pump",
-        EventTable = thetoggle
+        EventTable = {
+		    thetoggle,
+            { s = pathSPAS .. "switch.wav", t = 1 / 30, c = ca, v = 0.8 },
+        },
     },
     ["firemode_2"] = {
         Source = "to_semi",
-        EventTable = thetoggle
+        EventTable = {
+            thetoggle,
+            { s = pathSPAS .. "switch.wav", t = 1 / 30, c = ca, v = 0.8 },
+        },
     },
 
     ["switchsights"] = {
