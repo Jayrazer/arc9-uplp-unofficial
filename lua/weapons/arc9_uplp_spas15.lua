@@ -117,8 +117,8 @@ SWEP.ClipSize = 6
 
 -- Recoil
 SWEP.Recoil = 2 * 0.75
-SWEP.RecoilUp = 1.75
-SWEP.RecoilSide = 1.4
+SWEP.RecoilUp = 1.5
+SWEP.RecoilSide = 1.25
 
 -- Additional recoil when firing rapidly
 SWEP.RecoilMultRecoil = 2
@@ -199,11 +199,11 @@ SWEP.Firemodes = {
         ManualActionNoLastCycle = true,
         NoShellEjectManualAction = true,
         DispersionSpreadAddHipFire = -0.01,
-        SpreadMult = 0.8,
-        DamageMaxMult = 1.25, -- blehh :p
-        SweetSpotDamageMult = 1.25, -- blehh :p
+        SpreadMult = 0.85,
+        DamageMaxMult = 1.15, -- blehh :p
+        SweetSpotDamageMult = 1.15, -- blehh :p
 
-        RPM = 60/0.2,
+        RPM = 50/0.2,
     },
 }
 
@@ -233,7 +233,7 @@ SWEP.IronSights = {
 }
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(17, 40, 5)
+SWEP.CustomizePos = Vector(17, 35, 4)
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizeRotateAnchor = Vector(17, -2.5, -3)
 
@@ -528,8 +528,8 @@ SWEP.Animations = {
             { s = pathUTC .. "magpouch.ogg", t = 1 / 30, v = 0.6 },
             { s = pathUT .. "magout.ogg", t = 10 / 30, c = ca, v = 0.8 },
             { s = pathUT .. "magin.ogg", t = 28 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chback.ogg", t = 45 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber.ogg", t = 49 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "chback.ogg", t = 49 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "chamber.ogg", t = 50 / 30, c = ca, v = 0.8 },
             -- { s = UTCrattle, t = 62.5 / 30, c = ca, v = 0.8 },
             {hide = 1, t = 0},
             {hide = 0, t = 0.25},
@@ -592,75 +592,23 @@ SWEP.Animations = {
     },
 }
 
--- SWEP.Hook_TranslateAnimation = function(swep, anim)
-    -- if !IsFirstTimePredicted() then return end
-    -- -- theres some mod for arc9eft that makes mag checks on bind and it manipulates EFTInspectnum value so well keep eft in name to keep functionality
-    -- if anim == "inspect" or anim == "inspect_empty" then
-        -- swep.EFTInspectnum = (swep.EFTInspectnum or 0) + 1
-        -- local rand = swep.EFTInspectnum
-        -- if rand == 1 then return anim .. "_look" end
-        -- if rand == 2 then swep.EFTInspectnum = 0 rand = 0 end
-    -- end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local eles = data.elements
+    local mdl = data.model
 
----- Attachments
--- local aaaaaa = {
-    -- ["uplp_sg_shell_red"] = 6,
-    -- ["uplp_sg_shell_blue"] = 7,
-    -- ["uplp_sg_shell_black"] = 8,
-    -- ["uplp_sg_shell_green"] = 9,
-    -- ["uplp_sg_shell_orange"] = 10,
-    -- ["uplp_sg_shell_yellow"] = 11,
--- }
-
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local eles = data.elements
-    -- local mdl = data.model
-
-    -- if eles["uplp_molot_mag_drum"] or eles["uplp_molot_mag_drum_soda"] then -- many shells on drum
-        -- for k, v in pairs(aaaaaa) do
-            -- if eles[k] then
-                -- mdl:SetBodygroup(6, v)
-            -- end
-        -- end
-    -- end
-
-    -- if eles["uplp_molot_hg_cool"] or eles["uplp_molot_hg_cool2"] then -- rail instead of handstop on hgs
-        -- if wep:GetValue("LHIK") then
-            -- mdl:SetBodygroup(4, 2)
-        -- end
-    -- end
-
-    -- if eles["uplp_molot_brl_mini"] then -- fucking elements do not want to install themselves, forcing through setbg!
-        -- if eles["uplp_molot_hg_tac"] then mdl:SetBodygroup(3, 6) end
-        -- if eles["uplp_molot_hg_tac_b"] then mdl:SetBodygroup(3, 9) end
-        -- if eles["uplp_molot_hg_tac_w"] then mdl:SetBodygroup(3, 12) end
-        -- if eles["uplp_molot_hg_cool"] then mdl:SetBodygroup(3, 15) end
-        -- if eles["uplp_molot_hg_cool2"] then mdl:SetBodygroup(3, 18) end
-        -- if eles["uplp_molot_hg_azen"] then mdl:SetBodygroup(3, 3) end
-        -- if eles["uplp_molot_hg_azen_c"] then mdl:SetBodygroup(3, 4) end
-    -- elseif eles["uplp_molot_brl_micro"] then
-        -- if eles["uplp_molot_hg_tac"] then mdl:SetBodygroup(3, 7) end
-        -- if eles["uplp_molot_hg_tac_b"] then mdl:SetBodygroup(3, 10) end
-        -- if eles["uplp_molot_hg_tac_w"] then mdl:SetBodygroup(3, 13) end
-        -- if eles["uplp_molot_hg_cool"] then mdl:SetBodygroup(3, 16) end
-        -- if eles["uplp_molot_hg_cool2"] then mdl:SetBodygroup(3, 19) end
-        -- if eles["uplp_molot_hg_azen"] then mdl:SetBodygroup(3, 3) end
-        -- if eles["uplp_molot_hg_azen_c"] then mdl:SetBodygroup(3, 4) end
-    -- end
--- end
+	if eles["uplp_spas15_stock_fold"] then mdl:SetBodygroup(1, 1) end
+end
 
 SWEP.AttachmentElements = {
     -- STOCK
-    ["uplp_spas15_stock_unfold"] = { Bodygroups = { { 1, 1 } } },
-    ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 2 } } },
+    ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 1 } } },
 
 }
 
 local defatt = "arc9/def_att_icons/"
 local defatt2 = "entities/uplp_attachements/def/"
 
--- SWEP.Attachments = {
+SWEP.Attachments = {
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_optic"),
         -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
@@ -733,20 +681,15 @@ local defatt2 = "entities/uplp_attachements/def/"
         -- Pos = Vector(0.045, 5, -1.1),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_stock"),
-        -- Category = {"uplp_ak_stock"},
-        -- DefaultIcon = Material(defatt2 .. "akstock.png", "mips smooth"),
-        -- RejectAttachments = {
-        -- ["uplp_ak_stock_fold"] = true,
-        -- ["uplp_ak_stock_underfold"] = true,
-        -- ["uplp_ak_stock_old"] = true
-        -- },
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 2.044, -3.0),
-        -- Ang = Angle(90, 90, 180),
-        -- Installed = "uplp_ak_stock_molot",
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_stock"),
+        Category = {"uplp_spas15_stock"},
+        DefaultIcon = Material(defatt2 .. "akstock.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(0.045, 2.044, -3.0),
+        Ang = Angle(90, 90, 180),
+        Installed = "uplp_ak_stock_molot",
+    },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_backup"),
         -- Category = {"uplp_backup_optic"},
@@ -805,4 +748,4 @@ local defatt2 = "entities/uplp_attachements/def/"
         -- Pos = Vector(1.75, 0.16, -0.37),
         -- Ang = Angle(90, 0, -90),
     -- },
--- }
+}
