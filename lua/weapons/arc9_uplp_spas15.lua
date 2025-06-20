@@ -264,13 +264,13 @@ local pathSPAS = "weapons/arc9/uplp_spas15/"
 
 SWEP.ShootSound = {
     pathSPAS .. "fire1.wav",
-    pathSPAS .. "fire2.wav"
+    pathSPAS .. "fire2.wav",
+    pathSPAS .. "fire3.wav"
 }
 
 SWEP.ShootSoundSilenced = {
-    pathUT .. "fire-sup-01.wav",
-    pathUT .. "fire-sup-02.wav",
-    pathUT .. "fire-sup-03.wav",
+    pathSPAS .. "fire1-sup.wav",
+    pathSPAS .. "fire2-sup.wav",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
