@@ -620,6 +620,14 @@ end
 SWEP.AttachmentElements = {
     -- STOCK
     ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 1 } } },
+	
+	-- SHELLS
+    ["uplp_sg_shell_red"] = { Bodygroups = { { 3, 0 } } },
+    ["uplp_sg_shell_blue"] = { Bodygroups = { { 3, 1 } } },
+    ["uplp_sg_shell_black"] = { Bodygroups = { { 3, 2 } } },
+    ["uplp_sg_shell_green"] = { Bodygroups = { { 3, 3 } } },
+    ["uplp_sg_shell_orange"] = { Bodygroups = { { 3, 4 } } },
+    ["uplp_sg_shell_yellow"] = { Bodygroups = { { 3, 5 } } },
 
 }
 
@@ -635,14 +643,16 @@ SWEP.Attachments = {
         -- Pos = Vector(0, -0.175, 1.5),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
-        -- Category = {"uplp_molot_muzzle"},
-        -- Bone = "body",
-        -- Pos = Vector(0, 1.75, 21.08),
-        -- Ang = Angle(90, 90, 180),
-        -- Installed = "uplp_sg_mz_vepr",
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
+        Category = {"uplp_molot_muzzle"},
+        Bone = "body",
+        Pos = Vector(-0.1, 1.74, 21.8),
+        Ang = Angle(90, 90, 180),
+		RejectAttachments = {
+        ["uplp_sg_mz_vepr"] = true,
+        }
+    },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_internals"),
         -- Category = {"uplp_molot_bolt"},
@@ -677,15 +687,15 @@ SWEP.Attachments = {
         -- Pos = Vector(0.045, 6.5, 6.5),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_ammo"),
-        -- Category = {"uplp_sg_ammo"},
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 4, 5.5),
-        -- Ang = Angle(90, 90, 180),
-        -- Installed = "uplp_sg_shell_red",
-        -- Integral = "uplp_sg_shell_red",
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_ammo"),
+        Category = {"uplp_sg_ammo"},
+        Bone = "body",
+        Pos = Vector(0.045, 3, 5),
+        Ang = Angle(90, 90, 180),
+        Installed = "uplp_sg_shell_red",
+        Integral = "uplp_sg_shell_red",
+    },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_pistol_grip"),
         -- Category = {"uplp_ak_grip"},
@@ -740,7 +750,7 @@ SWEP.Attachments = {
         -- StickerModel = "models/weapons/arc9/uplp/stickers/vepr_1.mdl",
         -- Category = "stickers",
         -- Bone = "body",
-        -- Pos = Vector(0, 0.6, 5.4 + 1.5),
+        -- Pos = Vector(0, 2, 4),
         -- Ang = Angle(90, 90, 180),
     -- },
     -- {
