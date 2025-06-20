@@ -565,9 +565,9 @@ SWEP.Animations = {
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpback.wav", t = 1 / 30, c = ca, v = 0.8 },
-			{ s = pathSPAS .. "switch.wav", t = 9 / 30, c = ca, v = 0.8 },
-            { s = pathSPAS .. "magout.wav", t = 11 / 30, c = ca, v = 0.8 },
-			{ s = pathUTC .. "magpouch.ogg", t = 18 / 30, v = 0.6 },
+			{ s = pathSPAS .. "switch.wav", t = 10 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "magout.wav", t = 12 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "magpouch.ogg", t = 19 / 30, v = 0.6 },
             { s = pathSPAS .. "magin.wav", t = 27 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpforward.wav", t = 49 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 39 / 30, c = ca, v = 0.8 },
