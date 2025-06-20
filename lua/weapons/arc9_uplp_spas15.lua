@@ -9,7 +9,7 @@ SWEP.Slot = 3 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "SPAW-15"
-SWEP.Description = "A dual-mode shotgun with a box magazine."
+SWEP.Description = "The SPAW-15 is an evolution of the SPAW-12; mechanically similar, though the two look almost nothing alike. It features the same dual-mode operation as its older sibling, though it features a detachable box magazine as opposed to a traditional tube magazine."
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_shotgun") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_shotgun") -- In the Spawnmenu
@@ -17,20 +17,18 @@ SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_shotgun") -- In the Spaw
 SWEP.Trivia = {
     [ ARC9:GetPhrase( "uplp_realname" ) ] = "SPAS-15",
 
-    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase( "uplp_weapon_molot_manufacturer" ),
+    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase( "uplp_weapon_spas_manufacturer" ),
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_12gauge"),
-    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ),
-                                                                        ARC9:GetPhrase( "uplp_mechanism_gasoperated" ),
-                                                                        ARC9:GetPhrase( "uplp_mechanism_rotatingbolt" ) ),
-    [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_russia" ),
-    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "2003" ),
+	[ ARC9:GetPhrase( "uplp_mechanism" ) ] = ARC9:GetPhrase( "uplp_mechanism_gasoperated" ) .. " / " .. ARC9:GetPhrase( "uplp_mechanism_pumpaction" ),
+    [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_italy" ),
+    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( "1986" ),
 }
 
 SWEP.Credits = {
-    [ ARC9:GetPhrase( "uplp_lua" ) ] = "Moka",
-    [ ARC9:GetPhrase( "uplp_assets" ) ] = "TastyTony, Darsu",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, Darsu",
-    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th",
+    [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
+    [ ARC9:GetPhrase( "uplp_assets" ) ] = "TastyTony",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, speedonerd",
+    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th, speedonerd, Farion",
     [ ARC9:GetPhrase( "uplp_general" ) ] = "Darsu",
 }
 
@@ -240,7 +238,7 @@ SWEP.IronSights = {
 -- Customization Menu Info
 SWEP.CustomizePos = Vector(17, 35, 4)
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizeRotateAnchor = Vector(17, -2.5, -3)
+SWEP.CustomizeRotateAnchor = Vector(15, -2.5, -3)
 
 SWEP.CustomizeSnapshotPos = Vector(0, 30, 0)
 SWEP.CustomizeSnapshotFOV = 60
