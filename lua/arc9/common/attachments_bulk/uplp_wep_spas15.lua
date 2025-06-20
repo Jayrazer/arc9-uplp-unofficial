@@ -11,7 +11,7 @@ ATT.PrintName = "Folded Stock"
 ATT.CompactName = "FOLD"
 ATT.Description = "Fold the weapon's stock for better handling at the cost of recoil control."
 
-ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "foldstock.png", "mips smooth")
 ATT.Category = "uplp_spas15_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -38,7 +38,7 @@ ATT.PrintName = "381mm Barrel"
 ATT.CompactName = "381mm"
 ATT.Description = "A cut-down 381mm (15\") barrel for close-quarters combat."
 
-ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "shortbarrel.png", "mips smooth")
 ATT.Category = "uplp_spas15_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -64,7 +64,7 @@ ATT.PrintName = "559mm Barrel"
 ATT.CompactName = "559mm"
 ATT.Description = "A 559mm (22\") barrel found on civilian models of the weapon."
 
-ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "longbarrel.png", "mips smooth")
 ATT.Category = "uplp_spas15_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -91,7 +91,7 @@ ATT.PrintName = "8-Round Extended"
 ATT.CompactName = "8R Ext"
 ATT.Description = "8-round extended magazine for the SPAW-15."
 
-ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "mag8.png", "mips smooth")
 ATT.Category = "uplp_spas15_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 

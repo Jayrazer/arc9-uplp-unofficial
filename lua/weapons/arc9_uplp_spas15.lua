@@ -59,7 +59,7 @@ SWEP.CamOffsetAng = Angle(0, 90, 90)
 SWEP.ViewModel = "models/weapons/arc9/c_uplp_spas15.mdl"
 SWEP.WorldModel = "models/weapons/arc9/w_uplp_molot.mdl"
 
-SWEP.ActivePos = Vector(0, 1, -0.25)
+SWEP.ActivePos = Vector(0, 0, -0.25)
 
 SWEP.SprintPos = Vector(2, 1, -1.6)
 
@@ -672,7 +672,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
         Category = {"uplp_spas15_barrel"},
-        DefaultIcon = Material(defatt2 .. "akbar.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "spas15_barrel.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0.045, 1.55, 14),
         Icon_Offset = Vector(-5, 0, 0.5),
@@ -691,7 +691,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
         Category = {"uplp_spas15_mag"},
-        DefaultIcon = Material(defatt2 .. "saigamag.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "spas15_mag.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0.045, 6.25, 5.25),
         Ang = Angle(90, 90, 180),
@@ -708,7 +708,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
         Category = {"uplp_spas15_stock"},
-        DefaultIcon = Material(defatt2 .. "akstock.png", "mips smooth"),
+        DefaultIcon = Material(defatt2 .. "spas15_stock.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0.045, 2.044, -3.0),
         Ang = Angle(90, 90, 180),
