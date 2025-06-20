@@ -432,6 +432,24 @@ SWEP.Animations = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
         },
     },
+	["holster_pump"] = {
+        Source = "holster_pump",
+        Mult = 0.8,
+		MinProgress = 0.5,
+        IKTimeLine = { { t = 0, lhik = 1 } },
+        EventTable = {
+            { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+        },
+    },
+    ["holster_empty_pump"] = {
+        Source = "holster_pump",
+        Mult = 0.8,
+		MinProgress = 0.5,
+        IKTimeLine = { { t = 0, lhik = 1 } },
+        EventTable = {
+            { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
+        },
+    },
 
 
     ["fire"] = {
