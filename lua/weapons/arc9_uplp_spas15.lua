@@ -251,7 +251,7 @@ SWEP.DropMagazineTime = 0.5
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazinePos = Vector(0, -18, 15)
 SWEP.DropMagazineAng = Angle(90, 90, 0)
-SWEP.DropMagazineVelocity = Vector(0, -5, 10)
+SWEP.DropMagazineVelocity = Vector(0, -50, 25)
 -- SWEP.DropMagazineVelocity = Vector(0, 0, 0)
 
 ---- Sounds
