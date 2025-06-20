@@ -244,8 +244,8 @@ SWEP.CustomizeSnapshotPos = Vector(0, 30, 0)
 SWEP.CustomizeSnapshotFOV = 60
 
 -- Dropped Magazine
-SWEP.ShouldDropMag = true
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/arc9/magazines/spas15_mag_6.mdl"
 SWEP.DropMagazineTime = 0.5
 SWEP.DropMagazineQCA = 3
@@ -488,6 +488,7 @@ SWEP.Animations = {
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 35 / 30, c = ca, v = 0.8 },
         },
+		DropMagAt = 0.35,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -512,6 +513,7 @@ SWEP.Animations = {
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 35 / 30, c = ca, v = 0.8 },
         },
+		DropMagAt = 0.35,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -541,6 +543,7 @@ SWEP.Animations = {
             {hide = 0, t = 0.25},
             {hide = 2, t = 0.86},
         },
+		DropMagAt = 0.35,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -560,17 +563,17 @@ SWEP.Animations = {
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpback.wav", t = 1 / 30, c = ca, v = 0.8 },
-			{ s = pathSPAS .. "switch.wav", t = 10 / 30, c = ca, v = 0.8 },
-            { s = pathSPAS .. "magout.wav", t = 12 / 30, c = ca, v = 0.8 },
-			{ s = pathUTC .. "magpouch.ogg", t = 19 / 30, v = 0.6 },
-            { s = pathSPAS .. "magin.wav", t = 27 / 30, c = ca, v = 0.8 },
+			{ s = pathSPAS .. "switch.wav", t = 12 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "magout.wav", t = 15 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "magpouch.ogg", t = 20 / 30, v = 0.6 },
+            { s = pathSPAS .. "magin.wav", t = 29 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpforward.wav", t = 49 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 39 / 30, c = ca, v = 0.8 },
             {hide = 1, t = 0},
             {hide = 0, t = 0.25},
             {hide = 2, t = 0.86},
         },
-        DropMagAt = 0.86,
+        DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
