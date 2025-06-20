@@ -666,14 +666,6 @@ SWEP.Attachments = {
         ["uplp_sg_mz_vepr"] = true,
         }
     },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_internals"),
-        -- Category = {"uplp_molot_bolt"},
-        -- DefaultIcon = Material(defatt2 .. "trigger.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 2.5, 1.1),
-        -- Ang = Angle(90, 90, 180),
-    -- },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
         Category = {"uplp_spas15_barrel"},
@@ -710,19 +702,6 @@ SWEP.Attachments = {
         Installed = "uplp_sg_shell_red",
         Integral = "uplp_sg_shell_red",
     },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_pistol_grip"),
-        -- Category = {"uplp_ak_grip"},
-        -- DefaultIcon = Material(defatt2 .. "akgrip.png", "mips smooth"),
-        -- ActiveElements = {"uplp_ak_grip"},
-        -- ExcludeElements = {"uplp_no_pgrip"},
-        -- Bone = "body",
-        -- RejectAttachments = {
-        -- ["uplp_ak_grip_molot"] = true,
-        -- },
-        -- Pos = Vector(0.045, 5, -1.1),
-        -- Ang = Angle(90, 90, 180),
-    -- },
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
         Category = {"uplp_spas15_stock"},
