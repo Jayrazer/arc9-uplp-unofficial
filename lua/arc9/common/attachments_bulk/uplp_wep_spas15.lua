@@ -29,3 +29,24 @@ ATT.RecoilMult = 1.15
 ATT.RecoilSideMult = 1.15
 
 ARC9.LoadAttachment(ATT, "uplp_spas15_stock_fold")
+
+
+-- stendy mag
+
+ATT = {}
+
+ATT.PrintName = "9-Round Extended"
+ATT.CompactName = "8R Ext"
+ATT.Description = "9-round extended magazine for the SPAW-15."
+
+ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Category = "uplp_spas15_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_spas15_mag_8"}
+
+ATT.ClipSizeOverride = 9
+
+ATT.ReloadTimeMult = 1.1
+
+ARC9.LoadAttachment(ATT, "uplp_spas15_mag_8")

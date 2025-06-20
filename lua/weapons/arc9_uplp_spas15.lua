@@ -481,7 +481,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.725,
 		FireASAP = true,
-        Mult = 1,
+        Mult = 1.05,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
 			{ s = pathSPAS .. "switch.wav", t = 5 / 30, c = ca, v = 0.8 },
@@ -506,7 +506,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.725,
 		FireASAP = true,
-        Mult = 1,
+        Mult = 1.05,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
@@ -530,7 +530,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.775,
 		FireASAP = true,
-        Mult = 1,
+        Mult = 1.05,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
 			{ s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
@@ -560,7 +560,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.775,
 		FireASAP = true,
-        Mult = 1,
+        Mult = 1.05,
 		EjectAt = 3 / 30,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
@@ -615,6 +615,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local mdl = data.model
 
 	if eles["uplp_spas15_stock_fold"] then mdl:SetBodygroup(1, 1) end
+	if eles["uplp_spas15_mag_8"] then mdl:SetBodygroup(4, 1) end
 end
 
 SWEP.AttachmentElements = {
@@ -622,12 +623,14 @@ SWEP.AttachmentElements = {
     ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 1 } } },
 	
 	-- SHELLS
-    ["uplp_sg_shell_red"] = { Bodygroups = { { 3, 0 } } },
     ["uplp_sg_shell_blue"] = { Bodygroups = { { 3, 1 } } },
     ["uplp_sg_shell_black"] = { Bodygroups = { { 3, 2 } } },
     ["uplp_sg_shell_green"] = { Bodygroups = { { 3, 3 } } },
     ["uplp_sg_shell_orange"] = { Bodygroups = { { 3, 4 } } },
     ["uplp_sg_shell_yellow"] = { Bodygroups = { { 3, 5 } } },
+	
+	--MAG
+	["uplp_spas15_mag_8"] = { Bodygroups = { { 4, 1 } } },
 
 }
 
@@ -679,14 +682,14 @@ SWEP.Attachments = {
         -- Icon_Offset = Vector(-6.5, 0, 1),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_magazine"),
-        -- Category = {"uplp_molot_mag"},
-        -- DefaultIcon = Material(defatt2 .. "saigamag.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 6.5, 6.5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_magazine"),
+        Category = {"uplp_spas15_mag"},
+        DefaultIcon = Material(defatt2 .. "saigamag.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(0.045, 6.25, 5.25),
+        Ang = Angle(90, 90, 180),
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_ammo"),
         Category = {"uplp_sg_ammo"},
