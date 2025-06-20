@@ -179,14 +179,14 @@ SWEP.RecoilModifierCap = 1
 SWEP.SpeedMult = 0.8 + 0.05 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.65 / 0.85 -- When aiming
 
-SWEP.AimDownSightsTime = 0.45 - 0.1 -- Time it takes to fully enter ADS
-SWEP.SprintToFireTime = 0.42 - 0.1 -- Time it takes to fully enter sprint
+SWEP.AimDownSightsTime = 0.45 -- Time it takes to fully enter ADS
+SWEP.SprintToFireTime = 0.42 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 42
 
 -- Shooting and Firemodes
-SWEP.RPM = 250 -- How fast gun shoot
+SWEP.RPM = 325 -- How fast gun shoot
 
 SWEP.Num = 8 -- How many bullets shot at once
 
@@ -206,7 +206,7 @@ SWEP.Firemodes = {
         DamageMaxMult = 1.15, -- blehh :p
         SweetSpotDamageMult = 1.15, -- blehh :p
 
-        RPM = 50/0.2,
+        RPM = 60/0.4,
     },
 }
 
@@ -236,21 +236,21 @@ SWEP.IronSights = {
 }
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(17, 35, 4)
+SWEP.CustomizePos = Vector(11.5, 40, 4)
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizeRotateAnchor = Vector(15, -2.5, -3)
+SWEP.CustomizeRotateAnchor = Vector(11.5, -2.5, -3)
 
 SWEP.CustomizeSnapshotPos = Vector(0, 30, 0)
 SWEP.CustomizeSnapshotFOV = 60
 
 -- Dropped Magazine
-SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/vepr_mag_std.mdl"
-SWEP.DropMagazineTime = 0.6
-SWEP.DropMagazineQCA = 4
-SWEP.DropMagazinePos = Vector(0, 0, 0)
-SWEP.DropMagazineAng = Angle(90, 90, 90)
+SWEP.ShouldDropMag = true
+SWEP.ShouldDropMagEmpty = true
+SWEP.DropMagazineModel = "models/weapons/arc9/magazines/spas15_mag_6.mdl"
+SWEP.DropMagazineTime = 0.5
+SWEP.DropMagazineQCA = 3
+SWEP.DropMagazinePos = Vector(0, -18, 15)
+SWEP.DropMagazineAng = Angle(90, 90, 0)
 SWEP.DropMagazineVelocity = Vector(0, -5, 10)
 -- SWEP.DropMagazineVelocity = Vector(0, 0, 0)
 
@@ -377,7 +377,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         MinProgress = 0.75,
-        Mult = 0.8,
+        Mult = 0.85,
 		FireASAP = true,
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -387,7 +387,7 @@ SWEP.Animations = {
 	["draw_pump"] = {
         Source = "draw_pump",
         MinProgress = 0.75,
-        Mult = 0.8,
+        Mult = 0.85,
 		FireASAP = true,
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -406,7 +406,7 @@ SWEP.Animations = {
     ["draw_empty"] = {
         Source = "draw_empty",
         MinProgress = 0.75,
-        Mult = 0.8,
+        Mult = 0.85,
 		FireASAP = true,
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -416,7 +416,7 @@ SWEP.Animations = {
 	["draw_empty_pump"] = {
         Source = "draw_pump",
         MinProgress = 0.75,
-        Mult = 0.8,
+        Mult = 0.85,
 		FireASAP = true,
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -477,9 +477,9 @@ SWEP.Animations = {
         Source = "reload",
         MinProgress = 0.9,
 		PeekProgress = 0.875,
-		RefillProgress = 0.725,
+		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
 			{ s = pathSPAS .. "switch.wav", t = 5 / 30, c = ca, v = 0.8 },
@@ -488,7 +488,6 @@ SWEP.Animations = {
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 35 / 30, c = ca, v = 0.8 },
         },
-        DropMagAt = 0.86,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -502,9 +501,9 @@ SWEP.Animations = {
         Source = "reload_pump",
         MinProgress = 0.9,
 		PeekProgress = 0.875,
-		RefillProgress = 0.725,
+		RefillProgress = 0.6,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
@@ -513,7 +512,6 @@ SWEP.Animations = {
             { s = pathSPAS .. "magin.wav", t = 26 / 30, c = ca, v = 0.8 },
             { s = UTCrattle, t = 35 / 30, c = ca, v = 0.8 },
         },
-        DropMagAt = 0.86,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -526,9 +524,9 @@ SWEP.Animations = {
         Source = "reload_empty",
         MinProgress = 0.95,
 		PeekProgress = 0.9,
-		RefillProgress = 0.775,
+		RefillProgress = 0.45,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 1,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
 			{ s = pathSPAS .. "switch.wav", t = 6 / 30, c = ca, v = 0.8 },
@@ -543,7 +541,6 @@ SWEP.Animations = {
             {hide = 0, t = 0.25},
             {hide = 2, t = 0.86},
         },
-        DropMagAt = 0.86,
         IKTimeLine = {
             { t = 0, lhik = 1 },
             { t = 0.15, lhik = 0 },
@@ -556,9 +553,9 @@ SWEP.Animations = {
         Source = "reload_empty_pump",
         MinProgress = 0.95,
 		PeekProgress = 0.9,
-		RefillProgress = 0.775,
+		RefillProgress = 0.5,
 		FireASAP = true,
-        Mult = 1.05,
+        Mult = 1,
 		EjectAt = 3 / 30,
         EventTable = {
             { s = UTCrattle, t = 0 / 30, c = ca, v = 0.8 },
@@ -614,11 +611,26 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
 	if eles["uplp_spas15_stock_fold"] then mdl:SetBodygroup(1, 1) end
 	if eles["uplp_spas15_mag_8"] then mdl:SetBodygroup(4, 1) end
+	
+	if eles["uplp_optic_micro"] or eles["uplp_optic_mid"] or eles["uplp_optic_big"] then
+        mdl:SetBodygroup(5,1)
+    end
+	
 end
 
 SWEP.AttachmentElements = {
     -- STOCK
     ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 1 } } },
+	
+	-- BARRELS
+	["uplp_spas15_barrel_short"] = { 
+		Bodygroups = { { 2, 1 } }, 
+		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 19) } }
+	},	
+	["uplp_spas15_barrel_long"] = { 
+		Bodygroups = { { 2, 2 } }, 
+		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 25.45) } }
+	},
 	
 	-- SHELLS
     ["uplp_sg_shell_blue"] = { Bodygroups = { { 3, 1 } } },
@@ -636,14 +648,14 @@ local defatt = "arc9/def_att_icons/"
 local defatt2 = "entities/uplp_attachements/def/"
 
 SWEP.Attachments = {
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_optic"),
-        -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
-        -- DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0, -0.175, 1.5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_optic"),
+        Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
+        DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(-0.1, -1.3, 0.75),
+        Ang = Angle(90, 90, 180),
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_molot_muzzle"},
@@ -662,24 +674,25 @@ SWEP.Attachments = {
         -- Pos = Vector(0.045, 2.5, 1.1),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_barrel"),
-        -- Category = {"uplp_molot_barrel"},
-        -- DefaultIcon = Material(defatt2 .. "akbar.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 1.5, 13),
-        -- Icon_Offset = Vector(-5, 0, 0.5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_handguard"),
-        -- Category = {"uplp_molot_handguard"},
-        -- DefaultIcon = Material(defatt2 .. "akhg.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0.045, 2.5, 16.5),
-        -- Icon_Offset = Vector(-6.5, 0, 1),
-        -- Ang = Angle(90, 90, 180),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_barrel"),
+        Category = {"uplp_spas15_barrel"},
+        DefaultIcon = Material(defatt2 .. "akbar.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(0.045, 1.55, 14),
+        Icon_Offset = Vector(-5, 0, 0.5),
+        Ang = Angle(90, 90, 180),
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_tactical"),
+        Category = {"uplp_tac"},
+        Bone = "pump",
+        Pos = Vector(-1.05, -0.77, 1.7),
+        Ang = Angle(90, 90, -90),
+		RejectAttachments = {
+		["uplp_tac_laser_dbal"] = true,
+		}
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
         Category = {"uplp_spas15_mag"},
@@ -717,7 +730,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0.045, 2.044, -3.0),
         Ang = Angle(90, 90, 180),
-        Installed = "uplp_ak_stock_molot",
     },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_backup"),
