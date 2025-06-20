@@ -47,11 +47,12 @@ ATT.ActivateElements = {"uplp_spas15_barrel_short"}
 -- Positives
 ATT.AimDownSightsTimeAdd = -0.04
 ATT.SprintToFireTimeAdd = -0.04
-ATT.SpreadAddHipFire = -0.0028
 
 -- Negatives
-ATT.SpreadAdd = 0.003
-SpreadAddRecoil = 0.0012
+ATT.RangeMaxMult = 0.9
+ATT.RangeMinMult = 0.9
+ATT.PhysBulletMuzzleVelocityMult = 0.85
+ATT.SpreadAddRecoil = 0.0012
 
 ARC9.LoadAttachment(ATT, "uplp_spas15_barrel_short")
 
@@ -70,12 +71,14 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_spas15_barrel_long"}
 
 --Positives
-ATT.AimDownSightsTimeAdd = 0.04
-ATT.SprintToFireTimeAdd = 0.04
-ATT.SpreadAdd = -0.0032
+ATT.RangeMaxMult = 1.1
+ATT.RangeMinMult = 1.1
+ATT.PhysBulletMuzzleVelocityMult = 1.1
+ATT.SpreadAddRecoil = -0.001
 
 -- Negatives
-ATT.SpreadAddHipFire = 0.004
+ATT.AimDownSightsTimeAdd = 0.04
+ATT.SprintToFireTimeAdd = 0.04
 
 ARC9.LoadAttachment(ATT, "uplp_spas15_barrel_long")
 
