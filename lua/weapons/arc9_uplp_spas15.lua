@@ -305,8 +305,6 @@ SWEP.DropMagazineSounds = {
     pathUTC .. "rifle_magdrop_p.ogg",
 }
 
-
-
 local mechh = {
     pathUT .. "mech-01.wav",
     pathUT .. "mech-02.wav",
@@ -615,15 +613,64 @@ SWEP.Animations = {
             { s = pathSPAS .. "switch.wav", t = 1 / 30, c = ca, v = 0.8 },
         },
     },
+	
+	["inspect"] = {
+        Source = "inspect",
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "switch.wav", t = 63 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
+			{ s = pathSPAS .. "switch.wav", t = 94 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
+        },
+	},	
+	["inspect_pump"] = {
+        Source = "inspect_pump",
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
+        },
+	},	
+	["inspect_empty"] = {
+        Source = "inspect_empty",
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
+        },
+	},	
+	["inspect_empty_pump"] = {
+        Source = "inspect_empty_pump",
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
+        },
+	},
 
-    ["switchsights"] = {
-        Source = "modeswitch",
-        EventTable = thetoggle
-    },
-    ["switchsights_empty"] = {
-        Source = "modeswitch_empty",
-        EventTable = thetoggle
-    },
+    -- ["switchsights"] = {
+        -- Source = "modeswitch",
+        -- EventTable = thetoggle
+    -- },
+    -- ["switchsights_empty"] = {
+        -- Source = "modeswitch_empty",
+        -- EventTable = thetoggle
+    -- },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
