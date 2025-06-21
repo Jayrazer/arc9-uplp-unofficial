@@ -306,10 +306,9 @@ SWEP.DropMagazineSounds = {
 }
 
 local mechh = {
-    pathUT .. "mech-01.wav",
-    pathUT .. "mech-02.wav",
-    pathUT .. "mech-03.wav",
-    pathUT .. "mech-04.wav",
+    pathSPAS .. "mech.wav",
+    pathSPAS .. "mech2.wav",
+    pathSPAS .. "mech3.wav",
 }
 
 local UTCrattle = {
@@ -454,7 +453,7 @@ SWEP.Animations = {
         Source = "fire",
         IKTimeLine = { { t = 0, lhik = 1 } },
         EventTable = {
-            { s = mechh, t = 0, v = 0.75 },
+            { s = mechh, t = 1 / 30, v = 0.3 },
         },
     },
 	
@@ -467,7 +466,7 @@ SWEP.Animations = {
         Source = "fire_empty",
         IKTimeLine = { { t = 0, lhik = 1 } },
         EventTable = {
-            { s = mechh, t = 0, v = 0.75 },
+            { s = mechh, t = 1 / 30, v = 0.3 },
         },
     },
 	
@@ -622,7 +621,7 @@ SWEP.Animations = {
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "switch.wav", t = 63 / 30, c = ca, v = 0.8 },
-            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback_inspect.wav", t = 66 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
 			{ s = pathSPAS .. "switch.wav", t = 94 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
@@ -635,7 +634,7 @@ SWEP.Animations = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
-            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback_inspect.wav", t = 66 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
         },
@@ -657,7 +656,7 @@ SWEP.Animations = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_2.ogg", t = 47 / 30, c = ca, v = 0.8 },
-            { s = pathSPAS .. "pumpback.wav", t = 66 / 30, c = ca, v = 0.8 },
+            { s = pathSPAS .. "pumpback_inspect.wav", t = 66 / 30, c = ca, v = 0.8 },
             { s = pathSPAS .. "pumpforward.wav", t = 92 / 30, c = ca, v = 0.8 },
 			{ s = pathUTC .. "cloth_3.ogg", t = 98 / 30, c = ca, v = 0.8 },
         },
