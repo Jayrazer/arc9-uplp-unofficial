@@ -337,6 +337,12 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     end
 end
 
+SWEP.BulletBones = {
+    [1] = "bullet1",
+    [2] = "bullet2",
+    [3] = "bullet3",
+}
+
 -- Animations
 SWEP.Animations = {
     ["idle"] = {
@@ -493,6 +499,7 @@ SWEP.Animations = {
         MinProgress = 0.9,
 		PeekProgress = 0.875,
 		RefillProgress = 0.6,
+		MagSwapTime = 0.5,
 		FireASAP = true,
         Mult = 1,
         EventTable = {
@@ -518,6 +525,7 @@ SWEP.Animations = {
         MinProgress = 0.9,
 		PeekProgress = 0.875,
 		RefillProgress = 0.6,
+		MagSwapTime = 0.5,
 		FireASAP = true,
         Mult = 1,
         EventTable = {
@@ -542,6 +550,7 @@ SWEP.Animations = {
         MinProgress = 0.95,
 		PeekProgress = 0.9,
 		RefillProgress = 0.45,
+		MagSwapTime = 0.6,
 		FireASAP = true,
         Mult = 1,
         EventTable = {
@@ -572,6 +581,7 @@ SWEP.Animations = {
         MinProgress = 0.95,
 		PeekProgress = 0.9,
 		RefillProgress = 0.5,
+		MagSwapTime = 0.8,
 		FireASAP = true,
         Mult = 1,
 		EjectAt = 3 / 30,
