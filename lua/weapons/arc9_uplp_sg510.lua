@@ -36,9 +36,6 @@ SWEP.Credits = {
 
 
 SWEP.StandardPresets = {
-    "[Graywolf]XQAAAQC8AQAAAAAAAAA9iIIiM7tupQCpjtoZF0tx3T1+2RHfwAfOafWx3+nx5TweLf9gMpfv+Biqjvbq+IerWpNws9vQLZDxQMRcNitQEMr4ZOqZV9Lf+OPlhwn0N3gjhR8JGRHp/6ZkHWjGoRymtJTrw0XrK1iQ+c+IpH+GEZfxWp4Ost+XnwlRHAH9PKDqF3zaF7OR0eNLa8BZNZzsMi8v/ot0JzsY7lHFdxm5ChXEUoLKCxOzWfBsMwQNdA==",
-    "[OSW]XQAAAQCeAQAAAAAAAAA9iIIiM7tupQCpjtoZF0tx3T1+2RHfwAfOafWx3+nx5TweLf9gMpfv+Biqjvbq+IerWdZ49Xb/zqd5ukHllojGL+rxZn1W6hpvisosnlz5y11PSZ+9yogxKd7N0WZpjBJOPbLmyJQByIFc9XsYWKOqcKwaP1PqSKxtK7HGx7bEV0TLjsG81PqePeEsK+RfoEM1khPnF+CyrzUKkRi8CeZAqlspdlY+h6uLWxMXyZFfS09C",
-    "[Machinegunner]XQAAAQBHAQAAAAAAAAA9iIIiM7tupQCpjtobRJEkdZ1fP0HAsr6RlAUBofFyhtHBQI3R/SX59I4WPv+7Eq6OL7MEzFNpwLAMn+AErDa5AXoQMEMt7CuzB7SoyJFa5LZonkCkkDgZaAmfCsOXAIIx2aQKRBw0MnMKGgjgInSA1XKSi9LV3SW6pXYAH6ugaG5Iq+VdgAA=",
 }
 
 ---- Muzzle Effects, Shell Effects, Camera
@@ -253,12 +250,12 @@ SWEP.DropMagazineVelocity = Vector(0, 80, -80)
 local pathUT = ")uplp_urban_temp/ak/"
 local pathUTScar = ")uplp_urban_temp/scar/"
 local pathUTC = ")uplp_urban_temp/common/"
-local pathUTREAL = ")uplp_rz/fal/"
+local path510 = "weapons/arc9/uplp_stgw57/"
 
 SWEP.ShootSound = {
-    pathUTREAL .. "fire-01.wav",
-    pathUTREAL .. "fire-02.wav",
-    pathUTREAL .. "fire-03.wav",
+    path510 .. "fire-01.wav",
+    path510 .. "fire-02.wav",
+    path510 .. "fire-03.wav",
 }
 
 SWEP.ShootSoundSilenced = {
@@ -337,10 +334,10 @@ SWEP.ReloadHideBoneTables = {
 }
 
 local mechh = {
-    pathUTREAL .. "mech-01.wav",
-    pathUTREAL .. "mech-02.wav",
-    pathUTREAL .. "mech-03.wav",
-    pathUTREAL .. "mech-04.wav",
+    path510 .. "mech-01.wav",
+    path510 .. "mech-02.wav",
+    path510 .. "mech-03.wav",
+    path510 .. "mech-04.wav",
 }
 
 local UTCrattle = {
@@ -373,8 +370,8 @@ SWEP.Animations = {
         EventTable = {
             { s = pathUTC .. "cloth_3.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "raise.ogg", t = 2 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "chback.ogg", t = 1 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "chforward.ogg", t = 11 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "chargeback.wav", t = 3 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "chargeforward.wav", t = 9 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_4.ogg", t = 35 / 60, c = ca },
         },
         IKTimeLine = {
@@ -425,8 +422,8 @@ SWEP.Animations = {
             { s = pathUTC .. "magpouch.ogg", t = 0.0, v = 0.6 },
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUT .. "magrelease.ogg", t = 9 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 8 / 30 - 0.15, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magin.ogg", t = 25 / 30 - 0.05, c = ca, v = 0.8 },
+            { s = path510 .. "magout.ogg", t = 8 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.ogg", t = 25 / 30 - 0.05, c = ca, v = 0.8 },
             { s = UTCrattle, t = 23.5 / 30, c = ca, v = 0.8 },
             --{hide = 2, t = 0},
         },
@@ -449,10 +446,10 @@ SWEP.Animations = {
             { s = pathUTC .. "magpouch.ogg", t = 0.0, v = 0.6 },
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUT .. "magrelease.ogg", t = 9 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 8 / 30 - 0.15, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magin.ogg", t = 25 / 30 - 0.05, c = ca, v = 0.8 },
-            { s = pathUTScar .. "chpull.ogg", t = 37 / 30 - 0.05, c = ca, v = 0.5 },
-            { s = pathUTREAL .. "chforward.ogg", t = 40 / 30 - 0.1, c = ca, v = 1 },
+            { s = path510 .. "magout.ogg", t = 8 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.ogg", t = 25 / 30 - 0.05, c = ca, v = 0.8 },
+            { s = path510 .. "chargeback.wav", t = 60 / 30 - 0.05, c = ca, v = 0.5 },
+            { s = path510 .. "chargeforward.wav", t = 70 / 30 - 0.1, c = ca, v = 1 },
             { s = UTCrattle, t = 51 / 30, c = ca, v = 0.8 },
             --{hide = 2, t = 0},
         },
@@ -474,8 +471,8 @@ SWEP.Animations = {
             { s = pathUTC .. "movement-rifle-02.ogg", t = 5 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_2.ogg", t = 70 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 75 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "chback.ogg", t = 88 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "chforward.ogg", t = 112 / 30, c = ca, v = 1 },
+            { s = path510 .. "chback.ogg", t = 88 / 30, c = ca, v = 1 },
+            { s = path510 .. "chforward.ogg", t = 112 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_3.ogg", t = 122 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-03.ogg", t = 130 / 30, c = ca, v = 0.8 },
         },
