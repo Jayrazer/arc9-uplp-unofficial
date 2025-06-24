@@ -8,8 +8,8 @@ SWEP.Spawnable = true
 SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "FW 57"
-SWEP.Description = "The FW 57 (Fahrradwaffe mod. 1957) is a hefty battle rifle hailing from Switzerland. In typical Swiss fashion, it's overbuilt, reliable and unique among its contemporaries. It sports a higher magazine capacity than most other battle rifles."
+SWEP.PrintName = "FGW 57"
+SWEP.Description = "The Fahrradgewehr (\"Bicycle Rifle\") mod. 1957 is an eccentric battle rifle known for its reliability, accuracy and famously, being overbuilt and needlessly complex. Being a Swiss rifle, it saw very little combat use during its service life."
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_ar") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
