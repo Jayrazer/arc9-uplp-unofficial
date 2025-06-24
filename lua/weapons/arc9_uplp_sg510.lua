@@ -228,9 +228,9 @@ SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter
 end
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(14, 50, 5)
-SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizeRotateAnchor = Vector(14, -2, -3)
+SWEP.CustomizePos = Vector(18, 50, 4)
+SWEP.CustomizeAng = Angle(90, -2, 1)
+SWEP.CustomizeRotateAnchor = Vector(18, -2.7, 0)
 
 SWEP.CustomizeSnapshotPos = Vector(0, 55, 0)
 SWEP.CustomizeSnapshotFOV = 60
@@ -556,30 +556,21 @@ SWEP.Animations = {
 SWEP.DefaultBodygroups = "00000000070" -- Might as well prepare for the future
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local eles = data.elements
-    -- local mdl = data.model
+	local eles = data.elements
+	local mdl = data.model
 
     -- local short, long, rail = eles["uplp_fal_hg_paras"], eles["uplp_fal_hg_sniper"] or eles["uplp_fal_hg_para"], eles["uplp_fal_hg_para"] or eles["uplp_fal_hg_paras"]
 
-    -- if eles["uplp_fal_muz_long"] then
-        -- mdl:SetBodygroup(9, long and 6 or (short and 2 or 0))
-    -- elseif eles["uplp_fal_muz_sniper"] then
-        -- mdl:SetBodygroup(9, long and 4 or (short and 5 or 3))
-    -- end
-
-    -- mdl:SetBodygroup(10, rail and 0 or eles["uplp_tac_used"] and 1 or 0)
-
-    -- if eles["uplp_fal_hg_aus"] and wep:GetBipod() then
-        -- -- if wep:GetEnterBipodTime() + 0.1 < CurTime() then
-            -- mdl:SetBodygroup(2, 6)
-        -- -- end
-    -- end
+	if eles["uplp_optic_micro"] or eles["uplp_optic_mid"] or eles["uplp_optic_big"] then
+        mdl:SetBodygroup(5,1)
+    end
+	
 end
 
 SWEP.Hook_ModifyElements = function(wep, eles)
-    -- if eles["uplp_fal_rec_para"] or eles["uplp_optic_used"] then
-        -- eles["fal_dc"] = true -- for stciker
-    -- end
+    if ( eles["uplp_optic_micro"] or eles["uplp_optic_mid"] or eles["uplp_optic_big"] ) and !eles["uplp_sg510_barrel_amt"] then
+        eles["stgw57_sightsdown"] = true
+    end
 
     -- if wep:GetBipod() then
         -- eles["extralhik"] = true
@@ -592,7 +583,11 @@ SWEP.AttachmentElements = {
     ["uplp_sg510_mag_ext"] =  { Bodygroups = { { 3, 1 } }, },
     ["uplp_sg510_mag_762"] =  { Bodygroups = { { 3, 2 } }, },
     ["uplp_sg510_stock_wood"] =  { Bodygroups = { { 1, 1 } }, },
-    ["uplp_sg510_barrel_amt"] =  { Bodygroups = { { 2, 1 }, { 4, 2 } }, },
+    ["uplp_sg510_barrel_amt"] =  { 
+	Bodygroups = { { 2, 1 }, { 4, 2 } },
+	AttPosMods = {[1] = { Pos = Vector(0.03, -0.57, 25.9), }}	
+	},
+    ["stgw57_sightsdown"] =  { Bodygroups = { { 4, 1 }, }, },
 	
     -- AttPosMods = {[4] = { Pos = Vector(-1.17, 0.65, 14.1), }} },
 }
@@ -610,21 +605,22 @@ SWEP.Attachments = {
     -- },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_optic"),
-        -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big", "uplp_fal_scope"},
+        -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
         -- DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0, -0.25, 1.5),
+        -- Bone = "stgw57_root",
+		-- Scale = 1,
+        -- Pos = Vector(0, -1.8, 0.25),
         -- Ang = Angle(90, 90, 180),
-        -- -- RequireElements = {"use_optics"},
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
-        -- Category = {"uplp_muzzle", "uplp_fal_muzzle"},
-        -- Bone = "body",
-        -- Pos = Vector(0, 1.34, 28.5),
-        -- Ang = Angle(90, 90, 180),
-        -- Installed = "uplp_fal_muz_long",
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
+        Category = {"uplp_muzzle"},
+        Bone = "stgw57_root",
+		Scale = 1.3,
+        Pos = Vector(0.03, -0.57, 28),
+        Ang = Angle(90, 90, 180),
+		Icon_Offset = Vector(-2, 0, 0),
+    },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_tactical"),
         -- Category = {"uplp_tac"},
