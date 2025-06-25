@@ -686,7 +686,7 @@ SWEP.Attachments = {
         Category = {"uplp_sg510_mag"},
         DefaultIcon = Material(defatt2 .. "scarmag.png", "mips smooth"),
         Bone = "stgw57_root",
-        Pos = Vector(0, 5, 3),
+        Pos = Vector(0, 3, 8.5),
         Ang = Angle(90, 90, 180),
     },
     -- {
