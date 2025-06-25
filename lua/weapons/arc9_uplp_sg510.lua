@@ -622,6 +622,10 @@ SWEP.Hook_ModifyElements = function(wep, eles)
         eles["stgw57_sightsdown"] = true
     end
 
+    if eles["uplp_optic_big"] and eles["uplp_sg510_barrel_amt"] then
+        eles["nope"] = true
+    end
+
     -- if wep:GetBipod() then
         -- eles["extralhik"] = true
     -- end
@@ -634,11 +638,11 @@ SWEP.AttachmentElements = {
     ["uplp_sg510_mag_762"] =  { Bodygroups = { { 3, 2 } }, },
     ["uplp_sg510_stock_plastic"] =  { Bodygroups = { { 1, 1 } }, },
     ["uplp_sg510_stock_wood"] =  { Bodygroups = { { 1, 2 } }, },
-    ["uplp_sg510_barrel_amt"] =  { 
-	Bodygroups = { { 2, 1 }, { 4, 2 } },
-	AttPosMods = {[1] = { Pos = Vector(0.03, -0.57, 25.9), }}	
+    ["uplp_sg510_barrel_amt"] =  { Bodygroups = { { 2, 1 }, { 4, 2 } },
+	AttPosMods = {[2] = { Pos = Vector(0.03, -0.57, 25.9), }}	
 	},
     ["stgw57_sightsdown"] =  { Bodygroups = { { 4, 1 }, }, },
+    ["nope"] =  { Bodygroups = { { 4, 3 }, }, },
 	
     -- AttPosMods = {[4] = { Pos = Vector(-1.17, 0.65, 14.1), }} },
 }
@@ -647,14 +651,15 @@ local defatt = "arc9/def_att_icons/"
 local defatt2 = "entities/uplp_attachements/def/"
 
 SWEP.Attachments = {
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_optic"),
-        -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
-        -- DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
-        -- Bone = "stgw57_root",
-        -- Pos = Vector(0, -1.8, 0.25),
-        -- Ang = Angle(90, 90, 180),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_optic"),
+        Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
+        DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
+        Bone = "stgw57_root",
+        Pos = Vector(0.03, -2.2, 0.7),
+        Ang = Angle(90, 90, 180),
+		CorrectiveAng = Angle(0.595, 0.38, 0)
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
