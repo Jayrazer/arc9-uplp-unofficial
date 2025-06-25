@@ -236,10 +236,10 @@ SWEP.CustomizeSnapshotPos = Vector(0, 55, 0)
 SWEP.CustomizeSnapshotFOV = 60
 
 -- Dropped Magazine
-SWEP.ShouldDropMag = false
+SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/arc9/uplp/fal_mag_20.mdl"
-SWEP.DropMagazineTime = 1
+SWEP.DropMagazineTime = 0.85
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(0, 0, 40)
 SWEP.DropMagazineAng = Angle(0, 0, 0)
@@ -410,22 +410,20 @@ SWEP.Animations = {
 
     ["reload"] = {
         Source = "reload",
-        MinProgress = 0.8,
+        MinProgress = 0.9,
         PeekProgress = 0.865,
-        RefillProgress = 0.5,
+        RefillProgress = 0.6,
         FireASAP = true,
-        Mult = 0.9,
+        Mult = 1,
         EventTable = {
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
-            { s = pathUT .. "magrelease.ogg", t = 20 / 30, c = ca, v = 0.8 },
-            { s = path510 .. "magout1.wav", t = 27 / 30 - 0.15, c = ca, v = 0.8 },
-            { s = path510 .. "magin.wav", t = 40 / 30 - 0.05, c = ca, v = 0.8 },
-			{ s = pathUTC .. "cloth_2.ogg", t = 46 / 30, c = ca, v = 0.8 },
-			{ s = pathUTC .. "magpouch.ogg", t = 49 / 30, v = 0.2 },
-            { s = pathUTC .. "cloth_3.ogg", t = 58 / 30, c = ca, v = 0.8 },
-			{ s = UTCrattle, t = 61 / 30, c = ca, v = 0.8 },
-            --{hide = 2, t = 0},
+            { s = pathUT .. "magrelease.ogg", t = 18 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "magout2.wav", t = 21 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.wav", t = 35 / 30 - 0.05, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 42 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "movement-rifle-02.ogg", t = 46 / 30, c = ca, v = 0.8 },
+            {hide = 0, t = 0},
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -437,22 +435,74 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        MinProgress = 0.88,
+        MinProgress = 0.9,
         PeekProgress = 0.825,
-        RefillProgress = 0.48,
+        RefillProgress = 0.49,
+        FireASAP = true,
+        Mult = 0.95,
+        EventTable = {
+            { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
+            { s = pathUT .. "magrelease.ogg", t = 18 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "magout2.wav", t = 21 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.wav", t = 35 / 30 - 0.05, c = ca, v = 0.8 },
+            { s = path510 .. "chargeback.wav", t = 54 / 30 - 0.05, c = ca, v = 0.5 },
+            { s = path510 .. "chargeforward.wav", t = 61 / 30 - 0.1, c = ca, v = 1 },
+            { s = pathUTC .. "cloth_3.ogg", t = 74 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-02.ogg", t = 72 / 30, c = ca, v = 0.8 },
+            --{hide = 2, t = 0},
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.72, lhik = 0 },
+            { t = 0.86, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },    
+	
+	["reload_20"] = {
+        Source = "reload_20",
+        MinProgress = 0.9,
+        PeekProgress = 0.865,
+        RefillProgress = 0.6,
         FireASAP = true,
         Mult = 1,
         EventTable = {
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
-            { s = pathUT .. "magrelease.ogg", t = 23 / 30, c = ca, v = 0.8 },
-            { s = path510 .. "magout2.wav", t = 25 / 30 - 0.15, c = ca, v = 0.8 },
-            { s = path510 .. "magin.wav", t = 42 / 30 - 0.05, c = ca, v = 0.8 },
-            { s = path510 .. "chargeback.wav", t = 63 / 30 - 0.05, c = ca, v = 0.5 },
-            { s = path510 .. "chargeforward.wav", t = 71 / 30 - 0.1, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_3.ogg", t = 75 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magrelease.ogg", t = 18 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "magout2.wav", t = 21 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.wav", t = 35 / 30 - 0.05, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 42 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "movement-rifle-02.ogg", t = 46 / 30, c = ca, v = 0.8 },
+            {hide = 0, t = 0},
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.65, lhik = 0 },
+            { t = 0.9, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+    ["reload_empty_20"] = {
+        Source = "reload_empty_20",
+        MinProgress = 0.9,
+        PeekProgress = 0.825,
+        RefillProgress = 0.49,
+        FireASAP = true,
+        Mult = 0.95,
+        EventTable = {
+            { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
+            { s = pathUT .. "magrelease.ogg", t = 18 / 30, c = ca, v = 0.8 },
+            { s = path510 .. "magout2.wav", t = 21 / 30 - 0.15, c = ca, v = 0.8 },
+            { s = path510 .. "magin.wav", t = 35 / 30 - 0.05, c = ca, v = 0.8 },
+            { s = path510 .. "chargeback.wav", t = 54 / 30 - 0.05, c = ca, v = 0.5 },
+            { s = path510 .. "chargeforward.wav", t = 61 / 30 - 0.1, c = ca, v = 1 },
+            { s = pathUTC .. "cloth_3.ogg", t = 74 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-02.ogg", t = 72 / 30, c = ca, v = 0.8 },
-			{ s = UTCrattle, t = 84 / 30, c = ca, v = 0.8 },
             --{hide = 2, t = 0},
         },
         IKTimeLine = {
@@ -601,7 +651,6 @@ SWEP.Attachments = {
         -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
         -- DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         -- Bone = "stgw57_root",
-		-- Scale = 1,
         -- Pos = Vector(0, -1.8, 0.25),
         -- Ang = Angle(90, 90, 180),
     -- },
@@ -610,7 +659,7 @@ SWEP.Attachments = {
         Category = {"uplp_muzzle"},
         Bone = "stgw57_root",
 		Scale = 1.3,
-        Pos = Vector(0.03, -0.57, 28),
+        Pos = Vector(0.03, -0.57, 29.3),
         Ang = Angle(90, 90, 180),
 		Icon_Offset = Vector(-2, 0, 0),
     },

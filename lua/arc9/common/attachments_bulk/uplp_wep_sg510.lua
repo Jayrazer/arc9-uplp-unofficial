@@ -42,6 +42,10 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_sg510_mag_762"}
 
+ATT.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_20"
+end
+
 ATT.ClipSizeOverride = 20
 ATT.RPMOverride = 575
 
