@@ -57,13 +57,32 @@ ATT.DropMagazineModelOverride = "models/weapons/arc9/uplp/fal_mag_20.mdl"
 ARC9.LoadAttachment(ATT, "uplp_sg510_mag_762")
 
 
+-- plastic stock
+
+ATT = {}
+
+ATT.PrintName = "Plastic FGW Stock"
+ATT.CompactName = "PLASTIC"
+ATT.Description = "Plastic stock used on the FGW 57."
+
+ATT.Icon = Material(iconfolder .. "mag8.png", "mips smooth")
+ATT.Category = "uplp_sg510_stock"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_sg510_stock_plastic"}
+
+ATT.RecoilMultMult = 0.9
+
+ARC9.LoadAttachment(ATT, "uplp_sg510_stock_plastic")
+
+
 -- wood stock
 
 ATT = {}
 
 ATT.PrintName = "Wooden AMT Stock"
 ATT.CompactName = "WOOD"
-ATT.Description = "Replaces the plastic stock with a wooden stock from the AMT model."
+ATT.Description = "Wooden stock used on the AMT 57."
 
 ATT.Icon = Material(iconfolder .. "mag8.png", "mips smooth")
 ATT.Category = "uplp_sg510_stock"

@@ -632,7 +632,8 @@ end
 SWEP.AttachmentElements = {
     ["uplp_sg510_mag_ext"] =  { Bodygroups = { { 3, 1 } }, },
     ["uplp_sg510_mag_762"] =  { Bodygroups = { { 3, 2 } }, },
-    ["uplp_sg510_stock_wood"] =  { Bodygroups = { { 1, 1 } }, },
+    ["uplp_sg510_stock_plastic"] =  { Bodygroups = { { 1, 1 } }, },
+    ["uplp_sg510_stock_wood"] =  { Bodygroups = { { 1, 2 } }, },
     ["uplp_sg510_barrel_amt"] =  { 
 	Bodygroups = { { 2, 1 }, { 4, 2 } },
 	AttPosMods = {[1] = { Pos = Vector(0.03, -0.57, 25.9), }}	
@@ -705,6 +706,7 @@ SWEP.Attachments = {
         Bone = "stgw57_root",
         Pos = Vector(0, -0.5, -8),
         Ang = Angle(90, 90, 180),
+		Installed = "uplp_sg510_stock_plastic"
     },
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_backup"),
