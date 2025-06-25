@@ -597,13 +597,6 @@ local defatt2 = "entities/uplp_attachements/def/"
 
 SWEP.Attachments = {
     -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_receiver"),
-        -- Category = {"uplp_fal_rec"},
-        -- -- DefaultIcon = Material(defatt2 .. "akhg.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0, 1, 5),
-    -- },
-    -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_optic"),
         -- Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_optic_big"},
         -- DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
