@@ -439,7 +439,7 @@ SWEP.Animations = {
         PeekProgress = 0.825,
         RefillProgress = 0.49,
         FireASAP = true,
-        Mult = 0.95,
+        Mult = 1,
         EventTable = {
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
@@ -492,7 +492,7 @@ SWEP.Animations = {
         PeekProgress = 0.825,
         RefillProgress = 0.49,
         FireASAP = true,
-        Mult = 0.95,
+        Mult = 1,
         EventTable = {
             { s = pathUT .. "reload_start.ogg", t = 0.025, c = ca, v = 0.8 },
             { s = pathUTC .. "magpouch.ogg", t = 5 / 30, v = 0.6 },
