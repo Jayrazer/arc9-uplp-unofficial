@@ -202,9 +202,8 @@ ATT.SpreadAddSights = 0.015
 ATT.SprintToFireTimeMult = 0.8
 ATT.AimDownSightsTimeMult = 0.85
 ATT.DeployTimeMult = 0.85
-ATT.RecoilMult = 1.5
-ATT.RecoilSideMult = 1.5
-ATT.RecoilAutoControlMult = 0.95
+ATT.RecoilMult = 1.15
+ATT.RecoilSideMult = 1.15
 
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_para")
 
@@ -246,13 +245,13 @@ ATT.Attachments = {
     },
 }
 
-ATT.SpreadAddHipFire = 0.01
-ATT.SpreadAddSights = 0.01
-ATT.SprintToFireTimeMult = 0.95
+ATT.SpreadAddHipFire = 0.008
+ATT.SpreadAddSights = 0.008
+ATT.SprintToFireTimeMult = 0.9
 ATT.AimDownSightsTimeMult = 0.9
 ATT.DeployTimeMult = 0.925
-ATT.RecoilMult = 1.35
-ATT.RecoilSideMult = 1.15
+ATT.RecoilMult = 1.05
+--ATT.RecoilSideMult = 1.25
 
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
@@ -278,7 +277,7 @@ ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.RecoilAdd = -1
-ATT.RecoilAutoControlMult = 1.75
+ATT.RecoilAutoControlMult = 1.6
 ATT.VisualRecoilMult = 0.8
 ATT.VisualRecoilMultHipFire = 0.5
 ATT.SwayAddSights = -0.6
