@@ -17,6 +17,22 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_spas15_stock_fold"}
 
+ATT.Hook_TranslateAnimation = function(wep, anim)
+	if anim == "reload_empty" then
+		return anim .. "_foldstock"
+	end	
+	
+	if anim == "inspect" then
+		return anim .. "_foldstock"
+	end	
+	if anim == "inspect_pump" then
+		return anim .. "_foldstock"
+	end	
+	if anim == "inspect_empty" then
+		return anim .. "_foldstock"
+	end
+end
+
 -- Positives
 ATT.AimDownSightsTimeAdd = -0.1
 ATT.SprintToFireTimeAdd = -0.1
