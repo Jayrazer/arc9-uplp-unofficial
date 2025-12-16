@@ -876,30 +876,30 @@ SWEP.Attachments = {
 
 
     -- -- Cosmetic shit
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        -- StickerModel = "models/weapons/arc9/uplp/stickers/awp_2.mdl",
-        -- Category = "stickers",
-        -- Bone = "body",
-        -- Pos = Vector(0, 2, 5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " B",
-        -- StickerModel = "models/weapons/arc9/uplp/stickers/vepr_2.mdl",
-        -- Category = "stickers",
-        -- Bone = "body",
-        -- Pos = Vector(0, 2 + 1.5, -0.5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
-        -- StickerModel = "models/weapons/arc9/uplp/stickers/vepr_3.mdl",
-        -- Category = "stickers",
-        -- Bone = "body",
-        -- Pos = Vector(0, 0.5 + 0.5, -1.8 - 1.5),
-        -- Ang = Angle(90, 90, 180),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_spas15_sticker_a.mdl",
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, 1, 8.5),
+        Ang = Angle(90, 90, 180),
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " B",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_spas15_sticker_b.mdl",
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, 1.5, 4.7),
+        Ang = Angle(90, 90, 180),
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_spas15_sticker_c.mdl",
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, 1.5, 0.5),
+        Ang = Angle(90, 90, 180),
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
