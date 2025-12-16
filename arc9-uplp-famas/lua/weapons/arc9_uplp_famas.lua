@@ -179,6 +179,11 @@ SWEP.SprintToFireTime = 0.37 -- Time it takes to fully enter sprint
 -- SWEP.SwayAddSights = 1
 SWEP.BarrelLength = 38
 
+SWEP.Bipod = true
+SWEP.SpreadAddBipod = -0.003
+SWEP.RecoilMultBipod = 0.2
+SWEP.RecoilPerShotMultBipod = 0.5
+
 -- Shooting and Firemodes
 SWEP.RPM = 850 -- How fast gun shoot
 SWEP.HeatCapacity = 140 * 1.5 -- For suppresors; how many shots for full heat With big silencer (Small silencers will make this number lower down to 70%)
@@ -528,182 +533,6 @@ SWEP.Animations = {
         },
     },
 
-    ["reload_10"] = {
-        Source = "reload10",
-        MinProgress = 0.85,
-        PeekProgress = 0.85,
-        RefillProgress = 0.6,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 10 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 35 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 40 / 30, c = ca, v = 0.8 },
-
-            {hide = 2, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 1, t = 0.7},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.6, lhik = 0 },
-            { t = 0.975, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-    ["reload_empty_10"] = {
-        Source = "reload_empty10",
-        MinProgress = 0.87,
-        PeekProgress = 0.875,
-        RefillProgress = 0.775,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 10 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_1.ogg", t = 25 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_urban_temp/mp7/chback.ogg", t = 40 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 48 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 55 / 30, c = ca, v = 0.3 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 57.5 / 30, c = ca, v = 0.3 },
-
-            {hide = 2, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 1, t = 0.7},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.75, lhik = 0 },
-            { t = 0.95, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
-    ["reload_40"] = {
-        Source = "reload40",
-        MinProgress = 0.85,
-        PeekProgress = 0.85,
-        RefillProgress = 0.6,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 14 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 31 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 45 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 47.5 / 30, c = ca, v = 0.8 },
-
-            {hide = 2, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 1, t = 0.7},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.6, lhik = 0 },
-            { t = 0.975, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-    ["reload_empty_40"] = {
-        Source = "reload_empty40",
-        MinProgress = 0.87,
-        PeekProgress = 0.85,
-        RefillProgress = 0.675,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 14 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 31 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_1.ogg", t = 35 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber_press.ogg", t = 47 / 30, c = ca, v = 0.7 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 48 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 60 / 30, c = ca, v = 0.3 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 62.5 / 30, c = ca, v = 0.3 },
-
-            {hide = 2, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 1, t = 0.7},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.7, lhik = 0 },
-            { t = 0.9, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
-    ["reload_52"] = {
-        Source = "reload60",
-        MinProgress = 0.85,
-        PeekProgress = 0.85,
-        RefillProgress = 0.65,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 14 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 38.5 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 50 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 52.5 / 30, c = ca, v = 0.8 },
-
-            {hide = 1, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 2, t = 0.65},
-            {hide = 1, t = 0.9},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.66, lhik = 0 },
-            { t = 0.975, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-    ["reload_empty_52"] = {
-        Source = "reload_empty60",
-        MinProgress = 0.87,
-        PeekProgress = 0.85,
-        RefillProgress = 0.7,
-        FireASAP = true,
-        Mult = 1,
-        EventTable = {
-            { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
-            { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 14 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 36 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_1.ogg", t = 40 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber_press.ogg", t = 51.5 / 30, c = ca, v = 0.7 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 52.5 / 30, c = ca, v = 1 },
-            { s = pathUTC .. "cloth_4.ogg", t = 65 / 30, c = ca, v = 0.3 },
-            { s = pathUTC .. "movement-rifle-02.ogg", t = 67.5 / 30, c = ca, v = 0.3 },
-
-            {hide = 1, t = 0},
-            {hide = 0, t = 0.4},
-            {hide = 2, t = 0.65},
-            {hide = 1, t = 0.9},
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.15, lhik = 0 },
-            { t = 0.77, lhik = 0 },
-            { t = 0.9, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
     -- Inspecc --
 
     ["inspect"] = {
@@ -730,7 +559,7 @@ SWEP.Animations = {
         },
     },
     ["inspect_empty"] = {
-        Source = "inspect_empty",
+        Source = "inspect",
         FireASAP = true,
         MinProgress = 0.925,
         Mult = 1,
@@ -739,9 +568,11 @@ SWEP.Animations = {
             { s = pathUTC .. "movement-rifle-02.ogg", t = 5 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_2.ogg", t = 70 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 75 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_3.ogg", t = 110 / 30, c = ca, v = 0.8 },
-            { s = pathUTC .. "movement-rifle-03.ogg", t = 120 / 30, c = ca, v = 0.8 },
-            {hide = 2, t = 0},
+            { s = ")uplp_urban_temp/mp7/chback.ogg", t = 88 / 30, c = ca, v = 1 },
+            { s = pathUTREAL .. "boltforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "cloth_3.ogg", t = 122 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.ogg", t = 130 / 30, c = ca, v = 0.8 },
+            -- {hide = 1, t = 0},
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -855,16 +686,8 @@ local stockcol = {
         mdl:SetBodygroup(6, 4)
     end
 
-    if eles["uplp_aug_bot_alt"] then -- grrr element shits itself and regular grip el overriding it
-        mdl:SetBodygroup(6, 5)
-    end
-
-    if !eles["uplp_muzzle_used"] then
-        if eles["uplp_aug_brl_smg"] then
-            mdl:SetBodygroup(5, 1)
-        elseif eles["uplp_aug_brl_mg"] then
-            mdl:SetBodygroup(5, 2)
-        end
+    if eles["uplp_muzzle_used"] then
+        mdl:SetBodygroup(4, 2)
     end
 
     if !eles["uplp_aug_top_scope"] and eles["uplp_aug_brl_smg"] then
@@ -874,6 +697,12 @@ local stockcol = {
     if eles["uplp_aug_brl_mg"] and wep:GetBipod() then
         if wep:GetEnterBipodTime() + 0.1 < CurTime() then
             mdl:SetBodygroup(4, 3)
+        end
+    end
+	
+	if wep:GetBipod() then
+        if wep:GetEnterBipodTime() + 0.2 < CurTime() then
+            mdl:SetBodygroup(6, 1)
         end
     end
 
@@ -902,42 +731,22 @@ SWEP.AttachmentElements = {
     --["uplp_aug_top_scope"] = { Bodygroups = { { 2, 1 } } },
 
     -- IRONS
-    -- ["uplp_optic_used"] = { Bodygroups = { { 3, 0 } } },
+    ["uplp_optic_used"] = { Bodygroups = { { 2, 1 } } },
 
     -- BARRELS
-    ["uplp_aug_brl_smg"] = { Bodygroups = { { 4, 1 } }, AttPosMods = {
-        [5] = { Pos = Vector(0, 1.95, 7) },
-        } },
-    ["uplp_aug_brl_mg"] = { Bodygroups = { { 4, 2 } }, AttPosMods = {
-        [5] = { Pos = Vector(0, 1.95, 18) },
-        } },
-
+    ["uplp_famas_brl_snub"] = { Bodygroups = { { 3, 1 }, { 4, 1 } }, AttPosMods = {
+        [4] = { Pos = Vector(0, 1.765, 10.85) },
+	} },
+	
     -- MUZZLES
     ["uplp_muzzle_used"] = { Bodygroups = { { 4, 1 } } },
 
     -- GRIPS
-    ["uplp_grip_used"] = { Bodygroups = { { 6, 4 } } },
-    ["uplp_ubgl_m203_rail"] = { Bodygroups = { { 6, 4 } } },
-    ["uplp_aug_bot_alt"] = { Bodygroups = { { 6, 5 } }, AttPosMods = {
-        [6] = { Pos = Vector(0, 3.6, 7) },
-        [8] = { Pos = Vector(-1.15, 2.7, 8), Ang = Angle(90, 90, -90) },
-        } },
-
-    ["uplp_ar15_barrel_14"] = { Bodygroups = { { 3, 2 } }, AttPosMods = {
-    [7] = { Pos = Vector(0, 1.02, 16.15) },
-    [8] = { Pos = Vector(0, 0.975, 17.15) },
-    }},
-
-    -- BOTTOM RAIL
-    ["uplp_aug_bot_grip"] = { Bodygroups = { { 6, 0 } } },
+    ["uplp_grip_used"] = { Bodygroups = { { 7, 1 } } },
+    ["uplp_ubgl_m203_rail"] = { Bodygroups = { { 7, 1 } } },
 
     -- MAGAZINES
-    ["uplp_aug_mag_556_30p"] = { Bodygroups = { { 7, 1 } } },
-    ["uplp_aug_mag_556_40"] = { Bodygroups = { { 7, 2 } } },
-    ["uplp_aug_mag_556_52"] = { Bodygroups = { { 7, 3 } } },
-    ["uplp_aug_mag_300_10"] = { Bodygroups = { { 7, 4 } } },
-    ["uplp_aug_mag_919_25"] = { Bodygroups = { { 7, 5 } } },
-    ["uplp_aug_mag_919_40"] = { Bodygroups = { { 7, 6 } } },
+    ["uplp_famas_mag_35"] = { Bodygroups = { { 5, 1 } } },
 
 }
 
@@ -956,6 +765,13 @@ SWEP.Attachments = {
 		Scale = 0.8,
         Icon_Offset = Vector(1, 0, 0),
         ExcludeElements = {"uplp_ar15_rs_carry"},
+		RejectAttachments = {
+			["uplp_optic_generic"] = true,
+			["uplp_optic_pm3"] = true,
+			["uplp_optic_sniper"] = true,
+			["uplp_optic_old"] = true,
+			["uplp_optic_bigass"] = true,
+        },
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_backup"),
@@ -965,9 +781,6 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(0, 0, 0),
         Pos = Vector(0, -1.1, -0.4),
         Ang = Angle(90, 90, 180),
-        RejectAttachments = {
-            ["uplp_ar15_rs_carry"] = false, -- Coward.
-        },
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
@@ -991,9 +804,6 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_grip"),
         Category = {"uplp_grip_vert", "uplp_grip_horiz"},
-        RejectAttachments = {
-        ["uplp_grip_half"] = true,
-        },
         DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(-0.01, 3.5, 5.65),
@@ -1024,7 +834,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_backup"),
         Category = {"uplp_backup_optic_front"},
         Bone = "body",
-        Pos = Vector(0, -1.1, 4),
+        Pos = Vector(0, -1.1, 3.5),
         Ang = Angle(90, 90, 180),
         RequireElements = {"uplp_backup_optic_is"},
         Installed = "uplp_backup_optic_is_front",
@@ -1035,16 +845,6 @@ SWEP.Attachments = {
 
 
     -- Cosmetic shit
-    {
-        PrintName = ARC9:GetPhrase("uplp_category_stock"),
-        Category = {"uplp_aug_stock"},
-        DefaultIcon = Material(defatt .. "skin.png", "mips smooth"),
-        Bone = "body",
-        Pos = Vector(0, -0.5, -7),
-        Ang = Angle(90, 90, 180),
-        CosmeticOnly = true,
-    },
-
     {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
