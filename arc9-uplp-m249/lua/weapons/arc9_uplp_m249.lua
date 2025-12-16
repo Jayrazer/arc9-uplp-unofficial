@@ -784,15 +784,15 @@ SWEP.Attachments = {
         Pos = Vector(1, -1.5, -2.7),
         Ang = Angle(90, 90, 180),
     },	
-	{
-        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
-        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_m249_sticker_box.mdl",
-		ExcludeElements = {"uplp_m249_mag_30", "uplp_m249_mag_60"},
-        Category = "stickers",
-        Bone = "body",
-        Pos = Vector(1, 3, -6.5),
-        Ang = Angle(90, 90, 180),
-    },
+	-- {
+        -- PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
+        -- StickerModel = "models/weapons/arc9/uplp/stickers/uplp_m249_sticker_box.mdl",
+		-- ExcludeElements = {"uplp_m249_mag_30", "uplp_m249_mag_60"},
+        -- Category = "stickers",
+        -- Bone = "body",
+        -- Pos = Vector(1, 3, -6.5),
+        -- Ang = Angle(90, 90, 180),
+    -- },
 
 }
 
