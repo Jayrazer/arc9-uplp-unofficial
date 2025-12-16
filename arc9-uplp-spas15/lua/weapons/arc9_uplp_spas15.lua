@@ -878,10 +878,10 @@ SWEP.Attachments = {
     -- -- Cosmetic shit
     -- {
         -- PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        -- StickerModel = "models/weapons/arc9/uplp/stickers/vepr_1.mdl",
+        -- StickerModel = "models/weapons/arc9/uplp/stickers/awp_2.mdl",
         -- Category = "stickers",
         -- Bone = "body",
-        -- Pos = Vector(0, 2, 4),
+        -- Pos = Vector(0, 2, 5),
         -- Ang = Angle(90, 90, 180),
     -- },
     -- {
@@ -900,11 +900,11 @@ SWEP.Attachments = {
         -- Pos = Vector(0, 0.5 + 0.5, -1.8 - 1.5),
         -- Ang = Angle(90, 90, 180),
     -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_charm"),
-        -- Category = "charm",
-        -- Bone = "bolt",
-        -- Pos = Vector(1.75, 0.16, -0.37),
-        -- Ang = Angle(90, 0, -90),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_charm"),
+        Category = "charm",
+        Bone = "body",
+        Pos = Vector(0.5, 1.5, 7.5),
+        Ang = Angle(90, 0, -90),
+    },
 }
