@@ -347,7 +347,15 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "pzf3_root",
-        Pos = Vector(4.55, -6.45, 1),
+        Pos = Vector(4.55, -6.45, 3),
         Ang = Angle(90, 0, -90),
     },
+	{
+        PrintName = ARC9:GetPhrase("uplp_category_sticker"),
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_panzerfaust_sticker.mdl",
+        Category = "stickers",
+        Bone = "pzf3_root",
+        Pos = Vector(5, -6.25, -1),
+        Ang = Angle(90, 90, 180),
+    },    
 }
