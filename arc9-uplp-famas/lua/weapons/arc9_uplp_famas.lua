@@ -72,7 +72,7 @@ SWEP.WorldModelOffset = {
 }
 
 SWEP.ViewModelFOVBase = 70
-SWEP.ActivePos = Vector(0, -0.28, -0.5)
+SWEP.ActivePos = Vector(0, -0.28, -0.7)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
@@ -215,35 +215,35 @@ SWEP.NPCWeight = 60
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-     Pos = Vector(-2.275, -3, 0.58),
-     Ang = Angle(0, 0, 0.0),
+     Pos = Vector(-2.281, -3, -0.56),
+     Ang = Angle(0.0, -1, 0),
      Magnification = 1.15,
      ViewModelFOV = 65,
 }
 
-local is_tall = {
-    Pos = Vector(-2.275, -3, -0.15),
-    Ang = Angle(0, 0.05, 0),
-    Magnification = 1.15,
-    ViewModelFOV = 65,
-}
+-- local is_tall = {
+    -- Pos = Vector(-2.275, -3, -0.15),
+    -- Ang = Angle(0, 0.05, 0),
+    -- Magnification = 1.15,
+    -- ViewModelFOV = 65,
+-- }
 
-local is_short = {
-    Pos = Vector(-2.275, -3, -0.01),
-    Ang = Angle(0, 0.05, 0),
-    Magnification = 1.15,
-    ViewModelFOV = 65,
-}
+-- local is_short = {
+    -- Pos = Vector(-2.275, -3, -0.01),
+    -- Ang = Angle(0, 0.05, 0),
+    -- Magnification = 1.15,
+    -- ViewModelFOV = 65,
+-- }
 
-SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
-    local attached = self:GetElements()
+-- SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
+    -- local attached = self:GetElements()
 
-    if attached["uplp_ar15_rs_tall"] then
-        return is_tall
-    elseif attached["uplp_ar15_rs_short"] then
-        return is_short
-    end
-end
+    -- if attached["uplp_ar15_rs_tall"] then
+        -- return is_tall
+    -- elseif attached["uplp_ar15_rs_short"] then
+        -- return is_short
+    -- end
+-- end
 
 -- Customization Menu Info
 SWEP.CustomizePos = Vector(11.5, 40, 4)
@@ -972,15 +972,15 @@ SWEP.Attachments = {
             ["uplp_ar15_rs_carry"] = false, -- Coward.
         },
     },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_barrel"),
-        -- Category = {"uplp_aug_barrel"},
-        -- DefaultIcon = Material(defatt .. "barrel.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0, 2, 7),
-        -- Ang = Angle(90, 90, 180),
-        -- ActiveElements = {"uplp_ar15_barrel"},
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_barrel"),
+        Category = {"uplp_famas_barrel"},
+        DefaultIcon = Material(defatt .. "barrel.png", "mips smooth"),
+        Bone = "body",
+        Pos = Vector(0, 2, 7),
+        Ang = Angle(90, 90, 180),
+        ActiveElements = {"uplp_ar15_barrel"},
+    },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
@@ -1005,17 +1005,6 @@ SWEP.Attachments = {
         -- Installed = "uplp_aug_bot_grip",
         -- Integral = "uplp_aug_bot_grip",
     },
-    -- {
-        -- PrintName = ARC9:GetPhrase("uplp_category_extra"),
-        -- Category = {"uplp_aug_grip"},
-        -- DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
-        -- Bone = "body",
-        -- Pos = Vector(0, 3.6, 9),
-        -- Ang = Angle(90, 90, 180),
-        -- RequireElements = {"uplp_grip_used"},
-        -- -- Installed = "uplp_aug_bot_grip",
-        -- -- Integral = "uplp_aug_bot_grip",
-    -- },
     {
         PrintName = ARC9:GetPhrase("uplp_category_tactical"),
         Category = {"uplp_tac"},
@@ -1027,7 +1016,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
-        Category = {"uplp_aug_mag"},
+        Category = {"uplp_famas_mag"},
         DefaultIcon = Material(defatt2 .. "armag.png", "mips smooth"),
         Bone = "mag",
         Pos = Vector(0, 0, 0),
@@ -1110,7 +1099,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 5.25, 6),
         Ang = Angle(90, 90, 0),
         -- ExcludeElements = {"uplp_no_grip", "uplp_no_ubgl"},
-        MergeSlots = {6}, 
+        MergeSlots = {5}, 
         Hidden = true,
     },
 }
