@@ -8,8 +8,8 @@ SWEP.Spawnable = true
 SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "Baguette 33" --ARC9:GetPhrase("uplp_weapon_famas")
-SWEP.Description = "" --ARC9:GetPhrase("uplp_weapon_aug_desc")
+SWEP.PrintName = "Baguette FR" --ARC9:GetPhrase("uplp_weapon_famas")
+SWEP.Description = [[The FA-75 (Fusil d'Assault Modèle 1975) is the former standard issue rifle of the French Army and is still in use by the French Navy. Noted for its various idiosyncracies that distinguish it from similar rifles, such as a substandard magazine capacity, integrated bipod and unique blowback operation. The "Amélioré" model is a modern variant designed to integrate into a modular special forces kit, which updates the rifle to have accessory rails, conventional fire selector and a low profile upper receiver.]] --ARC9:GetPhrase("uplp_weapon_aug_desc")
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_ar") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
@@ -19,9 +19,7 @@ SWEP.Trivia = {
 
     [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "GIAT", --ARC9:GetPhrase( "uplp_weapon_aug_manufacturer" )
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_5.56x45mm"),
-    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ),
-                                                                        ARC9:GetPhrase( "uplp_mechanism_gasoperated" ),
-                                                                        ARC9:GetPhrase( "uplp_mechanism_rotatingbolt" ) ),
+    [ ARC9:GetPhrase( "uplp_mechanism" ) ] = "Lever-delayed blowback", --ARC9:GetPhrase( "uplp_mechanism_leverdelay" )
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_france" ),
     [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1975" ),
 }
@@ -960,10 +958,9 @@ SWEP.Attachments = {
         ExcludeElements = {"uplp_ar15_rs_carry"},
     },
     {
-        PrintName = ARC9:GetPhrase("uplp_category_sight_rear"),
+        PrintName = ARC9:GetPhrase("uplp_category_backup"),
         Category = {"uplp_backup_optic"},
         DefaultIcon = Material(defatt .. "rs.png", "mips smooth"),
-        ExcludeElements = {"uplp_aug_top_scope"},
         Bone = "body",
         CorrectiveAng = Angle(0, 0, 0),
         Pos = Vector(0, -1.1, -0.4),
@@ -1096,7 +1093,7 @@ SWEP.Attachments = {
         Category = {"uplp_m203_rail"},
         -- DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 5.25, 6),
+        Pos = Vector(0, 5.25, 5.5),
         Ang = Angle(90, 90, 0),
         -- ExcludeElements = {"uplp_no_grip", "uplp_no_ubgl"},
         MergeSlots = {5}, 
