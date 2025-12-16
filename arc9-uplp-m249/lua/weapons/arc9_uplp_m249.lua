@@ -763,19 +763,36 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "body",
-        Pos = Vector(0.78, -1.8, 7),
+        Pos = Vector(0.8, -2, -6),
         Ang = Angle(90, 0, -90),
     },
 
 
-    --{
-        --PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        --StickerModel = "models/weapons/arc9/uplp/stickers/ak_1.mdl",
-        --Category = "stickers",
-        --Bone = "body",
-        --Pos = Vector(0, 1.8 + 1.5, 5.75),
-        --Ang = Angle(90, 90, 180),
-    --},
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_m249_sticker_a.mdl",
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, -1.5, -9),
+        Ang = Angle(90, 90, 180),
+    },    
+	{
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " B",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_m249_sticker_b.mdl",
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, -1.5, -2.7),
+        Ang = Angle(90, 90, 180),
+    },	
+	{
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_m249_sticker_box.mdl",
+		ExcludeElements = {"uplp_m249_mag_30", "uplp_m249_mag_60"},
+        Category = "stickers",
+        Bone = "body",
+        Pos = Vector(1, 3, -6.5),
+        Ang = Angle(90, 90, 180),
+    },
 
 }
 
