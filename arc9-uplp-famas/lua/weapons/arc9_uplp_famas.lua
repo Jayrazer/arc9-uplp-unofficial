@@ -33,6 +33,7 @@ SWEP.Credits = {
 }
 
 SWEP.StandardPresets = {
+"[Commando Forces]XQAAAQCrAQAAAAAAAAA9iIIiM7tuo1AtUBf3wUZrgpRXm4Oq0ep9StmT7dClioBEa1QpANz4hrNJ6iaZJ04t7tkbIdBtVk/lO7sGjJZDvBOIRiHfayJRkMZZ6swBv/W6T6Pw+pitCftwjt8BSYk8Gp4N3Cks9REDgpvSDPuF32ORB7zFaVhcW9nj4NqJ2CfUeGR2LdUWeK1LvT1PbTHHUpVCaEsZorNMiS8lTbfuaHRP7dQ0BfnlxQ=="
 }
 
 SWEP.DefaultBodygroups = "00000000000000" -- Might as well prepare for the future
@@ -831,40 +832,32 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "body",
-        Pos = Vector(0.9, 2.3, 1.5),
+        Pos = Vector(0.8, 2.1, 0.5),
         Ang = Angle(90, 0, -90),
     },
 
     {
         PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
-        StickerModel = "models/weapons/arc9/uplp/stickers/aug_1.mdl",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_famas_sticker_a.mdl",
         Category = "stickers",
         Bone = "body",
-        Pos = Vector(0, 3 + 2.5, -11),
+        Pos = Vector(1, 1.8, 6.2),
         Ang = Angle(90, 90, 180),
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " B",
-        StickerModel = "models/weapons/arc9/uplp/stickers/aug_2.mdl",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_famas_sticker_b.mdl",
         Category = "stickers",
         Bone = "body",
-        Pos = Vector(0, 3.5 + 1.5, -6.5),
+        Pos = Vector(1, -0.3, -4.5),
         Ang = Angle(90, 90, 180),
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
-        StickerModel = "models/weapons/arc9/uplp/stickers/aug_3.mdl",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_famas_sticker_c.mdl",
         Category = "stickers",
         Bone = "body",
-        Pos = Vector(0, 2 + 0.5, -3),
-        Ang = Angle(90, 90, 180),
-    },
-    {
-        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " D",
-        StickerModel = "models/weapons/arc9/uplp/stickers/aug_4.mdl",
-        Category = "stickers",
-        Bone = "body",
-        Pos = Vector(0, 2 + 0.5, -1),
+        Pos = Vector(1, 1.5, -8.5),
         Ang = Angle(90, 90, 180),
     },
 
