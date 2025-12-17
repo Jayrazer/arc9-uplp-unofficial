@@ -82,7 +82,7 @@ SWEP.DamageMin = 10
 SWEP.DamageType = DMG_BULLET
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.8,
+    [HITGROUP_HEAD] = 2,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 0.9,
@@ -95,7 +95,7 @@ SWEP.Penetration = 15 -- Units of wood that can be penetrated
 SWEP.ImpactForce = 2 -- How much kick things will have when hit
 
 -- Range
-SWEP.RangeMin = 20 / ARC9.HUToM
+SWEP.RangeMin = 25 / ARC9.HUToM
 SWEP.RangeMax = 100 / ARC9.HUToM
 
 -- Physical Bullets
@@ -146,10 +146,10 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.0045
-SWEP.SpreadAddHipFire = 0.033
+SWEP.Spread = 0.0055
+SWEP.SpreadAddHipFire = 0.035
 
-SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadAddRecoil = 0.011
 SWEP.SpreadAddMove = 0.006
 SWEP.SpreadAddMidAir = 0.05
 
@@ -158,7 +158,7 @@ SWEP.SpreadMultMove = 1
 
 SWEP.RecoilDissipationRate = 7
 SWEP.RecoilResetTime = 0.02
-SWEP.RecoilPerShot = 1 / 8
+SWEP.RecoilPerShot = 1 / 5
 SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapSights = 1
@@ -479,7 +479,7 @@ SWEP.Animations = {
         Source = "reload",
         MinProgress = 0.85,
         PeekProgress = 0.85,
-        RefillProgress = 0.6,
+        RefillProgress = 0.55,
         FireASAP = true,
         Mult = 1,
         EventTable = {
@@ -506,7 +506,7 @@ SWEP.Animations = {
         Source = "reload_empty",
         MinProgress = 0.87,
         PeekProgress = 0.85,
-        RefillProgress = 0.6,
+        RefillProgress = 0.4,
         FireASAP = true,
         Mult = 1,
         EventTable = {
