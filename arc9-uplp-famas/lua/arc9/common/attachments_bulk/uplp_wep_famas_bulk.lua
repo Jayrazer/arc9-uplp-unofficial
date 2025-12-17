@@ -14,7 +14,7 @@ ATT.Description = ATT.PrintName
 
 ATT.Icon = Material(iconfolder .. "35mag.png", "mips smooth")
 
-ATT.DropMagazineModel = "models/weapons/arc9/uplp/aug_mag_556_40.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/famas_mag_ext.mdl"
 
 ATT.Category = "uplp_famas_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
@@ -55,9 +55,9 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_famas_brl_snub"}
 
 -- Positives
-ATT.RPMAdd = 40
-ATT.SpreadAddHipFire = -0.005
-ATT.SpreadAddRecoil = -0.001
+ATT.RPMAdd = 50
+ATT.SpreadAddHipFire = -0.006
+ATT.SpreadAddRecoil = -0.0012
 ATT.AimDownSightsTimeAdd = -0.04
 ATT.SprintToFireTimeAdd = -0.05
 ATT.SpeedMultSights = 1.12
@@ -68,10 +68,10 @@ ATT.RecoilMult = 1.25
 ATT.RecoilSideAdd = 0.25
 ATT.SpreadAdd = 0.0025
 ATT.RangeMaxMult = 0.85
-ATT.SweetSpotRangeAdd = -5 / ARC9.HUToM
-ATT.SweetSpotWidthAdd = 10 / ARC9.HUToM
-ATT.SweetSpotPeakAdd = -5 / ARC9.HUToM
-ATT.RangeMinAdd = -10 / ARC9.HUToM
+ATT.SweetSpotRangeAdd = -8 / ARC9.HUToM
+ATT.SweetSpotWidthAdd = 15 / ARC9.HUToM
+ATT.SweetSpotPeakAdd = -8 / ARC9.HUToM
+ATT.RangeMinAdd = -12 / ARC9.HUToM
 ATT.PhysBulletMuzzleVelocityMult = 0.8
 ATT.RecoilPerShot = 1 / 6
 
