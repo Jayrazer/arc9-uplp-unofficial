@@ -1,9 +1,6 @@
 local ATT = {}
 
-local iconfolder = "entities/uplp_attachements/aug/"
-local iconfolderar = "entities/uplp_attachements/ar15/"
-local iconfolderak = "entities/uplp_attachements/ak/"
-local iconfolderax = "entities/uplp_attachements/awp/"
+local iconfolder = "entities/uplp_attachements/famas/"
 
 ---------- uplp_famas_mag_35
 
@@ -15,7 +12,7 @@ ATT.PrintName = "35-Round 5.56x45mm"
 ATT.CompactName = "35R 5.56"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "35.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "35mag.png", "mips smooth")
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/aug_mag_556_40.mdl"
 
@@ -31,10 +28,10 @@ ATT.ActivateElements = {"uplp_famas_mag_35"}
 ATT.ClipSizeOverride = 35
 
 -- Negatives
-ATT.SpreadAddHipFire = 0.006
+ATT.SpreadAddHipFire = 0.005
 ATT.AimDownSightsTimeAdd = 0.03
 ATT.SprintToFireTimeAdd = 0.02
-ATT.DeployTimeMult = 1.15
+ATT.DeployTimeMult = 1.125
 ATT.SwayMultSights = 1.1
 ATT.SpeedMultSights = 0.9
 ATT.ReloadTimeMult = 1.1
@@ -50,7 +47,7 @@ ATT.PrintName = "285mm Commando Barrel"
 ATT.CompactName = "285mm"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "short.png", "mips smooth")
+ATT.Icon = Material(iconfolder .. "brlsnub.png", "mips smooth")
 
 ATT.Category = "uplp_famas_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
