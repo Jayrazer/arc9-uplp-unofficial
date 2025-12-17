@@ -15,7 +15,7 @@ SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_ar") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = "FAMAS Valorise", --ARC9:GetPhrase("uplp_weapon_aug_real")
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = "FAMAS Valorisé", --ARC9:GetPhrase("uplp_weapon_aug_real")
 
     [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "GIAT", --ARC9:GetPhrase( "uplp_weapon_aug_manufacturer" )
     [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_5.56x45mm"),
@@ -25,10 +25,10 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    [ ARC9:GetPhrase( "uplp_lua" ) ] = "Moka, 8Z",
+    [ ARC9:GetPhrase( "uplp_lua" ) ] = "Moka, 8Z, speedonerd",
     [ ARC9:GetPhrase( "uplp_assets" ) ] = "TastyTony",
     [ ARC9:GetPhrase( "uplp_animations" ) ] = "Partexedd, inspect by Darsu",
-    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th",
+    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "rzen1th, speedonerd",
     [ ARC9:GetPhrase( "uplp_general" ) ] = "Darsu",
 }
 
@@ -115,7 +115,7 @@ SWEP.RecoilUp = 0.7
 SWEP.RecoilSide = 0.9
 
 SWEP.RecoilRandomUp = 0.6
-SWEP.RecoilRandomSide = 0.8
+SWEP.RecoilRandomSide = 0.6
 
 SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
@@ -177,16 +177,16 @@ SWEP.AimDownSightsTime = 0.33 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.37 -- Time it takes to fully enter sprint
 
 -- SWEP.SwayAddSights = 1
-SWEP.BarrelLength = 38
+SWEP.BarrelLength = 36
 
 SWEP.Bipod = true
-SWEP.SpreadAddBipod = -0.003
+SWEP.SpreadAddBipod = -0.002
 SWEP.RecoilMultBipod = 0.2
 SWEP.RecoilPerShotMultBipod = 0.5
 
 -- Shooting and Firemodes
 SWEP.RPM = 900 -- How fast gun shoot
-SWEP.HeatCapacity = 140 * 1.5 -- For suppresors; how many shots for full heat With big silencer (Small silencers will make this number lower down to 70%)
+SWEP.HeatCapacity = 130 * 1.5 -- For suppresors; how many shots for full heat With big silencer (Small silencers will make this number lower down to 70%)
 
 SWEP.Num = 1 -- How many bullets shot at once
 
@@ -207,7 +207,7 @@ SWEP.ShootPitch = 100
 SWEP.ShootVolume = 120
 
 -- HoldType Info
-SWEP.HoldType = "smg"
+SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = nil
 SWEP.HoldTypeSights = "smg"
@@ -393,8 +393,8 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             { s = pathUTC .. "raise.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_urban_temp/mp7/chback.ogg", t = 3 / 30, c = ca, v = 1 },
-            { s = ")uplp_rz/mp9/chback.ogg", t = 11 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chback.ogg", t = 3 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chforward.ogg", t = 11 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_4.ogg", t = 32 / 60, c = ca },
         },
         IKTimeLine = {
@@ -669,22 +669,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local eles = data.elements
     local mdl = data.model
 
-    local stock = "uplp_aug_stock_"
-
-local stockcol = {
-    [stock .. "black"] = 1,
-    [stock .. "tan"] = 2,
-    [stock .. "white"] = 3,
-}
-
-    if !eles["uplp_grip_used"] then
-        for k, v in pairs(stockcol) do
-            if eles[k] then
-                mdl:SetBodygroup(6, v)
-            end
-        end
-    end
-
     if eles["uplp_optic_used"] or eles["uplp_ar15_rs"] or eles["uplp_backup_optic"] then
         mdl:SetBodygroup(2, 1)
     end
@@ -695,16 +679,6 @@ local stockcol = {
 
     if eles["uplp_muzzle_used"] then
         mdl:SetBodygroup(4, 2)
-    end
-
-    if !eles["uplp_aug_top_scope"] and eles["uplp_aug_brl_smg"] then
-        mdl:SetBodygroup(2, 2)
-    end
-
-    if eles["uplp_aug_brl_mg"] and wep:GetBipod() then
-        if wep:GetEnterBipodTime() + 0.1 < CurTime() then
-            mdl:SetBodygroup(4, 3)
-        end
     end
 	
 	if wep:GetBipod() then
@@ -754,6 +728,7 @@ SWEP.AttachmentElements = {
 
     -- MAGAZINES
     ["uplp_famas_mag_35"] = { Bodygroups = { { 5, 1 } } },
+    ["uplp_famas_mag_15"] = { Bodygroups = { { 5, 2 } } },
 
 }
 
@@ -813,7 +788,7 @@ SWEP.Attachments = {
         Category = {"uplp_grip_vert", "uplp_grip_horiz"},
         DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(-0.01, 3.5, 5.65),
+        Pos = Vector(-0.01, 3.5, 6.2),
         Ang = Angle(90, 90, 180),
 		Scale = 0.85
         -- Installed = "uplp_aug_bot_grip",
@@ -900,7 +875,7 @@ SWEP.Attachments = {
         Category = {"uplp_m203_rail"},
         -- DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 5.25, 5.5),
+        Pos = Vector(0, 5.15, 5.5),
         Ang = Angle(90, 90, 0),
         -- ExcludeElements = {"uplp_no_grip", "uplp_no_ubgl"},
         MergeSlots = {5}, 

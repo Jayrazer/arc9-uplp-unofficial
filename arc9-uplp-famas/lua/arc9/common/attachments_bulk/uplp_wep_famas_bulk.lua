@@ -21,10 +21,6 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_famas_mag_35"}
 
--- ATT.Hook_TranslateAnimation = function(wep, anim)
-    -- return anim .. "_40"
--- end
-
 ATT.ClipSizeOverride = 35
 
 -- Negatives
@@ -37,6 +33,38 @@ ATT.SpeedMultSights = 0.9
 ATT.ReloadTimeMult = 1.1
 
 ARC9.LoadAttachment(ATT, "uplp_famas_mag_35")
+
+
+---------- uplp_famas_mag_15
+
+ATT = {}
+
+ATT.Ignore = false
+
+ATT.PrintName = "15-Round 5.56x45mm"
+ATT.CompactName = "15R 5.56"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolder .. "15mag.png", "mips smooth")
+
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/famas_mag_small.mdl"
+
+ATT.Category = "uplp_famas_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_famas_mag_15"}
+
+ATT.SpreadAddHipFire = -0.005
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.SprintToFireTimeAdd = -0.02
+ATT.DeployTimeMult = 0.875
+ATT.SwayMultSights = 0.9
+ATT.ReloadTimeMult = 0.9
+
+-- Negatives
+ATT.ClipSizeOverride = 15
+
+ARC9.LoadAttachment(ATT, "uplp_famas_mag_15")
 
 
 ---------- uplp_famas_brl_snub
@@ -55,7 +83,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_famas_brl_snub"}
 
 -- Positives
-ATT.RPMAdd = 50
+ATT.RPMAdd = 25
 ATT.SpreadAddHipFire = -0.006
 ATT.SpreadAddRecoil = -0.0012
 ATT.AimDownSightsTimeAdd = -0.04
