@@ -522,8 +522,8 @@ SWEP.Animations = {
             { s = pathFAMAS .. "magplace.ogg", t = 21 / 30, c = ca, v = 1 },
             { s = pathFAMAS .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_1.ogg", t = 25 / 30, c = ca, v = 0.8 },
-            { s = pathFAMAS .. "chback.ogg", t = 39 / 30, c = ca, v = 1 },
-            { s = pathFAMAS .. "chforward.ogg", t = 43.5 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chback.ogg", t = 41 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chforward.ogg", t = 46/ 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_4.ogg", t = 50 / 30, c = ca, v = 0.3 },
             { s = pathUTC .. "movement-rifle-02.ogg", t = 52.5 / 30, c = ca, v = 0.3 },
 
