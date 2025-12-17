@@ -185,19 +185,19 @@ SWEP.RecoilMultBipod = 0.2
 SWEP.RecoilPerShotMultBipod = 0.5
 
 -- Shooting and Firemodes
-SWEP.RPM = 850 -- How fast gun shoot
+SWEP.RPM = 900 -- How fast gun shoot
 SWEP.HeatCapacity = 140 * 1.5 -- For suppresors; how many shots for full heat With big silencer (Small silencers will make this number lower down to 70%)
 
 SWEP.Num = 1 -- How many bullets shot at once
 
 SWEP.Firemodes = {
 	 { Mode = 3, -- Burst
-	 RPM = 900,
      },
     { Mode = -1, -- Full
+	RPM = 880,
      },    
     { Mode = 1, -- Semi
-    RPM = 600,
+    RPM = 650,
      }
 }
 
@@ -279,7 +279,7 @@ local pathUTC = ")uplp_urban_temp/common/"
 SWEP.ShootSound = {
     pathFAMAS .. "fire-01.wav",
     pathFAMAS .. "fire-02.wav",
-    --pathFAMAS .. "fire-03.wav",
+    pathFAMAS .. "fire-03.wav",
 }
 
 SWEP.ShootSoundSilenced = {
@@ -393,8 +393,8 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             { s = pathUTC .. "raise.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_rz/mp9/chback.ogg", t = 3 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 11 / 30, c = ca, v = 1 },
+            { s = ")uplp_urban_temp/mp7/chback.ogg", t = 3 / 30, c = ca, v = 1 },
+            { s = ")uplp_rz/mp9/chback.ogg", t = 11 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_4.ogg", t = 32 / 60, c = ca },
         },
         IKTimeLine = {
@@ -488,8 +488,10 @@ SWEP.Animations = {
         EventTable = {
             { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 8 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magrel.ogg", t = 7 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magout.ogg", t = 8 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magplace.ogg", t = 21 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_4.ogg", t = 35 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-02.ogg", t = 40 / 30, c = ca, v = 0.8 },
 
@@ -515,11 +517,13 @@ SWEP.Animations = {
         EventTable = {
             { s = pathUTC .. "magpouch.ogg", t = 4 / 30, v = 0.4 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUTREAL .. "magout.ogg", t = 8 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magrel.ogg", t = 7 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magout.ogg", t = 8 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magplace.ogg", t = 21 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "magin.ogg", t = 23 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_1.ogg", t = 25 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_rz/mp9/chback.ogg", t = 39 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 44 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chback.ogg", t = 39 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chforward.ogg", t = 43.5 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_4.ogg", t = 50 / 30, c = ca, v = 0.3 },
             { s = pathUTC .. "movement-rifle-02.ogg", t = 52.5 / 30, c = ca, v = 0.3 },
 
@@ -548,8 +552,8 @@ SWEP.Animations = {
             { s = pathUTC .. "movement-rifle-02.ogg", t = 5 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_2.ogg", t = 70 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 75 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_rz/mp9/chback.ogg", t = 90 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chback.ogg", t = 90 / 30, c = ca, v = 1 },
+            { s = ")uplp_rz/mp9/chforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_3.ogg", t = 122 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-03.ogg", t = 130 / 30, c = ca, v = 0.8 },
             -- {hide = 1, t = 0},
@@ -571,8 +575,8 @@ SWEP.Animations = {
             { s = pathUTC .. "movement-rifle-02.ogg", t = 5 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "cloth_2.ogg", t = 70 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 75 / 30, c = ca, v = 0.8 },
-            { s = ")uplp_rz/mp9/chback.ogg", t = 90 / 30, c = ca, v = 1 },
-            { s = pathUTREAL .. "boltforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
+            { s = pathFAMAS .. "chback.ogg", t = 90 / 30, c = ca, v = 1 },
+            { s = ")uplp_rz/mp9/chforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_3.ogg", t = 122 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-03.ogg", t = 130 / 30, c = ca, v = 0.8 },
             -- {hide = 1, t = 0},
@@ -763,7 +767,7 @@ SWEP.Attachments = {
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "body",
         CorrectiveAng = Angle(0, 0, 0),
-        Pos = Vector(-0.02, -1.1, 0.3),
+        Pos = Vector(-0.02, -1, 0.3),
         Ang = Angle(90, 90, 180),
 		Scale = 0.8,
         Icon_Offset = Vector(1, 0, 0),
