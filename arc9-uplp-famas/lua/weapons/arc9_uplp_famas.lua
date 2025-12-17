@@ -83,7 +83,7 @@ SWEP.DamageMin = 10
 SWEP.DamageType = DMG_BULLET
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
+    [HITGROUP_HEAD] = 1.8,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 0.9,
@@ -147,7 +147,7 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.0055
+SWEP.Spread = 0.004
 SWEP.SpreadAddHipFire = 0.035
 
 SWEP.SpreadAddRecoil = 0.011
@@ -195,7 +195,6 @@ SWEP.Firemodes = {
 	 { Mode = 3, -- Burst
      },
     { Mode = -1, -- Full
-	RPM = 880,
      },    
     { Mode = 1, -- Semi
     RPM = 650,

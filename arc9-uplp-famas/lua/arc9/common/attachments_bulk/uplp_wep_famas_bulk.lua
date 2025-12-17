@@ -83,7 +83,6 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.ActivateElements = {"uplp_famas_brl_snub"}
 
 -- Positives
-ATT.RPMAdd = 25
 ATT.SpreadAddHipFire = -0.006
 ATT.SpreadAddRecoil = -0.0012
 ATT.AimDownSightsTimeAdd = -0.04
