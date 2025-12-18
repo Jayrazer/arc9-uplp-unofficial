@@ -61,7 +61,7 @@ SWEP.WorldModelOffset = {
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.ViewModelFOVBase = 70
-SWEP.ActivePos = Vector(0, -1, -1)
+SWEP.ActivePos = Vector(1, -1, -0.5)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.PeekPos = Vector(3, 2, -1)
@@ -261,7 +261,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-		MinProgress = 0.9,
+		MinProgress = 0.7,
         EventTable = {
             {s = pathPanzer .. "draw.wav", t = 1 / 30},
         },
@@ -270,7 +270,7 @@ SWEP.Animations = {
         Source = "holster",
 		MinProgress = 0.9,
         EventTable = {
-            {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
+            {s = pathPanzer .. "reload_start.wav", t = 2 / 30},
         },
     },
     ["fire"] = {
@@ -290,12 +290,12 @@ SWEP.Animations = {
 		FireASAP = true,
         EventTable = {
             {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
-            {s = pathPanzer .. "magrelease.wav", t = 8 / 30},
-			{s = pathPanzer .. "magout.wav", t = 13 / 30},
+            {s = pathPanzer .. "magrelease.wav", t = 9 / 30},
+			{s = pathPanzer .. "magout.wav", t = 15 / 30},
             {s = pathPanzer .. "reload_mid.wav", t = 35 / 30},
-            {s = pathPanzer .. "magin1.wav", t = 55 / 30},
-            {s = pathPanzer .. "magin2.wav", t = 61 / 30},
-            {s = pathPanzer .. "rattle2.wav", t = 63 / 30},
+            {s = pathPanzer .. "magin1.wav", t = 56 / 30},
+            {s = pathPanzer .. "magin2.wav", t = 63 / 30},
+            {s = pathPanzer .. "rattle2.wav", t = 65 / 30},
         },
     },
     ["inspect"] = {
