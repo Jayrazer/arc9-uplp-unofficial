@@ -236,8 +236,7 @@ SWEP.DropMagazineVelocity = Vector(20, 10, 0)
 
 ---- Sounds
 -- urbna!
-local pathM249 = "weapons/arc9/uplp_m249/"
-
+local pathM249 = "uplp/m249/"
 local pathUT = "uplp_urban_temp/ar15/"
 local pathUTC = "uplp_urban_temp/common/"
 

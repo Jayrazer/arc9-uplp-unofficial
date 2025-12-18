@@ -230,10 +230,11 @@ SWEP.DropMagazineVelocity = Vector(70, 20, 0)
 
 ---- Sounds
 -- urbna!
+local pathPanzer = "uplp/panzerfaust/"
 local pathUT = "uplp_urban_temp/ak/"
 local pathUTC = "uplp_urban_temp/common/"
 
-SWEP.ShootSound = "^arc9_uplp/panzerfaust/pable3_fire.wav"
+SWEP.ShootSound = "^" .. pathPanzer .. "pable3_fire.wav"
 -- {
 	-- "^arc9_uplp/panzerfaust/fire_1.wav",
 	-- "^arc9_uplp/panzerfaust/fire_2.wav",
@@ -244,7 +245,7 @@ SWEP.ShootSoundSilenced = ""
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
 
 SWEP.DropMagazineSounds = {
-    "arc9_uplp/panzerfaust/tube_hit_ground.wav",
+    pathPanzer .. "tube_hit_ground.wav",
 }
 
 SWEP.BulletBones = {
@@ -262,14 +263,14 @@ SWEP.Animations = {
         Source = "draw",
 		MinProgress = 0.9,
         EventTable = {
-            {s = "arc9_uplp/panzerfaust/draw.wav", t = 1 / 30},
+            {s = pathPanzer .. "draw.wav", t = 1 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		MinProgress = 0.9,
         EventTable = {
-            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
+            {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
         },
     },
     ["fire"] = {
@@ -277,7 +278,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
         Time = 13 / 30,
         EventTable = {
-			{s = "arc9_uplp/panzerfaust/rocket.wav", t = 3 / 30},
+			{s = pathPanzer .. "rocket.wav", t = 3 / 30},
         },
     },
     ["reload"] = {
@@ -288,13 +289,13 @@ SWEP.Animations = {
 		MagSwapTime = 0.9,
 		FireASAP = true,
         EventTable = {
-            {s = "arc9_uplp/panzerfaust/reload_start.wav", t = 1 / 30},
-            {s = "arc9_uplp/panzerfaust/magrelease.wav", t = 8 / 30},
-			{s = "arc9_uplp/panzerfaust/magout.wav", t = 13 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 35 / 30},
-            {s = "arc9_uplp/panzerfaust/magin1.wav", t = 55 / 30},
-            {s = "arc9_uplp/panzerfaust/magin2.wav", t = 61 / 30},
-            {s = "arc9_uplp/panzerfaust/rattle2.wav", t = 63 / 30},
+            {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
+            {s = pathPanzer .. "magrelease.wav", t = 8 / 30},
+			{s = pathPanzer .. "magout.wav", t = 13 / 30},
+            {s = pathPanzer .. "reload_mid.wav", t = 35 / 30},
+            {s = pathPanzer .. "magin1.wav", t = 55 / 30},
+            {s = pathPanzer .. "magin2.wav", t = 61 / 30},
+            {s = pathPanzer .. "rattle2.wav", t = 63 / 30},
         },
     },
     ["inspect"] = {
@@ -303,10 +304,10 @@ SWEP.Animations = {
 		Time = 150 / 30,
         MinProgress = 0.925,
         EventTable = {
-		    {s = "arc9_uplp/panzerfaust/inspect_start.wav", t = 0 / 30},
-		    {s = "arc9_uplp/panzerfaust/inspect_mid.wav", t = 50 / 30},
-		    {s = "arc9_uplp/panzerfaust/rotate.wav", t = 62 / 30},
-            {s = "arc9_uplp/panzerfaust/reload_mid.wav", t = 102 / 30},
+		    {s = pathPanzer .. "inspect_start.wav", t = 0 / 30},
+		    {s = pathPanzer .. "inspect_mid.wav", t = 50 / 30},
+		    {s = pathPanzer .. "rotate.wav", t = 62 / 30},
+            {s = pathPanzer .. "reload_mid.wav", t = 102 / 30},
         },
     },
 }

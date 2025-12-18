@@ -259,7 +259,7 @@ SWEP.DropMagazineVelocity = Vector(0, -50, 25)
 -- urbna!
 local pathUT = ")uplp_urban_temp/vepr/"
 local pathUTC = "))uplp_urban_temp/common/"
-local pathSPAS = "weapons/arc9/uplp_spas15/"
+local pathSPAS = "uplp/spas15/"
 
 
 SWEP.ShootSound = {
