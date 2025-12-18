@@ -9,7 +9,7 @@ SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "Baguette FR" --ARC9:GetPhrase("uplp_weapon_famas")
-SWEP.Description = [[The FA-75 (Fusil d'Assault Modèle 1975) is the former standard issue rifle of the French Army and is still in use by the French Navy. Noted for its various idiosyncracies that distinguish it from similar rifles, such as a substandard magazine capacity, integrated bipod and unique blowback operation. The "Amélioré" model is a modern variant designed to integrate into a modular special forces kit, which updates the rifle to have accessory rails, conventional fire selector and a low profile upper receiver.]] --ARC9:GetPhrase("uplp_weapon_aug_desc")
+SWEP.Description = [[The FA-75 (Fusil d'Assault Modèle 1975) is the former standard issue rifle of the French Army and is still in use by the French Navy. Noted for its various idiosyncracies that distinguish it from similar rifles, such as an odd magazine capacity, integrated bipod and unique blowback operation. The "Amélioré" model is a modern variant designed to integrate into a modular special forces kit, which updates the rifle to have accessory rails and a low profile upper receiver.]] --ARC9:GetPhrase("uplp_weapon_aug_desc")
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_ar") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu
@@ -72,6 +72,8 @@ SWEP.WorldModelOffset = {
 
 SWEP.ViewModelFOVBase = 70
 SWEP.ActivePos = Vector(0, -0.28, -0.7)
+SWEP.SprintPos = Vector(4,0,-1.25)
+SWEP.SprintAng = Angle(40,-5,-20)
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
@@ -202,6 +204,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.PostBurstDelay = 0.15
+SWEP.RunawayBurst = true
 
 SWEP.ShootPitch = 100
 SWEP.ShootVolume = 120
@@ -251,7 +254,7 @@ SWEP.IronSights = {
 -- end
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(11.5, 40, 4)
+SWEP.CustomizePos = Vector(11.5, 40, 3)
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizeRotateAnchor = Vector(11.5, -2.5, -3)
 
@@ -509,7 +512,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        MinProgress = 0.87,
+        MinProgress = 0.89,
         PeekProgress = 0.85,
         RefillProgress = 0.4,
         FireASAP = true,
@@ -579,7 +582,7 @@ SWEP.Animations = {
             { s = ")uplp_rz/mp9/chforward.ogg", t = 113.5 / 30, c = ca, v = 1 },
             { s = pathUTC .. "cloth_3.ogg", t = 122 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-03.ogg", t = 130 / 30, c = ca, v = 0.8 },
-            -- {hide = 1, t = 0},
+            {hide = 2, t = 0.2},
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },

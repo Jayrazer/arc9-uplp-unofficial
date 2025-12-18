@@ -102,7 +102,7 @@ ATT.RangeMinAdd = -12 / ARC9.HUToM
 ATT.PhysBulletMuzzleVelocityMult = 0.8
 ATT.RecoilPerShot = 1 / 6
 
-ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-3, -2, 0) end
+ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-1, -2, 0) end
 ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-3, 0, 0) end
 
 ARC9.LoadAttachment(ATT, "uplp_famas_brl_snub")
