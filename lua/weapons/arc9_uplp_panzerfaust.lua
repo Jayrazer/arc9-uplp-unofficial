@@ -286,7 +286,7 @@ SWEP.Animations = {
         Time = 100 / 30,
         MinProgress = 1,
 		RefillProgress = 0.7,
-		MagSwapTime = 0.9,
+		MagSwapTime = 1.3,
 		FireASAP = true,
         EventTable = {
             {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
