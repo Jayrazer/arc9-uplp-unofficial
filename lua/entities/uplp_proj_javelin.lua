@@ -34,7 +34,7 @@ ENT.Acceleration = 4000
 ENT.SteerDelay = 0.5
 ENT.FlareRedirectChance = 0.2
 
-ENT.AudioLoop = "TacRP/weapons/rpg7/rocket_flight-1.wav"
+ENT.AudioLoop = "uplp/javelin/weap_juliet_proj_lp_01.wav"
 
 ENT.SmokeTrail = true
 

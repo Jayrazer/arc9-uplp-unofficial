@@ -18,7 +18,7 @@ ENT.ExplodeUnderwater = true
 ENT.SafetyFuse = 0.075
 ENT.ImpactDamage = 150
 
---ENT.AudioLoop = "TacRP/weapons/rpg7/rocket_flight-1.wav"
+ENT.AudioLoop = "uplp/panzerfaust/move_rpapa7_proj_flame_cls.ogg"
 
 ENT.SmokeTrail = true
 
