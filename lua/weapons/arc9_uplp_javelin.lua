@@ -58,6 +58,10 @@ SWEP.WorldModelOffset = {
     Scale = 0.9,
 }
 
+SWEP.CantPeek = true
+SWEP.NoAimAssist = true
+SWEP.NotForNPCs = true
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.ViewModelFOVBase = 70
@@ -74,17 +78,146 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
 
 
--- If we arent aiming, dont fire
+-- lock on stuff stolen from black ops pack
+SWEP.NextBeepTime = 0
+SWEP.TargetEntity = nil
+SWEP.StartTrackTime = 0
+SWEP.LockTime = 1
+
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
 end
+
+SWEP.Hook_GetShootEntData = function(self, data)
+    local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+
+    if tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity) then
+        data.Target = self.TargetEntity
+    end
+end
+
+SWEP.Hook_Think = function(self)
+    if self:GetSightAmount() >= 1 and self:Clip1() > 0 then
+
+        if self.NextBeepTime > CurTime() then return end
+
+        local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+
+        -- if CLIENT then
+        if tracktime >= 1 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("uplp/javelin/weap_juliet_ui_reticle_locked.ogg", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.25
+        else
+            if CLIENT then
+                self:EmitSound("uplp/javelin/weap_juliet_ui_reticle_tracking.ogg", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 1
+        end
+        -- end
+
+        local targets = ents.GetAll()
+
+        local best = nil
+        -- local bestang = -1000
+        local targetscore = 0
+
+        for _, ent in ipairs(targets) do
+            -- if ent:Health() <= 0 then continue end
+            -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
+            if ent:IsWorld() then continue end
+            if ent == self:GetOwner() then continue end
+            if ent.IsProjectile then continue end
+            if ent.UnTrackable then continue end
+            local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
+
+            if math.deg(math.acos(dot)) > 5 then continue end
+
+            local entscore = 1
+
+            if ent:IsPlayer() then entscore = entscore + 15 end
+            if ent:IsNPC() then entscore = entscore + 10 end
+            if ent:IsVehicle() then entscore = entscore + 25 end
+            if ent:Health() > 0 then entscore = entscore + 5 end
+            if ent.IsAirAsset then entscore = entscore + 100 end
+
+            entscore = entscore + (dot * 2.5)
+
+            entscore = entscore + (ent.ARC9TrackingScore or 0)
+
+            if entscore > targetscore then
+                -- local tr = util.TraceLine({
+                --     start = self:GetShootPos(),
+                --     endpos = ent:GetPos(),
+                --     filter = self:GetOwner(),
+                --     mask = MASK_VISIBLE_AND_NPCS
+                -- })
+
+                -- PrintTable(tr)
+
+                -- if tr.Entity == ent then
+                best = ent
+                bestang = dot
+                targetscore = entscore
+                -- end
+            end
+        end
+
+        if !best then self.TargetEntity = nil return end
+
+        local aa, bb = best:WorldSpaceAABB()
+        local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+        -- local dimx = (bb.x - aa.x) / 2
+        -- local dimy = (bb.y - aa.y) / 2
+        -- local dimz = (bb.z - aa.z) / 2
+
+        clutter = math.max(1000 - (vol / 1000), 128)
+
+        -- local dimx = clutter / 50
+        -- local dimy = clutter / 50
+        -- local dimz = clutter / 100
+
+        local tr2 = util.TraceLine({
+            start = self:GetShootPos(),
+            endpos = best:GetPos() + (self:GetShootDir():Forward() * clutter),
+            filter = self:GetOwner(),
+            mask = MASK_NPCWORLDSTATIC,
+            -- maxs = Vector(-dimx, -dimy, -dimz),
+            -- mins = Vector(dimx, dimy, dimz),
+        })
+
+        local tr3 = util.TraceLine({
+            start = self:GetShootPos(),
+            endpos = best:GetPos() + Vector(0, 0, -clutter),
+            filter = self:GetOwner(),
+            mask = MASK_NPCWORLDSTATIC,
+            -- maxs = Vector(-dimx, -dimy, -dimz),
+            -- mins = Vector(dimx, dimy, dimz),
+        })
+
+        -- -- Too much ground clutter
+        if tr2.Hit and !tr2.HitSky then return end
+        if tr3.Hit and !tr3.HitSky then return end
+
+        if !self.TargetEntity then
+            self.StartTrackTime = CurTime()
+        end
+
+        self.TargetEntity = best
+    else
+        self.TargetEntity = nil
+    end
+end
+
+------
 
 SWEP.DamageMax = 34
 SWEP.DamageMin = 18
 SWEP.HeadshotDamage = 1
 SWEP.DamageType = DMG_BULLET
 SWEP.DamageType = nil
-SWEP.ShootEnt = "uplp_proj_panzerfaust" -- Set to an entity to launch it out of this weapon.
+SWEP.ShootEnt = "uplp_proj_javelin" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 1800
 SWEP.ShootEntityData = {}
 
@@ -276,10 +409,10 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-		MinProgress = 0.9,
+		MinProgress = 1,
         Time = 13 / 30,
         EventTable = {
-			{s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 3 / 30},
+			{s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 2 / 30},
         },
     },
     ["reload"] = {
