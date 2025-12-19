@@ -9,7 +9,7 @@ SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "Baguette FR" --ARC9:GetPhrase("uplp_weapon_famas")
-SWEP.Description = [[The FA-75 (Fusil d'Assault Modèle 1975) is the former standard issue rifle of the French Army and is still in use by the French Navy. Noted for its various idiosyncracies that distinguish it from similar rifles, such as an odd magazine capacity, integrated bipod and unique blowback operation. The "Amélioré" model is a modern variant designed to integrate into a modular special forces kit, which updates the rifle to have accessory rails and a low profile upper receiver.]] --ARC9:GetPhrase("uplp_weapon_aug_desc")
+SWEP.Description = [[The "Fusil d'Assault Modèle 1975" (Assault Rifle Model of 1975) is the former standard issue rifle of the French Army and is still in use by the French Navy. Noted for its various idiosyncracies that distinguish it from similar rifles, such as an odd magazine capacity, integrated bipod and unique blowback operation. The "Amélioré" model is a modern variant designed to integrate into a modular special forces kit, which updates the rifle to have accessory rails and a low profile upper receiver.]] --ARC9:GetPhrase("uplp_weapon_aug_desc")
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_ar") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_ar") -- In the Spawnmenu

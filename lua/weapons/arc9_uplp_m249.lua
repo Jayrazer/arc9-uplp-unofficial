@@ -226,7 +226,7 @@ SWEP.CustomizeSnapshotFOV = 90
 -- Dropped Magazine
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
-SWEP.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_100.mdl"
+SWEP.DropMagazineModel = "models/weapons/arc9/uplp/uplp_m249_100.mdl"
 SWEP.DropMagazineTime = 1.55
 SWEP.DropMagazineTimeEmpty = 2.1
 SWEP.DropMagazineQCA = 2

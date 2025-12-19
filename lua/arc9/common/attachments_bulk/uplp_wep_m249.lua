@@ -20,7 +20,7 @@ ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_200"
 end
 
-ATT.DropMagazineModel = "models/weapons/arc9/magazines/uplp_m249_200.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/uplp_m249_200.mdl"
 ATT.DropMagazineTimeEmpty = 2.4
 
 -- Positives

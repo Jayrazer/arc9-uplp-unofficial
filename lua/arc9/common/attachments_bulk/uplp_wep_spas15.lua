@@ -116,6 +116,6 @@ ATT.ActivateElements = {"uplp_spas15_mag_8"}
 ATT.ClipSizeOverride = 8
 ATT.ReloadTimeMult = 1.075
 
-ATT.DropMagazineModelOverride = "models/weapons/arc9/magazines/spas15_mag_8.mdl"
+ATT.DropMagazineModelOverride = "models/weapons/arc9/uplp/spas15_mag_8.mdl"
 
 ARC9.LoadAttachment(ATT, "uplp_spas15_mag_8")

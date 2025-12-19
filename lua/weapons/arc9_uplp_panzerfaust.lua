@@ -45,8 +45,8 @@ SWEP.CamQCA = 3
 SWEP.CamOffsetAng = Angle(0, 0, 90)
 
 ---- View & Worldmodel
-SWEP.ViewModel = "models/weapons/arc9/uplp_unofficial/panzerfaust.mdl"
-SWEP.WorldModel = "models/weapons/arc9/uplp_unofficial/w_panzerfaust.mdl"
+SWEP.ViewModel = "models/weapons/arc9/c_uplp_panzerfaust.mdl"
+SWEP.WorldModel = "models/weapons/arc9/w_uplp_panzerfaust.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
@@ -221,7 +221,7 @@ SWEP.CustomizeSnapshotFOV = 90
 -- Dropped Magazine
 SWEP.ShouldDropMag = true
 SWEP.ShouldDropMagEmpty = true
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp_unofficial/magazines/panzerfaust.mdl"
+SWEP.DropMagazineModel = "models/weapons/arc9/uplp/panzerfaust.mdl"
 SWEP.DropMagazineTime = 0.7
 SWEP.DropMagazineQCA = 2
 SWEP.DropMagazinePos = Vector(30, 0, -20)

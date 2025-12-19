@@ -6,7 +6,7 @@ ATT.PrintName = "TK-F Scope - Dot Cross Reticle"
 ATT.CompactName = "DOT"
 ATT.Description = "Integral rocket launcher scope."
 
-ATT.Model = "models/weapons/arc9/uplp_unofficial/attachments/panzerfaust_scope.mdl"
+ATT.Model = "models/weapons/arc9/atts/uplp_panzerfaust_scope.mdl"
 --ATT.FoldSights = true
 
 ATT.Sights = {

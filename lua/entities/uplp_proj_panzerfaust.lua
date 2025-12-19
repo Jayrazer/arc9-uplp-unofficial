@@ -9,7 +9,7 @@ ENT.Information 		= ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
 
-ENT.Model = "models/weapons/arc9/uplp_unofficial/panzerfaust_warhead_proj.mdl"
+ENT.Model = "models/weapons/arc9/panzerfaust_warhead_proj.mdl"
 ENT.BoxSize = Vector(8, 4, 1)
 
 ENT.Damage = 400
