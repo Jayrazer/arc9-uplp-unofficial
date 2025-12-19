@@ -280,7 +280,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
         Time = 13 / 30,
         EventTable = {
-			{s = pathPanzer .. "rocket.wav", t = 3 / 30},
+			{s = pathPanzer .. "rocket.wav", t = 3 / 30, v = 40},
         },
     },
     ["reload"] = {

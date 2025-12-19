@@ -98,7 +98,7 @@ end
 
 SWEP.Hook_HUDPaintBackground = function(self)
 local TrackingIndicator = Material("VGUI/lockon.png")
-    if self:GetSightAmount() >= 0.75 then
+    if self:GetSightAmount() >= 1 then
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
              local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
@@ -238,11 +238,6 @@ end
 
 ------
 
-SWEP.DamageMax = 34
-SWEP.DamageMin = 18
-SWEP.HeadshotDamage = 1
-SWEP.DamageType = DMG_BULLET
-SWEP.DamageType = nil
 SWEP.ShootEnt = "uplp_proj_javelin" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 500
 SWEP.ShootEntityData = {}
@@ -383,7 +378,6 @@ SWEP.DropMagazineModel = "models/weapons/arc9/uplp/panzerfaust.mdl"
 
 ---- Sounds
 -- urbna!
-local pathPanzer = "uplp/panzerfaust/"
 local pathJavelin = "uplp/javelin/"
 local pathUT = "uplp_urban_temp/ak/"
 local pathUTC = "uplp_urban_temp/common/"
@@ -433,7 +427,7 @@ SWEP.Animations = {
         MinProgress = 1,
         Time = 13 / 30,
         EventTable = {
-            {s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 2 / 30},
+            {s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 2 / 30, v = 40},
         },
     },
     ["reload"] = {
