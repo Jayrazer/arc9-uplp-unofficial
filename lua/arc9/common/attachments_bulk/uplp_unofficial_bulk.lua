@@ -738,13 +738,13 @@ ATT.PrintName = "Javelin FLIR reticle"
 ATT.CompactName = "DOT"
 ATT.Description = "Integral rocket launcher scope."
 
-ATT.Model = "models/weapons/arc9/atts/uplp_panzerfaust_scope.mdl"
---ATT.FoldSights = true
+ATT.Model = "models/weapons/arc9/atts/uplp_javelin_scope.mdl"
+ATT.BoneMerge = true
 
 ATT.Sights = {
     {
-		Pos = Vector(7, 0.3275, -0.2),
-		Ang = Angle(1, -95, 0),
+		Pos = Vector(6, 0.24, -0.14),
+		Ang = Angle(1, -90, 0),
         Magnification = 2,
         ViewModelFOV = 56,
         RTScopeFOV = 48,
@@ -759,13 +759,14 @@ ATT.SortOrder = 1
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 4
 ATT.RTScopeFOV = 60 / 2
-ATT.RTScopeReticle = Material("vgui/uplp_reticles/dot2.png", "mips smooth")
+--ATT.RTScopeReticle = Material("vgui/uplp_reticles/dot2.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
 ATT.RTScopeColorable = true
 ATT.RTScopeShadowIntensity = 10
 ATT.RTScopeBlackBox = false
 ATT.RTScopeBlackBoxShadow = false
 ATT.ScopeScreenRatio = 1
+ATT.RTScopeRes = 1024
 
 ATT.RTScopeFLIR = true
 ATT.RTScopeFLIRSolid = true -- Solid color FLIR instead of like a shaded look

@@ -96,6 +96,26 @@ SWEP.Hook_GetShootEntData = function(self, data)
     end
 end
 
+SWEP.Hook_HUDPaintBackground = function(self)
+local TrackingIndicator = Material("VGUI/lockon.png")
+    if self:GetSightAmount() >= 0.75 then
+        if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+             local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
+             local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+             if tracktime >= 1 then
+                surface.SetDrawColor(255,0,0,200)
+                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
+             else
+                surface.SetMaterial(TrackingIndicator)
+                surface.SetDrawColor(255,0,0,200)
+                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60)
+             end
+        end
+    end
+end
+
 SWEP.Hook_Think = function(self)
     if self:GetSightAmount() >= 1 and self:Clip1() > 0 then
 
@@ -314,7 +334,7 @@ SWEP.Num = 1 -- How many bullets shot at once
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = "SINGLE"
+        PrintName = "LOCKON"
     },
 }
 
