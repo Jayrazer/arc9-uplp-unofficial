@@ -450,22 +450,13 @@ SWEP.Animations = {
 ---- Attachments
 SWEP.AttachmentElements = {}
 
--- SWEP.Hook_ModifyBodygroups = function(self, data)
-    -- local vm = data.model
-    -- local attached = data.elements
-
-    -- if self:Clip1() == 0 then vm:SetBodygroup(1,2) end
-	
-	-- if attached["uplp_ammo_bunkerbuster"] and self:Clip1() == 1 then vm:SetBodygroup(1,1) end
--- end
-
 SWEP.Attachments = {
     {
         PrintName = "Optic",
         Bone = "pzf3_root",
         Pos = Vector(9.05, -4.5, 0.075),
         Ang = Angle(0, 0, -92),
-		Integral = "uplp_optic_panzerfaust",
+		Integral = "uplp_optic_javelin",
 		Hidden = true,
         Category = {"uplp_optic_panzerfaust"},
 		CorrectivePos = Vector(0,0,0),
