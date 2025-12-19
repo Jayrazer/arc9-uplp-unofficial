@@ -58,6 +58,8 @@ SWEP.WorldModelOffset = {
     Scale = 0.9,
 }
 
+SWEP.CantPeek = true
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.ViewModelFOVBase = 70
@@ -85,7 +87,7 @@ SWEP.HeadshotDamage = 1
 SWEP.DamageType = DMG_BULLET
 SWEP.DamageType = nil
 SWEP.ShootEnt = "uplp_proj_panzerfaust" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 1800
+SWEP.ShootEntForce = 4500
 SWEP.ShootEntityData = {}
 
 SWEP.Penetration = 18

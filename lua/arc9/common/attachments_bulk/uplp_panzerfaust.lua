@@ -13,7 +13,7 @@ ATT.Sights = {
     {
 		Pos = Vector(7, 0.3275, -0.2),
 		Ang = Angle(1, -95, 0),
-        Magnification = 2,
+        Magnification = 1.5,
         ViewModelFOV = 56,
         RTScopeFOV = 48,
 
@@ -45,34 +45,4 @@ ATT.Hidden = false
 ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
 
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
-
-
---bunkerfaust
-
-ATT = {}
-
-ATT.PrintName = ARC9:GetPhrase("uplp_ammo_bunkerbuster.printname")
-ATT.CompactName = ARC9:GetPhrase("uplp_ammo_bunkerbuster.compactname")
-ATT.Icon = Material("")
-ATT.Description = ARC9:GetPhrase("uplp_ammo_bunkerbuster.description")
-ATT.CustomPros = { 
-["Blast Damage"] = "+25%"
-}
-ATT.CustomCons = {
-["Blast Radius"] = "-50%"
-}
-ATT.SortOrder = 0
-ATT.MenuCategory = ""
-ATT.Free = false
-
-ATT.ShootEntForceOverride = 2500
-
-ATT.Category = "uplp_panzer_ammo"
-ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
-ATT.ActivateElements = {"uplp_panzer_bunker"}
-ATT.ShootEnt = "uplp_proj_panzerfaust_bunker"
-
-ATT.Ignore = false
-
-ARC9.LoadAttachment(ATT, "uplp_ammo_bunkerbuster")
 
