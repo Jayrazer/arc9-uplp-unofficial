@@ -8,26 +8,26 @@ SWEP.Spawnable = true
 SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = "Lancer IPAT" --ARC9:GetPhrase("uplp_javelin")
-SWEP.Description = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
-SWEP.Class = "Rocket Launcher"
+SWEP.PrintName = "Lancer IPAT-MS" --ARC9:GetPhrase("uplp_javelin")
+SWEP.Description = [[The "Infantry-Portable Anti-Tank Missile System" (IPAT-MS) is a lock-on launcher designed for use by infantry units against ground targets from long distance.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
+SWEP.Class = "Missile Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_real"),
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = "FGM-148 Javelin", --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_real"),
 
-    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_manufacturer"),
-    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase("uplp_speedonerd_caliber_60mm"),
+    [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = "Raytheon Technologies", --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_manufacturer"),
+    [ ARC9:GetPhrase( "uplp_caliber" ) ] = "127mm Missile", --ARC9:GetPhrase("uplp_speedonerd_caliber_60mm"),
     [ ARC9:GetPhrase( "uplp_mechanism" ) ] = ARC9:GetPhrase("uplp_speedonerd_mechanism_rocket"),
-    [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_germany" ),
-    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1987" ),
+    [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_usa" ),
+    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1996" ),
 }
 
 SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_lua" ) ] = "speedonerd",
-    [ ARC9:GetPhrase( "uplp_assets" ) ] = "TastyTony",
-    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Dummified",
-    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "Treyarch",
+    [ ARC9:GetPhrase( "uplp_assets" ) ] = "GoldbergR",
+    [ ARC9:GetPhrase( "uplp_animations" ) ] = "Dummified, speedonerd",
+    [ ARC9:GetPhrase( "uplp_sounds" ) ] = "Infinity Ward",
 }
 
 ---- Muzzle Effects, Shell Effects, Camera
@@ -397,14 +397,15 @@ SWEP.Animations = {
         Source = "draw",
 		MinProgress = 0.7,
         EventTable = {
-            {s = pathPanzer .. "draw.wav", t = 1 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 1 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 14 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		MinProgress = 0.9,
         EventTable = {
-            {s = pathPanzer .. "reload_start.wav", t = 2 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 2 / 30},
         },
     },
     ["fire"] = {
@@ -436,10 +437,12 @@ SWEP.Animations = {
 		Time = 150 / 30,
         MinProgress = 0.925,
         EventTable = {
-		    {s = pathPanzer .. "inspect_start.wav", t = 0 / 30},
-		    {s = pathPanzer .. "inspect_mid.wav", t = 50 / 30},
-		    {s = pathPanzer .. "rotate.wav", t = 62 / 30},
-            {s = pathPanzer .. "reload_mid.wav", t = 102 / 30},
+		    {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 0 / 30},
+		    {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 12 / 30},
+		    {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 56 / 30},
+		    {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 104 / 30},
+		    {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 112 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 128 / 30},
         },
     },
 }

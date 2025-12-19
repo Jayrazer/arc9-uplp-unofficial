@@ -59,7 +59,7 @@ function ENT:Detonate(ent)
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(100)
+    dmg:SetDamage(800)
     util.BlastDamageInfo(dmg, self:GetPos(), 256)
     self:ImpactTraceAttack(ent, 500, 100)
 
