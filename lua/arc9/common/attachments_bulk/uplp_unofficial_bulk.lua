@@ -1,6 +1,134 @@
--- M249 attachas
+local ATT = {}
 
-local iconfolder = "entities/uplp_attachements/m249/"
+local iconfolderfamas = "entities/uplp_attachements/famas/"
+local iconfolderm249 = "entities/uplp_attachements/m249/"
+local iconfolderspas = "entities/uplp_attachements/spas15/"
+
+
+------------------------SPAS-15----------------------------
+
+-- folded stock
+-- not gonna do a no stock option cuz beh
+
+ATT = {}
+
+ATT.PrintName = "Folded Stock"
+ATT.CompactName = "FOLD"
+ATT.Description = "Fold the weapon's stock for better handling at the cost of recoil control."
+
+ATT.Icon = Material(iconfolderspas .. "foldstock.png", "mips smooth")
+ATT.Category = "uplp_spas15_stock"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_spas15_stock_fold"}
+
+ATT.Hook_TranslateAnimation = function(wep, anim)
+	if anim == "reload_empty" then
+		return anim .. "_foldstock"
+	end	
+	
+	if anim == "inspect" then
+		return anim .. "_foldstock"
+	end	
+	if anim == "inspect_pump" then
+		return anim .. "_foldstock"
+	end	
+	if anim == "inspect_empty" then
+		return anim .. "_foldstock"
+	end
+end
+
+-- Positives
+ATT.AimDownSightsTimeAdd = -0.1
+ATT.SprintToFireTimeAdd = -0.1
+ATT.SpeedMultSights = 1.075
+
+-- Negatives
+ATT.SwayAddSights = 0.4
+ATT.SwayMultSights = 1.1
+ATT.RecoilMult = 1.15
+ATT.RecoilSideMult = 1.15
+
+ARC9.LoadAttachment(ATT, "uplp_spas15_stock_fold")
+
+
+-- little barrel
+ATT = {}
+
+ATT.PrintName = "381mm Barrel"
+ATT.CompactName = "381mm"
+ATT.Description = "A cut-down 381mm (15\") barrel for close-quarters combat."
+
+ATT.Icon = Material(iconfolderspas .. "shortbarrel.png", "mips smooth")
+ATT.Category = "uplp_spas15_barrel"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_spas15_barrel_short"}
+
+-- Positives
+ATT.AimDownSightsTimeAdd = -0.04
+ATT.SprintToFireTimeAdd = -0.04
+
+-- Negatives
+ATT.RangeMaxMult = 0.9
+ATT.RangeMinMult = 0.9
+ATT.PhysBulletMuzzleVelocityMult = 0.85
+ATT.SpreadAddRecoil = 0.0012
+
+ARC9.LoadAttachment(ATT, "uplp_spas15_barrel_short")
+
+
+-- BIGF barrel
+ATT = {}
+
+ATT.PrintName = "559mm Barrel"
+ATT.CompactName = "559mm"
+ATT.Description = "A 559mm (22\") barrel found on civilian models of the weapon."
+
+ATT.Icon = Material(iconfolderspas .. "longbarrel.png", "mips smooth")
+ATT.Category = "uplp_spas15_barrel"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_spas15_barrel_long"}
+
+--Positives
+ATT.RangeMaxMult = 1.1
+ATT.RangeMinMult = 1.1
+ATT.PhysBulletMuzzleVelocityMult = 1.1
+ATT.SpreadAddRecoil = -0.001
+
+-- Negatives
+ATT.AimDownSightsTimeAdd = 0.04
+ATT.SprintToFireTimeAdd = 0.04
+
+ARC9.LoadAttachment(ATT, "uplp_spas15_barrel_long")
+
+
+-- stendy mag
+
+ATT = {}
+
+ATT.PrintName = "8-Round Extended"
+ATT.CompactName = "8R Ext"
+ATT.Description = "8-round extended magazine for the SPAW-15."
+
+ATT.Icon = Material(iconfolderspas .. "mag8.png", "mips smooth")
+ATT.Category = "uplp_spas15_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_spas15_mag_8"}
+
+ATT.ClipSizeOverride = 8
+ATT.ReloadTimeMult = 1.075
+
+ATT.DropMagazineModelOverride = "models/weapons/arc9/uplp/spas15_mag_8.mdl"
+
+ARC9.LoadAttachment(ATT, "uplp_spas15_mag_8")
+
+
+
+------------------------M249----------------------------
+
 
 -- 200rnd mag
 
@@ -10,7 +138,7 @@ ATT.PrintName = ARC9:GetPhrase( "uplp_m249_mag_200.printname" )
 ATT.CompactName = ARC9:GetPhrase( "uplp_m249_mag_200.compactname" )
 ATT.Description = ARC9:GetPhrase( "uplp_m249_mag_200.description" )
 
-ATT.Icon = Material(iconfolder .. "box_200.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "box_200.png", "mips smooth")
 ATT.Category = "uplp_m249_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -124,10 +252,6 @@ ATT.ReloadInSights = true
 
 ARC9.LoadAttachment(ATT, "uplp_m249_mag_60")
 
-
-
-
-
 -- SAW barrel
 
 ATT = {}
@@ -138,7 +262,7 @@ ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_saw.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_saw"}
 
-ATT.Icon = Material(iconfolder .. "brl_saw.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "brl_saw.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -181,7 +305,7 @@ ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_para.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_para"}
 
-ATT.Icon = Material(iconfolder .. "brl_para.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "brl_para.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -218,7 +342,7 @@ ATT.Description = ARC9:GetPhrase( "uplp_m249_brl_commando.description" )
 
 ATT.ActivateElements = {"uplp_m249_brl_commando"}
 
-ATT.Icon = Material(iconfolder .. "brl_commando.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "brl_commando.png", "mips smooth")
 ATT.Category = "uplp_m249_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -256,14 +380,6 @@ ATT.RecoilMult = 1.05
 ARC9.LoadAttachment(ATT, "uplp_m249_brl_commando")
 
 
-
-
-
-
-
-
-
-
 -- Stock
 
 ATT = {}
@@ -272,7 +388,7 @@ ATT.PrintName = ARC9:GetPhrase( "uplp_m249_stock_std.printname" )
 ATT.CompactName = ARC9:GetPhrase( "uplp_m249_stock_std.compactname" )
 ATT.Description = ARC9:GetPhrase( "uplp_m249_stock_std.description" )
 
-ATT.Icon = Material(iconfolder .. "std_stock.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "std_stock.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -297,7 +413,7 @@ ATT.PrintName = ARC9:GetPhrase( "uplp_m249_stock_buffer.printname" )
 ATT.CompactName = ARC9:GetPhrase( "uplp_m249_stock_buffer.compactname" )
 ATT.Description = ARC9:GetPhrase( "uplp_m249_stock_buffer.description" )
 
-ATT.Icon = Material(iconfolder .. "buffertube.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "buffertube.png", "mips smooth")
 ATT.Category = "uplp_m249_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -323,12 +439,6 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "uplp_m249_stock_buffer")
 
-
-
-
-
-
-
 -- default Heatshield
 
 ATT = {}
@@ -337,7 +447,7 @@ ATT.PrintName = ARC9:GetPhrase( "uplp_m249_hs_std.printname" )
 ATT.CompactName = ARC9:GetPhrase( "uplp_m249_hs_std.compactname" )
 ATT.Description = ARC9:GetPhrase( "uplp_m249_hs_std.description" )
 
-ATT.Icon = Material(iconfolder .. "hs_std.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "hs_std.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -355,7 +465,7 @@ ATT.PrintName = ARC9:GetPhrase( "uplp_m249_hs_mod.printname" )
 ATT.CompactName = ARC9:GetPhrase( "uplp_m249_hs_mod.compactname" )
 ATT.Description = ARC9:GetPhrase( "uplp_m249_hs_mod.description" )
 
-ATT.Icon = Material(iconfolder .. "hs_mod.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "hs_mod.png", "mips smooth")
 ATT.Category = "uplp_handguard_m249_short"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
@@ -397,10 +507,6 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "uplp_m249_hs_mod")
 
-
-
-
-
 -- default flash hider -- UNUSED
 
 ATT = {}
@@ -409,7 +515,7 @@ ATT.PrintName = "Default Muzzle"
 ATT.CompactName = "DEF"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolder .. "762b.png", "mips smooth")
+ATT.Icon = Material(iconfolderm249 .. "762b.png", "mips smooth")
 ATT.Category = "uplp_muzzle_m249"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 ATT.Model = "models/weapons/arc9/atts/uplp_m249_fh.mdl"
@@ -419,8 +525,6 @@ ATT.Hidden = true
 ATT.Free = false
 
 ARC9.LoadAttachment(ATT, "uplp_m249_flash_default")
-
-
 
 
 ---------- m249 special bipod for special boys
@@ -461,3 +565,242 @@ ATT.DrawFunc = function(self, model, wm)
 end
 
 ARC9.LoadAttachment(ATT, "uplp_m249_bipod")
+
+
+------------------------FAMAS----------------------------
+
+
+---------- uplp_famas_mag_35
+
+ATT = {}
+
+ATT.Ignore = false
+
+ATT.PrintName = "35-Round 5.56x45mm"
+ATT.CompactName = "35R 5.56"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderfamas .. "35mag.png", "mips smooth")
+
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/famas_mag_ext.mdl"
+
+ATT.Category = "uplp_famas_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_famas_mag_35"}
+
+ATT.ClipSizeOverride = 35
+
+-- Negatives
+ATT.SpreadAddHipFire = 0.005
+ATT.AimDownSightsTimeAdd = 0.03
+ATT.SprintToFireTimeAdd = 0.02
+ATT.DeployTimeMult = 1.125
+ATT.SwayMultSights = 1.1
+ATT.SpeedMultSights = 0.9
+ATT.ReloadTimeMult = 1.1
+
+ARC9.LoadAttachment(ATT, "uplp_famas_mag_35")
+
+
+---------- uplp_famas_mag_15
+
+ATT = {}
+
+ATT.Ignore = false
+
+ATT.PrintName = "15-Round 5.56x45mm"
+ATT.CompactName = "15R 5.56"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderm249 .. "15mag.png", "mips smooth")
+
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/famas_mag_small.mdl"
+
+ATT.Category = "uplp_famas_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_famas_mag_15"}
+
+ATT.SpreadAddHipFire = -0.005
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.SprintToFireTimeAdd = -0.02
+ATT.DeployTimeMult = 0.875
+ATT.SwayMultSights = 0.9
+ATT.ReloadTimeMult = 0.9
+
+-- Negatives
+ATT.ClipSizeOverride = 15
+
+ARC9.LoadAttachment(ATT, "uplp_famas_mag_15")
+
+
+---------- uplp_famas_brl_snub
+
+ATT = {}
+
+ATT.PrintName = "285mm Commando Barrel"
+ATT.CompactName = "285mm"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderm249 .. "brlsnub.png", "mips smooth")
+
+ATT.Category = "uplp_famas_barrel"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_famas_brl_snub"}
+
+-- Positives
+ATT.SpreadAddHipFire = -0.006
+ATT.SpreadAddRecoil = -0.0012
+ATT.AimDownSightsTimeAdd = -0.04
+ATT.SprintToFireTimeAdd = -0.05
+ATT.SpeedMultSights = 1.12
+ATT.BarrelLengthAdd = -10
+
+-- Negatives
+ATT.RecoilMult = 1.25
+ATT.RecoilSideAdd = 0.25
+ATT.SpreadAdd = 0.0025
+ATT.RangeMaxMult = 0.85
+ATT.SweetSpotRangeAdd = -8 / ARC9.HUToM
+ATT.SweetSpotWidthAdd = 15 / ARC9.HUToM
+ATT.SweetSpotPeakAdd = -8 / ARC9.HUToM
+ATT.RangeMinAdd = -12 / ARC9.HUToM
+ATT.PhysBulletMuzzleVelocityMult = 0.8
+ATT.RecoilPerShot = 1 / 6
+
+ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-1, -2, 0) end
+ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-3, 0, 0) end
+
+ARC9.LoadAttachment(ATT, "uplp_famas_brl_snub")
+
+
+------------------------Launcher Scopes----------------------------
+
+
+-- Panzerfaust 3 Integral Scope
+
+--apparently there's no way to make sights integral without them being an attachment thanks arctic
+
+ATT = {}
+
+ATT.PrintName = "TK-F Scope - Dot Cross Reticle"
+ATT.CompactName = "DOT"
+ATT.Description = "Integral rocket launcher scope."
+
+ATT.Model = "models/weapons/arc9/atts/uplp_panzerfaust_scope.mdl"
+--ATT.FoldSights = true
+
+ATT.Sights = {
+    {
+		Pos = Vector(7, 0.3275, -0.2),
+		Ang = Angle(1, -95, 0),
+        Magnification = 1.5,
+        ViewModelFOV = 56,
+        RTScopeFOV = 48,
+
+        SwayAddSights = sway_mid,
+    },
+}
+
+ATT.SortOrder = 1
+
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 4
+ATT.RTScopeFOV = 60 / 4
+ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
+ATT.RTScopeReticleScale = 1
+ATT.RTScopeColorable = true
+ATT.RTScopeShadowIntensity = 10
+ATT.RTScopeBlackBox = true
+ATT.RTScopeBlackBoxShadow = true
+
+ATT.ScopeScreenRatio = 0.5
+
+ATT.Category = "uplp_optic_panzerfaust"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.Free = true
+ATT.Hidden = false
+
+ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
+
+ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
+
+
+-- Javelin Integral Scope
+
+ATT = {}
+
+ATT.PrintName = "Javelin FLIR reticle"
+ATT.CompactName = "DOT"
+ATT.Description = "Integral rocket launcher scope."
+
+ATT.Model = "models/weapons/arc9/atts/uplp_panzerfaust_scope.mdl"
+--ATT.FoldSights = true
+
+ATT.Sights = {
+    {
+		Pos = Vector(7, 0.3275, -0.2),
+		Ang = Angle(1, -95, 0),
+        Magnification = 2,
+        ViewModelFOV = 56,
+        RTScopeFOV = 48,
+
+        SwayAddSights = sway_mid,
+    },
+}
+
+ATT.SortOrder = 1
+
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 4
+ATT.RTScopeFOV = 60 / 2
+ATT.RTScopeReticle = Material("vgui/uplp_reticles/dot2.png", "mips smooth")
+ATT.RTScopeReticleScale = 1
+ATT.RTScopeColorable = true
+ATT.RTScopeShadowIntensity = 10
+ATT.RTScopeBlackBox = false
+ATT.RTScopeBlackBoxShadow = false
+ATT.ScopeScreenRatio = 1
+
+ATT.RTScopeFLIR = true
+ATT.RTScopeFLIRSolid = true -- Solid color FLIR instead of like a shaded look
+ATT.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
+    [ "$pp_colour_addr" ] = 0,
+    [ "$pp_colour_addg" ] = 0,
+    [ "$pp_colour_addb" ] = 0,
+    [ "$pp_colour_brightness" ] = 0.1,
+    [ "$pp_colour_contrast" ] = 0.7,
+    [ "$pp_colour_colour" ] = 0.1,
+    [ "$pp_colour_mulr" ] = 0,
+    [ "$pp_colour_mulg" ] = 0,
+    [ "$pp_colour_mulb" ] = 0
+}
+ATT.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
+    ["$pp_colour_addr"] = 1,
+    ["$pp_colour_addg"] = 1,
+    ["$pp_colour_addb"] = 1,
+    ["$pp_colour_brightness"] = -0.59,
+    ["$pp_colour_contrast"] = 1,
+    ["$pp_colour_colour"] = 0,
+    ["$pp_colour_mulr"] = 0,
+    ["$pp_colour_mulg"] = 0,
+    ["$pp_colour_mulb"] = 0
+}
+
+ATT.ScopeScreenRatio = 0.5
+
+ATT.Category = "uplp_optic_panzerfaust"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.Free = true
+ATT.Hidden = false
+
+ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
+
+ARC9.LoadAttachment(ATT, "uplp_optic_javelin")
+
