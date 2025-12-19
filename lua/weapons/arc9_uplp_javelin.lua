@@ -97,7 +97,7 @@ SWEP.Hook_GetShootEntData = function(self, data)
 end
 
 SWEP.Hook_HUDPaintBackground = function(self)
-local TrackingIndicator = Material("VGUI/lockon.png")
+local TrackingIndicator = Material("vgui/uplp_reticles/halo_cross.png")
     if self:GetSightAmount() >= 1 then
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
@@ -110,7 +110,7 @@ local TrackingIndicator = Material("VGUI/lockon.png")
              else
                 surface.SetMaterial(TrackingIndicator)
                 surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60)
+                surface.DrawTexturedRect(toscreen.x - 90, toscreen.y - 90, 180, 180)
              end
         end
     end
