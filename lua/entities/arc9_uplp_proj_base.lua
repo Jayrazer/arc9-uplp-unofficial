@@ -69,6 +69,7 @@ ENT.TopAttackHeight = 512 // Distance above target to top attack
 ENT.TopAttackDistance = 128 // Distance from target to stop top attacking
 
 ENT.RocketLifetime = 30 // Rocket will cut after this time
+ENT.AccelerationDelay = 0
 
 ENT.MinSpeed = 0
 ENT.MaxSpeed = 0
@@ -135,7 +136,9 @@ function ENT:Initialize()
             self.TopAttacking = true
         end
 
-        self:SwitchTarget(self.LockOnEntity)
+        if self.ShootEntData and IsValid(self.ShootEntData.Target) then
+            self:SwitchTarget(self.ShootEntData.Target)
+        end
     end
 
     self.StartSuperSteerTime = CurTime()
@@ -333,7 +336,7 @@ function ENT:PhysicsUpdate(phys)
 
         self:SetAngles(Angle(newang.p, newang.y, 0))
         phys:SetVelocityInstantaneous(self:GetForward() * math.Clamp(v:Length() + (self.Acceleration - brake) * FrameTime(), self.MinSpeed, self.MaxSpeed))
-    elseif self.Acceleration > 0 then
+    elseif self.Acceleration > 0 and (self.SpawnTime + self.AccelerationDelay) <= CurTime() then
         phys:SetVelocityInstantaneous(self:GetForward() * math.Clamp(phys:GetVelocity():Length() + self.Acceleration * FrameTime(), self.MinSpeed, self.MaxSpeed))
     end
 end
@@ -341,6 +344,11 @@ end
 local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true, ["npc_helicopter"] = true}
 
 function ENT:DoTracking()
+
+    if self.ShootEntData and IsValid(self.ShootEntData.Target) then
+        self:SwitchTarget(self.ShootEntData.Target)
+    end
+
     local target = self.LockOnEntity
     if IsValid(target) then
         if self.TopAttack and self.TopAttacking then
@@ -596,6 +604,7 @@ function ENT:Draw()
 end
 
 function ENT:SwitchTarget(target)
+    if self.LockOnEntity == target then return end
     if IsValid(self.LockOnEntity) then
         if isfunction(self.LockOnEntity.OnLaserLock) then
             self.LockOnEntity:OnLaserLock(false)

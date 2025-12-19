@@ -137,7 +137,8 @@ SWEP.Hook_Think = function(self)
         end
         -- end
 
-        local targets = ents.GetAll()
+        --local targets = ents.GetAll()
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(5)))
 
         local best = nil
         -- local bestang = -1000
@@ -146,46 +147,50 @@ SWEP.Hook_Think = function(self)
         for _, ent in ipairs(targets) do
             -- if ent:Health() <= 0 then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
-            if ent:IsWorld() then continue end
+            if ent:IsWorld() or ent:GetClass() == "prop_dynamic" then continue end
             if ent == self:GetOwner() then continue end
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
 
-            if math.deg(math.acos(dot)) > 5 then continue end
+            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
+            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+            if vol <= 20000 then continue end
 
             local entscore = 1
-
-            if ent:IsPlayer() then entscore = entscore + 15 end
-            if ent:IsNPC() then entscore = entscore + 10 end
-            if ent:IsVehicle() then entscore = entscore + 25 end
+            if ent:IsPlayer() then entscore = entscore + 5 end
+            if ent:IsNPC() or ent:IsNextBot() then entscore = entscore + 2 end
+            if ent:IsVehicle() or ent.LVS then entscore = entscore + 10 end
             if ent:Health() > 0 then entscore = entscore + 5 end
-            if ent.IsAirAsset then entscore = entscore + 100 end
 
-            entscore = entscore + (dot * 2.5)
+            entscore = entscore + dot * 5
 
             entscore = entscore + (ent.ARC9TrackingScore or 0)
 
             if entscore > targetscore then
-                -- local tr = util.TraceLine({
-                --     start = self:GetShootPos(),
-                --     endpos = ent:GetPos(),
-                --     filter = self:GetOwner(),
-                --     mask = MASK_VISIBLE_AND_NPCS
-                -- })
-
-                -- PrintTable(tr)
-
-                -- if tr.Entity == ent then
-                best = ent
-                bestang = dot
-                targetscore = entscore
-                -- end
+                local tr = util.TraceLine({
+                    start = self:GetShootPos(),
+                    endpos = ent:WorldSpaceCenter(),
+                    filter = self:GetOwner(),
+                    mask = MASK_SHOT
+                })
+                if tr.Entity == ent then
+                    best = ent
+                    bestang = dot
+                    targetscore = entscore
+                end
             end
         end
 
         if !best then self.TargetEntity = nil return end
 
+        if !self.TargetEntity then
+            self.StartTrackTime = CurTime()
+        end
+
+        self.TargetEntity = best
+
+        --[[]
         local aa, bb = best:WorldSpaceAABB()
         local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
         -- local dimx = (bb.x - aa.x) / 2
@@ -225,6 +230,7 @@ SWEP.Hook_Think = function(self)
         end
 
         self.TargetEntity = best
+        ]]
     else
         self.TargetEntity = nil
     end
@@ -238,7 +244,7 @@ SWEP.HeadshotDamage = 1
 SWEP.DamageType = DMG_BULLET
 SWEP.DamageType = nil
 SWEP.ShootEnt = "uplp_proj_javelin" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 1800
+SWEP.ShootEntForce = 500
 SWEP.ShootEntityData = {}
 
 SWEP.Penetration = 18
@@ -247,12 +253,6 @@ SWEP.ImpactForce = 4
 -- Range
 SWEP.RangeMin = 20 / ARC9.HUToM
 SWEP.RangeMax = 90 / ARC9.HUToM
-
--- Physical Bullets
-SWEP.PhysBulletMuzzleVelocity = 715 / ARC9.HUToM
-SWEP.PhysBulletGravity = 1.5
-SWEP.PhysBulletDrag = 1.5
-SWEP.AlwaysPhysBullet = true
 
 -- Magazine Info
 SWEP.Ammo = "RPG_round" -- What ammo type this gun uses.
@@ -334,7 +334,7 @@ SWEP.Num = 1 -- How many bullets shot at once
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = "LOCKON"
+        PrintName = "LOCKON",
     },
 }
 
@@ -355,8 +355,8 @@ SWEP.NPCWeight = 100
 
 -- Iron Sight and Sight Info
 SWEP.IronSights = {
-	Pos = Vector(-4.95, 19.5, -2.42),
-	Ang = Angle(0, 0, 0),
+    Pos = Vector(-4.95, 19.5, -2.42),
+    Ang = Angle(0, 0, 0),
     Magnification = 1.25,
     ViewModelFOV = 60,
     CrosshairInSights = true,
@@ -390,9 +390,9 @@ local pathUTC = "uplp_urban_temp/common/"
 
 SWEP.ShootSound = "^" .. pathJavelin .. "weap_juliet_launch_01.wav"
 -- {
-	-- "^arc9_uplp/panzerfaust/fire_1.wav",
-	-- "^arc9_uplp/panzerfaust/fire_2.wav",
-	-- "^arc9_uplp/panzerfaust/fire_3.wav",
+    -- "^arc9_uplp/panzerfaust/fire_1.wav",
+    -- "^arc9_uplp/panzerfaust/fire_2.wav",
+    -- "^arc9_uplp/panzerfaust/fire_3.wav",
 -- }
 SWEP.ShootSoundIndoor = SWEP.ShootSound
 SWEP.ShootSoundSilenced = ""
@@ -411,11 +411,11 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
         Time = 35 / 35,
-		MinProgress = 1,
+        MinProgress = 1,
     },
     ["draw"] = {
         Source = "draw",
-		MinProgress = 0.7,
+        MinProgress = 0.7,
         EventTable = {
             {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 1 / 30},
             {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 14 / 30},
@@ -423,26 +423,26 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		MinProgress = 0.9,
+        MinProgress = 0.9,
         EventTable = {
             {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 2 / 30},
         },
     },
     ["fire"] = {
         Source = "fire",
-		MinProgress = 1,
+        MinProgress = 1,
         Time = 13 / 30,
         EventTable = {
-			{s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 2 / 30},
+            {s = pathJavelin .. "weap_juliet_proj_ignite_01.ogg", t = 2 / 30},
         },
     },
     ["reload"] = {
         Source = "reload",
         Time = 100 / 30,
         MinProgress = 1,
-		RefillProgress = 0.7,
-		MagSwapTime = 1.3,
-		FireASAP = true,
+        RefillProgress = 0.7,
+        MagSwapTime = 1.3,
+        FireASAP = true,
         EventTable = {
             {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 1 / 30},
             {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 12 / 30},
@@ -454,14 +454,14 @@ SWEP.Animations = {
     ["inspect"] = {
         Source = "inspect",
         FireASAP = true,
-		Time = 150 / 30,
+        Time = 150 / 30,
         MinProgress = 0.925,
         EventTable = {
-		    {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 0 / 30},
-		    {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 12 / 30},
-		    {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 56 / 30},
-		    {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 104 / 30},
-		    {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 112 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 0 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 12 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 56 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_raise_up.ogg", t = 104 / 30},
+            {s = pathJavelin .. "wfoly_la_juliet_reload_start.ogg", t = 112 / 30},
             {s = pathJavelin .. "wfoly_la_juliet_raise_settle.ogg", t = 128 / 30},
         },
     },
@@ -476,11 +476,11 @@ SWEP.Attachments = {
         Bone = "pzf3_root",
         Pos = Vector(9.05, -4.5, 0.075),
         Ang = Angle(0, 0, -92),
-		Integral = "uplp_optic_javelin",
-		Hidden = true,
+        Integral = "uplp_optic_javelin",
+        Hidden = true,
         Category = {"uplp_optic_panzerfaust"},
-		CorrectivePos = Vector(0,0,0),
-		CorrectiveAng = Angle(26, 18, -1)
+        CorrectivePos = Vector(0,0,0),
+        CorrectiveAng = Angle(26, 18, -1)
     },
 
     {
@@ -488,23 +488,23 @@ SWEP.Attachments = {
         Bone = "pzf3_root",
         Pos = Vector(0, -4.5, 15),
         Ang = Angle(0, 0, 0),
-		Hidden = true,
+        Hidden = true,
         Category = {"uplp_panzer_ammo"},
     },
-	
-	{
+
+    {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "pzf3_root",
         Pos = Vector(4.55, -6.45, 3),
         Ang = Angle(90, 0, -90),
     },
-	{
+    {
         PrintName = ARC9:GetPhrase("uplp_category_sticker"),
         StickerModel = "models/weapons/arc9/uplp/stickers/uplp_panzerfaust_sticker.mdl",
         Category = "stickers",
         Bone = "pzf3_root",
         Pos = Vector(5, -6.25, -1),
         Ang = Angle(90, 90, 180),
-    },    
+    },
 }
