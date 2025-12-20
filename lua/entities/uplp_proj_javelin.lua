@@ -4,7 +4,7 @@ ENT.Base                     = "arc9_uplp_proj_base"
 ENT.PrintName                = "Javelin Missile (F&F)"
 ENT.Spawnable                = false
 
-ENT.Model                    = "models/weapons/arc9/panzerfaust_warhead_proj.mdl"
+ENT.Model                    = "models/weapons/arc9/uplp_javelin_missile_shot.mdl"
 
 ENT.IsRocket = false // projectile has a booster and will not drop.
 
