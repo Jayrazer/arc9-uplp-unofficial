@@ -491,27 +491,34 @@ SWEP.Attachments = {
     },
 
     {
-        PrintName = "Ammo",
-        Bone = "pzf3_root",
-        Pos = Vector(0, -4.5, 15),
-        Ang = Angle(0, 0, 0),
-        Hidden = true,
-        Category = {"uplp_panzer_ammo"},
-    },
-
-    {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "pzf3_root",
-        Pos = Vector(4.95, -7.5, -7.25),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(4.13, -7.5, -8.25),
+        Ang = Angle(90, 0, -73),
     },
     {
-        PrintName = ARC9:GetPhrase("uplp_category_sticker"),
-        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_panzerfaust_sticker.mdl",
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " A",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_javelin_sticker_a.mdl",
         Category = "stickers",
         Bone = "pzf3_root",
-        Pos = Vector(5, -6.25, -1),
+        Pos = Vector(16, -10.25, -5),
+        Ang = Angle(90, 90, 180),
+    },    
+	{
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " B",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_javelin_sticker_b.mdl",
+        Category = "stickers",
+        Bone = "pzf3_root",
+        Pos = Vector(14, -10.25, -5),
+        Ang = Angle(90, 90, 180),
+    },
+	{
+        PrintName = ARC9:GetPhrase("uplp_category_sticker") .. " C",
+        StickerModel = "models/weapons/arc9/uplp/stickers/uplp_javelin_sticker_c.mdl",
+        Category = "stickers",
+        Bone = "pzf3_root",
+        Pos = Vector(12, -10.25, -5),
         Ang = Angle(90, 90, 180),
     },
 }

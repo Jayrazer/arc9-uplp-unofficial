@@ -763,13 +763,13 @@ ATT.RTScopeFOV = 60 / 2
 ATT.RTScopeReticleScale = 0.2
 ATT.RTScopeColorable = true
 ATT.RTScopeShadowIntensity = 10
-ATT.RTScopeBlackBox = false
+ATT.RTScopeBlackBox = true
 ATT.RTScopeBlackBoxShadow = false
 ATT.ScopeScreenRatio = 1
 ATT.RTScopeRes = 1024
 
 ATT.RTScopeFLIR = true
-ATT.RTScopeFLIRSolid = true -- Solid color FLIR instead of like a shaded look
+ATT.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
 ATT.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
     [ "$pp_colour_addr" ] = 0,
     [ "$pp_colour_addg" ] = 0,
