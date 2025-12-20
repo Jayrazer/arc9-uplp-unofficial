@@ -57,7 +57,7 @@ SWEP.CamOffsetAng = Angle(0, 90, 90)
 
 ---- View & Worldmodel
 SWEP.ViewModel = "models/weapons/arc9/c_uplp_spas15.mdl"
-SWEP.WorldModel = "models/weapons/arc9/w_uplp_molot.mdl"
+SWEP.WorldModel = "models/weapons/arc9/w_uplp_spas15.mdl"
 
 SWEP.ActivePos = Vector(0, 0, -0.25)
 
@@ -67,7 +67,7 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 -- SWEP.WorldModelMirror = "models/weapons/arc9/c_uplp_vepr.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-3.5, 3, -8),
+    Pos = Vector(-1, 3, -7),
     Ang = Angle(0, 0, 180),
     TPIKPos = Vector(-4.5, 2, -5),
     TPIKAng = Angle(-12, -0, 180),

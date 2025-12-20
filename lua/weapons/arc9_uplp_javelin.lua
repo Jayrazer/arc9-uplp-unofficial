@@ -10,7 +10,7 @@ SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "Lancer IPAT-MS" --ARC9:GetPhrase("uplp_javelin")
 SWEP.Description = [[The "Infantry Portable Anti-Tank Missile System" is a lock-on launcher designed for use by infantry units against heavily armored targets. It is primarily meant for use against ground targets but can also be effective against air targets thanks to its multiple tracking modes.
-Requires a lockon to fire.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
+Requires a lock-on to fire.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
 SWEP.Class = "Missile Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
 
@@ -49,13 +49,13 @@ SWEP.CamOffsetAng = Angle(0, 0, 90)
 
 ---- View & Worldmodel
 SWEP.ViewModel = "models/weapons/arc9/c_uplp_javelin.mdl"
-SWEP.WorldModel = "models/weapons/arc9/w_uplp_panzerfaust.mdl"
+SWEP.WorldModel = "models/weapons/arc9/w_uplp_javelin.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 --SWEP.WorldModelMirror = "models/weapons/arc9/uplp_unofficial/panzerfaust.mdl"
 SWEP.WorldModelOffset = {
-    Pos        =    Vector(-10, 5.5, -7.5),
+    Pos        =    Vector(-10, 5, -7),
     Ang        =    Angle(-15, -5, 216),
     Bone    =    "ValveBiped.Bip01_R_Hand",
     Scale = 0.9,
@@ -323,7 +323,7 @@ SWEP.AimDownSightsTime = 0.75 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.75 -- Time it takes to fully enter sprint
 
 SWEP.SwayAddSights = -1
-SWEP.BarrelLength = 60
+SWEP.BarrelLength = 40
 
 -- Shooting and Firemodes
 SWEP.RPM = 600 -- How fast gun shoot
@@ -350,11 +350,11 @@ SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120
 
 -- HoldType Info
-SWEP.HoldType = "camera"
-SWEP.HoldTypeSprint = "passive"
+SWEP.HoldType = "rpg"
+SWEP.HoldTypeSprint = "ar2"
 SWEP.HoldTypeHolstered = nil
-SWEP.HoldTypeSights = "rpg"
-SWEP.HoldTypeCustomize = "passive"
+SWEP.HoldTypeSights = "camera"
+SWEP.HoldTypeCustomize = "ar2"
 SWEP.HoldTypeNPC = nil
 
 -- NPC Info
@@ -487,7 +487,7 @@ SWEP.Attachments = {
         Hidden = true,
         Category = {"uplp_optic_panzerfaust"},
         CorrectivePos = Vector(0,0,0),
-        CorrectiveAng = Angle(26, 18, -1)
+        CorrectiveAng = Angle(26, 18, -2)
     },
 
     {
