@@ -85,7 +85,7 @@ SWEP.StartTrackTime = 0
 SWEP.LockTime = 1
 
 SWEP.HookP_BlockFire = function(self)
-    return self:GetSightAmount() < 1
+    return self:GetSightAmount() < 1 or not IsValid(self.TargetEntity) or math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1) < 1
 end
 
 SWEP.Hook_GetShootEntData = function(self, data)
@@ -96,8 +96,8 @@ SWEP.Hook_GetShootEntData = function(self, data)
     end
 end
 
-SWEP.Hook_HUDPaintBackground = function(self)
 local TrackingIndicator = Material("VGUI/lockon.png")
+SWEP.Hook_HUDPaintBackground = function(self)
     if self:GetSightAmount() >= 1 then
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
@@ -138,16 +138,17 @@ SWEP.Hook_Think = function(self)
         -- end
 
         --local targets = ents.GetAll()
-        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(5)))
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 50000, math.cos(math.rad(15)))
 
         local best = nil
         -- local bestang = -1000
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
+            local class = ent:GetClass()
             -- if ent:Health() <= 0 then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
-            if ent:IsWorld() or ent:GetClass() == "prop_dynamic" then continue end
+            if ent:IsWorld() or class == "prop_dynamic" or string.Left(class, 7) == "trigger" then continue end
             if ent == self:GetOwner() then continue end
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
@@ -155,7 +156,7 @@ SWEP.Hook_Think = function(self)
 
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
-            if vol <= 20000 then continue end
+            if vol <= 62000 then continue end -- about enough to filter humanoids
 
             local entscore = 1
             if ent:IsPlayer() then entscore = entscore + 5 end
@@ -171,10 +172,10 @@ SWEP.Hook_Think = function(self)
                 local tr = util.TraceLine({
                     start = self:GetShootPos(),
                     endpos = ent:WorldSpaceCenter(),
-                    filter = self:GetOwner(),
-                    mask = MASK_SHOT
+                    filter = {self:GetOwner(), ent},
+                    mask = MASK_OPAQUE
                 })
-                if tr.Entity == ent then
+                if tr.Fraction == 1 then
                     best = ent
                     bestang = dot
                     targetscore = entscore
@@ -326,12 +327,20 @@ SWEP.HeatCapacity = 120 * 1.5 -- For suppresors; how many shots for full heat Wi
 
 SWEP.Num = 1 -- How many bullets shot at once
 
+
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = "LOCKON",
+        PrintName = "F&F",
+        ShootEnt = "uplp_proj_javelin",
+    },
+    {
+        Mode = -1,
+        PrintName = "TOP",
+        ShootEnt = "uplp_proj_javelin_top",
     },
 }
+
 
 SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120

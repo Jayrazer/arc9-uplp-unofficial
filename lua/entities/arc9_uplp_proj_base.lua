@@ -540,7 +540,7 @@ function ENT:SafetyImpact(data, collider)
     end
 end
 
-function ENT:ImpactTraceAttack(ent, damage, pen)
+function ENT:ImpactTraceAttack(ent, damage, pen, pos)
     if !IsValid(ent) then return end
     if ent.LVS then
         // LVS only does its penetration logic on FireBullets, so we must fire a bullet to trigger it
@@ -549,13 +549,13 @@ function ENT:ImpactTraceAttack(ent, damage, pen)
             Attacker = self.Attacker or self:GetOwner(),
             Damage = damage,
             Tracer = 0,
-            Src = self:GetPos(),
+            Src = pos or self:GetPos(),
             Dir = self:GetForward(),
             HullSize = 16,
             Distance = 128,
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER) // LVS wants this
+                dmginfo:SetDamageType(DMG_AIRBOAT) // LVS wants this
                 dmginfo:SetDamageForce(self:GetForward() * pen) // penetration strength
             end,
         })
@@ -576,7 +576,7 @@ function ENT:ImpactTraceAttack(ent, damage, pen)
         dmginfo:SetInflictor(self)
         dmginfo:SetDamagePosition(self:GetPos())
         dmginfo:SetDamageForce(self:GetForward() * pen)
-        dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER)
+        dmginfo:SetDamageType(DMG_AIRBOAT)
         dmginfo:SetDamage(damage)
         ent:DispatchTraceAttack(dmginfo, tr, self:GetForward())
     end
@@ -596,7 +596,7 @@ function ENT:Draw()
 
     self:DrawModel()
 
-    if self.FlareColor then
+    if self.FlareColor and ((self.RocketLifetime or 0) <= 0 or self.SpawnTime + self.RocketLifetime >= CurTime()) then
         local mult = self.SafetyFuse and math.Clamp((CurTime() - (self.SpawnTime + self.SafetyFuse)) / self.SafetyFuse, 0.1, 1) or 1
         render.SetMaterial(mat)
         render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -16), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)

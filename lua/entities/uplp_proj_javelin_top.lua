@@ -1,12 +1,12 @@
 AddCSLuaFile()
 
 ENT.Base                     = "arc9_uplp_proj_base"
-ENT.PrintName                = "Javelin Missile (F&F)"
+ENT.PrintName                = "Javelin Missile (Top Attack)"
 ENT.Spawnable                = false
 
 ENT.Model                    = "models/weapons/arc9/panzerfaust_warhead_proj.mdl"
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
+ENT.IsRocket = true // projectile has a booster and will not drop.
 
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
@@ -18,29 +18,29 @@ ENT.ExplodeUnderwater = true
 ENT.GunshipWorkaround = false
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.25
-ENT.ImpactDamage = 0
-ENT.RocketLifetime = 5
+ENT.SafetyFuse = 0.5
+ENT.ImpactDamage = 150
+ENT.RocketLifetime = 10
 
-ENT.TopAttack = false
+ENT.TopAttack = true
 ENT.TopAttackHeight = 1000
 
-ENT.SteerSpeed = 150
-ENT.SeekerAngle = 60
-ENT.SeekerExplodeRange = 128
+ENT.SteerSpeed = 30
+ENT.SeekerAngle = 180
+ENT.SeekerExplodeRange = 0
 ENT.SeekerExplodeSnapPosition = false
 ENT.SeekerExplodeAngle = 90
 
 ENT.LeadTarget = true
-ENT.SuperSteerTime = 0
+ENT.SuperSteerTime = 1
 ENT.SuperSteerSpeed = 800
 
-ENT.MaxSpeed = 3000
-ENT.Acceleration = 3000
+ENT.MaxSpeed = 2000
+ENT.Acceleration = 4000
 
-ENT.SteerDelay = 0.25
-ENT.AccelerationDelay = 0.25
-ENT.FlareRedirectChance = 0.75
+ENT.SteerDelay = 0.5
+ENT.AccelerationDelay = 0.5
+ENT.FlareRedirectChance = 0.5
 
 ENT.AudioLoop = "uplp/javelin/weap_juliet_proj_lp_01.wav"
 
@@ -54,27 +54,20 @@ local path = "uplp_urban_temp/m203/"
 ENT.ExplosionSounds = {path .. "explosion-close-01.ogg", path .. "explosion-close-02.ogg", path .. "explosion-close-03.ogg", path .. "explosion-close-04.ogg", path .. "explosion-close-05.ogg", path .. "explosion-close-06.ogg"}
 ENT.DebrisSounds = {path .. "debris-01.ogg", path .. "debris-02.ogg", path .. "debris-03.ogg", path .. "debris-04.ogg", path .. "debris-05.ogg"}
 
-function ENT:OnInitialize()
-    if SERVER then
-        self:GetPhysicsObject():AddVelocity(Vector(0, 0, 150))
-    end
-end
-
 function ENT:Detonate(ent)
     local attacker = self.Attacker or self:GetOwner()
     local dir = self:GetForward()
-    local src = self:GetPos() + dir
+    local src = self:GetPos()
 
-    --local mult = TacRP.ConVars["mult_damage_explosive"]:GetFloat()
     local dmg = DamageInfo()
     dmg:SetAttacker(attacker)
-    dmg:SetDamageType(DMG_BLAST + DMG_AIRBOAT)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
     dmg:SetInflictor(self)
-    dmg:SetDamageForce(dir * 9000)
+    dmg:SetDamageForce(dir * 100)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(800)
-    util.BlastDamageInfo(dmg, self:GetPos(), 256)
-    // self:ImpactTraceAttack(ent, 400, 200)
+    dmg:SetDamage(500)
+    util.BlastDamageInfo(dmg, IsValid(ent) and ent:GetPos() or self:GetPos(), 256)
+    self:ImpactTraceAttack(ent, 900, 50000, src)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
