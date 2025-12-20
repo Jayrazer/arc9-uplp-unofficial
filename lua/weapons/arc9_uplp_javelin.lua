@@ -52,8 +52,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 --SWEP.WorldModelMirror = "models/weapons/arc9/uplp_unofficial/panzerfaust.mdl"
 SWEP.WorldModelOffset = {
-    Pos        =    Vector(-8.8, 5.5, -6.5),
-    Ang        =    Angle(-8, -3, 175),
+    Pos        =    Vector(-10, 5.5, -7.5),
+    Ang        =    Angle(-15, -5, 216),
     Bone    =    "ValveBiped.Bip01_R_Hand",
     Scale = 0.9,
 }
@@ -96,7 +96,7 @@ SWEP.Hook_GetShootEntData = function(self, data)
     end
 end
 
-local TrackingIndicator = Material("VGUI/lockon.png")
+local TrackingIndicator = Material("vgui/uplp_reticles/halo_cross.png")
 SWEP.Hook_HUDPaintBackground = function(self)
     if self:GetSightAmount() >= 1 then
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
@@ -110,7 +110,7 @@ SWEP.Hook_HUDPaintBackground = function(self)
              else
                 surface.SetMaterial(TrackingIndicator)
                 surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60)
+                surface.DrawTexturedRect(toscreen.x - 90, toscreen.y - 90, 180, 180)
              end
         end
     end
@@ -346,7 +346,7 @@ SWEP.ShootPitch = 90
 SWEP.ShootVolume = 120
 
 -- HoldType Info
-SWEP.HoldType = "rpg"
+SWEP.HoldType = "camera"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = nil
 SWEP.HoldTypeSights = "rpg"
@@ -499,8 +499,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "pzf3_root",
-        Pos = Vector(4.55, -6.45, 3),
-        Ang = Angle(90, 0, -90),
+        Pos = Vector(4.95, -7.5, -7.25),
+        Ang = Angle(0, 0, -90),
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_sticker"),
