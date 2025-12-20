@@ -9,7 +9,8 @@ SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "Lancer IPAT-MS" --ARC9:GetPhrase("uplp_javelin")
-SWEP.Description = [[The "Infantry-Portable Anti-Tank Missile System" (IPAT-MS) is a lock-on launcher designed for use by infantry units against ground targets from long distance.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
+SWEP.Description = [[The "Infantry Portable Anti-Tank Missile System" is a lock-on launcher designed for use by infantry units against heavily armored targets. It is primarily meant for use against ground targets but can also be effective against air targets thanks to its multiple tracking modes.
+Requires a lockon to fire.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
 SWEP.Class = "Missile Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
 
@@ -29,6 +30,8 @@ SWEP.Credits = {
     [ ARC9:GetPhrase( "uplp_animations" ) ] = "Dummified, speedonerd",
     [ ARC9:GetPhrase( "uplp_sounds" ) ] = "Infinity Ward",
 }
+
+SWEP.Crosshair = false
 
 ---- Muzzle Effects, Shell Effects, Camera
 SWEP.MuzzleParticle = "muzzleflash_m79"
@@ -83,6 +86,7 @@ SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
 SWEP.LockTime = 1
+SWEP.RequireLockon = true
 
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1 or not IsValid(self.TargetEntity) or math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1) < 1
@@ -318,7 +322,7 @@ SWEP.SpeedMultShooting = 0.8
 SWEP.AimDownSightsTime = 0.75 -- Time it takes to fully enter ADS
 SWEP.SprintToFireTime = 0.75 -- Time it takes to fully enter sprint
 
-SWEP.SwayAddSights = 1.25
+SWEP.SwayAddSights = -1
 SWEP.BarrelLength = 60
 
 -- Shooting and Firemodes
@@ -369,8 +373,8 @@ SWEP.IronSights = {
 SWEP.ReloadInSights = false
 
 -- Customization Menu Info
-SWEP.CustomizePos = Vector(11, 40, 5)
-SWEP.CustomizeAng = Angle(85, 0, 0)
+SWEP.CustomizePos = Vector(10, 40, 5)
+SWEP.CustomizeAng = Angle(90, -10, 34)
 SWEP.CustomizeSnapshotPos = Vector(0, 10, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeSnapshotFOV = 90
