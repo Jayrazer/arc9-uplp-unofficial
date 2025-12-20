@@ -1,0 +1,4 @@
+- balance pass
+- actual worldmodels for all weapons
+- ump
+- m320 maybe?
