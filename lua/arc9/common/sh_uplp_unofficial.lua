@@ -52,17 +52,17 @@ local function POLYUF()
 		local mossberg = weapons.GetStored("arc9_uplp_m590")
 		mossberg.DamageMax = 105
 		mossberg.DamageMin = 36
-		mossberg.RangeMin = 10	
+		mossberg.RangeMin = 10 / ARC9.HUToM
 		
 		local r870 = weapons.GetStored("arc9_uplp_r870")
 		r870.DamageMax = 105
 		r870.DamageMin = 36
-		r870.RangeMin = 10
+		r870.RangeMin = 10 / ARC9.HUToM
 		
 		local spas12 = weapons.GetStored("arc9_uplp_spas")
 		spas12.DamageMax = 70
 		spas12.DamageMin = 28
-		spas12.RangeMin = 8
+		spas12.RangeMin = 8 / ARC9.HUToM
 		spas12.Firemodes = {
 			{
 				Mode = 1, -- Pump
