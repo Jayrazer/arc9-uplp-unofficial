@@ -698,7 +698,9 @@ ATT.Sights = {
 		Ang = Angle(1, -95, 0),
         Magnification = 1.5,
         ViewModelFOV = 56,
-        RTScopeFOV = 48,
+        -- RTScopeFOV = 48,
+        RTScopeMagnification = 4,
+        ShadowPos = Vector(0.33, 0, -0.69),
 
         SwayAddSights = sway_mid,
     },
@@ -709,7 +711,8 @@ ATT.SortOrder = 1
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 4
-ATT.RTScopeFOV = 60 / 4
+-- ATT.RTScopeFOV = 60 / 4
+ATT.RTScopeMagnification = 4
 ATT.RTScopeReticle = Material("vgui/uplp_reticles/aug.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
 ATT.RTScopeColorable = true
@@ -730,6 +733,17 @@ ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
 ARC9.LoadAttachment(ATT, "uplp_optic_panzerfaust")
 
 
+
+
+
+
+
+
+
+
+
+
+
 -- Javelin Integral Scope
 
 ATT = {}
@@ -743,11 +757,14 @@ ATT.BoneMerge = true
 
 ATT.Sights = {
     {
-		Pos = Vector(5.5, 0.23, -0.18),
-		Ang = Angle(0, -90, 0),
+		Pos = Vector(5.7, 0.245, -0.195),
+		Ang = Angle(-1, -90, 1),
+		-- Ang = Angle(0, -90, 0),
         Magnification = 2,
         ViewModelFOV = 56,
-        RTScopeFOV = 48,
+        -- RTScopeFOV = 48,
+        BaseSight = false ,
+        RTScopeMagnification = 2,
 
         SwayAddSights = sway_mid,
     },
@@ -758,13 +775,16 @@ ATT.SortOrder = 1
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 4
-ATT.RTScopeFOV = 60 / 2
---ATT.RTScopeReticle = Material("vgui/uplp_reticles/halo_cross.png", "mips smooth")
-ATT.RTScopeReticleScale = 1
-ATT.RTScopeColorable = true
-ATT.RTScopeShadowIntensity = 10
-ATT.RTScopeBlackBox = true
-ATT.RTScopeBlackBoxShadow = false
+-- ATT.RTScopeFOV = 60 / 2
+ATT.RTScopeMagnification = 2
+-- ATT.RTScopeReticle = Material("vgui/uplp_reticles/grrr.png", "mips smooth")
+ATT.RTScopeReticle = Material("entities/uplp_attachments/unoff/jav.png", "mips smooth")
+ATT.RTScopeReticleScale = 0.95
+ATT.RTScopeColorable = false 
+ATT.RTScopeShadowIntensity = 6
+ATT.RTCollimator = false
+ATT.RTScopeBlackBox = true 
+ATT.RTScopeBlackBoxShadow = true
 ATT.ScopeScreenRatio = 1
 ATT.RTScopeRes = 1024
 
@@ -802,6 +822,68 @@ ATT.Free = true
 ATT.Hidden = false
 
 ATT.ModelOffset = Vector(1.01, -2.07, 2.605)
+
+ATT.RTScopeDrawFunc = function(swep, rtsize, sight)
+    -- ammo
+    if swep:Clip1() > 0 then
+        surface.SetDrawColor(0, 255, 0)
+        surface.DrawRect(160, 480, 150, 150)
+        
+        surface.SetDrawColor(83, 0, 0)
+        surface.DrawRect(160, 650, 150, 150)
+    else
+        surface.SetDrawColor(255, 0, 0)
+        surface.DrawRect(160, 650, 150, 150)
+
+        surface.SetDrawColor(0, 73, 0)
+        surface.DrawRect(160, 480, 150, 150)
+    end
+    
+    -- firemode
+    if swep:GetFiremode() == 1 then
+        surface.SetDrawColor(0, 255, 0)
+        surface.DrawRect(860, 280, 150, 150)
+        
+        surface.SetDrawColor(83, 0, 0)
+        surface.DrawRect(860, 450, 150, 150)
+    else
+        surface.SetDrawColor(255, 0, 0)
+        surface.DrawRect(860, 450, 150, 150)
+
+        surface.SetDrawColor(0, 73, 0)
+        surface.DrawRect(860, 280, 150, 150)
+    end
+
+    -- locked in
+    if swep:GetSightAmount() < 1 or not IsValid(swep.TargetEntity) then
+        surface.SetDrawColor(255, 0, 0)
+        surface.DrawRect(660, 450, 150, 150)
+
+        surface.SetDrawColor(0, 73, 0)
+        surface.DrawRect(660, 280, 150, 150)  
+    else      
+        surface.SetDrawColor(0, 255, 0)
+        surface.DrawRect(660, 280, 150, 150)
+        
+        surface.SetDrawColor(83, 0, 0)
+        surface.DrawRect(660, 450, 150, 150)
+    end
+
+    -- can fire
+    if swep:GetSightAmount() < 1 or not IsValid(swep.TargetEntity) or math.Clamp((CurTime() - swep.StartTrackTime) / swep.LockTime, 0, 1) < 1 then
+        surface.SetDrawColor(255, 0, 0)
+        surface.DrawRect(60, 450, 150, 150)
+
+        surface.SetDrawColor(0, 73, 0)
+        surface.DrawRect(60, 280, 150, 150)
+    else
+        surface.SetDrawColor(0, 255, 0)
+        surface.DrawRect(60, 280, 150, 150)
+        
+        surface.SetDrawColor(83, 0, 0)
+        surface.DrawRect(60, 450, 150, 150)
+    end
+end
 
 ARC9.LoadAttachment(ATT, "uplp_optic_javelin")
 

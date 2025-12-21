@@ -101,24 +101,7 @@ SWEP.Hook_GetShootEntData = function(self, data)
 end
 
 local TrackingIndicator = Material("vgui/uplp_reticles/halo_cross.png")
-SWEP.Hook_HUDPaintBackground = function(self)
-    if self:GetSightAmount() >= 1 then
-        if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
-             local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
-             local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
 
-             if tracktime >= 1 then
-                surface.SetDrawColor(255,0,0,200)
-                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
-                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
-             else
-                surface.SetMaterial(TrackingIndicator)
-                surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 89, toscreen.y - 89, 180, 180)
-             end
-        end
-    end
-end
 
 SWEP.Hook_Think = function(self)
     if self:GetSightAmount() >= 1 and self:Clip1() > 0 then
@@ -522,3 +505,234 @@ SWEP.Attachments = {
         Ang = Angle(90, 90, 180),
     },
 }
+
+
+
+-- dirty dirty hacks
+
+-- SWEP.BuildMultiSight = function() end
+SWEP.GenerateAutoSight = function() 
+    return {
+        -- Pos = Vector(-1.5, -10, -1.5),
+        Pos = Vector(-1.789, -10, 3.845),
+        Ang = Angle(5.86339, 31.1695, 24.6),
+        Magnification = 1.2,
+        ExtraSightDistance = 0,
+        GeneratedSight = true,
+        ShadowPos = Vector(0, 0, -0.25),
+    }
+end
+
+-- SWEP.MultiSightTable = {
+--     {
+--         -- Pos = Vector(-4.615, -3.5, -4.03),
+--         -- Pos = Vector(-1.5, -10, -1.5),
+--         Pos = Vector(-1.789, -10, 3.845),
+--         -- Ang = -Angle(31.1695, -5.86339, -21.7681),
+--         Ang = Angle(5.86339, 31.1695, 24.6),
+--         Magnification = 1.2,
+--         ViewModelFOV = 60,
+--         CrosshairInSights = false,
+--     },
+-- }
+
+
+
+
+
+if CLIENT then
+
+
+local rtsize = math.min(1024, ScrW(), ScrH())
+
+local rtmat = GetRenderTarget("arc9_pipscope", rtsize, rtsize, false)
+
+local rtsurf = Material("effects/arc9/rt")
+local shadow = Material("arc9/shadow.png", "mips smooth")
+local shadow2 = Material("arc9/shadow2.png", "mips smooth")
+local vec1 = Vector(1, 1, 1)
+
+local arc9_scope_r = GetConVar("arc9_scope_r")
+local arc9_scope_g = GetConVar("arc9_scope_g")
+local arc9_scope_b = GetConVar("arc9_scope_b")
+
+function SWEP:DoRTScope(model, atttbl, active)
+    local pos = model:GetPos()
+    local ang = EyeAngles()
+
+    if active then
+        local sightzang = 0
+        if self:ShouldDoScope() then
+            self.RenderingRTScope = true
+            local sight = self:GetSight()
+            sightzang = sight.Ang.z
+            local sightpos = sight.ShadowPos or (sight.OriginalSightTable or {}).Pos or sight.Pos or Vector(0, 0, 0)
+            sightpos = sightpos * ((sight.slottbl or {}).Scale or 1)
+
+            -- sightpos.x = -sightpos.x -- to fix pso-like side scopes
+            sightpos.x = 0
+
+            pos = pos + (sightpos.x * ang:Right())
+            -- pos = pos + (sightpos.y * ang:Forward())
+            pos = pos + (sightpos.z * -ang:Up())
+
+            local screenpos
+
+            if sight.BaseSight then
+                screenpos = {
+                    visible = true,
+                    x = ScrW() / 2,
+                    y = ScrH() / 2
+                }
+            else
+                screenpos = pos:ToScreen()
+            end
+
+            local shadow_intensity = atttbl.RTScopeShadowIntensity or 10
+
+            local sh_x = ((screenpos.x - (ScrW() / 2)) * shadow_intensity)
+            local sh_y = ((screenpos.y - (ScrH() / 2)) * shadow_intensity)
+
+            local ret_x = (screenpos.x - (ScrW() / 2)) * 10
+            local ret_y = (screenpos.y - (ScrH() / 2)) * 10
+
+            local sh_s = math.floor(rtsize * 1.3)
+
+            sh_x = sh_x - ((sh_s-rtsize) / 2)
+            sh_y = sh_y - ((sh_s-rtsize) / 2)
+
+            ret_x = ret_x - ((sh_s-rtsize) / 2)
+            ret_y = ret_y - ((sh_s-rtsize) / 2)
+
+            render.PushRenderTarget(rtmat)
+
+
+            cam.Start2D()
+
+
+            
+
+            -- javelin!!!
+            
+            if self:GetSightAmount() >= 1 then
+                if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+                    local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
+                    local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+                    local fuckx = toscreen.x*2 - rtsize*2
+                    local fucky = toscreen.y*2 - rtsize + 100
+
+                    if tracktime >= 1 then
+                        surface.SetDrawColor(255,0,0,200)
+                        surface.DrawLine(0, fucky, rtsize, fucky)
+                        surface.DrawLine(fuckx, 0, fuckx, rtsize)
+                    else
+                        surface.SetMaterial(TrackingIndicator)
+                        surface.SetDrawColor(255,0,0,200)
+                        surface.DrawTexturedRect(fuckx - 89, fucky - 89, 180, 180)
+                    end
+                end
+            end
+
+
+            if atttbl.RTScopeDrawFunc then
+                atttbl.RTScopeDrawFunc(self, rtsize, sight)
+            end
+
+
+
+            local reticle = sight.Reticle or atttbl.RTScopeReticle
+            local color = atttbl.RTScopeColor or color_white
+
+            if atttbl.RTScopeColorable then
+                color = Color(0, 0, 0)
+                color.r = arc9_scope_r:GetInt()
+                color.g = arc9_scope_g:GetInt()
+                color.b = arc9_scope_b:GetInt()
+            end
+
+            local size = rtsize * (atttbl.RTScopeReticleScale or 1)
+
+
+            if reticle then
+                local rtr_x = (rtsize - size) / 2
+                local rtr_y = (rtsize - size) / 2
+
+                if atttbl.RTScopeBlackBox != false then
+                    surface.SetDrawColor(0, 0, 0)
+                    surface.DrawRect(rtr_x - size * 4, rtr_y - size * 8, size * 8, size * 8) -- top
+                    surface.DrawRect(rtr_x - size * 8, rtr_y - size * 4, size * 8, size * 8) -- left
+                    surface.DrawRect(rtr_x - size * 4, rtr_y + size - 1, size * 8, size * 8) -- bottom
+                    surface.DrawRect(rtr_x + size - 1, rtr_y - size * 4, size * 8, size * 8) -- right
+
+                    if atttbl.RTScopeBlackBoxShadow != false then
+                        surface.SetMaterial(shadow2)
+                        surface.SetDrawColor(0, 0, 0)
+                        surface.DrawTexturedRect(rtr_x, rtr_y, size, size)
+                    end
+                end
+                surface.SetDrawColor(color)
+                surface.SetMaterial(reticle)
+                -- surface.DrawTexturedRect(rtr_x, rtr_y, size, size)
+                -- local counterrotation = (self.LastViewModelAng and self.LastViewModelAng.z or 0) - sightzang + self.SubtleVisualRecoilAng.z * 2 - EyeAngles().z
+                surface.DrawTexturedRectRotated(size / 2 + rtr_x, size / 2 + rtr_y, size, size, 0)
+            end
+
+            -- if atttbl.RTScopeDrawFunc then
+            --     atttbl.RTScopeDrawFunc(self, rtsize, sight)
+            -- end
+
+            -- if drawfunc then -- doesn't seem to be working
+            --     drawfunc(self, pos, model)
+            -- end
+
+            if !atttbl.RTScopeNoShadow then
+                surface.SetDrawColor(0, 0, 0)
+                surface.SetMaterial(shadow)
+                surface.DrawTexturedRect(sh_x, sh_y, sh_s, sh_s)
+
+                if !screenpos.visible then
+                    surface.SetDrawColor(0, 0, 0)
+                    surface.DrawRect(0, 0, rtsize, rtsize)
+                else
+                    surface.SetDrawColor(0, 0, 0)
+                    surface.DrawRect(sh_x - sh_s * 4, sh_y - sh_s * 8, sh_s * 8, sh_s * 8) -- top
+                    surface.DrawRect(sh_x - sh_s * 8, sh_y - sh_s * 4, sh_s * 8, sh_s * 8) -- left
+                    surface.DrawRect(sh_x - sh_s * 4, sh_y + sh_s, sh_s * 8, sh_s * 8) -- bottom
+                    surface.DrawRect(sh_x + sh_s, sh_y - sh_s * 4, sh_s * 8, sh_s * 8) -- right
+                end
+            end
+        else
+            render.PushRenderTarget(rtmat)
+            cam.Start2D()
+        end
+
+        local sd = self:GetSightAmount()
+
+        surface.SetDrawColor(0, 0, 0, 255 * (1 - sd))
+        surface.DrawRect(0, 0, rtsize, rtsize)
+
+        cam.End2D()
+
+        render.PopRenderTarget()
+        -- if sd > 0 then render.SetToneMappingScaleLinear(render.GetToneMappingScaleLinear()*0.2) end
+
+        if sd > 0.33 then render.SetToneMappingScaleLinear(LerpVector(sd * 1.5 - 0.5, render.GetToneMappingScaleLinear(), vec1)) end
+
+        -- local counterrotation = self.LastViewModelAng.z - sightzang + (arc9_cheapscopes:GetBool() and 0 or self.SubtleVisualRecoilAng.z * 2) - EyeAngles().z
+        rtsurf:SetTexture("$basetexture", rtmat)
+        -- rtsurf:SetFloat("$rot", ((atttbl.RTScopeShadowIntensity or 0) > 1 or atttbl.RTCollimator) and counterrotation or 0)
+        rtsurf:SetFloat("$rot", 0)
+        -- rtsurf:SetMatrix("$basetexturetransform", Matrix({{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}))
+
+        -- model:SetSubMaterial()
+
+        model:SetSubMaterial(atttbl.RTScopeSubmatIndex, "effects/arc9/rt")
+    else
+        -- model:SetSubMaterial()
+        rtsurf:SetTexture("$basetexture", "vgui/black")
+        model:SetSubMaterial(atttbl.RTScopeSubmatIndex, "vgui/black")
+    end
+end
+
+end
