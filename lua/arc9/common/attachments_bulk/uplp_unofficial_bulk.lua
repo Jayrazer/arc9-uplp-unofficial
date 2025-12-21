@@ -1,8 +1,8 @@
 local ATT = {}
 
-local iconfolderfamas = "entities/uplp_attachements/famas/"
-local iconfolderm249 = "entities/uplp_attachements/m249/"
-local iconfolderspas = "entities/uplp_attachements/spas15/"
+local iconfolderfamas = "entities/uplp_attachments/famas/"
+local iconfolderm249 = "entities/uplp_attachments/m249/"
+local iconfolderspas = "entities/uplp_attachments/spas15/"
 
 
 ------------------------SPAS-15----------------------------
@@ -613,7 +613,7 @@ ATT.PrintName = "15-Round 5.56x45mm"
 ATT.CompactName = "15R 5.56"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderm249 .. "15mag.png", "mips smooth")
+ATT.Icon = Material(iconfolderfamas .. "15mag.png", "mips smooth")
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/famas_mag_small.mdl"
 
@@ -643,7 +643,7 @@ ATT.PrintName = "285mm Commando Barrel"
 ATT.CompactName = "285mm"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderm249 .. "brlsnub.png", "mips smooth")
+ATT.Icon = Material(iconfolderfamas .. "brlsnub.png", "mips smooth")
 
 ATT.Category = "uplp_famas_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
