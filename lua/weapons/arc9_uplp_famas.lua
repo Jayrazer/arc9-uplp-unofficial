@@ -774,7 +774,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, 2, 7),
         Ang = Angle(90, 90, 180),
-        ActiveElements = {"uplp_ar15_barrel"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),

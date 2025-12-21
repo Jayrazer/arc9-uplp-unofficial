@@ -755,20 +755,27 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
         mdl:SetBodygroup(5,1)
     end
 	
+	if eles["uplp_muzzle_used"] then
+        mdl:SetBodygroup(6, 3)
+    end
+	
 end
 
 SWEP.AttachmentElements = {
     -- STOCK
     ["uplp_spas15_stock_fold"] = { Bodygroups = { { 1, 1 } } },
 	
+	    -- MUZZLES
+    ["uplp_muzzle_used"] = { Bodygroups = { { 6, 3 } } },
+	
 	-- BARRELS
 	["uplp_spas15_barrel_short"] = { 
-		Bodygroups = { { 2, 1 } }, 
-		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 19) } }
+		Bodygroups = { { 2, 1 }, { 6, 1 } }, 
+		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 19.57) } }
 	},	
 	["uplp_spas15_barrel_long"] = { 
-		Bodygroups = { { 2, 2 } }, 
-		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 25.45) } }
+		Bodygroups = { { 2, 2 }, { 6, 2 } }, 
+		AttPosMods = { [2] = { Pos = Vector(-0.1, 1.74, 26.03) } }
 	},
 	
 	-- SHELLS
@@ -799,11 +806,12 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_molot_muzzle"},
         Bone = "body",
-        Pos = Vector(-0.1, 1.74, 21.8),
+        Pos = Vector(-0.1, 1.74, 22.4),
         Ang = Angle(90, 90, 180),
 		RejectAttachments = {
         ["uplp_sg_mz_vepr"] = true,
-        }
+        },
+		ActiveElements = {"uplp_muzzle_used"}
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
