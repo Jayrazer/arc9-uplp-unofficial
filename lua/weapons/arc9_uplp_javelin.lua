@@ -114,7 +114,7 @@ SWEP.Hook_HUDPaintBackground = function(self)
              else
                 surface.SetMaterial(TrackingIndicator)
                 surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 90, toscreen.y - 90, 180, 180)
+                surface.DrawTexturedRect(toscreen.x - 89, toscreen.y - 89, 180, 180)
              end
         end
     end
@@ -487,7 +487,7 @@ SWEP.Attachments = {
         Hidden = true,
         Category = {"uplp_optic_panzerfaust"},
         CorrectivePos = Vector(0,0,0),
-        CorrectiveAng = Angle(26, 18, -2)
+        CorrectiveAng = Angle(26, 19.5, -4)
     },
 
     {

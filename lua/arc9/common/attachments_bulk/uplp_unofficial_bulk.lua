@@ -744,7 +744,7 @@ ATT.BoneMerge = true
 ATT.Sights = {
     {
 		Pos = Vector(5.5, 0.23, -0.18),
-		Ang = Angle(0, -91, 0),
+		Ang = Angle(0, -90, 0),
         Magnification = 2,
         ViewModelFOV = 56,
         RTScopeFOV = 48,
@@ -760,7 +760,7 @@ ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 4
 ATT.RTScopeFOV = 60 / 2
 --ATT.RTScopeReticle = Material("vgui/uplp_reticles/halo_cross.png", "mips smooth")
-ATT.RTScopeReticleScale = 0.2
+ATT.RTScopeReticleScale = 1
 ATT.RTScopeColorable = true
 ATT.RTScopeShadowIntensity = 10
 ATT.RTScopeBlackBox = true
