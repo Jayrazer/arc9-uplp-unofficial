@@ -99,7 +99,7 @@ SWEP.ImpactForce = 2 -- How much kick things will have when hit
 
 -- Range
 SWEP.RangeMin = 25 / ARC9.HUToM
-SWEP.RangeMax = 100 / ARC9.HUToM
+SWEP.RangeMax = 75 / ARC9.HUToM
 
 -- Physical Bullets
 SWEP.PhysBulletMuzzleVelocity = 715 / ARC9.HUToM
