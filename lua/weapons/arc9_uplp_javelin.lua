@@ -85,7 +85,7 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
 SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
-SWEP.LockTime = 1
+SWEP.LockTime = 2
 SWEP.RequireLockon = true
 
 SWEP.HookP_BlockFire = function(self)
@@ -260,24 +260,8 @@ SWEP.RecoilMultSights = 1
 SWEP.RecoilMultCrouch = 0.75
 
 -- Visual Recoil
+SWEP.UseVisualRecoil = false
 SWEP.VisualRecoil = 0
-SWEP.VisualRecoilMultSights = 1
--- SWEP.VisualRecoilCenter = Vector(2, 11, 2)
-SWEP.VisualRecoilUp = 0 -- Vertical tilt
-SWEP.VisualRecoilSide = -0 -- Horizontal tilt
-SWEP.VisualRecoilRoll = 0 -- Roll tilt
-SWEP.VisualRecoilPunch = 0 -- How far back visual recoil moves the gun
-SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilSpringMagnitude = 0
-SWEP.VisualRecoilPositionBumpUp = 0
-
-SWEP.VisualRecoilMultHipFire = 1
-SWEP.VisualRecoilUpHipFire = 2
-SWEP.VisualRecoilSideHipFire = -0.2
-SWEP.VisualRecoilRollHipFire = 20
-SWEP.VisualRecoilPunchHipFire = 0.5
-SWEP.VisualRecoilDampingConstHipFire = 45
-SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
 SWEP.Spread = 0
@@ -623,12 +607,12 @@ function SWEP:DoRTScope(model, atttbl, active)
                     local fucky = toscreen.y*2 - rtsize + 100
 
                     if tracktime >= 1 then
-                        surface.SetDrawColor(255,0,0,200)
+                        surface.SetDrawColor(255,255,255,200)
                         surface.DrawLine(0, fucky, rtsize, fucky)
                         surface.DrawLine(fuckx, 0, fuckx, rtsize)
                     else
                         surface.SetMaterial(TrackingIndicator)
-                        surface.SetDrawColor(255,0,0,200)
+                        surface.SetDrawColor(255,255,255,200)
                         surface.DrawTexturedRect(fuckx - 89, fucky - 89, 180, 180)
                     end
                 end

@@ -778,7 +778,7 @@ ATT.RTScopeSubmatIndex = 4
 -- ATT.RTScopeFOV = 60 / 2
 ATT.RTScopeMagnification = 2
 -- ATT.RTScopeReticle = Material("vgui/uplp_reticles/grrr.png", "mips smooth")
-ATT.RTScopeReticle = Material("entities/uplp_attachments/unoff/jav.png", "mips smooth")
+ATT.RTScopeReticle = Material("entities/uplp_attachments/unoff/javelin_reticle.png", "mips smooth")
 ATT.RTScopeReticleScale = 0.95
 ATT.RTScopeColorable = false 
 ATT.RTScopeShadowIntensity = 6
@@ -827,61 +827,50 @@ ATT.RTScopeDrawFunc = function(swep, rtsize, sight)
     -- ammo
     if swep:Clip1() > 0 then
         surface.SetDrawColor(0, 255, 0)
-        surface.DrawRect(160, 480, 150, 150)
+        surface.DrawRect(500, 800, 150, 150)
         
         surface.SetDrawColor(83, 0, 0)
-        surface.DrawRect(160, 650, 150, 150)
+        surface.DrawRect(680, 800, 150, 150)
     else
         surface.SetDrawColor(255, 0, 0)
-        surface.DrawRect(160, 650, 150, 150)
+        surface.DrawRect(680, 800, 150, 150)
 
         surface.SetDrawColor(0, 73, 0)
-        surface.DrawRect(160, 480, 150, 150)
+        surface.DrawRect(500, 800, 150, 150)
     end
     
     -- firemode
     if swep:GetFiremode() == 1 then
-        surface.SetDrawColor(0, 255, 0)
-        surface.DrawRect(860, 280, 150, 150)
-        
-        surface.SetDrawColor(83, 0, 0)
-        surface.DrawRect(860, 450, 150, 150)
-    else
-        surface.SetDrawColor(255, 0, 0)
+	    surface.SetDrawColor(0, 255, 0)
         surface.DrawRect(860, 450, 150, 150)
 
         surface.SetDrawColor(0, 73, 0)
         surface.DrawRect(860, 280, 150, 150)
+		else
+        surface.SetDrawColor(0, 255, 0)
+        surface.DrawRect(860, 280, 150, 150)
+        
+        surface.SetDrawColor(0, 73, 0)
+        surface.DrawRect(860, 450, 150, 150)
+
     end
 
     -- locked in
     if swep:GetSightAmount() < 1 or not IsValid(swep.TargetEntity) then
-        surface.SetDrawColor(255, 0, 0)
-        surface.DrawRect(660, 450, 150, 150)
-
         surface.SetDrawColor(0, 73, 0)
-        surface.DrawRect(660, 280, 150, 150)  
+        surface.DrawRect(680, 80, 150, 150)  
     else      
         surface.SetDrawColor(0, 255, 0)
-        surface.DrawRect(660, 280, 150, 150)
-        
-        surface.SetDrawColor(83, 0, 0)
-        surface.DrawRect(660, 450, 150, 150)
+        surface.DrawRect(680, 80, 150, 150)
     end
 
     -- can fire
     if swep:GetSightAmount() < 1 or not IsValid(swep.TargetEntity) or math.Clamp((CurTime() - swep.StartTrackTime) / swep.LockTime, 0, 1) < 1 then
         surface.SetDrawColor(255, 0, 0)
-        surface.DrawRect(60, 450, 150, 150)
-
-        surface.SetDrawColor(0, 73, 0)
-        surface.DrawRect(60, 280, 150, 150)
+        surface.DrawRect(500, 80, 150, 150)
     else
         surface.SetDrawColor(0, 255, 0)
-        surface.DrawRect(60, 280, 150, 150)
-        
-        surface.SetDrawColor(83, 0, 0)
-        surface.DrawRect(60, 450, 150, 150)
+        surface.DrawRect(500, 80, 150, 150)
     end
 end
 
