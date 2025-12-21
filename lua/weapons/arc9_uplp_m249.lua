@@ -682,7 +682,7 @@ SWEP.AttachmentElements = {
 }
 
 local defatt = "arc9/def_att_icons/"
-local defatt2 = "entities/uplp_attachements/def/"
+local defatt2 = "entities/uplp_attachments/def/"
 
 SWEP.Attachments = {
     {

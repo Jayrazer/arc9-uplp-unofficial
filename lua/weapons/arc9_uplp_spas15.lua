@@ -166,7 +166,7 @@ SWEP.DispersionSpread = 0
 SWEP.DispersionSpreadAddHipFire = 0.02
 
 SWEP.DispersionSpreadAddRecoil = 0.05
-SWEP.DispersionSpreadAddMove = 0.03
+SWEP.DispersionSpreadAddMove = 0.01
 SWEP.DispersionSpreadAddMidAir = 0.05
 
 SWEP.RecoilDissipationRate = 2
@@ -784,7 +784,7 @@ SWEP.AttachmentElements = {
 }
 
 local defatt = "arc9/def_att_icons/"
-local defatt2 = "entities/uplp_attachements/def/"
+local defatt2 = "entities/uplp_attachments/def/"
 
 SWEP.Attachments = {
     {
