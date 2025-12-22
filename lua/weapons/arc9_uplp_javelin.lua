@@ -100,8 +100,7 @@ SWEP.Hook_GetShootEntData = function(self, data)
     end
 end
 
-local TrackingIndicator = Material("vgui/uplp_reticles/halo_cross.png")
-
+local TrackingIndicator = Material("entities/uplp_attachments/unoff/javelin_diamond.png", "mips smooth")
 
 SWEP.Hook_Think = function(self)
     if self:GetSightAmount() >= 1 and self:Clip1() > 0 then
@@ -544,6 +543,8 @@ function SWEP:DoRTScope(model, atttbl, active)
     local pos = model:GetPos()
     local ang = EyeAngles()
 
+    local realscrw, realscrh = ScrW(), ScrH()
+
     if active then
         local sightzang = 0
         if self:ShouldDoScope() then
@@ -603,9 +604,11 @@ function SWEP:DoRTScope(model, atttbl, active)
                     local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
                     local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
 
-                    local fuckx = toscreen.x*2 - rtsize*2
-                    local fucky = toscreen.y*2 - rtsize + 100
-
+                    local bitch = 5 - (realscrh / 480) -- 2.75 for 1080p, 2 for 1440p this is total bullshitt
+                    -- local bitch = (-0.001171875 * realscrw) + 5
+                    local fuckx, fucky =    ((toscreen.x / realscrw) - 0.5) * bitch * realscrw + rtsize / 2, 
+                                            ((toscreen.y / realscrh) - 0.5) * bitch * realscrh + rtsize / 2
+                    
                     if tracktime >= 1 then
                         surface.SetDrawColor(255,255,255,200)
                         surface.DrawLine(0, fucky, rtsize, fucky)
@@ -613,7 +616,7 @@ function SWEP:DoRTScope(model, atttbl, active)
                     else
                         surface.SetMaterial(TrackingIndicator)
                         surface.SetDrawColor(255,255,255,200)
-                        surface.DrawTexturedRect(fuckx - 89, fucky - 89, 180, 180)
+                        surface.DrawTexturedRect(fuckx - 75, fucky - 75, 150, 150)
                     end
                 end
             end
