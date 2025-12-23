@@ -74,7 +74,7 @@ SWEP.WorldModelOffset = {
 }
 
 SWEP.ViewModelFOVBase = 65
-SWEP.ActivePos = Vector(-0.35, 0.3, 1.3)
+SWEP.ActivePos = Vector(-0.1, 0.3, 1.2)
 
 SWEP.BobSettingsMove =  {1.2, -0.8, 1.3,    0.6, 1.5, 1.2}
 SWEP.BobSettingsSpeed = {0.91, 1, 1.0,    1, 0.92, 0.8}
@@ -262,9 +262,9 @@ SWEP.ShootSound = {
 }
 
 SWEP.ShootSoundSilenced = {
-    pathUT .. "fire-sup-01.wav",
-    pathUT .. "fire-sup-02.wav",
-    pathUT .. "fire-sup-03.wav",
+    pathUT .. "fire-40-sup-01.wav",
+    pathUT .. "fire-40-sup-02.wav",
+    pathUT .. "fire-40-sup-03.wav",
 }
 
 SWEP.ShootSoundSilencedIndoor = SWEP.ShootSoundSilenced
@@ -731,18 +731,18 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
         -- end
     -- end
 
-    -- if eles["uplp_mp5_stock_col_f"] then
-        -- mdl:SetBodygroup(3, 4)
-    -- end
+    if eles["uplp_ump45_stock_fold_in"] then
+        mdl:SetBodygroup(2, 2)
+    end
 
-    -- if eles["uplp_mp5_grip_kurz"] then
-        -- mdl:SetBodygroup(2, 6)
-    -- end
+    if eles[tacc] then
+        mdl:SetBodygroup(1, 1)
+    end
 end
 
 SWEP.AttachmentElements = {
-    -- -- OPTICS
-    -- ["uplp_optic_used"] = { Bodygroups={ { 5, 1 } } },
+    -- OPTICS
+    ["uplp_optic_used"] = { Bodygroups={ { 5, 1 } } },
 
     -- -- BARRELS
     -- ["uplp_mp5_kurz"] = { Bodygroups={ { 1, 1 } } },
@@ -761,12 +761,10 @@ SWEP.AttachmentElements = {
     -- } },
     -- ["uplp_mp5_grip_kurz"] = { Bodygroups = { { 2, 6 }} },
 
-    -- -- STOCKS
-    -- ["uplp_mp5_stock_buffer"] = { Bodygroups = { { 3, 5 } } },
-    -- ["uplp_mp5_stock_pdw"] = { Bodygroups = { { 3, 2 } } },
-    -- ["uplp_mp5_stock_col"] = { Bodygroups = { { 3, 3 } } },
-    -- ["uplp_mp5_stock_col_f"] = { Bodygroups = { { 3, 4 } } },
-    -- ["uplp_mp5_stock_fixed"] = { Bodygroups = { { 3, 1 } } },
+    -- STOCKS
+    ["uplp_ump45_stock_fold"] = { Bodygroups = { { 2, 1 } } },
+    ["uplp_ump45_stock_fold_in"] = { Bodygroups = { { 2, 2 } } },
+
 
     -- -- MAGAZINES
     -- ["uplp_mp5_mag_15"] = { Bodygroups={ { 4, 2 } } },
@@ -774,7 +772,8 @@ SWEP.AttachmentElements = {
     -- ["uplp_mp5_mag_10mm"] = { Bodygroups={ { 4, 1 }, { 0, 1 } } },
 
     -- GRIPS
-    -- ["uplp_grip_used"] = { Bodygroups={ { 3, 1 } } },
+    ["uplp_grip_used"] = { Bodygroups={ { 1, 1 } } },
+    ["uplp_tac_used"] = { Bodygroups={ { 1, 1 } } },
 
 }
 
@@ -787,14 +786,15 @@ SWEP.Attachments = {
         Category = {"uplp_optic_micro", "uplp_optic_mid", "uplp_mp5_optic"},
         DefaultIcon = Material(defatt .. "optic.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, -1.72, 1.5),
+        Pos = Vector(0, -1.72, 2),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(0, 0, 0),
         CorrectiveAng = Angle(0, 0, 0),
+		ActiveElements = {"uplp_optic_used"}
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
-        Category = {"uplp_mp5_handguard"},
+        Category = {""},
         DefaultIcon = Material(defatt2 .. "mp5front.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0, 6.5) * 0.78,
@@ -802,43 +802,43 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_grip"),
-        Category = {"uplp_grip_vert", "uplp_mp5_grip"},
+        Category = {"uplp_grip_vert"},
         DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
         Bone = "body",
-        Pos = Vector(0, 0.45, 8.5),
+        Pos = Vector(0, 1.12, 8.5),
         Ang = Angle(90, 90, 180),
         Icon_Offset = Vector(0.5, 0, -1),
-        ExcludeElements = {"uplp_mp5_hg_navy"},
+		ActiveElements = {"uplp_grip_used"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_tactical"),
-        Category = {"uplp_tac", "uplp_mp5_handguard_tac"},
+        Category = {"uplp_tac"},
         Bone = "laseradj",
-        Pos = Vector(0, 0, -2),
+        Pos = Vector(-0.26, 0.46, -1),
         Ang = Angle(90, 90, -90),
         Icon_Offset = Vector(0, 0, 0),
-        ExcludeElements = {"uplp_mp5_bar_kurz"},
+		ActiveElements = {"uplp_tac_used"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_muzzle"),
         Category = {"uplp_muzzle"},
         Bone = "body",
-        Pos = Vector(0, -0.2, 13.85) * 0.78,
+        Pos = Vector(0, 0.3, 15.25) * 0.78,
         Ang = Angle(90, 90, 180),
         ExcludeElements = {"uplp_mp5_bar_sd"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
-        Category = {"uplp_mp5_stock"},
+        Category = {"uplp_ump45_stock"},
         DefaultIcon = Material(defatt2 .. "mp5stock.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0.35, -5) * 0.78,
         Ang = Angle(90, 90, 180),
-        Installed = "uplp_mp5_stock_col",
+		Installed = "uplp_ump45_stock_fold"
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
-        Category = {"uplp_mp5_mag"},
+        Category = {"uplp_ump45_mag"},
         DefaultIcon = Material(defatt2 .. "vityazmag.png", "mips smooth"),
         Bone = "mag",
         Pos = Vector(0, 0, -0.4),
@@ -897,18 +897,18 @@ SWEP.Attachments = {
         Ang = Angle(90, 0, -90),
     },
 
-    {
-        PrintName = ARC9:GetPhrase("uplp_category_ubgl") or "ubgl",
-        Category = {"uplp_m203_rail"},
-        DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
-        Bone = "body",
-        Pos = Vector(0, 2.25, 7.66),
-        Ang = Angle(90, 90, 0),
-        Icon_Offset = Vector(0.5, 0, -1),
-        MergeSlots = {3},
-        Hidden = true,
-        ExcludeElements = {"uplp_mp5_bar_kurz"},
-    },
+    -- {
+        -- PrintName = ARC9:GetPhrase("uplp_category_ubgl") or "ubgl",
+        -- Category = {"uplp_m203_rail"},
+        -- DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
+        -- Bone = "body",
+        -- Pos = Vector(0, 2.25, 7.66),
+        -- Ang = Angle(90, 90, 0),
+        -- Icon_Offset = Vector(0.5, 0, -1),
+        -- MergeSlots = {3},
+        -- Hidden = true,
+        -- ExcludeElements = {"uplp_mp5_bar_kurz"},
+    -- },
 }
 
 SWEP.HookP_NameChange = function(self, name)

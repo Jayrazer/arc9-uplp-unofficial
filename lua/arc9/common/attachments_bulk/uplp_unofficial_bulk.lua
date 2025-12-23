@@ -3,6 +3,7 @@ local ATT = {}
 local iconfolderfamas = "entities/uplp_attachments/famas/"
 local iconfolderm249 = "entities/uplp_attachments/m249/"
 local iconfolderspas = "entities/uplp_attachments/spas15/"
+local iconfolderump = "entities/uplp_attachments/ump45/"
 
 
 ------------------------SPAS-15----------------------------
@@ -674,6 +675,89 @@ ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-1, -2, 0) end
 ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-3, 0, 0) end
 
 ARC9.LoadAttachment(ATT, "uplp_famas_brl_snub")
+
+
+------------------------UMP-45-------------------------
+
+
+ATT = {}
+
+ATT.PrintName = "Buffer Tube"
+ATT.CompactName = "Buffer"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderump .. "tube.png", "mips smooth")
+
+ATT.Category = "uplp_ump45_stock"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_ump45_stock_buffer"}
+
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_stock"),
+        Category = {"uplp_ar15_stock"},
+        DefaultIcon = Material("entities/uplp_attachements/def/arstock.png", "mips smooth"),
+        Pos = Vector(0.55, 0, -0.55) * 0.78,
+        Ang = Angle(0, 0, 0),
+        Scale = 1.0
+    },
+}
+
+-- AR15 stocks reduce too much recoil so this is to counterbalance them
+ATT.RecoilAdd = 0.25
+ATT.SwayAddSights = 0.5
+
+ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-1.5, 3, 0) end
+ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-1.5, 0, 0) end
+
+ARC9.LoadAttachment(ATT, "uplp_ump45_stock_buffer")
+
+
+
+ATT = {}
+
+ATT.PrintName = "Folding Stock"
+ATT.CompactName = "F. Stock"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderump .. "rect.png", "mips smooth")
+
+ATT.Category = "uplp_ump45_stock"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_ump45_stock_fold"}
+
+-- Positives
+ATT.RecoilAutoControlMult = 1.2
+ATT.VisualRecoilMultHipFire = 0.5
+
+-- Buffer Tube stats
+ATT.RecoilAdd = -0.45
+ATT.SwayAddSights = -0.5
+ATT.AimDownSightsTimeAdd = 0.05
+ATT.SprintToFireTimeAdd = 0.03
+ATT.SpeedMultSights = 0.95
+
+ATT.ToggleStats = {
+    {
+        PrintName = ARC9:GetPhrase("uplp_togglestat_extended"),
+        ActivateElements = {"uplp_ump45_stock_fold"},
+        CustomizePosHook = function(wep, vec) return vec + Vector(-4, 3, 0) end,
+        CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-4, 0, 0) end,
+    },
+    {
+        PrintName = ARC9:GetPhrase("uplp_togglestat_folded"),
+        ActivateElements = {"uplp_ump45_stock_fold_in"},
+        AimDownSightsTimeAdd = -0.03,
+        SprintToFireTimeAdd = -0.02,
+        RecoilAdd = 0.15,
+        RecoilAutoControlMult = 1 / 1.2,
+        SpeedMultSights = 1 / 0.95,
+    },
+}
+
+ARC9.LoadAttachment(ATT, "uplp_ump45_stock_fold")
 
 
 ------------------------Launcher Scopes----------------------------
