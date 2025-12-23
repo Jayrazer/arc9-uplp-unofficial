@@ -767,9 +767,10 @@ SWEP.AttachmentElements = {
 
 
     -- -- MAGAZINES
-    -- ["uplp_mp5_mag_15"] = { Bodygroups={ { 4, 2 } } },
-    -- ["uplp_mp5_mag_50"] = { Bodygroups={ { 4, 3 } } },
-    -- ["uplp_mp5_mag_10mm"] = { Bodygroups={ { 4, 1 }, { 0, 1 } } },
+    ["uplp_ump45_mag_10"] = { Bodygroups={ { 3, 1 } } },
+    ["uplp_ump45_mag_15"] = { Bodygroups={ { 3, 3 } } },
+    ["uplp_ump45_mag_30"] = { Bodygroups={ { 3, 2 } } },
+    ["uplp_ump45_mag_50"] = { Bodygroups={ { 3, 4 } } },
 
     -- GRIPS
     ["uplp_grip_used"] = { Bodygroups={ { 1, 1 } } },
