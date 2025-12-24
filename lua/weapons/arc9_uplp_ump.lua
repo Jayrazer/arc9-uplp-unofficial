@@ -9,21 +9,22 @@ SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "UV-45" --ARC9:GetPhrase("uplp_weapon_ump")
-SWEP.Description = ARC9:GetPhrase("uplp_weapon_mp5_desc")
+SWEP.Description = [[The "Universale Verteidigungswaffe 45 Kal." (Universal Defense Weapon .45 Caliber) is a modern subgun designed specifically for American law enforcement and military. The modular design allows the weapon to easily swap calibers by only replacing three parts (barrel, bolt and magazine). 
+Intended to replace the older PV-9, it's cheaper and simpler in design but has failed to sell nearly as well.]] --ARC9:GetPhrase("uplp_weapon_mp5_desc")
 
 SWEP.Class = ARC9:GetPhrase("uplp_class_weapon_smg") -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_smg") -- In the Spawnmenu
 
 SWEP.Trivia = {
-    [ ARC9:GetPhrase( "uplp_realname" ) ] = ARC9:GetPhrase("uplp_weapon_mp5_real"),
+    [ ARC9:GetPhrase( "uplp_realname" ) ] = "H&K UMP-45", --ARC9:GetPhrase("uplp_weapon_ump45_real"),
 
     [ ARC9:GetPhrase( "uplp_manufacturer" ) ] = ARC9:GetPhrase( "uplp_weapon_mp5_manufacturer" ),
-    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_9x19mm"),
+    [ ARC9:GetPhrase( "uplp_caliber" ) ] = ARC9:GetPhrase( "uplp_caliber_45ACP"),
     [ ARC9:GetPhrase( "uplp_mechanism" ) ] = string.format( ARC9:GetPhrase("uplp_mechanism_2" ),
-                                                                        ARC9:GetPhrase( "uplp_mechanism_rollerdelay" ),
+                                                                        "Simple Blowback",
                                                                         ARC9:GetPhrase( "uplp_mechanism_closedbolt" ) ),
     [ ARC9:GetPhrase( "uplp_country" ) ] = ARC9:GetPhrase( "uplp_country_germany" ),
-    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "1966" ),
+    [ ARC9:GetPhrase( "uplp_year" ) ] = string.format( ARC9:GetPhrase("uplp_year_present"), "2000" ),
 }
 
 SWEP.Credits = {
@@ -976,27 +977,9 @@ SWEP.Attachments = {
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
 
-    if att["uplp_mp5_bar_kurz"] then
-        name = ARC9:GetPhrase("uplp_weapon_mp5k")
-    elseif att["uplp_mp5_bar_sd"] then
-        name = ARC9:GetPhrase("uplp_weapon_mp5sd")
-    end
-
-    if att["uplp_mp5_mag_10mm"] then
-        name = string.Replace(name, "9", "10")
+	if att["uplp_ump45_mag_15"] or att["uplp_ump45_mag_30"] or att["uplp_ump45_mag_50"] then
+        name = string.Replace(name, "45", "9")
     end
 
     return name
-end
-
-SWEP.CustomPoseParamsHandler = function(swep, ent, iswm)
-    if swep:GetElements()["uplp_weapon_mp5k"] then
-        ent:SetPoseParameter("owo", 1) -- different animations for mpk5
-    else
-        ent:SetPoseParameter("owo", 0)
-    end
-
-    local loadedronds = swep:GetLoadedRounds()
-    if loadedronds <= 15 then loadedronds = loadedronds - 0.75 end
-    ent:SetPoseParameter("magspring", 1-math.Clamp(loadedronds/30, 0, 1))
 end

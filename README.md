@@ -7,4 +7,4 @@ Unofficial ARC9 PolyArms weapons
 - SAW-46 (M249)
 - SPAW-15 (SPAS-15)
 - TK-F 3 (Panzerfaust 3)
-- UV-45 (UMP-45) (planned)
+- UV-45 (UMP-45)

@@ -9,7 +9,7 @@ SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = "Lancer IPAT-MS" --ARC9:GetPhrase("uplp_javelin")
-SWEP.Description = [[The "Infantry Portable Anti-Tank Missile System" is a lock-on launcher designed for use by infantry units against heavily armored targets. It is primarily meant for use against ground targets but can also be effective against air targets thanks to its multiple tracking modes.
+SWEP.Description = [[The "Infantry-Portable Anti-Tank Missile System" is a lock-on launcher designed for use by infantry units against heavily armored targets. It is primarily meant for use against ground targets but can also be effective against air targets thanks to its multiple tracking modes.
 Requires a lock-on to fire.]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
 SWEP.Class = "Missile Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
