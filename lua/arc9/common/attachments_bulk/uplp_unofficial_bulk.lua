@@ -723,7 +723,7 @@ ATT.PrintName = "Folding Stock"
 ATT.CompactName = "F. Stock"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "rect.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "foldstock.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_stock"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
@@ -735,7 +735,7 @@ ATT.RecoilAutoControlMult = 1.2
 ATT.VisualRecoilMultHipFire = 0.5
 
 -- Buffer Tube stats
-ATT.RecoilAdd = -0.45
+ATT.RecoilAdd = -0.35
 ATT.SwayAddSights = -0.5
 ATT.AimDownSightsTimeAdd = 0.05
 ATT.SprintToFireTimeAdd = 0.03
@@ -752,8 +752,8 @@ ATT.ToggleStats = {
         PrintName = ARC9:GetPhrase("uplp_togglestat_folded"),
         ActivateElements = {"uplp_ump45_stock_fold_in"},
         AimDownSightsTimeAdd = -0.03,
-        SprintToFireTimeAdd = -0.02,
-        RecoilAdd = 0.15,
+        SprintToFireTimeAdd = -0.03,
+        RecoilAdd = 0.2,
         RecoilAutoControlMult = 1 / 1.2,
         SpeedMultSights = 1 / 0.95,
     },
@@ -768,7 +768,7 @@ ATT = {}
 ATT.PrintName = "50-Round 9x19mm Drum"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "50.png", "mips smooth")
+ATT.Icon = Material("entities/uplp_attachements/mp5/50.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
@@ -780,6 +780,9 @@ ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_50.mdl"
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_50"
 end
+
+ATT.DamageMaxOverride = 15
+ATT.DamageMinOverride = 7
 
 ATT.ClipSizeOverride = 50
 ATT.RPMOverride = 700
@@ -807,28 +810,30 @@ ATT = {}
 ATT.PrintName = "15-Round 9x19mm Magazine"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "15.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "9mm_15.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_ump45_mag_15"}
 
-ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
+--ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump45_mag_15.mdl"
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9"
 end
 
+ATT.DamageMaxOverride = 15
+ATT.DamageMinOverride = 7
+
 ATT.ClipSizeOverride = 15
 ATT.RPMOverride = 700
 
-ATT.AimDownSightsTimeAdd = -0.03
-ATT.SprintToFireTimeAdd = -0.02
-ATT.SwayMultSights = 0.6
+ATT.AimDownSightsTimeAdd = -0.05
+ATT.SprintToFireTimeAdd = -0.03
 ATT.SpeedMultSights = 1.1
 ATT.ReloadTimeMult = 0.925
-ATT.SpreadAddHipFire = -0.003
+ATT.SpreadAddHipFire = -0.0035
 
 ATT.ShootSoundOverride = {
     ")uplp_urban_temp/mp5/fire-01.wav",
@@ -845,28 +850,27 @@ ATT = {}
 ATT.PrintName = "30-Round 9x19mm Magazine"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "15.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "9mm_30.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_ump45_mag_30"}
 
-ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
+--ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump45_mag_30.mdl"
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9"
 end
 
+ATT.DamageMaxOverride = 15
+ATT.DamageMinOverride = 7
+
 ATT.ClipSizeOverride = 30
 ATT.RPMOverride = 700
 
-ATT.AimDownSightsTimeAdd = -0.03
-ATT.SprintToFireTimeAdd = -0.02
-ATT.SwayMultSights = 0.6
-ATT.SpeedMultSights = 1.1
-ATT.ReloadTimeMult = 0.925
-ATT.SpreadAddHipFire = -0.003
+ATT.AimDownSightsTimeAdd = -0.02
+ATT.SprintToFireTimeAdd = -0.015
 
 ATT.ShootSoundOverride = {
     ")uplp_urban_temp/mp5/fire-01.wav",
@@ -889,7 +893,7 @@ ATT = {}
 ATT.PrintName = "10-Round .45 ACP Magazine"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "15.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "45acp_10.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_mag"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
@@ -906,7 +910,6 @@ ATT.ClipSizeOverride = 10
 
 ATT.AimDownSightsTimeAdd = -0.03
 ATT.SprintToFireTimeAdd = -0.02
-ATT.SwayMultSights = 0.6
 ATT.SpeedMultSights = 1.1
 ATT.ReloadTimeMult = 0.925
 ATT.SpreadAddHipFire = -0.003

@@ -858,6 +858,7 @@ SWEP.AttachmentElements = {
 
 local defatt = "arc9/def_att_icons/"
 local defatt2 = "entities/uplp_attachements/def/"
+local defatt3 = "entities/uplp_attachments/def/"
 
 SWEP.Attachments = {
     {
@@ -910,7 +911,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
         Category = {"uplp_ump45_stock"},
-        DefaultIcon = Material(defatt2 .. "mp5stock.png", "mips smooth"),
+        DefaultIcon = Material(defatt3 .. "ump45_stock.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0.35, -5) * 0.78,
         Ang = Angle(90, 90, 180),
@@ -919,7 +920,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_magazine"),
         Category = {"uplp_ump45_mag"},
-        DefaultIcon = Material(defatt2 .. "vityazmag.png", "mips smooth"),
+        DefaultIcon = Material(defatt3 .. "ump45_mag.png", "mips smooth"),
         Bone = "mag",
         Pos = Vector(0, 0, -0.4),
         Ang = Angle(90, 90, 180),
