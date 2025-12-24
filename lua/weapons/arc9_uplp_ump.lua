@@ -729,6 +729,27 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },
+	["inspect_empty"] = {
+        Source = "inspect_empty",
+        FireASAP = true,
+        MinProgress = 0.925,
+        EventTable = {
+            { s = pathUTC .. "cloth_1.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-02.ogg", t = 5 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_2.ogg", t = 70 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.ogg", t = 67 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "rack1.ogg", t = 88 / 30, c = ca, v = 0.5 },
+            { s = pathUT .. "chlock.ogg", t = 108 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "cloth_3.ogg", t = 119 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.ogg", t = 127 / 30, c = ca, v = 0.8 },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.825, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
 
     -- Firemodee --
 
@@ -764,7 +785,7 @@ SWEP.Animations = {
     },
 
     ["dryfire"] = {
-        Source = "modeswitch",
+        Source = "modeswitch_empty",
     },
 }
 
