@@ -760,7 +760,6 @@ ATT.ToggleStats = {
 ARC9.LoadAttachment(ATT, "uplp_ump45_stock_fold")
 
 
---- mags
 
 ATT = {}
 
@@ -781,6 +780,7 @@ ATT.Hook_TranslateAnimation = function(wep, anim)
 end
 
 ATT.ClipSizeOverride = 50
+ATT.RPMOverride = 700
 
 ATT.SpreadAddHipFire = 0.008
 ATT.AimDownSightsTimeAdd = 0.05
@@ -790,6 +790,12 @@ ATT.SwayAddSights = 0.3
 ATT.SwayMultSights = 1.25
 ATT.SpeedAdd = -0.025
 ATT.SpeedMultSights = 0.8
+
+ATT.ShootSoundOverride = {
+    ")uplp_urban_temp/mp5/fire-01.wav",
+    ")uplp_urban_temp/mp5/fire-02.wav",
+    ")uplp_urban_temp/mp5/fire-03.wav",
+}
 
 ARC9.LoadAttachment(ATT, "uplp_ump45_mag_50")
 
@@ -808,11 +814,12 @@ ATT.ActivateElements = {"uplp_ump45_mag_15"}
 
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
 
--- ATT.Hook_TranslateAnimation = function(wep, anim)
-    -- return anim .. "_15"
--- end
+ATT.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_9"
+end
 
 ATT.ClipSizeOverride = 15
+ATT.RPMOverride = 700
 
 ATT.AimDownSightsTimeAdd = -0.03
 ATT.SprintToFireTimeAdd = -0.02
@@ -821,7 +828,58 @@ ATT.SpeedMultSights = 1.1
 ATT.ReloadTimeMult = 0.925
 ATT.SpreadAddHipFire = -0.003
 
+ATT.ShootSoundOverride = {
+    ")uplp_urban_temp/mp5/fire-01.wav",
+    ")uplp_urban_temp/mp5/fire-02.wav",
+    ")uplp_urban_temp/mp5/fire-03.wav",
+}
+
 ARC9.LoadAttachment(ATT, "uplp_ump45_mag_15")
+
+
+
+ATT = {}
+
+ATT.PrintName = "30-Round 9x19mm Magazine"
+ATT.Description = ATT.PrintName
+
+ATT.Icon = Material(iconfolderump .. "15.png", "mips smooth")
+
+ATT.Category = "uplp_ump45_mag"
+ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+
+ATT.ActivateElements = {"uplp_ump45_mag_30"}
+
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
+
+ATT.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_9"
+end
+
+ATT.ClipSizeOverride = 30
+ATT.RPMOverride = 700
+
+ATT.AimDownSightsTimeAdd = -0.03
+ATT.SprintToFireTimeAdd = -0.02
+ATT.SwayMultSights = 0.6
+ATT.SpeedMultSights = 1.1
+ATT.ReloadTimeMult = 0.925
+ATT.SpreadAddHipFire = -0.003
+
+ATT.ShootSoundOverride = {
+    ")uplp_urban_temp/mp5/fire-01.wav",
+    ")uplp_urban_temp/mp5/fire-02.wav",
+    ")uplp_urban_temp/mp5/fire-03.wav",
+}
+
+ATT.ShootSoundSilencedOverride = {
+    ")uplp_urban_temp/mp5/fire-sup-01.wav",
+    ")uplp_urban_temp/mp5/fire-sup-02.wav",
+    ")uplp_urban_temp/mp5/fire-sup-03.wav",
+}
+
+ARC9.LoadAttachment(ATT, "uplp_ump45_mag_30")
+
 
 
 ATT = {}
@@ -852,37 +910,6 @@ ATT.ReloadTimeMult = 0.925
 ATT.SpreadAddHipFire = -0.003
 
 ARC9.LoadAttachment(ATT, "uplp_ump45_mag_10")
-
-
-
-ATT = {}
-
-ATT.PrintName = "30-Round 9x19mm Magazine"
-ATT.Description = ATT.PrintName
-
-ATT.Icon = Material(iconfolderump .. "15.png", "mips smooth")
-
-ATT.Category = "uplp_ump45_mag"
-ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
-
-ATT.ActivateElements = {"uplp_ump45_mag_30"}
-
-ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
-
--- ATT.Hook_TranslateAnimation = function(wep, anim)
-    -- return anim .. "_15"
--- end
-
-ATT.ClipSizeOverride = 30
-
-ATT.AimDownSightsTimeAdd = -0.03
-ATT.SprintToFireTimeAdd = -0.02
-ATT.SwayMultSights = 0.6
-ATT.SpeedMultSights = 1.1
-ATT.ReloadTimeMult = 0.925
-ATT.SpreadAddHipFire = -0.003
-
-ARC9.LoadAttachment(ATT, "uplp_ump45_mag_30")
 
 
 ------------------------Launcher Scopes----------------------------

@@ -430,7 +430,7 @@ SWEP.Animations = {
         PeekProgress = 0.875,
         RefillProgress = 0.7,
         FireASAP = true,
-        DropMagAt = 0.6,
+        DropMagAt = 0.55,
         Mult = 1,
         EventTable = {
             { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -458,7 +458,68 @@ SWEP.Animations = {
         PeekProgress = 0.825,
         RefillProgress = 0.75,
         FireASAP = true,
-        DropMagAt = 1.05,
+        DropMagAt = 0.6,
+        Mult = 1.0,
+        EventTable = {
+            { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
+            -- { s = pathUT .. "magin.ogg", t = 1.03, c = ca, v = 0.8 },
+            { s = pathUT .. "magtap.ogg", t = 1.05*0.9 - 0.035, c = ca, v = 0.8 },
+
+            { s = pathUT .. "chlock.ogg", t = 1.3, c = ca, v = 0.8 },
+            { s = pathUT .. "chamber.ogg", t = 1.4, c = ca, v = 0.8 },
+
+            { s = pathUTC .. "cloth_4.ogg", t = 1.45, c = ca, v = 0.8 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.75, lhik = 0 },
+            { t = 0.95, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
+	["reload_9"] = {
+        Source = "reload_9",
+        MinProgress = 0.85,
+        PeekProgress = 0.875,
+        RefillProgress = 0.7,
+        FireASAP = true,
+        DropMagAt = 0.55,
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUT .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
+            -- { s = pathUT .. "magin.ogg", t = 1.03, c = ca, v = 0.8 },
+            { s = pathUT .. "magtap.ogg", t = 1.05*0.9 - 0.035, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_4.ogg", t = 1.2*0.9, c = ca, v = 0.8 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.625, lhik = 0 },
+            { t = 0.95, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+    ["reload_empty_9"] = {
+        Source = "reload_empty_9",
+        MinProgress = 0.9,
+        PeekProgress = 0.825,
+        RefillProgress = 0.75,
+        FireASAP = true,
+        DropMagAt = 0.6,
         Mult = 1.0,
         EventTable = {
             { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
@@ -747,19 +808,10 @@ SWEP.AttachmentElements = {
     -- -- BARRELS
     -- ["uplp_mp5_kurz"] = { Bodygroups={ { 1, 1 } } },
 
-    -- -- HANDGUARDS & BARRELS
-    -- ["uplp_mp5_hg_navy"] = { Bodygroups = { { 2, 1 } } },
-    -- ["uplp_mp5_bar_sd"] = { Bodygroups = { { 2, 3 } }, AttPosMods = {
-        -- [3] = { Pos = Vector(0, 1.13, 9.5) * 0.78 },
-        -- [4] = { Pos = Vector(-0.15, 0.05, 2) * 0.78 },
-        -- [14] = { Pos = Vector(0, 2.8, 9.8) * 0.78 },
+    -- HANDGUARDS & BARRELS
+    -- ["uplp_ump45_bar_long"] = { Bodygroups = { { 6, 1 } }, AttPosMods = {
+        -- [5] = { Pos = Vector(0, 0.3, 23.24) * 0.78 },
     -- } },
-    -- ["uplp_mp5_bar_kurz"] = { Bodygroups = { { 2, 5 }, { 1, 1 } }, AttPosMods = {
-        -- [5] = { Pos = Vector(0, -0.2, 10.25) * 0.78 },
-        -- [3] = { Pos = Vector(0, 0.75, 8.25) * 0.78 },
-        -- [14] = { Pos = Vector(0, 2.5, 8.7) * 0.78 },
-    -- } },
-    -- ["uplp_mp5_grip_kurz"] = { Bodygroups = { { 2, 6 }} },
 
     -- STOCKS
     ["uplp_ump45_stock_fold"] = { Bodygroups = { { 2, 1 } } },
@@ -795,11 +847,12 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
-        Category = {""},
+        Category = {"uplp_ump45_barrel"},
         DefaultIcon = Material(defatt2 .. "mp5front.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0, 6.5) * 0.78,
         Ang = Angle(90, 90, 180),
+		Hidden = true
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_grip"),
