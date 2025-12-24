@@ -950,7 +950,6 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(1, 1.3, 0.7),
         Ang = Angle(90, 90, 180),
-        ExcludeElements = {"uplp_mp5_bar_kurz", "uplp_mp5_bar_sd", "uplp_grip_used", "uplp_tac_used"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
