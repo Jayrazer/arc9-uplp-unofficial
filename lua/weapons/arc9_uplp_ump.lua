@@ -59,13 +59,13 @@ SWEP.CamOffsetAng = Angle(0, 0, 90)
 
 ---- View & Worldmodel
 SWEP.ViewModel = "models/weapons/arc9/c_uplp_ump.mdl"
-SWEP.WorldModel = "models/weapons/arc9/w_uplp_mp5.mdl"
+SWEP.WorldModel = "models/weapons/arc9/w_uplp_ump45.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 -- SWEP.WorldModelMirror = "models/weapons/arc9/c_uplp_mp5.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-3.5, 3, -8),
+    Pos = Vector(-5.75, 3.5, -8),
     Ang = Angle(0, 0, 180),
     TPIKPos = Vector(-8, 4, -6),
     TPIKAng = Angle(-12, -0, 180),
@@ -241,7 +241,7 @@ SWEP.CustomizeSnapshotFOV = 60
 -- Dropped Magazine
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_30.mdl"
+SWEP.DropMagazineModel = "models/weapons/arc9/uplp/ump_mag_25.mdl"
 SWEP.DropMagazineTime = 0.63
 SWEP.DropMagazineQCA = 4
 SWEP.DropMagazinePos = Vector(0, 0, 0)

@@ -817,7 +817,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_ump45_mag_15"}
 
---ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump45_mag_15.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump_mag_15.mdl"
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9"
@@ -857,7 +857,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_ump45_mag_30"}
 
---ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump45_mag_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump_mag_30.mdl"
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
     return anim .. "_9"
@@ -900,7 +900,7 @@ ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
 
 ATT.ActivateElements = {"uplp_ump45_mag_10"}
 
-ATT.DropMagazineModel = "models/weapons/arc9/uplp/mp5_mag_15.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump_mag_10.mdl"
 
 -- ATT.Hook_TranslateAnimation = function(wep, anim)
     -- return anim .. "_15"
