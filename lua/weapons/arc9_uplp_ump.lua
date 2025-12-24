@@ -84,8 +84,8 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 
 ---- Weapon Stats and Behaviour
 -- Damage
-SWEP.DamageMax = 14
-SWEP.DamageMin = 8
+SWEP.DamageMax = 20
+SWEP.DamageMin = 5
 SWEP.DamageType = DMG_BULLET
 
 SWEP.BodyDamageMults = {
@@ -118,18 +118,18 @@ SWEP.ClipSize = 25
 
 -- Recoil
 SWEP.Recoil = 1.5
-SWEP.RecoilUp = 0.65
-SWEP.RecoilSide = 0.35
+SWEP.RecoilUp = 0.75
+SWEP.RecoilSide = 0.3
 
-SWEP.RecoilRandomUp = 0.5
-SWEP.RecoilRandomSide = 0.5
+SWEP.RecoilRandomUp = 0.55
+SWEP.RecoilRandomSide = 0.55
 
 SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
 SWEP.RecoilPunch = 0
 SWEP.RecoilAutoControl = 2
 
-SWEP.RecoilMultSights = 0.75
+SWEP.RecoilMultSights = 0.85
 SWEP.RecoilMultCrouch = 0.85
 
 -- Visual Recoil
@@ -153,10 +153,10 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.003
-SWEP.SpreadAddHipFire = 0.014
+SWEP.Spread = 0.0038
+SWEP.SpreadAddHipFire = 0.012
 
-SWEP.SpreadAddRecoil = 0.015
+SWEP.SpreadAddRecoil = 0.025
 SWEP.SpreadAddMove = 0.01
 SWEP.SpreadAddMidAir = 0.05
 
@@ -165,7 +165,7 @@ SWEP.SpreadMultMove = 1
 
 SWEP.RecoilDissipationRate = 6
 SWEP.RecoilResetTime = 0.015
-SWEP.RecoilPerShot = 1 / 8
+SWEP.RecoilPerShot = 1 / 10
 
 SWEP.RecoilMax = 1
 SWEP.RecoilModifierCap = 1
@@ -177,18 +177,18 @@ SWEP.RecoilPerShotMultSights = 0.75
 SWEP.HipfireBloomAmplification = 0.75
 
 -- Weapon handling
-SWEP.SpeedMult = 0.97 -- Walk speed multiplier
+SWEP.SpeedMult = 0.95 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.75 -- When aiming
 SWEP.SpeedMultShooting = 0.85
 
 SWEP.SwayAddSights = 0.5
 SWEP.BarrelLength = 28
 
-SWEP.AimDownSightsTime = 0.36 - 0.1
-SWEP.SprintToFireTime = 0.33 - 0.1
+SWEP.AimDownSightsTime = 0.3
+SWEP.SprintToFireTime = 0.34
 
 -- Shooting and Firemodes
-SWEP.RPM = 650 -- How fast gun shoot
+SWEP.RPM = 600 -- How fast gun shoot
 SWEP.HeatCapacity = 100 * 1.5 -- For suppresors; how many shots for full heat With big silencer (Small silencers will make this number lower down to 70%)
 
 SWEP.Num = 1 -- How many bullets shot at once
@@ -972,7 +972,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("uplp_category_charm"),
         Category = "charm",
         Bone = "body",
-        Pos = Vector(0.9, -0.075, 4.925),
+        Pos = Vector(0.72, -0.2, -2),
         Ang = Angle(90, 0, -90),
     },
 

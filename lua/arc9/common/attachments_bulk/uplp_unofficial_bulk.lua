@@ -682,6 +682,8 @@ ARC9.LoadAttachment(ATT, "uplp_famas_brl_snub")
 
 ATT = {}
 
+ATT.Ignore = true
+
 ATT.PrintName = "Buffer Tube"
 ATT.CompactName = "Buffer"
 ATT.Description = ATT.PrintName
