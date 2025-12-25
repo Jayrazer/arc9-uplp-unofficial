@@ -682,38 +682,52 @@ ARC9.LoadAttachment(ATT, "uplp_famas_brl_snub")
 
 ATT = {}
 
-ATT.Ignore = true
-
-ATT.PrintName = "Buffer Tube"
-ATT.CompactName = "Buffer"
+ATT.PrintName = "200mm SD Barrel"
+ATT.CompactName = "200mm SD"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "tube.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "sd.png", "mips smooth")
 
-ATT.Category = "uplp_ump45_stock"
+ATT.Category = "uplp_ump45_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
+ATT.ActivateElements = {"uplp_ump45_bar_sd"}
+ATT.Silencer = true
+ATT.MuzzleParticleOverride = "muzzleflash_suppressed"
+ATT.MuzzleParticleOverride_Priority = 10
 
-ATT.ActivateElements = {"uplp_ump45_stock_buffer"}
+-- Positives
+ATT.SpreadAddRecoil = -0.003
+ATT.RecoilMult = 0.9
+ATT.ShootVolumeMult = 0.7
 
-ATT.Attachments = {
-    {
-        PrintName = ARC9:GetPhrase("uplp_category_stock"),
-        Category = {"uplp_ar15_stock"},
-        DefaultIcon = Material("entities/uplp_attachements/def/arstock.png", "mips smooth"),
-        Pos = Vector(0.55, 0, -0.55) * 0.78,
-        Ang = Angle(0, 0, 0),
-        Scale = 1.0
-    },
-}
+-- Negatives
+ATT.AimDownSightsTimeAdd = 0.03
+ATT.PhysBulletMuzzleVelocityMult = 0.8
 
--- AR15 stocks reduce too much recoil so this is to counterbalance them
-ATT.RecoilAdd = 0.25
-ATT.SwayAddSights = 0.5
+ATT.Overheat = true
+--ATT.HeatCapacityMult = 1
 
-ATT.CustomizePosHook = function(wep, vec) return vec + Vector(-1.5, 3, 0) end
-ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(-1.5, 0, 0) end
+ATT.SpreadHook = function(wep, stat)
+    local heat = wep:GetHeatAmount() / wep:GetProcessedValue("HeatCapacity", true)
+    return Lerp(heat ^ 2, stat, stat + 0.01)
+end
 
-ARC9.LoadAttachment(ATT, "uplp_ump45_stock_buffer")
+ATT.HeatDissipationHook = function(wep, stat)
+    local heat = wep:GetHeatAmount() / wep:GetProcessedValue("HeatCapacity", true)
+    return Lerp(heat ^ 2, stat, stat * 2)
+end
+
+ATT.RPMHook = function(wep, stat)
+    local heat = wep:GetHeatAmount() / wep:GetProcessedValue("HeatCapacity", true)
+    if heat >= 0.5 then
+        return Lerp((heat - 0.5) / 0.5, stat, stat * 0.85)
+    end
+end
+
+ATT.CustomizePosHook = function(wep, vec) return vec + Vector(2, 2, 0) end
+ATT.CustomizeRotateAnchorHook = function(wep, vec) return vec + Vector(2, 0, 0) end
+
+ARC9.LoadAttachment(ATT, "uplp_ump45_bar_sd")
 
 
 

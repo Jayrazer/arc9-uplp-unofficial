@@ -835,9 +835,7 @@ SWEP.AttachmentElements = {
     -- ["uplp_mp5_kurz"] = { Bodygroups={ { 1, 1 } } },
 
     -- HANDGUARDS & BARRELS
-    -- ["uplp_ump45_bar_long"] = { Bodygroups = { { 6, 1 } }, AttPosMods = {
-        -- [5] = { Pos = Vector(0, 0.3, 23.24) * 0.78 },
-    -- } },
+    ["uplp_ump45_bar_sd"] = { Bodygroups = { { 6, 1 } } },
 
     -- STOCKS
     ["uplp_ump45_stock_fold"] = { Bodygroups = { { 2, 1 } } },
@@ -879,7 +877,7 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, 0, 6.5) * 0.78,
         Ang = Angle(90, 90, 180),
-		Hidden = true
+		Hidden = false
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_grip"),
@@ -906,7 +904,7 @@ SWEP.Attachments = {
         Bone = "body",
         Pos = Vector(0, 0.3, 15.25) * 0.78,
         Ang = Angle(90, 90, 180),
-        ExcludeElements = {"uplp_mp5_bar_sd"},
+        ExcludeElements = {"uplp_ump45_bar_sd"},
     },
     {
         PrintName = ARC9:GetPhrase("uplp_category_stock"),
