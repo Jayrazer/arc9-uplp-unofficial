@@ -797,26 +797,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local eles = data.elements
     local mdl = data.model
     local tacc = "uplp_tac_used"
-    local hg = "uplp_mp5_hg_"
-
-    -- if eles["uplp_muzzle_used"] or eles["uplp_mp5_bar_kurz"] or eles["uplp_mp5_bar_sd"] then
-        -- mdl:SetBodygroup(6, 1)
-    -- end
-
-    -- local gripper = eles["uplp_grip_used"] or eles["uplp_m203_used"]
-    -- if (gripper or eles[tacc]) then
-        -- if !eles["uplp_mp5_hg_navy"] and !eles["uplp_mp5_bar_kurz"] and !eles["uplp_mp5_bar_sd"] then
-            -- mdl:SetBodygroup(2, 2)
-        -- elseif eles["uplp_mp5_bar_kurz"] then
-            -- mdl:SetBodygroup(2, 7)
-        -- elseif gripper and eles["uplp_mp5_bar_sd"] then
-            -- mdl:SetBodygroup(2, 4)
-        -- end
-
-        -- if eles[tacc] and eles["uplp_mp5_bar_sd"] then
-            -- mdl:SetBodygroup(6, 2)
-        -- end
-    -- end
 
     if eles["uplp_ump45_stock_fold_in"] then
         mdl:SetBodygroup(2, 2)
@@ -971,6 +951,10 @@ SWEP.Attachments = {
 
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
+	
+	if att["uplp_ump45_bar_sd"] then
+        name = "UV-45S"
+    end
 
 	if att["uplp_ump45_mag_15"] or att["uplp_ump45_mag_30"] or att["uplp_ump45_mag_50"] then
         name = string.Replace(name, "45", "9")
