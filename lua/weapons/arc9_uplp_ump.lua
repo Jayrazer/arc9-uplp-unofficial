@@ -831,9 +831,6 @@ SWEP.AttachmentElements = {
     -- OPTICS
     ["uplp_optic_used"] = { Bodygroups={ { 5, 1 } } },
 
-    -- -- BARRELS
-    -- ["uplp_mp5_kurz"] = { Bodygroups={ { 1, 1 } } },
-
     -- HANDGUARDS & BARRELS
     ["uplp_ump45_bar_sd"] = { Bodygroups = { { 6, 1 } } },
 
@@ -873,7 +870,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("uplp_category_barrel"),
         Category = {"uplp_ump45_barrel"},
-        DefaultIcon = Material(defatt2 .. "mp5front.png", "mips smooth"),
+        DefaultIcon = Material(defatt3 .. "ump45_barrel.png", "mips smooth"),
         Bone = "body",
         Pos = Vector(0, 0, 6.5) * 0.78,
         Ang = Angle(90, 90, 180),

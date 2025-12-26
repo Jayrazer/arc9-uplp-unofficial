@@ -686,7 +686,7 @@ ATT.PrintName = "200mm SD Barrel"
 ATT.CompactName = "200mm SD"
 ATT.Description = ATT.PrintName
 
-ATT.Icon = Material(iconfolderump .. "sd.png", "mips smooth")
+ATT.Icon = Material(iconfolderump .. "barrel_sup.png", "mips smooth")
 
 ATT.Category = "uplp_ump45_barrel"
 ATT.MenuCategory = "ARC9 - Poly Arms Attachments"
