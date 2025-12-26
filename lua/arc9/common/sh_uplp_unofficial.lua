@@ -63,6 +63,7 @@ local function POLYUF()
 		spas12.DamageMax = 70
 		spas12.DamageMin = 28
 		spas12.RangeMin = 8 / ARC9.HUToM
+		spas12.Spread = 0.042 * 1.25
 		spas12.Firemodes = {
 			{
 				Mode = 1, -- Pump
@@ -73,9 +74,9 @@ local function POLYUF()
 				uplp_semi = true,
 				SuppressEmptySuffix = true,
 				DispersionSpreadAddHipFire = -0.02,
-				Spread = 0.032 * 1.5,
-				DamageMax = 102,
-				RPM = 600,
+				Spread = 0.032 * 1.45,
+				DamageMax = 105,
+				RPM = 575,
 			},
 			{
 				Mode = 1, -- Semi
