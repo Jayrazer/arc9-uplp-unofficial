@@ -801,6 +801,7 @@ ATT.DamageMinOverride = 7
 ATT.ClipSizeOverride = 50
 ATT.RPMOverride = 700
 
+ATT.RecoilAdd = -0.2
 ATT.SpreadAddHipFire = 0.008
 ATT.AimDownSightsTimeAdd = 0.05
 ATT.SprintToFireTimeAdd = 0.07
@@ -834,7 +835,7 @@ ATT.ActivateElements = {"uplp_ump45_mag_15"}
 ATT.DropMagazineModel = "models/weapons/arc9/uplp/ump_mag_15.mdl"
 
 ATT.Hook_TranslateAnimation = function(wep, anim)
-    return anim .. "_9"
+    return anim .. "_9_15"
 end
 
 ATT.DamageMaxOverride = 15
@@ -843,6 +844,7 @@ ATT.DamageMinOverride = 7
 ATT.ClipSizeOverride = 15
 ATT.RPMOverride = 700
 
+ATT.RecoilAdd = -0.15
 ATT.AimDownSightsTimeAdd = -0.05
 ATT.SprintToFireTimeAdd = -0.03
 ATT.SpeedMultSights = 1.1
@@ -883,6 +885,7 @@ ATT.DamageMinOverride = 7
 ATT.ClipSizeOverride = 30
 ATT.RPMOverride = 700
 
+ATT.RecoilAdd = -0.15
 ATT.AimDownSightsTimeAdd = -0.02
 ATT.SprintToFireTimeAdd = -0.015
 
@@ -927,6 +930,10 @@ ATT.SprintToFireTimeAdd = -0.02
 ATT.SpeedMultSights = 1.1
 ATT.ReloadTimeMult = 0.925
 ATT.SpreadAddHipFire = -0.003
+
+ATT.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_15"
+end
 
 ARC9.LoadAttachment(ATT, "uplp_ump45_mag_10")
 

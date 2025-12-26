@@ -558,15 +558,15 @@ SWEP.Animations = {
         DropMagAt = 0.5,
         EventTable = {
             { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUMP .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
             { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
-            -- { s = pathUT .. "magin.ogg", t = 1.03, c = ca, v = 0.8 },
-            { s = pathUT .. "magtap.ogg", t = 1.05*0.9 - 0.035 - 0.125, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_4.ogg", t = 1.2*0.9 - 0.125, c = ca, v = 0.8 },
+            { s = pathUMP .. "magstruggle.ogg", t = 0.7*0.9, c = ca, v = 0.8 },
+            { s = pathUMP .. "magin.ogg", t = 1.04*0.9 - 0.035, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_4.ogg", t = 1.2*0.9, c = ca, v = 0.8 },
 
             {hide = 0, t = 0},
-            {hide = 1, t = 0.5},
-            {hide = 0, t = 0.65}
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -586,21 +586,80 @@ SWEP.Animations = {
         DropMagAt = 1.0,
         EventTable = {
             { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "rack1.ogg", t = 0.2, c = ca, v = 0.8 },
-            { s = pathUT .. "chlock.ogg", t = 0.3, c = ca, v = 0.8 },
+            { s = pathUMP .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
+            { s = pathUMP .. "magstruggle.ogg", t = 0.7*0.9, c = ca, v = 0.8 },
+            { s = pathUMP .. "magin.ogg", t = 1.04*0.9 - 0.035, c = ca, v = 0.8 },
 
-            { s = pathUT .. "magout.ogg", t = 0.73 - 0.15, c = ca, v = 0.8 },
-            { s = pathUTC .. "magpouch_pull_small.ogg", t = 1.0, v = 0.6 },
-            { s = pathUT .. "magtap.ogg", t = 1.44 - 0.08 - 0.125, c = ca, v = 0.8 },
-            -- { s = pathUT .. "magin.ogg", t = 1.4, c = ca, v = 0.8 },
-            { s = pathUTC .. "cloth_1.ogg", t = 1.65 - 0.125, c = ca, v = 0.5 },
-            --{ s = ")uplp_urban_temp/ak/scrape.ogg", t = 1.82, c = ca, v = 1 },
-            { s = pathUTREAL .. "slap.ogg", t = 1.9 - 0.125, c = ca, v = 0.75 },
-            { s = pathUTC .. "cloth_4.ogg", t = 2.0 - 0.125, c = ca, v = 0.8 },
+            { s = pathUMP .. "chlock2.ogg", t = 1.32, c = ca, v = 0.8 },
+            { s = pathUMP .. "chamber.ogg", t = 1.35, c = ca, v = 0.8 },
+
+            { s = pathUTC .. "cloth_4.ogg", t = 1.45, c = ca, v = 0.8 },
 
             {hide = 0, t = 0},
-            {hide = 1, t = 1.0},
-            {hide = 0, t = 1.15}
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.75, lhik = 0 },
+            { t = 0.95, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+	
+	["reload_9_15"] = {
+        Source = "reload_9_15",
+        MinProgress = 0.85,
+        PeekProgress = 0.875,
+        RefillProgress = 0.7,
+        FireASAP = true,
+        DropMagAt = 0.55,
+        Mult = 1,
+        EventTable = {
+            { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUMP .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
+            { s = pathUMP .. "magstruggle.ogg", t = 0.7*0.9, c = ca, v = 0.8 },
+            { s = pathUMP .. "magin.ogg", t = 1.04*0.9 - 0.035, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_4.ogg", t = 1.2*0.9, c = ca, v = 0.8 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.625, lhik = 0 },
+            { t = 0.95, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+    ["reload_empty_9_15"] = {
+        Source = "reload_empty_9_15",
+        MinProgress = 0.9,
+        PeekProgress = 0.825,
+        RefillProgress = 0.75,
+        FireASAP = true,
+        DropMagAt = 0.6,
+        Mult = 1.0,
+        EventTable = {
+            { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUMP .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
+            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
+            { s = pathUMP .. "magstruggle.ogg", t = 0.7*0.9, c = ca, v = 0.8 },
+            { s = pathUMP .. "magin.ogg", t = 1.04*0.9 - 0.035, c = ca, v = 0.8 },
+
+            { s = pathUMP .. "chlock2.ogg", t = 1.32, c = ca, v = 0.8 },
+            { s = pathUMP .. "chamber.ogg", t = 1.35, c = ca, v = 0.8 },
+
+            { s = pathUTC .. "cloth_4.ogg", t = 1.45, c = ca, v = 0.8 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.6},
+            {hide = 0, t = 0.75}
         },
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -670,40 +729,6 @@ SWEP.Animations = {
             { t = 0.1, lhik = 0 },
             { t = 0.75, lhik = 0 },
             { t = 0.95, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
-    ["reload_empty_catch"] = {
-        Source = "reload_empty_catch",
-        MinProgress = 0.85,
-        PeekProgress = 0.8,
-        RefillProgress = 0.725,
-        MagSwapTime = 0.8,
-        FireASAP = true,
-        Mult = 1,
-        DropMagAt = 0.6,
-        EventTable = {
-            { s = pathUTC .. "rattle2.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            { s = pathUT .. "magout.ogg", t = 0.25*0.9 - 0.15, c = ca, v = 0.8 },
-            { s = pathUTC .. "magpouch_pull_small.ogg", t = 0.5*0.9, v = 0.6 },
-            -- { s = pathUT .. "magin.ogg", t = 1.03, c = ca, v = 0.8 },
-            { s = pathUT .. "magtap.ogg", t = 1.05*0.9 - 0.035, c = ca, v = 0.8 },
-
-            { s = pathUT .. "chlock.ogg", t = 1.3, c = ca, v = 0.8 },
-            { s = pathUT .. "chamber.ogg", t = 1.4, c = ca, v = 0.8 },
-
-            { s = pathUTC .. "cloth_4.ogg", t = 1.45, c = ca, v = 0.8 },
-
-            {hide = 0, t = 0},
-            {hide = 1, t = 0.6},
-            {hide = 0, t = 0.75}
-        },
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.7, lhik = 0 },
-            { t = 0.9, lhik = 1 },
             { t = 1, lhik = 1 },
         },
     },
