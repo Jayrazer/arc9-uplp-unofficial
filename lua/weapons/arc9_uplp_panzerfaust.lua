@@ -8,8 +8,9 @@ SWEP.Spawnable = true
 SWEP.Slot = 4 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
-SWEP.PrintName = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3")
-SWEP.Description = ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
+SWEP.PrintName = "PZJ-3" --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3")
+SWEP.Description = [[ The "Panzerjäger 3" (Tank Destroyer, Model 3) is a simple dumbfire rocket launcher that is effective against both vehicles and infantry. The unguided warhead and quick-reload design allow for great suppression, but it's ineffective against air targets due to not having lock-on.
+Must be aimed in order to fire. ]] --ARC9:GetPhrase("uplp_speedonerd_weapon_panzerfaust3_desc")
 SWEP.Class = "Rocket Launcher"
 SWEP.SubCategory = ARC9:GetPhrase("uplp_category_weapon_utils") -- In the Spawnmenu
 

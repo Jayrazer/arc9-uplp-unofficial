@@ -119,7 +119,7 @@ SWEP.ClipSize = 25
 
 -- Recoil
 SWEP.Recoil = 1.5
-SWEP.RecoilUp = 0.75
+SWEP.RecoilUp = 1
 SWEP.RecoilSide = 0.3
 
 SWEP.RecoilRandomUp = 0.55
@@ -154,8 +154,8 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.0038
-SWEP.SpreadAddHipFire = 0.012
+SWEP.Spread = 0.009
+SWEP.SpreadAddHipFire = 0.015
 
 SWEP.SpreadAddRecoil = 0.025
 SWEP.SpreadAddMove = 0.01

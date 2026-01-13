@@ -149,7 +149,7 @@ SWEP.VisualRecoilDampingConstHipFire = 45
 SWEP.VisualRecoilPositionBumpUpHipFire = .5
 
 -- Accuracy and Spread
-SWEP.Spread = 0.004
+SWEP.Spread = 0.015
 SWEP.SpreadAddHipFire = 0.035
 
 SWEP.SpreadAddRecoil = 0.011
@@ -195,11 +195,12 @@ SWEP.Num = 1 -- How many bullets shot at once
 
 SWEP.Firemodes = {
 	 { Mode = 3, -- Burst
-     },
+	 Spread = 0.01
+	 },
     { Mode = -1, -- Full
-     },    
+	 },    
     { Mode = 1, -- Semi
-    RPM = 650,
+	RPM = 650,
      }
 }
 
