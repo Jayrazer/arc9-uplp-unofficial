@@ -84,7 +84,7 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 
 ---- Weapon Stats and Behaviour
 -- Damage
-SWEP.DamageMax = 18
+SWEP.DamageMax = 17
 SWEP.DamageMin = 12
 SWEP.DamageType = DMG_BULLET
 
@@ -595,24 +595,24 @@ SWEP.Animations = {
         },
     },
 	
-	    -- ["inspect_30"] = {
-        -- Source = {"inspect_30"},
-        -- EventTable = {
-            -- { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
-            -- { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
-			-- { s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
-            -- { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
-            -- { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
-            -- { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
-            -- { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
-        -- },
-        -- IKTimeLine = {
-            -- { t = 0, lhik = 1 },
-            -- { t = 0.15, lhik = 0 },
-            -- { t = 0.4, lhik = 0 },
-            -- { t = 0.48, lhik = 1 },
-        -- },
-    -- },
+	["inspect_30"] = {
+        Source = {"inspect_30"},
+        EventTable = {
+            { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
+            { s = pathUTC .. "movement-rifle-02.ogg", t = 82 / 30, c = ca, v = 0.8 },
+            { s = pathUTC .. "cloth_3.ogg", t = 85 / 30, c = ca, v = 0.8 },
+        },
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.15, lhik = 0 },
+            { t = 0.4, lhik = 0 },
+            { t = 0.48, lhik = 1 },
+        },
+    },
 
 
     ["firemode_1"] = {
