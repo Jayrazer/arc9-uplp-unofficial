@@ -15,7 +15,7 @@ ENT.ImpactFuse = true // projectile explodes on impact.
 ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
 
-ENT.SafetyFuse = 0.075
+ENT.SafetyFuse = 0.1
 ENT.ImpactDamage = 150
 
 ENT.AudioLoop = "uplp/panzerfaust/move_rpapa7_proj_flame_cls.ogg"
