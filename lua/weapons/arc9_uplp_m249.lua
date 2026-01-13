@@ -577,10 +577,11 @@ SWEP.Animations = {
     -- Inspect
 
     ["inspect"] = {
-        Source = {"inspect_30"},
+        Source = {"inspect"},
         EventTable = {
             { s = pathUTC .. "cloth_4.ogg", t = 0 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-03.ogg", t = 5 / 30, c = ca, v = 0.8 },
+			{ s = pathUTC .. "grab-polymer.ogg", t = 6 / 30, c = ca, v = 1 },
 			{ s = pathUTC .. "cloth_2.ogg", t = 44 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "movement-rifle-04.ogg", t = 50 / 30, c = ca, v = 0.8 },
             { s = pathUTC .. "grab-polymer.ogg", t = 58 / 30, c = ca, v = 1 },
