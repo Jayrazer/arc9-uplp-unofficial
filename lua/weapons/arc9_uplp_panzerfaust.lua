@@ -248,16 +248,17 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-		MinProgress = 0.7,
+		MinProgress = 0.5,
+		FireASAP = true,
         EventTable = {
             {s = pathPanzer .. "draw.wav", t = 1 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		MinProgress = 0.9,
+		MinProgress = 0.5,
         EventTable = {
-            {s = pathPanzer .. "reload_start.wav", t = 2 / 30},
+            {s = pathPanzer .. "reload_start.wav", t = 1 / 30},
         },
     },
     ["fire"] = {
