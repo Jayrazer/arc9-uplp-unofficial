@@ -9,7 +9,7 @@ SWEP.Slot = 2 -- Which slot the weapon is in; starts at 0
 
 ---- Name, Description, Class, Category and Trivia
 SWEP.PrintName = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249" )
-SWEP.Description = ARC9:GetPhrase( "uplp_speedonerd_weapon_m249_desc" )
+SWEP.Description = [[The "Squad Automatic Weapon, Mk. 46" is a popular light machine gun with excellent versatility. Unlike other machine guns, the SAW is intended to be carried and fired from the shoulder instead of mounted, and can accept lightweight AR-15 magazines in addition to ammunition belts.]]--ARC9:GetPhrase( "uplp_speedonerd_weapon_m249_desc" )
 
 SWEP.Class = ARC9:GetPhrase( "uplp_class_weapon_mg" ) -- In the Customization Menu
 SWEP.SubCategory = ARC9:GetPhrase( "uplp_category_weapon_mg" ) -- In the Spawnmenu
